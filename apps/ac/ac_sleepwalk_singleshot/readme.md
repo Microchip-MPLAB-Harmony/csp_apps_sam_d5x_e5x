@@ -54,7 +54,7 @@ The following table shows the target hardware for the application projects.
 5. Console displays the message stating whether voltage at AC input is lower or greater than the internal bandgap voltage (1.1 V)
 6. LED toggles when comparison is done
 
-Below table shows the AC input pin and LED name for the board
+Below table shows the AC input pin and LED name for the board:
 
 | Board| AC input pin | LED name|
 |------|----------|---------|

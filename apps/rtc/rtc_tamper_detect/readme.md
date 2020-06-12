@@ -67,6 +67,7 @@ The following table shows the target hardware for the application projects.
     ![output](images/output_rtc_tamper_2.png)
 
 Following table provides the LED name:
+
 | Board      | LED Name |
 | ---------- | ---------------- |--------- |
 | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)    | LED0 |

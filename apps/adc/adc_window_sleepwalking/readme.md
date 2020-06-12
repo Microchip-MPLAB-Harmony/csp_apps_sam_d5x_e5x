@@ -9,6 +9,11 @@ This application shows how to configure ADC in a sleepwalking operation, where i
 This example application shows how to use the ADC Peripheral library to perform sleepwalking.
 The ADC peripheral is configured to operate in window mode. The ADC conversion is triggered by RTC compare 0 event. On every trigger, window detection operation is performed in standby sleep. The window interrupt is generated when the input voltage falls below the window upper threshold and the CPU is woken up by this interrupt.
 
+| Board | ADC window upper threshold |
+| ----- | -------------------------- |
+| [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | 0.825 V |
+|||
+
 ## Downloading and building the application
 
 To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x) and click
@@ -49,6 +54,6 @@ The following table shows the target hardware for the application projects.
     - Flow Control : None
 3. Build and Program the application using its IDE
 4. Console displays ADC Window Detected when ADC input is lower than 1/4 th of the reference
-voltage i.e below 0.825 V:
+voltage (i.e below 0.825 V):
 
     ![output](images/output_adc_window_sleepwalking.png)

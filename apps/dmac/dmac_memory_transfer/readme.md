@@ -46,7 +46,15 @@ The following table shows the target hardware for the application projects.
     - Stop : 1 Bit
     - Flow Control : None
 3. Build and Program the application using its IDE
-4. Observe output message in console as follows:
+4. LED indicates the success or failure:
+    - LED is turned ON when the DMAC memory transfer is successful.
+    - Following table provides the LED name
+
+    | Board Name | LED Name |
+    |------------| -------- |
+    |[SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | LED0 |
+
+5. Observe output message in console as follows:
 
     ![output](images/output_dmac_memory_transfer.png)
 

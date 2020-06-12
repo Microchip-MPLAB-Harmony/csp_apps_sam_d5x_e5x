@@ -76,7 +76,7 @@ The following applications are provided to demonstrate the typical or interestin
 |[TC timer mode](apps/tc/tc_timer_mode/readme.md)|This example shows how to use the TC module in timer mode to generate periodic interrupt|
 |[TCC PWM generation](apps/tcc/tcc_synchronous_pwm_channels/readme.md)|This example application shows how to use the TCC to generate a 2 or 3 phase PWM signals for motor control with dead time|
 |[TRNG random number](apps/trng/random_number/readme.md)|This example application shows how to use the TCC to generate a 2 or 3 phase PWM signals for motor control with dead time|
-|[WDT timeout](apps/wdt/wdt_timeout//readme.md)|This example shows how to generate a Watchdog timer reset by emulating a deadlock|
+|[WDT timeout](apps/wdt/wdt_timeout/readme.md)|This example shows how to generate a Watchdog timer reset by emulating a deadlock|
 |||
 ____
 

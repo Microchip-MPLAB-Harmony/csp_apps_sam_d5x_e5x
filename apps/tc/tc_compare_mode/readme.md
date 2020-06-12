@@ -53,7 +53,7 @@ The following table shows the target hardware for the application projects.
 
 | Timer Channel   | Pin      | Observable characteristic of the waveform
 | ----------------| ---------| -----------------------------------------|
-| TC0_WO0 | PA04(Pin 14 of EXT1) | Toggle output with 37.5 Hz |
-| TC1_WO1 | PA07(Pin 6 of EXT1)  | Active high output with 75 Hz |
-| TC4_WO1 | PB09 (Pin 8 of EXT1) | Active low output with 75 Hz |
+| TC0_WO0 | PA04(Pin 14 of EXT1) | Toggle output with 37.5 Hz frequency |
+| TC1_WO1 | PA07(Pin 6 of EXT1)  | Active high output with 75 Hz frequency |
+| TC4_WO1 | PB09 (Pin 8 of EXT1) | Active low output with 75 Hz frequency |
 ||||

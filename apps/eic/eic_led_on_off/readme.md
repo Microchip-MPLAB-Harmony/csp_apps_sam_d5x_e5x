@@ -34,15 +34,14 @@ The following table shows the target hardware for the application projects.
 
 ### Setting up [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)
 
-- Connect an oscilloscope to monitor the PORT pin PB15 (Pin 8 of the EXT2 header)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
 
 1. Build and Program the application using its IDE
 2. LED toggles on every switch release
-3. The following table provides the LED name.
 
+Following table provides the LED name:
 
 | Board      | Switch Name | LED Name |
 | ---------- | ---------| ------------|

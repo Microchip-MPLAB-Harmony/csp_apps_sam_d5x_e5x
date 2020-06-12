@@ -34,18 +34,16 @@ The following table shows the target hardware for the application projects.
 
 ### [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)
 
-- Connect an oscilloscope to monitor the PORT pin PB15 (Pin 8 of the EXT2 header)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
 
 1. Build and Program the application using its IDE
-2. Observe a clock of 5 MHz on the clock output pin
-3. The LED indicates the success or failure:
-    - The LED is turned ON when the hardware CRC value matched with the software calculated CRC value
-    - The LED is turned OFF when the hardware CRC value did not match with the software calculated CRC value
-4. The following table provides the LED name
+2. The LED indicates the success or failure:
+    - LED is turned ON when the hardware CRC value matched with the software calculated CRC value
+    - LED is turned OFF when the hardware CRC value did not match with the software calculated CRC value
 
+The following table provides the LED name
 
 | Board      | LED Name |
 | ---------- | ---------|

@@ -52,7 +52,7 @@ The following table shows the target hardware for the application projects.
 
     ![output_1](images/output_nvmctrl_smarteeprom_1.png)
 
-    - After Reset the device
+    - After Resetting the device
 
     ![output_2](images/output_nvmctrl_smarteeprom_2.png)
 

@@ -36,10 +36,6 @@ The following table shows the target hardware for the application projects.
 
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
-### Setting up [SAM V71 Xplained Ultra board](https://www.microchip.com/developmenttools/ProductDetails/atsamv71-xult)
-
-- Connect the Debug USB port on the board to the computer using a micro USB cable
-
 ## Running the Application
 
 1. Open the Terminal application (Ex.:Tera term) on the computer
@@ -61,7 +57,7 @@ The following table shows the target hardware for the application projects.
 
 7. WDT will reset the device in four seconds and the demonstration should restart
 
-Refer the table below for details of switch and LED
+Refer the table below for details of switch and LED:
 
 | Board      | Switch Name | LED Name |
 | ---------- | ---------| ------------|

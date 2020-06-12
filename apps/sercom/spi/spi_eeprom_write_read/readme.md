@@ -41,10 +41,11 @@ The following table shows the target hardware for the application projects.
 
 1. Build and Program the application project using its IDE
 2. LED indicates the success or failure:
-    - The LED is turned ON when the value read from the EEPROM matched with the written value
-    - The LED is turned OFF when the value read from the EEPROM did not match with the written value
+    - LED is turned ON when the value read from the EEPROM matched with the written value
+    - LED is turned OFF when the value read from the EEPROM did not match with the written value
 
 Following table provides the LED name:
+
 | Board      | LED Name |
 | ---------- | ---------------- |--------- |
 | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)    | LED0 |

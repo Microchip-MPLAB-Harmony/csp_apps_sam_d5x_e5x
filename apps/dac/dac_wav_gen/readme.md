@@ -44,7 +44,7 @@ The following table shows the target hardware for the application projects.
 3. Press switch to toggle the waveform shape from sine wave to sawtooth wave and back
 4. Refer to the below table for dac output pin and switch details:
 
-| Board      | DACC output pins | Switch Name |
+| Board      | DAC output pins | Switch Name |
 | ----------------- |-----------|-------------|
 | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)    | PA02 (Pin 1 of the ADC/DAC Header) | SW0 |
 ||||

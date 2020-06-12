@@ -41,9 +41,9 @@ The following table shows the target hardware for the application projects.
 
 1. Build and Program the application using its IDE
 2. Observe a sine wave of 5 KHz frequency on DAC output pin
-4. Refer to the below table for dac output pin details:
+3. Refer to the below table for dac output pin details:
 
-| Board      | DACC output pins |
+| Board      | DAC output pins |
 | ----------------- |-----------|
 | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)    | PA02 (Pin 1 of the ADC/DAC Header) |
 |||

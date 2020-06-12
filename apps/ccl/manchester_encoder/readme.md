@@ -34,7 +34,9 @@ The following table shows the target hardware for the application projects.
 
 ### Setting up  [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)
 
-- use a jumper wire to connect PA05 (EXT1 pin 13) to PB01 (EXT2 pin 5) (To route  SCK signal to CCL_IN[2])
+- Use jumper from PA05 (EXT1 pin 13) to PB01 (EXT2 pin 5) (This routes SCK signal to CCL_IN[2])
+- PA04 (EXT1 pin 14) has MOSI output
+- PB02 (EXT2 pin 10) has CCL output (CCL_OUT)
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
 ## Running the Application
@@ -43,6 +45,7 @@ The following table shows the target hardware for the application projects.
 2. Connect a logic analyzer to SCK pin
 3. Connect a logic analyzer to the Manchester-encoded output CCL_OUT pin
 4. Refer to the following table for pin details:
+
     |Board| MOSI pin | SCK pin  | CCL_OUT pin |
     |-----|----------|----------|-------------|
     |[SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)| PA04 (EXT1 pin 14) | PA05 (EXT1 pin 13) | PB02 (EXT2 pin 10) |

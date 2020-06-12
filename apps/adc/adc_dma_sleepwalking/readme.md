@@ -50,3 +50,12 @@ The following table shows the target hardware for the application projects.
 4. CPU wakes up after every 16 transfers of ADC result and updates the console as shown below:
 
     ![output](images/output_adc_dma_sleepwalking.png)
+
+5. Failure is indicated by turning ON the user LED (i.e. application failed if the LED is turned ON)
+
+Refer to the table below for details of LED:
+
+| Board| LED name|
+|------|---------|
+| [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | LED0 |
+|||

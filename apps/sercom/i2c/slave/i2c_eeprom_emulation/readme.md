@@ -49,8 +49,7 @@ Hardware setup requires two boards, one acting as the I2C Master and the other a
 
 ### Setting up [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)
 
-- On EXT1 header, connect I2C SDA line on Pin 11 (PA22) and I2C SCL line
-on Pin 12 (PA23) with the corresponding SDA and SCL lines of the I2C master
+- On EXT1 header, connect I2C SDA line on Pin 11 (PA22) and I2C SCL line on Pin 12 (PA23) with the corresponding SDA and SCL lines of the I2C master
 - Connect a ground wire from Pin 2 of EXT1 to the ground of the I2C master
 - Connect the Debug USB port on the board to the computer using a micro USB cable
 
@@ -58,9 +57,8 @@ on Pin 12 (PA23) with the corresponding SDA and SCL lines of the I2C master
 
 1. Build and program I2C EEPROM application from *apps/sercom/i2c/master/i2c_eeprom/firmware* onto the evaluation kit used as I2C master
 2. Build and Program I2C slave application onto the evaluation kit used as I2C slave
-3. Run application on i2c slave board and then run the application on I2C master board
+3. Run application on I2C slave board and then run the application on I2C master board
 4. LED on the I2C master board indicates success or failure:
 
     - The LED is turned ON when the value read from the I2C slave matches with the written value
     - The LED is turned OFF when the value read from the I2C slave did not match with the written value
-

@@ -12,6 +12,8 @@ This example application shows how to use the TRNG peripheral library to produce
 
 To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x) and click
 
+![clone](../../../docs/images/clone.png)
+
 Path of the application within the repository is **apps/trng/random_number/firmware** .
 
 To build the application, refer to the following table and open the project using its IDE.

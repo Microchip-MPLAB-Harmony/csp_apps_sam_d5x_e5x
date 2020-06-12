@@ -55,14 +55,14 @@ The following table shows the target hardware for the application projects.
 4. LED is blinked continuously using the SysTick Timer
 5. Console displays the following message
 
-    ![output](images/output_rstc_reset_cause_1.png)
+    ![output_1](images/output_rstc_reset_cause_1.png)
 
 6. Watchdog timer is fed periodically using System Timer (SysTick) to prevent the WDT reset and the LED is toggled
 7. Press the switch to put the system in deadlock (LED should stop blinking)
 8. WDT will reset the device in four seconds and the demonstration should restart
 9. Console should display the following message
 
-    ![output](images/output_rstc_reset_cause_2.png)
+    ![output_2](images/output_rstc_reset_cause_2.png)
 
 Following table provides the details of switch and LED
 
