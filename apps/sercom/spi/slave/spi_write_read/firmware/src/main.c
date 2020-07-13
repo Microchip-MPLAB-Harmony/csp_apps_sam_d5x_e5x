@@ -55,19 +55,19 @@
 /*
  * Protocol:
  * Master:     [WR_CMD ADDR1 ADDR0 DATA0 DATA1 .. DATAN] ... ... ... ... ... ... [RD_CMD ADDR1 ADDR0] [DUMMY DUMMY .. DUMMY]
- * Slave:      [DUMMY  DUMMY DUMMY DUMMY DUMMY .. DUMMY] ... ... ... ... ... ... [DUMMY  DUMMY DUMMY] [DATA0 DATA1 .. DATAN] 
+ * Slave:      [DUMMY  DUMMY DUMMY DUMMY DUMMY .. DUMMY] ... ... ... ... ... ... [DUMMY  DUMMY DUMMY] [DATA0 DATA1 .. DATAN]
  * BUSY PIN:    ----------------------------------------------------------------
  * ____________|                                                                |____________________________________________
- * 
+ *
  * WR_CMD = 0x02
  * RD_CMD = 0x03
  * BUSY   = 0x01
  * READY  = 0x00
- */ 
+ */
 
 typedef enum
 {
-	APP_STATE_INITIALIZE,
+    APP_STATE_INITIALIZE,
     APP_STATE_READ,
     APP_STATE_WRITE,
     APP_STATE_IDLE,
@@ -86,8 +86,8 @@ typedef enum
 #define LED_Off()                           LED_Set()
 
 typedef struct
-{    
-    uint8_t busy        :1;    
+{
+    uint8_t busy        :1;
     uint8_t reserved    :7;
 }STATUS;
 
@@ -97,8 +97,8 @@ typedef struct
     volatile STATUS              status;
     volatile uint8_t             nBytesRead;
     volatile uint8_t             nBytesToWrite;
-    volatile uint8_t             nBytesReadRequest;    
-    volatile uint16_t            memAddr;        
+    volatile uint8_t             nBytesReadRequest;
+    volatile uint16_t            memAddr;
 }APP_DATA;
 
 APP_DATA appData;
@@ -146,14 +146,14 @@ uint8_t APP_TxData[APP_TX_BUFFER_SIZE];
 void delay(uint32_t count)
 {
     uint32_t i;
-    
+
     // 1 loop roughly provides 1us delay at 32MHz CPU frequency
     for (i = 0; i < count; i++)
     {
         asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
         asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
         asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
-        asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");        
+        asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");asm("NOP");
     }
 }
 
@@ -161,18 +161,18 @@ void SPIEventHandler(uintptr_t context )
 {
     if (SERCOM6_SPI_ErrorGet() == SPI_SLAVE_ERROR_NONE)
     {
-        appData.nBytesRead = SERCOM6_SPI_Read(APP_RxData, SERCOM6_SPI_ReadCountGet()); 
+        appData.nBytesRead = SERCOM6_SPI_Read(APP_RxData, SERCOM6_SPI_ReadCountGet());
 
         switch(APP_RxData[0])
-        {            
+        {
             case APP_CMD_WRITE:
                 if (appData.status.busy == 0)
-                {                
+                {
                     appData.status.busy = 1;
                     appData.memAddr = ((APP_RxData[1] << 8) | (APP_RxData[2]));
-                    appData.nBytesToWrite = (appData.nBytesRead - 3);                
-                    appData.state = APP_STATE_WRITE;                
-                }                
+                    appData.nBytesToWrite = (appData.nBytesRead - 3);
+                    appData.state = APP_STATE_WRITE;
+                }
                 break;
 
             case APP_CMD_READ:
@@ -184,62 +184,62 @@ void SPIEventHandler(uintptr_t context )
                 {
                     memcpy(APP_TxData, &APP_MemoryBuffer[appData.memAddr], appData.nBytesReadRequest);
                     SERCOM6_SPI_Write(APP_TxData, appData.nBytesReadRequest);
-                }            
+                }
                 break;
-        } 
+        }
 
         if (appData.status.busy == 0)
         {
             /* Indicate to SPI Master that slave is ready for data transfer */
             SERCOM6_SPI_Ready();
         }
-    }       
+    }
 }
 
 int main ( void )
 {
     /* Initialize all modules */
-    SYS_Initialize ( NULL );    
-    
+    SYS_Initialize ( NULL );
+
     appData.state = APP_STATE_INITIALIZE;
-    
+
     while(1)
     {
         /* Check the application's current state. */
         switch (appData.state)
         {
             case APP_STATE_INITIALIZE:
-                  
-                SERCOM6_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0);  
-                
+
+                SERCOM6_SPI_CallbackRegister(SPIEventHandler, (uintptr_t) 0);
+
                 /* Wait for instructions from SPI master */
-                appData.state = APP_STATE_IDLE;   
-                
+                appData.state = APP_STATE_IDLE;
+
                 break;
-                
-            case APP_STATE_WRITE: 
-                
+
+            case APP_STATE_WRITE:
+
                 /* Adding delay to simulate busy condition */
                 delay(1000);
-                
-                /* Copy received data into Application memory buffer */                                
+
+                /* Copy received data into Application memory buffer */
                 if ((appData.memAddr + appData.nBytesToWrite) <= APP_MEM_BUFFER_SIZE)
                 {
                     memcpy(&APP_MemoryBuffer[appData.memAddr], &APP_RxData[3], appData.nBytesToWrite);
                 }
-                
+
                 appData.status.busy = 0;
-                
+
+                appData.state = APP_STATE_IDLE;
+
                 /* Indicate to SPI Master that slave is ready for data transfer */
                 SERCOM6_SPI_Ready();
-                
-                appData.state = APP_STATE_IDLE; 
-                                
+
                 break;
-                            
-            case APP_STATE_IDLE: 
+
+            case APP_STATE_IDLE:
                 break;
-                
+
             default:
                 break;
         }
