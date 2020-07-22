@@ -13,7 +13,7 @@
   Description
 
   Remarks:
-    
+
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
@@ -64,7 +64,7 @@ void QSPI_Initialize(void)
     QSPI_REGS->QSPI_CTRLB = QSPI_CTRLB_MODE_SPI | QSPI_CTRLB_CSMODE_NORELOAD | QSPI_CTRLB_DATALEN(0x0) | QSPI_CTRLB_LOOPEN(0);
 
     // Set serial clock register
-    QSPI_REGS->QSPI_BAUD = (QSPI_BAUD_BAUD(119))  ;
+    QSPI_REGS->QSPI_BAUD = (QSPI_BAUD_BAUD(1))  ;
 
     // Enable the qspi Module
     /* LASTXFER = 0 */
@@ -183,14 +183,14 @@ bool QSPI_TransferSetup (QSPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock )
     {
         return false;
     }
-    
+
     /* Disable the module */
     QSPI_REGS->QSPI_CTRLA &= ~QSPI_CTRLA_ENABLE_Msk;
-    
+
     if(spiSourceClock == 0)
     {
         // Fetch Master Clock Frequency directly
-        spiSourceClock = 1000000;
+        spiSourceClock = 50000000;
     }
 
     scbr = spiSourceClock/setup->clockFrequency;
@@ -208,12 +208,12 @@ bool QSPI_TransferSetup (QSPI_TRANSFER_SETUP * setup, uint32_t spiSourceClock )
 
     /* Enable the module */
     QSPI_REGS->QSPI_CTRLA = QSPI_CTRLA_ENABLE_Msk;
-    
+
     while((QSPI_REGS->QSPI_STATUS & QSPI_STATUS_ENABLE_Msk) != QSPI_STATUS_ENABLE_Msk)
     {
         /* Wait for QSPI enable flag to set */
     }
-    
+
     return true;
 }
 
@@ -223,7 +223,7 @@ void QSPI_CallbackRegister (QSPI_CALLBACK callback, uintptr_t context)
     qspiObj.context = context;
 }
 
-bool QSPI_IsBusy()
+bool QSPI_IsBusy(void)
 {
     return ((qspiObj.transferIsBusy) || ((QSPI_REGS->QSPI_INTFLAG & QSPI_INTFLAG_DRE_Msk ) == 0));
 }

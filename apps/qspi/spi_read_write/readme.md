@@ -6,7 +6,11 @@ This example shows how to use the QSPI Peripheral library to perform erase, writ
 
 ## Description
 
-This example uses the QSPI peripheral library to erase and write an array of values to the SPI Serial Flash memory. It verifies the value written by reading the values back and comparing it to the value written.
+This example uses the QSPI peripheral library to erase and write an array of values to the QSPI Serial Flash memory in SPI Mode. It verifies the value written by reading the values back and comparing it to the value written.
+
+The application can be configured to perform operations on below QSPI Serial Flash Memories
+- SST26VF064B (Default)
+- N25Q256
 
 ## Downloading and building the application
 
@@ -38,13 +42,21 @@ The following table shows the target hardware for the application projects.
 
 ## Running the Application
 
-1. Build and Program the application project using its respective IDE
-2. Reset the device by power cycle
-3. The LED indicates the success or failure:
-    - The LED is turned ON when the value read from the QSPI Serial Flash memory matched with the written value
+1. Open the application project using its respective IDE
+2. Open **app.h** file and set the macro for the QSPI Flash memory present on the board to 1
+    ```
+    #define APP_USE_SST26_FLASH     1
+
+    #define APP_USE_N25Q_FLASH      0
+    ```
+
+3. Build and Program the application project
+4. Reset the device by power cycle
+5. The LED indicates the success or failure:
+    - The LED is turned ON when the value read from the QSPI Serial Flash memory matches with the written value
 
 The following table provides the LED name
+
 | Board      | LED Name |
-| ---------- | ---------------- |--------- |
+| ---------- | -------- |
 | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)    | LED0 |
-|||

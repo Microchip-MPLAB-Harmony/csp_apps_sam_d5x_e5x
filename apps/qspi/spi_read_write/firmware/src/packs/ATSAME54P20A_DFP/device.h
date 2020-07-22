@@ -41,7 +41,15 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+#pragma GCC diagnostic push
+#ifndef __cplusplus
+#pragma GCC diagnostic ignored "-Wnested-externs"
+#endif
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wattributes"
+#pragma GCC diagnostic ignored "-Wundef"
 #include "atsame54p20a.h"
+#pragma GCC diagnostic pop
 #include "device_cache.h"
 #include "atsame54p20a_compat.h"
 #include "toolchain_specifics.h"

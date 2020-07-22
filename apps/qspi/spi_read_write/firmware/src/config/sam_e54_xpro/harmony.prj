@@ -13,8 +13,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">3C64B0B744B67F634A4B2C0AF49B32A8</GeneratedChecksum>
-          <UserChecksum dnOrder="6">3C64B0B744B67F634A4B2C0AF49B32A8</UserChecksum>
+          <GeneratedChecksum dnOrder="5">B9388144EA8C18C396F2DB6CC40DCB4D</GeneratedChecksum>
+          <UserChecksum dnOrder="6">B9388144EA8C18C396F2DB6CC40DCB4D</UserChecksum>
         </File>
         <File dnOrder="1">
           <Type dnOrder="0">SOURCE</Type>
@@ -31,8 +31,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">DAE1BD67D4DDFCFCE04EF08D3219DA25</GeneratedChecksum>
-          <UserChecksum dnOrder="6">DAE1BD67D4DDFCFCE04EF08D3219DA25</UserChecksum>
+          <GeneratedChecksum dnOrder="5">9EC62E086D9514B40E5CB66F55CE69D8</GeneratedChecksum>
+          <UserChecksum dnOrder="6">9EC62E086D9514B40E5CB66F55CE69D8</UserChecksum>
         </File>
         <File dnOrder="3">
           <Type dnOrder="0">SOURCE</Type>
@@ -49,8 +49,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3"/>
           <PhysicalPath dnOrder="4">/../../</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">F81A00E640818EDFB9E79C9BD241AEF4</GeneratedChecksum>
-          <UserChecksum dnOrder="6">F81A00E640818EDFB9E79C9BD241AEF4</UserChecksum>
+          <GeneratedChecksum dnOrder="5"/>
+          <UserChecksum dnOrder="6"/>
         </File>
         <File dnOrder="5">
           <Type dnOrder="0">SOURCE</Type>
@@ -121,8 +121,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/qspi/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/qspi/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">FFF5024F8F1C322F0BBE012C4594D7E1</GeneratedChecksum>
-          <UserChecksum dnOrder="6">FFF5024F8F1C322F0BBE012C4594D7E1</UserChecksum>
+          <GeneratedChecksum dnOrder="5">1547041707BF8D2ACCF4B48DDB8E6216</GeneratedChecksum>
+          <UserChecksum dnOrder="6">1547041707BF8D2ACCF4B48DDB8E6216</UserChecksum>
         </File>
         <File dnOrder="13">
           <Type dnOrder="0">SOURCE</Type>
@@ -139,8 +139,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A6AAF56A40249E61083D5D23CED1CDDC</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A6AAF56A40249E61083D5D23CED1CDDC</UserChecksum>
+          <GeneratedChecksum dnOrder="5">5A4E3030D76586D4E7DA5C25A447F23B</GeneratedChecksum>
+          <UserChecksum dnOrder="6">5A4E3030D76586D4E7DA5C25A447F23B</UserChecksum>
         </File>
         <File dnOrder="15">
           <Type dnOrder="0">SOURCE</Type>
@@ -148,8 +148,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/stdio/</LogicalPath>
           <PhysicalPath dnOrder="4">/stdio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">A9F55E7CB78F22D9000CA03DC635973C</GeneratedChecksum>
-          <UserChecksum dnOrder="6">A9F55E7CB78F22D9000CA03DC635973C</UserChecksum>
+          <GeneratedChecksum dnOrder="5">D25F6B390797A23B29C8109A91F047C4</GeneratedChecksum>
+          <UserChecksum dnOrder="6">D25F6B390797A23B29C8109A91F047C4</UserChecksum>
         </File>
         <File dnOrder="16">
           <Type dnOrder="0">HEADER</Type>
@@ -319,8 +319,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">packs/ATSAME54P20A_DFP/</LogicalPath>
           <PhysicalPath dnOrder="4">/../../packs/ATSAME54P20A_DFP/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">5989369F98A57C69D35585B657F4825A</GeneratedChecksum>
-          <UserChecksum dnOrder="6">5989369F98A57C69D35585B657F4825A</UserChecksum>
+          <GeneratedChecksum dnOrder="5">330050AD6B9C7573EB4BFA29619FAA76</GeneratedChecksum>
+          <UserChecksum dnOrder="6">330050AD6B9C7573EB4BFA29619FAA76</UserChecksum>
         </File>
         <File dnOrder="35">
           <Type dnOrder="0">HEADER</Type>
@@ -580,8 +580,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/peripheral/qspi/</LogicalPath>
           <PhysicalPath dnOrder="4">/peripheral/qspi/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">6EBD29322A9C86FB4288643E7EE99809</GeneratedChecksum>
-          <UserChecksum dnOrder="6">6EBD29322A9C86FB4288643E7EE99809</UserChecksum>
+          <GeneratedChecksum dnOrder="5">61223D55D98E61FC2D152498E436E050</GeneratedChecksum>
+          <UserChecksum dnOrder="6">61223D55D98E61FC2D152498E436E050</UserChecksum>
         </File>
         <File dnOrder="64">
           <Type dnOrder="0">HEADER</Type>
@@ -715,8 +715,8 @@
           <Security dnOrder="2">NON_SECURE</Security>
           <LogicalPath dnOrder="3">config/sam_e54_xpro/</LogicalPath>
           <PhysicalPath dnOrder="4">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="5">9CD8403A0E087BFF0E93ACEBC5177B85</GeneratedChecksum>
-          <UserChecksum dnOrder="6">9CD8403A0E087BFF0E93ACEBC5177B85</UserChecksum>
+          <GeneratedChecksum dnOrder="5">F49577F7084C624B30CC2CF26CB1BD0C</GeneratedChecksum>
+          <UserChecksum dnOrder="6">F49577F7084C624B30CC2CF26CB1BD0C</UserChecksum>
         </File>
         <File dnOrder="79">
           <Type dnOrder="0">HEADER</Type>
@@ -758,11 +758,11 @@
     </Manifest>
     <Settings dnOrder="5">
       <Setting dnOrder="0" key="CMSISPath" value=".\dev_packs\arm\CMSIS\5.6.0"/>
-      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\SAME54_DFP\3.2.53\atdf\ATSAME54P20A.atdf"/>
+      <Setting dnOrder="1" key="DFPPath" value=".\dev_packs\Microchip\SAME54_DFP\3.3.64\atdf\ATSAME54P20A.atdf"/>
       <Setting dnOrder="2" key="FORCE_OPTIMIZATION" value="false"/>
       <Setting dnOrder="3" key="GENERATE_BACKUP" value="true"/>
       <Setting dnOrder="4" key="MERGE_STRATEGY" value="USER_ALL"/>
-      <Setting dnOrder="5" key="PackageFilter" value="bsp;core;csp;expresslogic_threadx;mbed_os;micrium_ucos3;"/>
+      <Setting dnOrder="5" key="PackageFilter" value="aerospace;aws_cloud;bootloader;bootloader_apps_uart;bsp;core;crypto;cryptoauthlib;csp;csp_apps_sam_d5x_e5x;csp_apps_sam_e70_s70_v70_v71;expresslogic_threadx;gfx;gfx_apps;net;usb;"/>
     </Settings>
   </Configurator>
 </Configuration>
