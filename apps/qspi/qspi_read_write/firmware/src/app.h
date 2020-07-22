@@ -1,22 +1,26 @@
 /*******************************************************************************
- Debug Console Source file
+  Application Header File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    debug_console.c
+    app.h
 
   Summary:
-    debug console Source File
+    This header file provides prototypes and definitions for the application.
 
   Description:
-    None
-
+    This header file provides function prototypes and data type definitions for
+    the application.  Some of these are required by the system (such as the
+    "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
+    internally by the application (such as the "APP_STATES" definition).  Both
+    are defined here for convenience.
 *******************************************************************************/
 
+//DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -37,19 +41,23 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+//DOM-IGNORE-END
 
+#ifndef APP_H
+#define APP_H
 
-#ifdef __arm__
-/* Declaration of these functions are missing in stdio.h for ARM parts*/
-int _mon_getc(int canblock);
-void _mon_putc(char c);
-#endif //__arm__
+#define APP_USE_SST26_FLASH     1
+#define APP_USE_N25Q_FLASH      0
 
-int _mon_getc(int canblock)
-{
-   return 0;
-}
+#if APP_USE_SST26_FLASH
+    #include "app_sst26.h"
+#elif APP_USE_N25Q_FLASH
+    #include "app_n25q.h"
+#endif
 
-void _mon_putc(char c)
-{
-}
+#endif /* APP_H */
+
+/*******************************************************************************
+ End of File
+ */
+

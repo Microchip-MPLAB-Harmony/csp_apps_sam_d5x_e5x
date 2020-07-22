@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app_n25q.c
+    app_sst26.c
 
   Summary:
     This file contains the source code for QSPI PLIB Demonstration
@@ -18,7 +18,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -49,7 +49,7 @@
 
 #include "app.h"
 
-#if APP_USE_N25Q_FLASH
+#if APP_USE_SST26_FLASH
 
 // *****************************************************************************
 // *****************************************************************************
@@ -94,7 +94,7 @@ static APP_TRANSFER_STATUS APP_ResetFlash(void)
 {
     memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = N25Q_CMD_FLASH_RESET_ENABLE;
+    qspi_command_xfer.instruction = SST26_CMD_FLASH_RESET_ENABLE;
     qspi_command_xfer.width = SINGLE_BIT_SPI;
 
     if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
@@ -102,13 +102,30 @@ static APP_TRANSFER_STATUS APP_ResetFlash(void)
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    qspi_command_xfer.instruction = N25Q_CMD_FLASH_RESET;
+    qspi_command_xfer.instruction = SST26_CMD_FLASH_RESET;
     qspi_command_xfer.width = SINGLE_BIT_SPI;
 
     if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
     {
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
+
+    return APP_TRANSFER_COMPLETED;
+}
+
+/* Enables the QUAD IO on the flash */
+static APP_TRANSFER_STATUS APP_EnableQuadIO(void)
+{
+    memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
+
+    qspi_command_xfer.instruction = SST26_CMD_ENABLE_QUAD_IO;
+    qspi_command_xfer.width = SINGLE_BIT_SPI;
+
+    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    {
+        return APP_TRANSFER_ERROR_UNKNOWN;
+    }
+
     return APP_TRANSFER_COMPLETED;
 }
 
@@ -117,7 +134,28 @@ static APP_TRANSFER_STATUS APP_WriteEnable(void)
 {
     memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
 
-    qspi_command_xfer.instruction = N25Q_CMD_WRITE_ENABLE;
+    qspi_command_xfer.instruction = SST26_CMD_WRITE_ENABLE;
+    qspi_command_xfer.width = QUAD_CMD;
+
+    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
+    {
+        return APP_TRANSFER_ERROR_UNKNOWN;
+    }
+
+    return APP_TRANSFER_COMPLETED;
+}
+
+/* This function sends down command to perform a global unprotect of the flash. */
+static APP_TRANSFER_STATUS APP_UnlockFlash(void)
+{
+    if (APP_TRANSFER_COMPLETED != APP_WriteEnable())
+    {
+        return APP_TRANSFER_ERROR_UNKNOWN;
+    }
+
+    memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
+
+    qspi_command_xfer.instruction = SST26_CMD_UNPROTECT_GLOBAL;
     qspi_command_xfer.width = QUAD_CMD;
 
     if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
@@ -133,9 +171,9 @@ static APP_TRANSFER_STATUS APP_ReadJedecId(uint32_t *jedec_id)
 {
     memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
 
-    qspi_register_xfer.instruction = N25Q_CMD_MULTIPLE_IO_READ_ID;
+    qspi_register_xfer.instruction = SST26_CMD_QUAD_JEDEC_ID_READ;
     qspi_register_xfer.width = QUAD_CMD;
-    qspi_register_xfer.dummy_cycles = 0;
+    qspi_register_xfer.dummy_cycles = 2;
 
     if (QSPI_RegisterRead(&qspi_register_xfer, jedec_id, 3) == false)
     {
@@ -150,9 +188,9 @@ static APP_TRANSFER_STATUS APP_ReadStatus( uint32_t *rx_data, uint32_t rx_data_l
 {
     memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
 
-    qspi_register_xfer.instruction = N25Q_CMD_READ_STATUS_REG;
+    qspi_register_xfer.instruction = SST26_CMD_READ_STATUS_REG;
     qspi_register_xfer.width = QUAD_CMD;
-    qspi_register_xfer.dummy_cycles = 0;
+    qspi_register_xfer.dummy_cycles = 2;
 
     if (QSPI_RegisterRead(&qspi_register_xfer, rx_data, rx_data_length) == false)
     {
@@ -171,7 +209,7 @@ static APP_TRANSFER_STATUS APP_TransferStatusCheck(void)
         return APP_TRANSFER_ERROR_UNKNOWN;
     }
 
-    if((reg_status & (1<<0)))
+    if(reg_status & (1<<0))
         return APP_TRANSFER_BUSY;
     else
         return APP_TRANSFER_COMPLETED;
@@ -182,9 +220,9 @@ static APP_TRANSFER_STATUS APP_MemoryRead( uint32_t *rx_data, uint32_t rx_data_l
 {
     memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = N25Q_CMD_FAST_READ;
+    qspi_memory_xfer.instruction = SST26_CMD_HIGH_SPEED_READ;
     qspi_memory_xfer.width = QUAD_CMD;
-    qspi_memory_xfer.dummy_cycles = 10;
+    qspi_memory_xfer.dummy_cycles = 6;
 
     if (QSPI_MemoryRead(&qspi_memory_xfer, rx_data, rx_data_length, address) == false) {
         return APP_TRANSFER_ERROR_UNKNOWN;
@@ -202,7 +240,7 @@ static APP_TRANSFER_STATUS APP_MemoryWrite( uint32_t *tx_data, uint32_t tx_data_
 
     memset((void *)&qspi_memory_xfer, 0, sizeof(qspi_memory_xfer_t));
 
-    qspi_memory_xfer.instruction = N25Q_CMD_PAGE_PROGRAM;
+    qspi_memory_xfer.instruction = SST26_CMD_PAGE_PROGRAM;
     qspi_memory_xfer.width = QUAD_CMD;
 
     if (QSPI_MemoryWrite(&qspi_memory_xfer, tx_data, tx_data_length, address) == false)
@@ -235,35 +273,9 @@ static APP_TRANSFER_STATUS APP_Erase(uint8_t instruction, uint32_t address)
 
 static APP_TRANSFER_STATUS APP_SectorErase(uint32_t address)
 {
-    return (APP_Erase(N25Q_CMD_SUBSECTOR_ERASE, address));
+    return (APP_Erase(SST26_CMD_SECTOR_ERASE, address));
 }
 
-static APP_TRANSFER_STATUS APP_EnableQuadIO(void)
-{
-    uint32_t config_reg = 0x1F;
-	memset((void *)&qspi_command_xfer, 0, sizeof(qspi_command_xfer_t));
-
-    qspi_command_xfer.instruction = N25Q_CMD_WRITE_ENABLE;
-    qspi_command_xfer.width = SINGLE_BIT_SPI;
-
-    if (QSPI_CommandWrite(&qspi_command_xfer, 0) == false)
-    {
-        return APP_TRANSFER_ERROR_UNKNOWN;
-    }
-
-    memset((void *)&qspi_register_xfer, 0, sizeof(qspi_register_xfer_t));
-
-    qspi_register_xfer.instruction = N25Q_CMD_WRITE_ENHANCED_VOLATILE_CONFIG_REGISTER;
-    qspi_register_xfer.width = SINGLE_BIT_SPI;
-    qspi_register_xfer.dummy_cycles = 0;
-
-    if (QSPI_RegisterWrite(&qspi_register_xfer,&config_reg, 1) == false)
-    {
-          return APP_TRANSFER_ERROR_UNKNOWN;
-    }
-    return APP_TRANSFER_COMPLETED;
-
-}
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Initialization and State Machine Functions
@@ -318,12 +330,12 @@ void APP_Tasks ( void )
             }
             else
             {
-                appData.state = APP_STATE_ENTER_QUAD_IO;
+                appData.state = APP_STATE_ENABLE_QUAD_IO;
             }
             break;
         }
 
-        case APP_STATE_ENTER_QUAD_IO:
+        case APP_STATE_ENABLE_QUAD_IO:
         {
             if (APP_EnableQuadIO() != APP_TRANSFER_COMPLETED)
             {
@@ -331,7 +343,19 @@ void APP_Tasks ( void )
             }
             else
             {
+                appData.state = APP_STATE_UNLOCK_FLASH;
+            }
+            break;
+        }
 
+        case APP_STATE_UNLOCK_FLASH:
+        {
+            if (APP_UnlockFlash() != APP_TRANSFER_COMPLETED)
+            {
+                appData.state = APP_STATE_ERROR;
+            }
+            else
+            {
                 appData.state = APP_STATE_READ_JEDEC_ID;
             }
             break;
@@ -345,7 +369,7 @@ void APP_Tasks ( void )
                 break;
             }
 
-            if (appData.jedec_id != N25Q256_JEDEC_ID)
+            if (appData.jedec_id != SST26VF064B_JEDEC_ID)
             {
                 appData.state = APP_STATE_ERROR;
                 break;
@@ -462,7 +486,8 @@ void APP_Tasks ( void )
     }
 }
 
-#endif // APP_USE_N25Q_FLASH
+#endif // APP_USE_SST26_FLASH
+
 /*******************************************************************************
  End of File
  */

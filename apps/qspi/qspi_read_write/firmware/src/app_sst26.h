@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app_n25q.h
+    app_sst26.h
 
   Summary:
     This header file provides prototypes and definitions for the application.
@@ -20,7 +20,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2020 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -43,8 +43,8 @@
 *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef APP_N25Q_H
-#define APP_N25Q_H
+#ifndef APP_SST26_H
+#define APP_SST26_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -80,7 +80,7 @@ extern "C" {
 
 #define MEM_START_ADDRESS          (0x0U)
 
-#define N25Q256_JEDEC_ID           (0x19BA20UL)
+#define SST26VF064B_JEDEC_ID       (0x004326BFUL)
 
 #define LED_ON                     LED_Clear
 #define LED_OFF                    LED_Set
@@ -106,7 +106,10 @@ typedef enum
     APP_STATE_RESET_FLASH,
 
     /* Enable Quad IO Mode*/
-    APP_STATE_ENTER_QUAD_IO,
+    APP_STATE_ENABLE_QUAD_IO,
+
+    /* Unlock Flash*/
+    APP_STATE_UNLOCK_FLASH,
 
     /* Read JEDEC ID*/
     APP_STATE_READ_JEDEC_ID,
@@ -168,13 +171,13 @@ typedef struct
     uint8_t writeBuffer[BUFFER_SIZE];
 } APP_DATA;
 
-/* N25Q Command set
+/* SST26 Command set
 
   Summary:
-    Enumeration listing the N25QVF commands.
+    Enumeration listing the SST26VF commands.
 
   Description:
-    This enumeration defines the commands used to interact with the N25QVF
+    This enumeration defines the commands used to interact with the SST26VF
     series of devices.
 
   Remarks:
@@ -184,47 +187,48 @@ typedef struct
 typedef enum
 {
     /* Reset enable command. */
-    N25Q_CMD_FLASH_RESET_ENABLE = 0x66,
+    SST26_CMD_FLASH_RESET_ENABLE = 0x66,
 
     /* Command to reset the flash. */
-    N25Q_CMD_FLASH_RESET        = 0x99,
+    SST26_CMD_FLASH_RESET        = 0x99,
+
+    /* Command to Enable QUAD IO */
+    SST26_CMD_ENABLE_QUAD_IO     = 0x38,
+
+    /* Command to Reset QUAD IO */
+    SST26_CMD_RESET_QUAD_IO      = 0xFF,
 
     /* Command to read JEDEC-ID of the flash device. */
-    N25Q_CMD_JEDEC_ID_READ      = 0x9F,
+    SST26_CMD_JEDEC_ID_READ      = 0x9F,
 
-    /*QUAD Command to read JEDEC-ID of the flash device. */
-    N25Q_CMD_MULTIPLE_IO_READ_ID = 0xAF,
+    /* QUAD Command to read JEDEC-ID of the flash device. */
+    SST26_CMD_QUAD_JEDEC_ID_READ = 0xAF,
 
     /* Command to perfrom High Speed Read */
-    N25Q_CMD_FAST_READ          = 0x0B,
+    SST26_CMD_HIGH_SPEED_READ    = 0x0B,
 
     /* Write enable command. */
-    N25Q_CMD_WRITE_ENABLE       = 0x06,
+    SST26_CMD_WRITE_ENABLE       = 0x06,
 
     /* Page Program command. */
-    N25Q_CMD_PAGE_PROGRAM       = 0x02,
+    SST26_CMD_PAGE_PROGRAM       = 0x02,
 
     /* Command to read the Flash status register. */
-    N25Q_CMD_READ_STATUS_REG    = 0x05,
+    SST26_CMD_READ_STATUS_REG    = 0x05,
 
     /* Command to perform sector erase */
-    N25Q_CMD_SUBSECTOR_ERASE      = 0x20,
+    SST26_CMD_SECTOR_ERASE       = 0x20,
 
     /* Command to perform Bulk erase */
-    N25Q_CMD_SECTOR_ERASE_64K     = 0xD8,
+    SST26_CMD_BULK_ERASE_64K     = 0xD8,
 
     /* Command to perform Chip erase */
-    N25Q_CMD_BULK_ERASE         = 0xC7,
+    SST26_CMD_CHIP_ERASE         = 0xC7,
 
-    /* Command to enter quad mode */
-    N25Q_CMD_ENTER_QUAD   = 0x35,
+    /* Command to unlock the flash device. */
+    SST26_CMD_UNPROTECT_GLOBAL   = 0x98
 
-    /* Command to exit quad mode */
-    N25Q_CMD_EXIT_QUAD   = 0xF5,
-
-    /*Command to Write enhanced volatile config register */
-    N25Q_CMD_WRITE_ENHANCED_VOLATILE_CONFIG_REGISTER   = 0x61
-} N25Q_CMD;
+} SST26_CMD;
 
 typedef enum
 {
@@ -321,7 +325,7 @@ void APP_Tasks( void );
 #endif
 //DOM-IGNORE-END
 
-#endif /* APP_N25Q_H */
+#endif /* APP_SST26_H */
 
 /*******************************************************************************
  End of File
