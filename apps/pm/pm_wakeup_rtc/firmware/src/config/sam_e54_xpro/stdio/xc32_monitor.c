@@ -1,5 +1,5 @@
 /*******************************************************************************
- Debug Console Source file 
+ Debug Console Source file
 
   Company:
     Microchip Technology Inc.
@@ -39,6 +39,12 @@
 *******************************************************************************/
 
 #include "definitions.h"
+
+#ifdef __arm__
+/* Declaration of these functions are missing in stdio.h for ARM parts*/
+int _mon_getc(int canblock);
+void _mon_putc(char c);
+#endif //__arm__
 
 int _mon_getc(int canblock)
 {

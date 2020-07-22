@@ -24,6 +24,12 @@
 #ifndef TOOLCHAIN_SPECIFICS_H
 #define TOOLCHAIN_SPECIFICS_H
 
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+extern "C" {
+
+#endif
+
 
 #include "cmsis_compiler.h"
 #include <sys/types.h>
@@ -33,6 +39,9 @@
 #define CACHE_LINE_SIZE    (16u)
 #define CACHE_ALIGN        __ALIGNED(CACHE_LINE_SIZE)
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif // end of header
 

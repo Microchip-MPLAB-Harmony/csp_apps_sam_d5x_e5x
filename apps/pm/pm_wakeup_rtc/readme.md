@@ -57,6 +57,12 @@ message
 
     ![output](images/output_pm_wakeup_rtc_2.png)
 
+8. Select 'e' to enter the backup mode (LED is turned off when the device enters backup mode)
+9. When the device wakes up on RTC compare match interrupt, the LED starts blinking and the console displays the following
+message
+
+    ![output](images/output_pm_wakeup_rtc_3.png)
+
 The following table provides the details of LED
 
 | Board      | LED Name   |

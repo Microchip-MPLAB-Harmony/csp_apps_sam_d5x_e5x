@@ -59,6 +59,7 @@ enum
   STANDBY_SLEEP_MODE = 'b',
   HIBERNATE_SLEEP_MODE = 'c',
   OFF_SLEEP_MODE ='d',
+  BACKUP_SLEEP_MODE ='e'
 }SLEEP_MODES;
 
 uint8_t cmd = 0;
@@ -87,6 +88,7 @@ void display_menu (void)
     printf("\n\rb) Standby Sleep Mode"); 
     printf("\n\rc) Hibernate Sleep Mode");
     printf("\n\rd) Off Sleep Mode");
+    printf("\n\re) Backup Sleep Mode");
     printf("\n\rEnter your choice");    
     scanf("%c", &cmd);
 }
@@ -171,6 +173,16 @@ int main ( void )
                 printf("\n\rPress Reset button to wakeup the device   ");   
                 LED_OFF();
                 PM_OffModeEnter();
+                break;
+            }
+            case BACKUP_SLEEP_MODE:
+            {
+                printf("\n\n\rConfiguring RTC Compare Match for wake up.......");
+                configure_alarm();
+                SYSTICK_TimerStop();
+                printf("\n\rEntering Backup Mode   ");
+                LED_OFF();
+                PM_BackupModeEnter();
                 break;
             }
             default:
