@@ -123,6 +123,15 @@ uint32_t TC0_CompareFrequencyGet( void )
     return (uint32_t)(937500UL);
 }
 
+void TC0_CompareCommandSet(TC_COMMAND command)
+{
+    TC0_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
+    while((TC0_REGS->COUNT16.TC_SYNCBUSY))
+    {
+        /* Wait for Write Synchronization */
+    }    
+}
+
 /* Get the current counter value */
 uint16_t TC0_Compare16bitCounterGet( void )
 {

@@ -124,6 +124,15 @@ uint32_t TC4_CompareFrequencyGet( void )
     return (uint32_t)(937500UL);
 }
 
+void TC4_CompareCommandSet(TC_COMMAND command)
+{
+    TC4_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
+    while((TC4_REGS->COUNT16.TC_SYNCBUSY))
+    {
+        /* Wait for Write Synchronization */
+    }    
+}
+
 /* Get the current counter value */
 uint16_t TC4_Compare16bitCounterGet( void )
 {
