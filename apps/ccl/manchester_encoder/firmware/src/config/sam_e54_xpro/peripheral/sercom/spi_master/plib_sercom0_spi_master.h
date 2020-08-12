@@ -5,10 +5,10 @@
     Microchip Technology Inc.
 
   File Name
-    plib_sercom0_spi.h
+    plib_sercom0_spi_master.h
 
   Summary
-   SERCOM0_SPI PLIB Header File.
+   SERCOM0_SPI Master PLIB Header File.
 
   Description
     This file defines the interface to the SERCOM SPI peripheral library.
@@ -45,8 +45,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_SERCOM0_SPI_H // Guards against multiple inclusion
-#define PLIB_SERCOM0_SPI_H
+#ifndef PLIB_SERCOM0_SPI_MASTER_H // Guards against multiple inclusion
+#define PLIB_SERCOM0_SPI_MASTER_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -56,7 +56,7 @@
 /* This section lists the other files that are included in this file.
 */
 
-#include "plib_sercom_spi_common.h"
+#include "plib_sercom_spi_master_common.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
@@ -588,4 +588,4 @@ bool SERCOM0_SPI_IsBusy (void);
 }
 #endif
 
-#endif /* PLIB_SERCOM0_SPI_H */
+#endif /* PLIB_SERCOM0_SPI_MASTER_H */
