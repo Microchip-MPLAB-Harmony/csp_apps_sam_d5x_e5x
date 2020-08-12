@@ -1,6 +1,6 @@
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# SERCOM I2C EEPROM emulation (I2C slave)
+# SERCOM I2C EEPROM emulation
 
 This example application demonstrates how to use the SERCOM peripheral in slave mode.
 

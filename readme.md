@@ -62,7 +62,7 @@ The following applications are provided to demonstrate the typical or interestin
 |[RTC periodic interrupt](apps/rtc/rtc_periodic_timeout/readme.md)|This example application shows how to use the RTC to generate periodic interrupts|
 |[RTC tamper detect](apps/rtc/rtc_tamper_detect/readme.md)|This example application shows how to configure and use tamper detect feature of RTC|
 |[SERCOM I2C EEPROM read write](apps/sercom/i2c/master/i2c_eeprom/readme.md)|This example application demonstrates how to use the SERCOM peripheral to write and read from the I2C serial EEPROM memory|
-|[SERCOM I2C EEPROM emulation (I2C slave)](apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.md)|This example application demonstrates how to use the SERCOM peripheral in slave mode|
+|[SERCOM I2C EEPROM emulation](apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.md)|This example application demonstrates how to use the SERCOM peripheral in slave mode|
 |[SERCOM SPI EEPROM read write](apps/sercom/spi/spi_eeprom_write_read/readme.md)|This example application demonstrates how to use the SERCOM SPI peripheral to write and read from the SPI serial EEPROM memory|
 |[SERCOM SPI ping pong with DMA](apps/sercom/spi/spi_ping_pong_with_dma/readme.md)|This example demonstrates how to continuously transmit and receive data over a SPI interface using ping pong buffers with DMA|
 |[SERCOM SPI blocking](apps/sercom/spi/spi_self_loopback_blocking/readme.md)|This example application demonstrates how to use the SERCOM SPI peripheral to transmit and receive a block of data in a blocking manner|
