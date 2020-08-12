@@ -126,7 +126,21 @@ extern void __attribute__((weak,long_call)) __xc32_on_bootstrap(void);
  */
 void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, noreturn)) Reset_Handler(void)
 {
+#ifdef SCB_VTOR_TBLOFF_Msk
     uint32_t *pSrc;
+#endif
+
+#if defined (__REINIT_STACK_POINTER)
+    /* Initialize SP from linker-defined _stack symbol. */
+    __asm__ volatile ("ldr sp, =_stack" : : : "sp");
+
+#ifdef SCB_VTOR_TBLOFF_Msk
+    /* Buy stack for locals */
+    __asm__ volatile ("sub sp, sp, #8" : : : "sp");
+#endif
+    __asm__ volatile ("add r7, sp, #0" : : : "r7");
+#endif
+
 
     /* Call the optional application-provided _on_reset() function. */
     if (_on_reset)
@@ -143,7 +157,8 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
     FPU_Enable();
 #endif
 
-	TCM_Configure(2);
+
+    TCM_Configure(2);
 
     /* Enable TCM   */
     TCM_Enable();
@@ -183,6 +198,7 @@ void __attribute__((optimize("-O1"), section(".text.Reset_Handler"), long_call, 
 
     /* Branch to application's main function */
     main();
+
 #if (defined(__DEBUG) || defined(__DEBUG_D)) && defined(__XC32)
     __builtin_software_breakpoint();
 #endif

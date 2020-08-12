@@ -46,8 +46,8 @@
 #ifndef APP_H
 #define APP_H
 
-#define APP_USE_SST26_FLASH     1
-#define APP_USE_N25Q_FLASH      0
+#define APP_USE_SST26_FLASH     0
+#define APP_USE_N25Q_FLASH      1
 
 #if APP_USE_SST26_FLASH
     #include "app_sst26.h"
