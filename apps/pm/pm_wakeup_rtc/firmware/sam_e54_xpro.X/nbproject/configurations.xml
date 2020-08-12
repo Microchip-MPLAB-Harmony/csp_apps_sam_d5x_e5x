@@ -50,6 +50,7 @@
           <itemPath>../src/config/sam_e54_xpro/device_cache.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/sam_e54_xpro/definitions.h</itemPath>
+          <itemPath>../src/config/sam_e54_xpro/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f1" displayName="packs" projectFiles="true">
@@ -106,12 +107,10 @@
           <logicalFolder name="f2" displayName="pio" projectFiles="true">
             <itemPath>../src/packs/ATSAME54P20A_DFP/pio/same54p20a.h</itemPath>
           </logicalFolder>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/device.h</itemPath>
-          <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a_compat.h</itemPath>
           <itemPath>../src/packs/ATSAME54P20A_DFP/atsame54p20a.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
-          <logicalFolder name="f1" displayName="CMSIS" projectFiles="true">
+          <logicalFolder name="f2" displayName="CMSIS" projectFiles="true">
             <logicalFolder name="f1" displayName="Core" projectFiles="true">
               <logicalFolder name="f1" displayName="Include" projectFiles="true">
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
@@ -123,10 +122,11 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm4.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="pio" projectFiles="true">
+          <logicalFolder name="f1" displayName="pio" projectFiles="true">
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
@@ -137,6 +137,7 @@
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/sam_e54_xpro/harmony.prj</itemPath>
       <itemPath>../src/config/sam_e54_xpro/sam_e54_xpro.xml</itemPath>
+      <itemPath>../../../../../../mhc/../csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/firmware/src/config/sam_e54_xpro/sam_e54_xpro.xml</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -217,8 +218,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.3.64"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.3.64"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -375,7 +376,8 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/sam_e54_xpro;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/CMSIS/"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -407,6 +409,8 @@
       </C32Global>
       <EdbgTool>
         <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="swd"/>
         <property key="communication.speed" value="2.000"/>
@@ -416,6 +420,7 @@
         <property key="firmware.toolpack"
                   value="Press to select which tool pack to use"/>
         <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -430,8 +435,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/H3/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/firmware/sam_e54_xpro.X/debug/sam_e54_xpro/sam_e54_xpro_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -442,6 +445,9 @@
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.log_level" value="0"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
