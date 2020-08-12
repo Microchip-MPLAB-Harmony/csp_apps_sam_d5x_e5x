@@ -65,45 +65,41 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for WRITE_PROTECT pin ***/
 #define WRITE_PROTECT_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 10)
 #define WRITE_PROTECT_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 10)
 #define WRITE_PROTECT_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 10)
-#define WRITE_PROTECT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10)) & 0x01)
 #define WRITE_PROTECT_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 10)
 #define WRITE_PROTECT_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 10)
+#define WRITE_PROTECT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10)) & 0x01)
 #define WRITE_PROTECT_PIN                  PORT_PIN_PA10
 
 /*** Macros for HOLD pin ***/
 #define HOLD_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 11)
 #define HOLD_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 11)
 #define HOLD_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 11)
-#define HOLD_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11)) & 0x01)
 #define HOLD_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 11)
 #define HOLD_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 11)
+#define HOLD_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11)) & 0x01)
 #define HOLD_PIN                  PORT_PIN_PA11
 
 /*** Macros for CHIP_SELECT pin ***/
 #define CHIP_SELECT_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 11)
 #define CHIP_SELECT_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 11)
 #define CHIP_SELECT_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 11)
-#define CHIP_SELECT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11)) & 0x01)
 #define CHIP_SELECT_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 11)
 #define CHIP_SELECT_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 11)
+#define CHIP_SELECT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 11)) & 0x01)
 #define CHIP_SELECT_PIN                  PORT_PIN_PB11
 
 /*** Macros for LED pin ***/
 #define LED_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 18)
 #define LED_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 18)
 #define LED_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 18)
-#define LED_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 18)
 #define LED_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 18)
+#define LED_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 18)) & 0x01)
 #define LED_PIN                  PORT_PIN_PC18
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -1060,7 +1056,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1099,7 +1095,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
