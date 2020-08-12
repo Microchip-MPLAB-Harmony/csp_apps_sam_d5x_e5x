@@ -5,10 +5,10 @@
     Microchip Technology Inc.
 
   File Name
-    plib_sercom_spi.h
+    plib_sercom_spi_master_common.h
 
   Summary
-   SERCOM_SPI PLIB Local Header File.
+   SERCOM_SPI PLIB Master Local Header File.
 
   Description
     This file defines the interface to the SERCOM SPI peripheral library.
@@ -45,8 +45,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef PLIB_SERCOM_SPI_COMMON_H  // Guards against multiple inclusion
-#define PLIB_SERCOM_SPI_COMMON_H
+#ifndef PLIB_SERCOM_SPI_MASTER_COMMON_H  // Guards against multiple inclusion
+#define PLIB_SERCOM_SPI_MASTER_COMMON_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -301,4 +301,4 @@ typedef struct
 
 #endif
 
-#endif //PLIB_SERCOM_SPI_COMMON_H
+#endif //PLIB_SERCOM_SPI_MASTER_COMMON_H
