@@ -168,10 +168,10 @@ void CAN1_Initialize(void)
     CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
 
     /* Set Data Bit Timing and Prescaler Register */
-    CAN1_REGS->CAN_DBTP = CAN_DBTP_DTSEG2(7) | CAN_DBTP_DTSEG1(20) | CAN_DBTP_DBRP(0) | CAN_DBTP_DSJW(7);
+    CAN1_REGS->CAN_DBTP = CAN_DBTP_DTSEG2(7) | CAN_DBTP_DTSEG1(20) | CAN_DBTP_DBRP(0) | CAN_DBTP_DSJW(6);
 
     /* Set Nominal Bit timing and Prescaler Register */
-    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(4) | CAN_NBTP_NTSEG1(13) | CAN_NBTP_NBRP(5) | CAN_NBTP_NSJW(4);
+    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(4) | CAN_NBTP_NTSEG1(13) | CAN_NBTP_NBRP(5) | CAN_NBTP_NSJW(3);
 
     /* Receive Buffer / FIFO Element Size Configuration Register */
     CAN1_REGS->CAN_RXESC = 0  | CAN_RXESC_F0DS(7) | CAN_RXESC_F1DS(7) | CAN_RXESC_RBDS(7);
@@ -879,8 +879,8 @@ void CAN1_InterruptHandler(void)
 {
     uint8_t length = 0;
     uint8_t rxgi = 0;
-    can_rxbe_registers_t *rxbeFifo = NULL;
     uint8_t bufferIndex = 0;
+    can_rxbe_registers_t *rxbeFifo = NULL;
     can_rxf0e_registers_t *rxf0eFifo = NULL;
     can_rxf1e_registers_t *rxf1eFifo = NULL;
     uint32_t ir = CAN1_REGS->CAN_IR;
@@ -1096,7 +1096,7 @@ void CAN1_InterruptHandler(void)
     {
         CAN1_REGS->CAN_IR = CAN_IR_TC_Msk;
         CAN1_REGS->CAN_IE &= (~CAN_IE_TCE_Msk);
-        for (uint8_t bufferIndex = 0; bufferIndex < (CAN1_TX_FIFO_BUFFER_SIZE/CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE); bufferIndex++)
+        for (bufferIndex = 0; bufferIndex < (CAN1_TX_FIFO_BUFFER_SIZE/CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE); bufferIndex++)
         {
             if ((CAN1_REGS->CAN_TXBTO & (1 << (bufferIndex & 0x1F))) &&
                 (CAN1_REGS->CAN_TXBTIE & (1 << (bufferIndex & 0x1F))))

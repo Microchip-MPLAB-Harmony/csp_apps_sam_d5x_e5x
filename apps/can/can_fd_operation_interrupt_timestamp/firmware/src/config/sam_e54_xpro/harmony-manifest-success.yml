@@ -4,28 +4,15 @@
 
 
 project: can_fd_operation_interrupt_timestamp
-creation_date: 2020-06-09T03:29:14.203+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-08-19T13:20:34.112+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Headless            # [IDE|Standalone|Headless]
 mplabx_version: NA        # if MPLAB X plugin only
 plugin_version: NA        # if MPLAB X plugin only
+compiler: xc32
 
 modules:
-    - {name: "bootloader", version: "v3.3.0-rc.3"}
-    - {name: "bsp", version: "v3.7.0"}
-    - {name: "CMSIS-FreeRTOS", version: "unknown"}
-    - {name: "contentmanager", version: "v1.3.1"}
-    - {name: "core", version: "v3.7.1"}
     - {name: "csp", version: "unknown"}
-    - {name: "csp_apps_pic32cm_mc00", version: "unknown"}
-    - {name: "csp_apps_pic32mk", version: "unknown"}
-    - {name: "csp_apps_pic32mx", version: "unknown"}
-    - {name: "csp_apps_pic32mz_da", version: "unknown"}
-    - {name: "csp_apps_pic32mz_ef", version: "unknown"}
-    - {name: "csp_apps_sam_d5x_e5x", version: "unknown"}
-    - {name: "csp_apps_sam_e70_s70_v70_v71", version: "unknown"}
-    - {name: "csp_apps_sam_g55", version: "unknown"}
-    - {name: "csp_apps_sam_rh71", version: "unknown"}
-    - {name: "dev_packs", version: "unknown"}
-    - {name: "mhc", version: "v3.4.1"}
+    - {name: "dev_packs", version: "v3.8.0-rc.2"}
+    - {name: "mhc", version: "v3.5.0-tc.1"}
 
