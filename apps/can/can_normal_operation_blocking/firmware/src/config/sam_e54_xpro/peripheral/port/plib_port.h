@@ -65,18 +65,14 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for STANDBY pin ***/
 #define STANDBY_Set()               (PORT_REGS->GROUP[2].PORT_OUTSET = 1 << 13)
 #define STANDBY_Clear()             (PORT_REGS->GROUP[2].PORT_OUTCLR = 1 << 13)
 #define STANDBY_Toggle()            (PORT_REGS->GROUP[2].PORT_OUTTGL = 1 << 13)
-#define STANDBY_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 13)) & 0x01)
 #define STANDBY_OutputEnable()      (PORT_REGS->GROUP[2].PORT_DIRSET = 1 << 13)
 #define STANDBY_InputEnable()       (PORT_REGS->GROUP[2].PORT_DIRCLR = 1 << 13)
+#define STANDBY_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 13)) & 0x01)
 #define STANDBY_PIN                  PORT_PIN_PC13
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -1033,7 +1029,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -1072,7 +1068,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
