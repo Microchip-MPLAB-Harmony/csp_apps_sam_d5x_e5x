@@ -2184,18 +2184,15 @@
                     <file>
                         <name>$PROJ_DIR$\..\src\config\sam_e54_xpro_iar\definitions.h</name>
                     </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\src\config\sam_e54_xpro_iar\device.h</name>
+                    </file>
                 </group>
             </group>
             <group>
                 <name>packs</name>
                 <group>
                     <name>ATSAME54P20A_DFP</name>
-                    <file>
-                        <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\device.h</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\atsame54p20a_compat.h</name>
-                    </file>
                     <group>
                         <name>component</name>
                         <file>
@@ -2360,6 +2357,9 @@
                                 </file>
                                 <file>
                                     <name>$PROJ_DIR$\..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</name>
+                                </file>
+                                <file>
+                                    <name>$PROJ_DIR$\..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</name>
                                 </file>
                             </group>
                         </group>
