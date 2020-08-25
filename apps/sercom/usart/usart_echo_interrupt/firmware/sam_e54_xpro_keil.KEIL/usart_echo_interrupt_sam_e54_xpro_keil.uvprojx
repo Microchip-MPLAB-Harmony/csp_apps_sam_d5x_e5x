@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
 
   <SchemaVersion>2.1</SchemaVersion>
@@ -10,7 +10,7 @@
       <TargetName>sam_e54_xpro_keil</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6130001::V6.13.1::.\ARMCLANG</pCCUsed>
+      <pCCUsed>6140000::V6.14::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -19,28 +19,28 @@
           <PackID>Atmel.SAME54_DFP.1.1.134</PackID>
           <PackURL>http://packs.download.atmel.com/</PackURL>
           <Cpu>IRAM(0x20000000,0x40000) IRAM2(0x20000000,0x8000) IRAM3(0x20000000,0x8000) IRAM4(0x47000000,0x2000) IROM(0x00000000,0x100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
-          <FlashUtilSpec />
-          <StartupFile />
-          <FlashDriverDll />
+          <FlashUtilSpec></FlashUtilSpec>
+          <StartupFile></StartupFile>
+          <FlashDriverDll></FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile />
-          <MemoryEnv />
-          <Cmp />
-          <Asm />
-          <Linker />
-          <OHString />
-          <InfinionOptionDll />
-          <SLE66CMisc />
-          <SLE66AMisc />
-          <SLE66LinkerMisc />
+          <RegisterFile></RegisterFile>
+          <MemoryEnv></MemoryEnv>
+          <Cmp></Cmp>
+          <Asm></Asm>
+          <Linker></Linker>
+          <OHString></OHString>
+          <InfinionOptionDll></InfinionOptionDll>
+          <SLE66CMisc></SLE66CMisc>
+          <SLE66AMisc></SLE66AMisc>
+          <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile>$$Device:ATSAME54P20A$svd\ATSAME54P20A.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath />
-          <IncludePath />
-          <LibPath />
-          <RegisterFilePath />
-          <DBRegisterFilePath />
+          <BinPath></BinPath>
+          <IncludePath></IncludePath>
+          <LibPath></LibPath>
+          <RegisterFilePath></RegisterFilePath>
+          <DBRegisterFilePath></DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -62,8 +62,8 @@
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopU1X>0</nStopU1X>
@@ -72,8 +72,8 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -82,15 +82,15 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name />
-            <UserProg2Name />
+            <UserProg1Name></UserProg1Name>
+            <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
             <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
-          <SVCSIdString />
+          <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -104,8 +104,8 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument />
-          <IncludeLibraryModules />
+          <CustomArgument></CustomArgument>
+          <IncludeLibraryModules></IncludeLibraryModules>
           <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
@@ -138,11 +138,11 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3 />
-          <Flash4 />
-          <pFcarmOut />
-          <pFcarmGrp />
-          <pFcArmRoot />
+          <Flash3></Flash3>
+          <Flash4></Flash4>
+          <pFcarmOut></pFcarmOut>
+          <pFcarmGrp></pFcarmGrp>
+          <pFcArmRoot></pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -175,7 +175,7 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M4"</AdsCpuType>
-            <RvctDeviceName />
+            <RvctDeviceName></RvctDeviceName>
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
@@ -185,9 +185,10 @@
             <uocXRam>0</uocXRam>
             <RvdsVP>2</RvdsVP>
             <RvdsMve>0</RvdsMve>
+            <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
-            <StupSel>0</StupSel>
+            <StupSel>8</StupSel>
             <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
@@ -308,7 +309,7 @@
                 <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector />
+            <RvctStartVector></RvctStartVector>
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
@@ -335,9 +336,9 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls />
-              <Define />
-              <Undefine />
+              <MiscControls></MiscControls>
+              <Define></Define>
+              <Undefine></Undefine>
               <IncludePath>..\src;..\src\config\sam_e54_xpro_keil;..\src\packs\ATSAME54P20A_DFP;..\src\packs\CMSIS\CMSIS\Core\Include;..\src\packs\CMSIS</IncludePath>
             </VariousControls>
           </Cads>
@@ -351,12 +352,12 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <uClangAs>0</uClangAs>
+            <ClangAsOpt>4</ClangAsOpt>
             <VariousControls>
-              <MiscControls />
-              <Define />
-              <Undefine />
-              <IncludePath />
+              <MiscControls></MiscControls>
+              <Define></Define>
+              <Undefine></Undefine>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -366,402 +367,417 @@
             <noStLib>0</noStLib>
             <RepFail>1</RepFail>
             <useFile>0</useFile>
-            <TextAddressRange />
-            <DataAddressRange />
-            <pXoBase />
+            <TextAddressRange></TextAddressRange>
+            <DataAddressRange></DataAddressRange>
+            <pXoBase></pXoBase>
             <ScatterFile>..\src\config\sam_e54_xpro_keil\sam_e54_xpro_keil.sct</ScatterFile>
-            <IncludeLibs />
-            <IncludeLibsPath />
-            <Misc />
-            <LinkerInputFile />
-            <DisabledWarnings />
+            <IncludeLibs></IncludeLibs>
+            <IncludeLibsPath></IncludeLibsPath>
+            <Misc></Misc>
+            <LinkerInputFile></LinkerInputFile>
+            <DisabledWarnings></DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
       <Groups>
         <Group>
-        <GroupName>Harmony3</GroupName>
-        <Files>
-          <File>
-            <FileName>plib_nvmctrl.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvmctrl\plib_nvmctrl.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_sercom2_usart.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\sercom\usart\plib_sercom2_usart.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_sercom_usart_common.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\sercom\usart\plib_sercom_usart_common.h</FilePath>
-          </File>
-          <File>
-            <FileName>device_cache.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\device_cache.h</FilePath>
-          </File>
-          <File>
-            <FileName>toolchain_specifics.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\toolchain_specifics.h</FilePath>
-          </File>
-          <File>
-            <FileName>definitions.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\definitions.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_port.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\port\plib_port.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_clock.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\clock\plib_clock.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_nvic.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvic\plib_nvic.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_cmcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\cmcc\plib_cmcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>device.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\device.h</FilePath>
-          </File>
-          <File>
-            <FileName>atsame54p20a_compat.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\atsame54p20a_compat.h</FilePath>
-          </File>
-          <File>
-            <FileName>ac.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\ac.h</FilePath>
-          </File>
-          <File>
-            <FileName>adc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\adc.h</FilePath>
-          </File>
-          <File>
-            <FileName>aes.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\aes.h</FilePath>
-          </File>
-          <File>
-            <FileName>can.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\can.h</FilePath>
-          </File>
-          <File>
-            <FileName>ccl.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\cmcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>dac.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\dac.h</FilePath>
-          </File>
-          <File>
-            <FileName>dmac.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\dmac.h</FilePath>
-          </File>
-          <File>
-            <FileName>dsu.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\dsu.h</FilePath>
-          </File>
-          <File>
-            <FileName>eic.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\eic.h</FilePath>
-          </File>
-          <File>
-            <FileName>evsys.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</FilePath>
-          </File>
-          <File>
-            <FileName>freqm.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</FilePath>
-          </File>
-          <File>
-            <FileName>gclk.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</FilePath>
-          </File>
-          <File>
-            <FileName>gmac.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</FilePath>
-          </File>
-          <File>
-            <FileName>hmatrixb.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</FilePath>
-          </File>
-          <File>
-            <FileName>i2s.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</FilePath>
-          </File>
-          <File>
-            <FileName>icm.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\icm.h</FilePath>
-          </File>
-          <File>
-            <FileName>mclk.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\mclk.h</FilePath>
-          </File>
-          <File>
-            <FileName>nvmctrl.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\nvmctrl.h</FilePath>
-          </File>
-          <File>
-            <FileName>osc32kctrl.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</FilePath>
-          </File>
-          <File>
-            <FileName>oscctrl.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\oscctrl.h</FilePath>
-          </File>
-          <File>
-            <FileName>pac.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pac.h</FilePath>
-          </File>
-          <File>
-            <FileName>pcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>pdec.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pdec.h</FilePath>
-          </File>
-          <File>
-            <FileName>pm.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pm.h</FilePath>
-          </File>
-          <File>
-            <FileName>port.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\port.h</FilePath>
-          </File>
-          <File>
-            <FileName>pukcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pukcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>qspi.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\qspi.h</FilePath>
-          </File>
-          <File>
-            <FileName>ramecc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\ramecc.h</FilePath>
-          </File>
-          <File>
-            <FileName>rstc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\rstc.h</FilePath>
-          </File>
-          <File>
-            <FileName>rtc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\rtc.h</FilePath>
-          </File>
-          <File>
-            <FileName>sdhc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\sdhc.h</FilePath>
-          </File>
-          <File>
-            <FileName>sercom.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\sercom.h</FilePath>
-          </File>
-          <File>
-            <FileName>supc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\supc.h</FilePath>
-          </File>
-          <File>
-            <FileName>tc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\tc.h</FilePath>
-          </File>
-          <File>
-            <FileName>tcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\tcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>trng.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\trng.h</FilePath>
-          </File>
-          <File>
-            <FileName>usb.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\usb.h</FilePath>
-          </File>
-          <File>
-            <FileName>wdt.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\component\wdt.h</FilePath>
-          </File>
-          <File>
-            <FileName>atsame54p20a.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\atsame54p20a.h</FilePath>
-          </File>
-          <File>
-            <FileName>same54p20a.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_version.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_compiler.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_iccarm.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_gcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_armcc.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_armclang.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</FilePath>
-          </File>
-          <File>
-            <FileName>cmsis_armclang_ltm.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</FilePath>
-          </File>
-          <File>
-            <FileName>core_cm4.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</FilePath>
-          </File>
-          <File>
-            <FileName>mpu_armv7.h</FileName>
-            <FileType>5</FileType>
-            <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</FilePath>
-          </File>
-          <File>
-            <FileName>plib_nvmctrl.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvmctrl\plib_nvmctrl.c</FilePath>
-          </File>
-          <File>
-            <FileName>plib_sercom2_usart.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\sercom\usart\plib_sercom2_usart.c</FilePath>
-          </File>
-          <File>
-            <FileName>main.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\main.c</FilePath>
-          </File>
-          <File>
-            <FileName>initialization.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\initialization.c</FilePath>
-          </File>
-          <File>
-            <FileName>interrupts.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\interrupts.c</FilePath>
-          </File>
-          <File>
-            <FileName>exceptions.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\exceptions.c</FilePath>
-          </File>
-          <File>
-            <FileName>keil_monitor.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\stdio\keil_monitor.c</FilePath>
-          </File>
-          <File>
-            <FileName>plib_port.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\port\plib_port.c</FilePath>
-          </File>
-          <File>
-            <FileName>plib_clock.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\clock\plib_clock.c</FilePath>
-          </File>
-          <File>
-            <FileName>plib_nvic.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvic\plib_nvic.c</FilePath>
-          </File>
-          <File>
-            <FileName>plib_cmcc.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\cmcc\plib_cmcc.c</FilePath>
-          </File>
-          <File>
-            <FileName>startup_keil.c</FileName>
-            <FileType>1</FileType>
-            <FilePath>..\src\config\sam_e54_xpro_keil\startup_keil.c</FilePath>
-          </File>
-        </Files>
-      </Group>
+          <GroupName>Harmony3</GroupName>
+          <Files>
+            <File>
+              <FileName>plib_nvmctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvmctrl\plib_nvmctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_sercom2_usart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\sercom\usart\plib_sercom2_usart.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_sercom_usart_common.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\sercom\usart\plib_sercom_usart_common.h</FilePath>
+            </File>
+            <File>
+              <FileName>device_cache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\device_cache.h</FilePath>
+            </File>
+            <File>
+              <FileName>toolchain_specifics.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\toolchain_specifics.h</FilePath>
+            </File>
+            <File>
+              <FileName>definitions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\definitions.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\port\plib_port.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\clock\plib_clock.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_nvic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvic\plib_nvic.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_cmcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\cmcc\plib_cmcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>device.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\device.h</FilePath>
+            </File>
+            <File>
+              <FileName>ac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\ac.h</FilePath>
+            </File>
+            <File>
+              <FileName>adc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\adc.h</FilePath>
+            </File>
+            <File>
+              <FileName>aes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\aes.h</FilePath>
+            </File>
+            <File>
+              <FileName>can.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\can.h</FilePath>
+            </File>
+            <File>
+              <FileName>ccl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\cmcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>dac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\dac.h</FilePath>
+            </File>
+            <File>
+              <FileName>dmac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\dmac.h</FilePath>
+            </File>
+            <File>
+              <FileName>dsu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\dsu.h</FilePath>
+            </File>
+            <File>
+              <FileName>eic.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\eic.h</FilePath>
+            </File>
+            <File>
+              <FileName>evsys.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</FilePath>
+            </File>
+            <File>
+              <FileName>freqm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</FilePath>
+            </File>
+            <File>
+              <FileName>gclk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</FilePath>
+            </File>
+            <File>
+              <FileName>gmac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</FilePath>
+            </File>
+            <File>
+              <FileName>hmatrixb.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</FilePath>
+            </File>
+            <File>
+              <FileName>i2s.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</FilePath>
+            </File>
+            <File>
+              <FileName>icm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\icm.h</FilePath>
+            </File>
+            <File>
+              <FileName>mclk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\mclk.h</FilePath>
+            </File>
+            <File>
+              <FileName>nvmctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\nvmctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>osc32kctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>oscctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\oscctrl.h</FilePath>
+            </File>
+            <File>
+              <FileName>pac.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pac.h</FilePath>
+            </File>
+            <File>
+              <FileName>pcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>pdec.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pdec.h</FilePath>
+            </File>
+            <File>
+              <FileName>pm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pm.h</FilePath>
+            </File>
+            <File>
+              <FileName>port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\port.h</FilePath>
+            </File>
+            <File>
+              <FileName>pukcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\pukcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>qspi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\qspi.h</FilePath>
+            </File>
+            <File>
+              <FileName>ramecc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\ramecc.h</FilePath>
+            </File>
+            <File>
+              <FileName>rstc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\rstc.h</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\rtc.h</FilePath>
+            </File>
+            <File>
+              <FileName>sdhc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\sdhc.h</FilePath>
+            </File>
+            <File>
+              <FileName>sercom.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\sercom.h</FilePath>
+            </File>
+            <File>
+              <FileName>supc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\supc.h</FilePath>
+            </File>
+            <File>
+              <FileName>tc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\tc.h</FilePath>
+            </File>
+            <File>
+              <FileName>tcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\tcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>trng.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\trng.h</FilePath>
+            </File>
+            <File>
+              <FileName>usb.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\usb.h</FilePath>
+            </File>
+            <File>
+              <FileName>wdt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\wdt.h</FilePath>
+            </File>
+            <File>
+              <FileName>atsame54p20a.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\atsame54p20a.h</FilePath>
+            </File>
+            <File>
+              <FileName>same54p20a.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_version.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_compiler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_iccarm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_gcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_armcc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_armclang.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</FilePath>
+            </File>
+            <File>
+              <FileName>cmsis_armclang_ltm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</FilePath>
+            </File>
+            <File>
+              <FileName>core_cm4.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</FilePath>
+            </File>
+            <File>
+              <FileName>mpu_armv7.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</FilePath>
+            </File>
+            <File>
+              <FileName>cachel1_armv7.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</FilePath>
+            </File>
+            <File>
+              <FileName>plib_nvmctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvmctrl\plib_nvmctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>plib_sercom2_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\sercom\usart\plib_sercom2_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>initialization.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\initialization.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\interrupts.c</FilePath>
+            </File>
+            <File>
+              <FileName>exceptions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\exceptions.c</FilePath>
+            </File>
+            <File>
+              <FileName>keil_monitor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\stdio\keil_monitor.c</FilePath>
+            </File>
+            <File>
+              <FileName>plib_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\port\plib_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>plib_clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\clock\plib_clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>plib_nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\nvic\plib_nvic.c</FilePath>
+            </File>
+            <File>
+              <FileName>plib_cmcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\peripheral\cmcc\plib_cmcc.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_keil.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\config\sam_e54_xpro_keil\startup_keil.c</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
 
   <RTE>
-    <apis />
-    <components />
-    <files />
+    <apis/>
+    <components/>
+    <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>&lt;Project Info&gt;</LayName>
+        <LayDesc></LayDesc>
+        <LayUrl></LayUrl>
+        <LayKeys></LayKeys>
+        <LayCat></LayCat>
+        <LayLic></LayLic>
+        <LayTarg>0</LayTarg>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

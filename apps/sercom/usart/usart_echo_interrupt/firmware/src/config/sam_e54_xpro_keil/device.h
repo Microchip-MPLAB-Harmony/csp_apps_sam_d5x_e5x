@@ -1,5 +1,24 @@
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+  Device Header File
+
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    device.h
+
+  Summary:
+    This file includes the selected device from within the project.
+    The device will provide access to respective device packs.
+
+  Description:
+    None
+
+*******************************************************************************/
+
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -20,48 +39,9 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+// DOM-IGNORE-END
 
-#ifndef TOOLCHAIN_SPECIFICS_H
-#define TOOLCHAIN_SPECIFICS_H
-
-#ifdef __cplusplus  // Provide C++ Compatibility
-extern "C" {
-#endif
-
-#include "cmsis_compiler.h"
-
-#ifndef _SSIZE_T_DECLARED
-#ifdef __SIZE_TYPE__
-/* If __SIZE_TYPE__ is defined (armclang) we define ssize_t based on size_t.
-We simply change "unsigned" to "signed" for this single definition
-to make sure ssize_t and size_t only differ by their signedness. */
-#define unsigned signed
-typedef __SIZE_TYPE__ _ssize_t;
-#undef unsigned
-#else
-#if defined(__INT_MAX__) && __INT_MAX__ == 2147483647
-typedef int _ssize_t;
-#else
-typedef long _ssize_t;
-#endif
-#endif
-typedef _ssize_t ssize_t;
-#define	_SSIZE_T_DECLARED
-#endif
-
-#define NO_INIT        __attribute__((section(".no_init")))
-#define SECTION(a)     __attribute__((__section__(a)))
-
-#define CACHE_LINE_SIZE    (16u)
-#define CACHE_ALIGN        __ALIGNED(CACHE_LINE_SIZE)
-
-#ifndef FORMAT_ATTRIBUTE
-   #define FORMAT_ATTRIBUTE(archetype, string_index, first_to_check)  __attribute__ ((format (archetype, string_index, first_to_check)))
-#endif
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif // end of header
+#include "atsame54p20a.h"
+#include "device_cache.h"
+#include "toolchain_specifics.h"
 
