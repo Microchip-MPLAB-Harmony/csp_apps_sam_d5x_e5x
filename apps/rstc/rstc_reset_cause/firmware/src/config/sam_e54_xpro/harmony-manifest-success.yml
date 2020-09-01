@@ -4,7 +4,7 @@
 
 
 project: rstc_reset_cause
-creation_date: 2020-08-12T17:08:15.470+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-09-01T22:01:17.376+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Headless            # [IDE|Standalone|Headless]
 mplabx_version: NA        # if MPLAB X plugin only
@@ -12,7 +12,6 @@ plugin_version: NA        # if MPLAB X plugin only
 compiler: xc32
 
 modules:
-    - {name: "csp", version: "v3.8.0-rc.2"}
-    - {name: "dev_packs", version: "v3.8.0-rc.2"}
-    - {name: "mhc", version: "v3.5.0-tc.1"}
-
+    - {name: "csp", version: "v3.8.0"}
+    - {name: "dev_packs", version: "v3.8.0"}
+    - {name: "mhc", version: "v3.5.1"}
