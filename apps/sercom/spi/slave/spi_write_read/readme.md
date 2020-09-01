@@ -1,3 +1,10 @@
+---
+parent: Harmony 3 peripheral library application examples for SAM D5X/E5X family
+title: SERCOM SPI Slave read write 
+has_children: false
+has_toc: false
+---
+
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # SERCOM SPI Slave read write
@@ -54,7 +61,7 @@ The following table shows the target hardware for the application projects.
 
 ## Running the Application
 
-1. Build and Program the SPI master application project (available under apps\sercom\spi\master\spi_write_read_test_app) using its IDE
+1. Build and Program the SPI master application project (available under **apps/sercom/spi/master/spi_write_read_test_app**) using its IDE
 2. Build and Program the SPI slave application project using its IDE
 3. On the SPI master board, press switch to start reading and writing data
 2. LED on SPI master board indicates the success or failure:

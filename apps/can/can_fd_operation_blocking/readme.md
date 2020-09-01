@@ -1,3 +1,10 @@
+---
+parent: Harmony 3 peripheral library application examples for SAM D5X/E5X family
+title: CAN FD blocking 
+has_children: false
+has_toc: false
+---
+
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # CAN FD blocking
@@ -10,9 +17,8 @@ This application transmits CAN FD message to CAN Bus and receives CAN FD message
 
 ## Downloading and building the application
 
-To download or clone this application from Github, go to the [top level of the repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x) and click
-
-![clone](../../../docs/images/clone.png)
+To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x) and then click **Clone** button to clone this repository or download as zip file.
+This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
 Path of the application within the repository is **apps/can/can_fd_operation_blocking/firmware** .
 

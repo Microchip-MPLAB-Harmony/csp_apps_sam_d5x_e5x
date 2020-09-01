@@ -1,3 +1,10 @@
+---
+parent: Harmony 3 peripheral library application examples for SAM D5X/E5X family
+title: SERCOM SPI Master read write test application 
+has_children: false
+has_toc: false
+---
+
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # SERCOM SPI Master read write test application

@@ -2,6 +2,5 @@
 <Package name="csp_apps_sam_d5x_e5x">
     <Dependencies>
         <Dependency name="csp" version="v3.8.0"/>
-        <Dependency name="dev_packs" version="v3.8.0"/>
     </Dependencies>
 </Package>
