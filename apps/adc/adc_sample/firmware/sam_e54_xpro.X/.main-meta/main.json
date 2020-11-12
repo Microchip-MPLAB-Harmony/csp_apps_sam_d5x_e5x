@@ -1,0 +1,76 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_adc_sample",
+		"version": "3.0.1",
+		"displayName": "ADC Sample Example for SAM D5x/E5x Family",
+		"projectName": "adc_sample_sam_e54_xpro",
+		"shortDescription": "This example application shows how to sample an analog input using the ADC and displays the converted samples on a serial terminal.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME54P20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E54 Xplained Pro board"
+			],
+			[
+				"Harmony", "Peripherals", "ADC"
+			],
+			[
+				"Peripherals", "ADC"
+			]
+		],
+		"peripherals": [
+			"ADC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME54P20A",
+			"SAM D5x/E5x Family",
+			"AC voltage",
+			"Analog to Digital Converter",
+			"ADC",
+			"Analog"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

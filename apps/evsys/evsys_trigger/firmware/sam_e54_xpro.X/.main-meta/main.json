@@ -1,0 +1,75 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_evsys_trigger",
+		"version": "3.0.1",
+		"displayName": "EVSYS trigger Example for SAM D5x/E5x Family",
+		"projectName": "evsys_trigger_sam_e54_xpro",
+		"shortDescription": "This example application demonstrates how to use the EVSYS Peripheral library to setup autonomous, low-latency and configurable communication between peripherals.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME54P20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E54 Xplained Pro board"
+			],
+			[
+				"Harmony", "Peripherals", "EVSYS"
+			],
+			[
+				"Peripherals", "EVSYS"
+			]
+		],
+		"peripherals": [
+			"EVSYS"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME54P20A",
+			"SAM D5x/E5x Family",
+			"EVSYS",
+			"Event System",
+			"CIP"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

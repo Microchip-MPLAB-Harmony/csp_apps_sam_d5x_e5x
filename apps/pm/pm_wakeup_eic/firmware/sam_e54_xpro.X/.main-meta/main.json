@@ -1,0 +1,76 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_pm_wakeup_eic",
+		"version": "3.0.1",
+		"displayName": "PM wakeup using EIC Example for SAM D5x/E5x Family",
+		"projectName": "pm_wakeup_eic_sam_e54_xpro",
+		"shortDescription": "This application demonstrates entering the low power modes and exiting it using the EIC.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "CMSIS",
+			"semverRange": "^5.4.0"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAME54P20A",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM E54 Xplained Pro board"
+			],
+			[
+				"Harmony", "Peripherals", "PM"
+			],
+			[
+				"Peripherals", "PM"
+			]
+		],
+		"peripherals": [
+			"PM"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAME54P20A",
+			"SAM D5x/E5x Family",
+			"PM",
+			"Power Managment",
+			"Low Power",
+			"Sleep"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
