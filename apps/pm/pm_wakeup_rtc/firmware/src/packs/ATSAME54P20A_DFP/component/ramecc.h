@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-06-22T15:30:56Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_RAMECC_COMPONENT_H_
 #define _SAME54_RAMECC_COMPONENT_H_
 

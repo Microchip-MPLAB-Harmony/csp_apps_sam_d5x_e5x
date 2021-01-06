@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-06-22T15:30:56Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_DSU_COMPONENT_H_
 #define _SAME54_DSU_COMPONENT_H_
 
@@ -43,13 +43,7 @@
 #define DSU_CTRL_CE_Pos                       _U_(4)                                               /**< (DSU_CTRL) Chip-Erase Position */
 #define DSU_CTRL_CE_Msk                       (_U_(0x1) << DSU_CTRL_CE_Pos)                        /**< (DSU_CTRL) Chip-Erase Mask */
 #define DSU_CTRL_CE(value)                    (DSU_CTRL_CE_Msk & ((value) << DSU_CTRL_CE_Pos))    
-#define DSU_CTRL_ARR_Pos                      _U_(6)                                               /**< (DSU_CTRL) Auxiliary Row Read Position */
-#define DSU_CTRL_ARR_Msk                      (_U_(0x1) << DSU_CTRL_ARR_Pos)                       /**< (DSU_CTRL) Auxiliary Row Read Mask */
-#define DSU_CTRL_ARR(value)                   (DSU_CTRL_ARR_Msk & ((value) << DSU_CTRL_ARR_Pos))  
-#define DSU_CTRL_SMSA_Pos                     _U_(7)                                               /**< (DSU_CTRL) Start Memory Stream Access Position */
-#define DSU_CTRL_SMSA_Msk                     (_U_(0x1) << DSU_CTRL_SMSA_Pos)                      /**< (DSU_CTRL) Start Memory Stream Access Mask */
-#define DSU_CTRL_SMSA(value)                  (DSU_CTRL_SMSA_Msk & ((value) << DSU_CTRL_SMSA_Pos))
-#define DSU_CTRL_Msk                          _U_(0xDD)                                            /**< (DSU_CTRL) Register Mask  */
+#define DSU_CTRL_Msk                          _U_(0x1D)                                            /**< (DSU_CTRL) Register Mask  */
 
 
 /* -------- DSU_STATUSA : (DSU Offset: 0x01) (R/W 8) Status A -------- */
@@ -94,20 +88,11 @@
 #define DSU_STATUSB_CELCK_Pos                 _U_(5)                                               /**< (DSU_STATUSB) Chip Erase Locked Position */
 #define DSU_STATUSB_CELCK_Msk                 (_U_(0x1) << DSU_STATUSB_CELCK_Pos)                  /**< (DSU_STATUSB) Chip Erase Locked Mask */
 #define DSU_STATUSB_CELCK(value)              (DSU_STATUSB_CELCK_Msk & ((value) << DSU_STATUSB_CELCK_Pos))
-#define DSU_STATUSB_TDCCD0_Pos                _U_(6)                                               /**< (DSU_STATUSB) Test Debug Communication Channel 0 Dirty Position */
-#define DSU_STATUSB_TDCCD0_Msk                (_U_(0x1) << DSU_STATUSB_TDCCD0_Pos)                 /**< (DSU_STATUSB) Test Debug Communication Channel 0 Dirty Mask */
-#define DSU_STATUSB_TDCCD0(value)             (DSU_STATUSB_TDCCD0_Msk & ((value) << DSU_STATUSB_TDCCD0_Pos))
-#define DSU_STATUSB_TDCCD1_Pos                _U_(7)                                               /**< (DSU_STATUSB) Test Debug Communication Channel 1 Dirty Position */
-#define DSU_STATUSB_TDCCD1_Msk                (_U_(0x1) << DSU_STATUSB_TDCCD1_Pos)                 /**< (DSU_STATUSB) Test Debug Communication Channel 1 Dirty Mask */
-#define DSU_STATUSB_TDCCD1(value)             (DSU_STATUSB_TDCCD1_Msk & ((value) << DSU_STATUSB_TDCCD1_Pos))
-#define DSU_STATUSB_Msk                       _U_(0xFF)                                            /**< (DSU_STATUSB) Register Mask  */
+#define DSU_STATUSB_Msk                       _U_(0x3F)                                            /**< (DSU_STATUSB) Register Mask  */
 
 #define DSU_STATUSB_DCCD_Pos                  _U_(2)                                               /**< (DSU_STATUSB Position) Debug Communication Channel x Dirty */
 #define DSU_STATUSB_DCCD_Msk                  (_U_(0x3) << DSU_STATUSB_DCCD_Pos)                   /**< (DSU_STATUSB Mask) DCCD */
 #define DSU_STATUSB_DCCD(value)               (DSU_STATUSB_DCCD_Msk & ((value) << DSU_STATUSB_DCCD_Pos)) 
-#define DSU_STATUSB_TDCCD_Pos                 _U_(6)                                               /**< (DSU_STATUSB Position) Test Debug Communication Channel x Dirty */
-#define DSU_STATUSB_TDCCD_Msk                 (_U_(0x3) << DSU_STATUSB_TDCCD_Pos)                  /**< (DSU_STATUSB Mask) TDCCD */
-#define DSU_STATUSB_TDCCD(value)              (DSU_STATUSB_TDCCD_Msk & ((value) << DSU_STATUSB_TDCCD_Pos)) 
 
 /* -------- DSU_ADDR : (DSU Offset: 0x04) (R/W 32) Address -------- */
 #define DSU_ADDR_RESETVALUE                   _U_(0x00)                                            /**<  (DSU_ADDR) Address  Reset Value */

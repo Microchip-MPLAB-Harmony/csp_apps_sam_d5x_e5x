@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2020-06-22T15:30:56Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_ICM_COMPONENT_H_
 #define _SAME54_ICM_COMPONENT_H_
 
@@ -158,13 +158,7 @@
 #define ICM_CFG_UALGO_SHA1                    (ICM_CFG_UALGO_SHA1_Val << ICM_CFG_UALGO_Pos)        /**< (ICM_CFG) SHA1 Algorithm Position  */
 #define ICM_CFG_UALGO_SHA256                  (ICM_CFG_UALGO_SHA256_Val << ICM_CFG_UALGO_Pos)      /**< (ICM_CFG) SHA256 Algorithm Position  */
 #define ICM_CFG_UALGO_SHA224                  (ICM_CFG_UALGO_SHA224_Val << ICM_CFG_UALGO_Pos)      /**< (ICM_CFG) SHA224 Algorithm Position  */
-#define ICM_CFG_HAPROT_Pos                    _U_(16)                                              /**< (ICM_CFG) Region Hash Area Protection Position */
-#define ICM_CFG_HAPROT_Msk                    (_U_(0x3F) << ICM_CFG_HAPROT_Pos)                    /**< (ICM_CFG) Region Hash Area Protection Mask */
-#define ICM_CFG_HAPROT(value)                 (ICM_CFG_HAPROT_Msk & ((value) << ICM_CFG_HAPROT_Pos))
-#define ICM_CFG_DAPROT_Pos                    _U_(24)                                              /**< (ICM_CFG) Region Descriptor Area Protection Position */
-#define ICM_CFG_DAPROT_Msk                    (_U_(0x3F) << ICM_CFG_DAPROT_Pos)                    /**< (ICM_CFG) Region Descriptor Area Protection Mask */
-#define ICM_CFG_DAPROT(value)                 (ICM_CFG_DAPROT_Msk & ((value) << ICM_CFG_DAPROT_Pos))
-#define ICM_CFG_Msk                           _U_(0x3F3FF3F7)                                      /**< (ICM_CFG) Register Mask  */
+#define ICM_CFG_Msk                           _U_(0x0000F3F7)                                      /**< (ICM_CFG) Register Mask  */
 
 
 /* -------- ICM_CTRL : (ICM Offset: 0x04) ( /W 32) Control -------- */
