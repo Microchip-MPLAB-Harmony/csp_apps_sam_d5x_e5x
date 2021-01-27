@@ -74,21 +74,21 @@
 // *****************************************************************************
 // *****************************************************************************
 /* CAN1 Message RAM Configuration Size */
-#define CAN1_RX_FIFO0_ELEMENT_SIZE       72
-#define CAN1_RX_FIFO0_SIZE               72
-#define CAN1_RX_FIFO1_ELEMENT_SIZE       72
-#define CAN1_RX_FIFO1_SIZE               72
-#define CAN1_RX_BUFFER_ELEMENT_SIZE      72
-#define CAN1_RX_BUFFER_SIZE              72
-#define CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE 72
-#define CAN1_TX_FIFO_BUFFER_SIZE         72
-#define CAN1_TX_EVENT_FIFO_SIZE          8
-#define CAN1_STD_MSG_ID_FILTER_SIZE      8
-#define CAN1_EXT_MSG_ID_FILTER_SIZE      16
+#define CAN1_RX_FIFO0_ELEMENT_SIZE       72U
+#define CAN1_RX_FIFO0_SIZE               72U
+#define CAN1_RX_FIFO1_ELEMENT_SIZE       72U
+#define CAN1_RX_FIFO1_SIZE               72U
+#define CAN1_RX_BUFFER_ELEMENT_SIZE      72U
+#define CAN1_RX_BUFFER_SIZE              72U
+#define CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE 72U
+#define CAN1_TX_FIFO_BUFFER_SIZE         72U
+#define CAN1_TX_EVENT_FIFO_SIZE          8U
+#define CAN1_STD_MSG_ID_FILTER_SIZE      8U
+#define CAN1_EXT_MSG_ID_FILTER_SIZE      16U
 
 /* CAN1_MESSAGE_RAM_CONFIG_SIZE to be used by application or driver
    for allocating buffer from non-cached contiguous memory */
-#define CAN1_MESSAGE_RAM_CONFIG_SIZE     320
+#define CAN1_MESSAGE_RAM_CONFIG_SIZE     320U
 
 // *****************************************************************************
 // *****************************************************************************
@@ -110,6 +110,8 @@ bool CAN1_StandardFilterElementSet(uint8_t filterNumber, can_sidfe_registers_t *
 bool CAN1_StandardFilterElementGet(uint8_t filterNumber, can_sidfe_registers_t *stdMsgIDFilterElement);
 bool CAN1_ExtendedFilterElementSet(uint8_t filterNumber, can_xidfe_registers_t *extMsgIDFilterElement);
 bool CAN1_ExtendedFilterElementGet(uint8_t filterNumber, can_xidfe_registers_t *extMsgIDFilterElement);
+void CAN1_SleepModeEnter(void);
+void CAN1_SleepModeExit(void);
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
     }
