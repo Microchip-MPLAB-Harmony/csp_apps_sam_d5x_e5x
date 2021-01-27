@@ -1,7 +1,7 @@
 /**
  * \brief Component description for GMAC
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -1489,6 +1489,10 @@
 #define GMAC_HRB_REG_OFST              (0x80)              /**< (GMAC_HRB) Hash Register Bottom [31:0] Offset */
 #define GMAC_HRT_REG_OFST              (0x84)              /**< (GMAC_HRT) Hash Register Top [63:32] Offset */
 #define GMAC_TIDM_REG_OFST             (0xA8)              /**< (GMAC_TIDM) Type ID Match n Register Offset */
+#define GMAC_TIDM0_REG_OFST            (0xA8)              /**< (GMAC_TIDM0) Type ID Match n Register Offset */
+#define GMAC_TIDM1_REG_OFST            (0xAC)              /**< (GMAC_TIDM1) Type ID Match n Register Offset */
+#define GMAC_TIDM2_REG_OFST            (0xB0)              /**< (GMAC_TIDM2) Type ID Match n Register Offset */
+#define GMAC_TIDM3_REG_OFST            (0xB4)              /**< (GMAC_TIDM3) Type ID Match n Register Offset */
 #define GMAC_WOL_REG_OFST              (0xB8)              /**< (GMAC_WOL) Wake on LAN Offset */
 #define GMAC_IPGS_REG_OFST             (0xBC)              /**< (GMAC_IPGS) IPG Stretch Register Offset */
 #define GMAC_SVLAN_REG_OFST            (0xC0)              /**< (GMAC_SVLAN) Stacked VLAN Register Offset */

@@ -49,6 +49,7 @@
 
 #include <string.h>
 #include "plib_nvmctrl.h"
+#include "interrupts.h"
 
 static volatile uint16_t nvm_error;
 static uint16_t nvm_status;
