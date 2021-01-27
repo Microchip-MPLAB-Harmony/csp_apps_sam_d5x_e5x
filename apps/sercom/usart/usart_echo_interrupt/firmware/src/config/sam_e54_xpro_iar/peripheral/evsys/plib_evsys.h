@@ -1,22 +1,20 @@
 /*******************************************************************************
-  Device Header File
+  Interface definition of EVSYS PLIB.
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    device.h
+    plib_evsys.h
 
   Summary:
-    This file includes the selected device from within the project.
-    The device will provide access to respective device packs.
+    Interface definition of the Event System Plib (EVSYS).
 
   Description:
-    None
-
+    This file defines the interface for the EVSYS Plib.
+    It allows user to setup event generators and users.
 *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -39,19 +37,29 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
 
-#ifndef DEVICE_H
-#define DEVICE_H
+#ifndef EVSYS_H    // Guards against multiple inclusion
+#define EVSYS_H
 
-#ifndef DONT_USE_PREDEFINED_CORE_HANDLERS
-    #define DONT_USE_PREDEFINED_CORE_HANDLERS
-#endif //DONT_USE_PREDEFINED_CORE_HANDLERS
-#ifndef DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
-    #define DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
-#endif //DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
-#include "same54p20a.h"
-#include "device_cache.h"
-#include "toolchain_specifics.h"
+#include "device.h"
+#include <stdint.h>
+#include <stddef.h>
 
-#endif //DEVICE_H
+#ifdef __cplusplus // Provide C++ Compatibility
+ extern "C" {
+#endif
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Interface
+// *****************************************************************************
+// *****************************************************************************
+
+/***************************** EVSYS API *******************************/
+void EVSYS_Initialize( void );
+#ifdef __cplusplus // Provide C++ Compatibility
+ }
+#endif
+
+#endif

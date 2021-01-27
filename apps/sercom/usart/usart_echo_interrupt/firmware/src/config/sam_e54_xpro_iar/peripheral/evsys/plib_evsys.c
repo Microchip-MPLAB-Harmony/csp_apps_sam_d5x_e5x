@@ -1,22 +1,20 @@
 /*******************************************************************************
-  Device Header File
+  EVSYS Peripheral Library
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    device.h
+    plib_evsys.c
 
   Summary:
-    This file includes the selected device from within the project.
-    The device will provide access to respective device packs.
+    EVSYS Source File
 
   Description:
     None
 
 *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
@@ -39,19 +37,14 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
-// DOM-IGNORE-END
 
-#ifndef DEVICE_H
-#define DEVICE_H
+#include "plib_evsys.h"
+#include "interrupts.h"
 
-#ifndef DONT_USE_PREDEFINED_CORE_HANDLERS
-    #define DONT_USE_PREDEFINED_CORE_HANDLERS
-#endif //DONT_USE_PREDEFINED_CORE_HANDLERS
-#ifndef DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
-    #define DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
-#endif //DONT_USE_PREDEFINED_PERIPHERALS_HANDLERS
-#include "same54p20a.h"
-#include "device_cache.h"
-#include "toolchain_specifics.h"
 
-#endif //DEVICE_H
+
+void EVSYS_Initialize( void )
+{
+    /*Event Channel User Configuration*/
+
+}

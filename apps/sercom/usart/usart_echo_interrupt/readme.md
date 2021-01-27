@@ -27,8 +27,8 @@ To build the application, refer to the following table and open the project usin
 | Project Name      | Description                                    |
 | ----------------- | ---------------------------------------------- |
 | sam_e54_xpro.X    | MPLABX Project for [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
-| sam_e54_xpro_iar.IAR    | IAR Project for [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
-| sam_e54_xpro_keil.KEIL    | KEIL uVision Project for [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
+| sam_e54_xpro_iar.IAR/usart_echo_interrupt_sam_e54_xpro.eww    | IAR Project for [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
+| sam_e54_xpro_keil.KEIL/usart_echo_interrupt_sam_e54_xpro_keil.uvprojx    | KEIL uVision Project for [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
 |||
 
 ## Setting up the hardware
@@ -37,7 +37,7 @@ The following table shows the target hardware for the application projects.
 
 | Project Name| Board|
 |:---------|:---------:|
-| sam_e54_xpro.X <br> sam_e54_xpro_iar.IAR <br> sam_e54_xpro_keil.KEIL  | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
+| sam_e54_xpro.X <br> sam_e54_xpro_iar.IAR/usart_echo_interrupt_sam_e54_xpro.eww <br> sam_e54_xpro_keil.KEIL/usart_echo_interrupt_sam_e54_xpro_keil.uvprojx  | [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)|
 |||
 
 ### Setting up [SAM E54 Xplained Pro board](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro)
