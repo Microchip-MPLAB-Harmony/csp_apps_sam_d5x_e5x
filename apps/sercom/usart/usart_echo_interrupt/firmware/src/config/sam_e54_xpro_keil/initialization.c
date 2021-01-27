@@ -104,6 +104,7 @@
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_Initialize( );
 
   
@@ -115,6 +116,8 @@ void SYS_Initialize ( void* data )
 
 
     SERCOM2_USART_Initialize();
+
+    EVSYS_Initialize();
 
 
 

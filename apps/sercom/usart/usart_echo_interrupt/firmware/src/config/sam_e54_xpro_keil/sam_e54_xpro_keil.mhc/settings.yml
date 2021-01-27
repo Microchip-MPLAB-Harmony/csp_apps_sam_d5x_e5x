@@ -1,0 +1,14 @@
+configName: sam_e54_xpro_keil
+folderName: ''
+format_version: v1.0
+frameworkPath: D:\Projects\h3
+processor: ATSAME54P20A
+projectName: usart_echo_interrupt_sam_e54_xpro_keil
+settings:
+  PackageFilter: bsp;core;csp;net;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.6.0
+  MERGE_STRATEGY: OVERWRITE
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.2.60\atdf\ATSAME54P20A.atdf
