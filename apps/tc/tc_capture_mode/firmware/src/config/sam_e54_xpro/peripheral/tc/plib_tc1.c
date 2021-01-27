@@ -52,7 +52,7 @@
 // *****************************************************************************
 /* This section lists the other files that are included in this file.
 */
-
+#include "interrupts.h"
 #include "plib_tc1.h"
 
 // *****************************************************************************
@@ -62,7 +62,7 @@
 // *****************************************************************************
 
 
-TC_CAPTURE_CALLBACK_OBJ TC1_CallbackObject;
+static TC_CAPTURE_CALLBACK_OBJ TC1_CallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -85,13 +85,13 @@ void TC1_CaptureInitialize( void )
                                   | TC_CTRLA_CAPTEN0_Msk | TC_CTRLA_CAPTEN1_Msk  ;
 
 
-    TC1_REGS->COUNT16.TC_EVCTRL = TC_EVCTRL_EVACT_PPW | TC_EVCTRL_TCEI_Msk;
+    TC1_REGS->COUNT16.TC_EVCTRL = (uint8_t)(TC_EVCTRL_EVACT_PPW | TC_EVCTRL_TCEI_Msk);
 
     /* Clear all interrupt flags */
-    TC1_REGS->COUNT16.TC_INTFLAG = TC_INTFLAG_Msk;
+    TC1_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
 
     /* Enable Interrupt */
-    TC1_REGS->COUNT16.TC_INTENSET = TC_INTENSET_MC0_Msk;
+    TC1_REGS->COUNT16.TC_INTENSET = (uint8_t)(TC_INTENSET_MC0_Msk);
     TC1_CallbackObject.callback = NULL;
 }
 
@@ -120,13 +120,13 @@ void TC1_CaptureStop( void )
 
 uint32_t TC1_CaptureFrequencyGet( void )
 {
-    return (uint32_t)(30000000UL);
+    return (uint32_t)(30000000U);
 }
 
 void TC1_CaptureCommandSet(TC_COMMAND command)
 {
-    TC1_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
-    while((TC1_REGS->COUNT16.TC_SYNCBUSY))
+    TC1_REGS->COUNT16.TC_CTRLBSET = (uint8_t)((uint32_t)command << TC_CTRLBSET_CMD_Pos);
+    while((TC1_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
     }    
@@ -151,12 +151,12 @@ void TC1_CaptureCallbackRegister( TC_CAPTURE_CALLBACK callback, uintptr_t contex
 
 void TC1_CaptureInterruptHandler( void )
 {
-    if (TC1_REGS->COUNT16.TC_INTENSET != 0)
+    if (TC1_REGS->COUNT16.TC_INTENSET != 0U)
     {
         TC_CAPTURE_STATUS status;
         status = (TC_CAPTURE_STATUS) (TC1_REGS->COUNT16.TC_INTFLAG);
         /* Clear all interrupts */
-        TC1_REGS->COUNT16.TC_INTFLAG = TC_INTFLAG_Msk;
+        TC1_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
 
         if((status != TC_CAPTURE_STATUS_NONE) && TC1_CallbackObject.callback != NULL)
         {
