@@ -41,6 +41,7 @@
 
 #include "device.h"
 #include "plib_trng.h"
+#include "interrupts.h"
 
 
 void TRNG_Initialize( void )
