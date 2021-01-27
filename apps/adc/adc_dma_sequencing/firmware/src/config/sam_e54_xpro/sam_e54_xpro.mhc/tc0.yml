@@ -1,0 +1,80 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tc0}
+children:
+- type: Symbols
+  children:
+  - type: Comment
+    attributes: {id: TC_COMPARE_PERIOD_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '**** Compare Period is 409.6 us ****'}
+  - type: KeyValueSet
+    attributes: {id: TC_CTRLA_PRESCALER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: Integer
+    attributes: {id: TC_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc0, value: '58593'}
+  - type: Comment
+    attributes: {id: TC_Resolution}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '****Timer resolution is 17066.6666667 nS****'}
+  - type: Boolean
+    attributes: {id: TC_TIMER_EVCTRL_OVFEO}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: TC_TIMER_INTENSET_OVF}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: Long
+    attributes: {id: TC_TIMER_PERIOD}
+    children:
+    - type: Attributes
+      children:
+      - type: Long
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '65535'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc0, value: '29296'}
+  - type: Float
+    attributes: {id: TC_TIMER_TIME_MS}
+    children:
+    - type: Attributes
+      children:
+      - type: Float
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '1118.4811'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '500.0'}
+- type: ElementPosition
+  attributes: {x: '171', y: '60', id: tc0}
