@@ -53,6 +53,7 @@
 /* This section lists the other files that are included in this file.
 */
 
+#include "interrupts.h"
 #include "plib_tc4.h"
 
 // *****************************************************************************
@@ -83,17 +84,17 @@ void TC4_CompareInitialize( void )
     TC4_REGS->COUNT16.TC_CTRLA = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_PRESCALER_DIV64 | TC_CTRLA_PRESCSYNC_PRESC ;
 
     /* Configure waveform generation mode */
-    TC4_REGS->COUNT16.TC_WAVE = TC_WAVE_WAVEGEN_MPWM;
+    TC4_REGS->COUNT16.TC_WAVE = (uint8_t)TC_WAVE_WAVEGEN_MPWM;
 
 
     TC4_REGS->COUNT16.TC_CC[0] = 12500U;
     TC4_REGS->COUNT16.TC_CC[1] = 3000U;
 
     /* Clear all interrupt flags */
-    TC4_REGS->COUNT16.TC_INTFLAG = TC_INTFLAG_Msk;
+    TC4_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
 
 
-    while((TC4_REGS->COUNT16.TC_SYNCBUSY))
+    while((TC4_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -126,8 +127,8 @@ uint32_t TC4_CompareFrequencyGet( void )
 
 void TC4_CompareCommandSet(TC_COMMAND command)
 {
-    TC4_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
-    while((TC4_REGS->COUNT16.TC_SYNCBUSY))
+    TC4_REGS->COUNT16.TC_CTRLBSET = (uint8_t)((uint32_t)command << TC_CTRLBSET_CMD_Pos);
+    while((TC4_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
     }    
@@ -137,14 +138,14 @@ void TC4_CompareCommandSet(TC_COMMAND command)
 uint16_t TC4_Compare16bitCounterGet( void )
 {
     /* Write command to force COUNT register read synchronization */
-    TC4_REGS->COUNT16.TC_CTRLBSET |= TC_CTRLBSET_CMD_READSYNC;
+    TC4_REGS->COUNT16.TC_CTRLBSET |= (uint8_t)TC_CTRLBSET_CMD_READSYNC;
 
     while((TC4_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CTRLB_Msk) == TC_SYNCBUSY_CTRLB_Msk)
     {
         /* Wait for Write Synchronization */
     }
 
-    while((TC4_REGS->COUNT16.TC_CTRLBSET & TC_CTRLBSET_CMD_Msk) != 0)
+    while((TC4_REGS->COUNT16.TC_CTRLBSET & TC_CTRLBSET_CMD_Msk) != 0U)
     {
         /* Wait for CMD to become zero */
     }
@@ -165,14 +166,16 @@ void TC4_Compare16bitCounterSet( uint16_t count )
 }
 
 /* Configure period value */
-void TC4_Compare16bitPeriodSet( uint16_t period )
+bool TC4_Compare16bitPeriodSet( uint16_t period )
 {
-    /* Configure period value */
-    TC4_REGS->COUNT16.TC_CCBUF[0] = period;
-    while((TC4_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CC0_Msk) == TC_SYNCBUSY_CC0_Msk)
+    bool status = false;
+    if((TC4_REGS->COUNT16.TC_STATUS & TC_STATUS_CCBUFV0_Msk) == 0U)
     {
-        /* Wait for Write Synchronization */
+        /* Configure period value */
+        TC4_REGS->COUNT16.TC_CCBUF[0] = period;
+        status = true;
     }
+    return status;
 }
 
 /* Read period value */
@@ -183,25 +186,29 @@ uint16_t TC4_Compare16bitPeriodGet( void )
 }
 
 /* Configure duty cycle value */
-void TC4_Compare16bitMatch0Set( uint16_t compareValue )
+bool TC4_Compare16bitMatch0Set( uint16_t compareValue )
 {
-    /* Set new compare value for compare channel 0 */
-    TC4_REGS->COUNT16.TC_CCBUF[0] = compareValue;
-    while((TC4_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CC0_Msk) == TC_SYNCBUSY_CC0_Msk)
+    bool status = false;
+    if((TC4_REGS->COUNT16.TC_STATUS & TC_STATUS_CCBUFV0_Msk) == 0U)
     {
-        /* Wait for Write Synchronization */
+        /* Set new compare value for compare channel 0 */
+        TC4_REGS->COUNT16.TC_CCBUF[0] = compareValue;
+        status = true;
     }
+    return status;
 }
 
 /* Configure duty cycle value */
-void TC4_Compare16bitMatch1Set( uint16_t compareValue )
+bool TC4_Compare16bitMatch1Set( uint16_t compareValue )
 {
-    /* Set new compare value for compare channel 1 */
-    TC4_REGS->COUNT16.TC_CCBUF[1] = compareValue;
-    while((TC4_REGS->COUNT16.TC_SYNCBUSY & TC_SYNCBUSY_CC1_Msk) == TC_SYNCBUSY_CC1_Msk)
+    bool status = false;
+    if((TC4_REGS->COUNT16.TC_STATUS & TC_STATUS_CCBUFV1_Msk) == 0U)
     {
-        /* Wait for Write Synchronization */
+        /* Set new compare value for compare channel 1 */
+        TC4_REGS->COUNT16.TC_CCBUF[1] = compareValue;
+        status = true;
     }
+    return status;
 }
 
 
@@ -214,6 +221,6 @@ TC_COMPARE_STATUS TC4_CompareStatusGet( void )
     TC_COMPARE_STATUS compare_status;
     compare_status = ((TC_COMPARE_STATUS)(TC4_REGS->COUNT16.TC_INTFLAG));
     /* Clear timer overflow interrupt */
-    TC4_REGS->COUNT16.TC_INTFLAG = compare_status;
+    TC4_REGS->COUNT16.TC_INTFLAG = (uint8_t)compare_status;
     return compare_status;
 }
