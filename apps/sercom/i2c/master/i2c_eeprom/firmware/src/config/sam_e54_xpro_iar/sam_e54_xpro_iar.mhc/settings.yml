@@ -1,0 +1,13 @@
+configName: sam_e54_xpro_iar
+folderName: ''
+format_version: v1.0
+frameworkPath: D:\HARMONY3
+processor: ATSAME54P20A
+projectName: i2c_eeprom_sam_e54_xpro
+settings:
+  PackageFilter: bsp;core;csp;net;
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.6.0
+  MERGE_STRATEGY: OVERWRITE
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.2.60\atdf\ATSAME54P20A.atdf
