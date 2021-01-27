@@ -1,7 +1,7 @@
 /**
  * \brief Header file for ATSAME54P20A
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -610,6 +610,69 @@ void SDHC1_Handler                 ( void );
 #include "component/usb.h"
 #include "component/wdt.h"
 /** @}  end of Peripheral Software API */
+
+/* ************************************************************************** */
+/*   INSTANCE DEFINITIONS FOR SAME54P20A */
+/* ************************************************************************** */
+#include "instance/ac.h"
+#include "instance/adc0.h"
+#include "instance/adc1.h"
+#include "instance/aes.h"
+#include "instance/can0.h"
+#include "instance/can1.h"
+#include "instance/ccl.h"
+#include "instance/cmcc.h"
+#include "instance/dac.h"
+#include "instance/dmac.h"
+#include "instance/dsu.h"
+#include "instance/eic.h"
+#include "instance/evsys.h"
+#include "instance/freqm.h"
+#include "instance/gclk.h"
+#include "instance/gmac.h"
+#include "instance/hmatrix.h"
+#include "instance/i2s.h"
+#include "instance/icm.h"
+#include "instance/mclk.h"
+#include "instance/nvmctrl.h"
+#include "instance/osc32kctrl.h"
+#include "instance/oscctrl.h"
+#include "instance/pac.h"
+#include "instance/pcc.h"
+#include "instance/pdec.h"
+#include "instance/pm.h"
+#include "instance/port.h"
+#include "instance/qspi.h"
+#include "instance/ramecc.h"
+#include "instance/rstc.h"
+#include "instance/rtc.h"
+#include "instance/sdhc0.h"
+#include "instance/sdhc1.h"
+#include "instance/sercom0.h"
+#include "instance/sercom1.h"
+#include "instance/sercom2.h"
+#include "instance/sercom3.h"
+#include "instance/sercom4.h"
+#include "instance/sercom5.h"
+#include "instance/sercom6.h"
+#include "instance/sercom7.h"
+#include "instance/supc.h"
+#include "instance/tc0.h"
+#include "instance/tc1.h"
+#include "instance/tc2.h"
+#include "instance/tc3.h"
+#include "instance/tc4.h"
+#include "instance/tc5.h"
+#include "instance/tc6.h"
+#include "instance/tc7.h"
+#include "instance/tcc0.h"
+#include "instance/tcc1.h"
+#include "instance/tcc2.h"
+#include "instance/tcc3.h"
+#include "instance/tcc4.h"
+#include "instance/trng.h"
+#include "instance/usb.h"
+#include "instance/wdt.h"
 
 /** \addtogroup SAME54P20A_id Peripheral Ids Definitions
  *  @{

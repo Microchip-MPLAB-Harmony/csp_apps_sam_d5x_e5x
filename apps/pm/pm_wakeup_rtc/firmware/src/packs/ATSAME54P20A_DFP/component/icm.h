@@ -1,7 +1,7 @@
 /**
  * \brief Component description for ICM
  *
- * Copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2021 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -366,6 +366,14 @@
 #define ICM_DSCR_REG_OFST              (0x30)              /**< (ICM_DSCR) Region Descriptor Area Start Address Offset */
 #define ICM_HASH_REG_OFST              (0x34)              /**< (ICM_HASH) Region Hash Area Start Address Offset */
 #define ICM_UIHVAL_REG_OFST            (0x38)              /**< (ICM_UIHVAL) User Initial Hash Value n Offset */
+#define ICM_UIHVAL0_REG_OFST           (0x38)              /**< (ICM_UIHVAL0) User Initial Hash Value n Offset */
+#define ICM_UIHVAL1_REG_OFST           (0x3C)              /**< (ICM_UIHVAL1) User Initial Hash Value n Offset */
+#define ICM_UIHVAL2_REG_OFST           (0x40)              /**< (ICM_UIHVAL2) User Initial Hash Value n Offset */
+#define ICM_UIHVAL3_REG_OFST           (0x44)              /**< (ICM_UIHVAL3) User Initial Hash Value n Offset */
+#define ICM_UIHVAL4_REG_OFST           (0x48)              /**< (ICM_UIHVAL4) User Initial Hash Value n Offset */
+#define ICM_UIHVAL5_REG_OFST           (0x4C)              /**< (ICM_UIHVAL5) User Initial Hash Value n Offset */
+#define ICM_UIHVAL6_REG_OFST           (0x50)              /**< (ICM_UIHVAL6) User Initial Hash Value n Offset */
+#define ICM_UIHVAL7_REG_OFST           (0x54)              /**< (ICM_UIHVAL7) User Initial Hash Value n Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /** \brief ICM_DESCRIPTOR register API structure */
