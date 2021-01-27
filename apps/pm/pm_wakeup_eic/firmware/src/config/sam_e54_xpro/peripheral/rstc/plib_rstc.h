@@ -70,6 +70,37 @@
 
 // *****************************************************************************
 // *****************************************************************************
+// Section:Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+
+#define RSTC_RESET_CAUSE_POR_RESET  RSTC_RCAUSE_POR_Msk
+
+#define RSTC_RESET_CAUSE_BODCORE_RESET  RSTC_RCAUSE_BODCORE_Msk
+
+#define RSTC_RESET_CAUSE_BODVDD_RESET  RSTC_RCAUSE_BODVDD_Msk
+
+#define RSTC_RESET_CAUSE_NVM_RESET  RSTC_RCAUSE_NVM_Msk
+
+#define RSTC_RESET_CAUSE_EXT_RESET  RSTC_RCAUSE_EXT_Msk
+
+#define RSTC_RESET_CAUSE_WDT_RESET  RSTC_RCAUSE_WDT_Msk
+
+#define RSTC_RESET_CAUSE_SYST_RESET  RSTC_RCAUSE_SYST_Msk
+
+#define RSTC_RESET_CAUSE_BACKUP_RESET  RSTC_RCAUSE_BACKUP_Msk
+
+
+#define RSTC_BKUPEXIT_CAUSE_RTC  RSTC_BKUPEXIT_RTC_Msk
+
+#define RSTC_BKUPEXIT_CAUSE_BBPS  RSTC_BKUPEXIT_BBPS_Msk
+
+#define RSTC_BKUPEXIT_CAUSE_HIB  RSTC_BKUPEXIT_HIB_Msk
+
+
+
+// *****************************************************************************
+// *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
@@ -91,37 +122,9 @@
     Refer to the specific device data sheet to determine availability.
 */
 
-typedef enum
-{
+typedef uint32_t RSTC_RESET_CAUSE;
 
-    RSTC_RESET_CAUSE_POR_RESET = RSTC_RCAUSE_POR_Msk,
-
-    RSTC_RESET_CAUSE_BODCORE_RESET = RSTC_RCAUSE_BODCORE_Msk,
-
-    RSTC_RESET_CAUSE_BODVDD_RESET = RSTC_RCAUSE_BODVDD_Msk,
-
-    RSTC_RESET_CAUSE_NVM_RESET = RSTC_RCAUSE_NVM_Msk,
-
-    RSTC_RESET_CAUSE_EXT_RESET = RSTC_RCAUSE_EXT_Msk,
-
-    RSTC_RESET_CAUSE_WDT_RESET = RSTC_RCAUSE_WDT_Msk,
-
-    RSTC_RESET_CAUSE_SYST_RESET = RSTC_RCAUSE_SYST_Msk,
-
-    RSTC_RESET_CAUSE_BACKUP_RESET = RSTC_RCAUSE_BACKUP_Msk,
-
-} RSTC_RESET_CAUSE;
-
-typedef enum
-{
-
-    RSTC_BKUPEXIT_CAUSE_RTC = RSTC_BKUPEXIT_RTC_Msk,
-
-    RSTC_BKUPEXIT_CAUSE_BBPS = RSTC_BKUPEXIT_BBPS_Msk,
-
-    RSTC_BKUPEXIT_CAUSE_HIB = RSTC_BKUPEXIT_HIB_Msk,
-
-} RSTC_BKUPEXIT_CAUSE;
+typedef uint32_t RSTC_BKUPEXIT_CAUSE;
 
 RSTC_BKUPEXIT_CAUSE RSTC_BackupExitCauseGet (void);
 
