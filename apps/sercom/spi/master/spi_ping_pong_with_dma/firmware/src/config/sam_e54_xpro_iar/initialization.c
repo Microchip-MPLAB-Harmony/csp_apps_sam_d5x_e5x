@@ -104,6 +104,7 @@
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_Initialize( );
 
   
@@ -113,6 +114,8 @@ void SYS_Initialize ( void* data )
 
 
 
+
+    EVSYS_Initialize();
 
     SERCOM6_SPI_Initialize();
 
