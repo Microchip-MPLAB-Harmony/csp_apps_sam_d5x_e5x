@@ -46,6 +46,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#include "interrupts.h"
 #include "plib_wdt.h"
 
 
@@ -61,26 +62,68 @@ void WDT_Enable( void )
     if((WDT_REGS->WDT_CTRLA & WDT_CTRLA_ALWAYSON_Msk) != WDT_CTRLA_ALWAYSON_Msk)
     {
         /* Enable Watchdog Timer */
-        WDT_REGS->WDT_CTRLA |= WDT_CTRLA_ENABLE_Msk;
+        WDT_REGS->WDT_CTRLA |= (uint8_t)WDT_CTRLA_ENABLE_Msk;
 
         /* Wait for synchronization */
-        while(WDT_REGS->WDT_SYNCBUSY);
+        while(WDT_REGS->WDT_SYNCBUSY != 0U)
+        {
+
+        }
     }
 }
 
+/* This function is used to disable the Watchdog Timer */
 void WDT_Disable( void )
 {
+    /* Wait for synchronization */
+    while(WDT_REGS->WDT_SYNCBUSY != 0U)
+    {
+
+    }
+
     /* Disable Watchdog Timer */
-    WDT_REGS->WDT_CTRLA &= ~(WDT_CTRLA_ENABLE_Msk);
+    WDT_REGS->WDT_CTRLA &= (uint8_t)(~WDT_CTRLA_ENABLE_Msk);
+
+    /* Wait for synchronization */
+    while(WDT_REGS->WDT_SYNCBUSY != 0U)
+    {
+
+    }
 }
 
+/* If application intends to stay in active mode after clearing WDT, then use WDT_Clear API to clear the WDT. This avoids CPU from waiting or stalling for Synchronization.
+ * If application intends to enter low power mode after clearing WDT, then use the WDT_ClearWithSync API to clear the WDT.
+ */
 void WDT_Clear( void )
 {
     if ((WDT_REGS->WDT_SYNCBUSY & WDT_SYNCBUSY_CLEAR_Msk) != WDT_SYNCBUSY_CLEAR_Msk)
     {
         /* Clear WDT and reset the WDT timer before the
         timeout occurs */
-        WDT_REGS->WDT_CLEAR = WDT_CLEAR_CLEAR_KEY;
+        WDT_REGS->WDT_CLEAR = (uint8_t)WDT_CLEAR_CLEAR_KEY;
+    }
+}
+
+/* This API must be used if application intends to enter low power mode after clearing WDT.
+ * It waits for write synchronization to complete as the device must not enter low power mode
+ * while write sync is in progress.
+ */
+void WDT_ClearWithSync( void )
+{
+    /* Wait for synchronization */
+    while(WDT_REGS->WDT_SYNCBUSY != 0U)
+    {
+
+    }
+
+    /* Clear WDT and reset the WDT timer before the
+    timeout occurs */
+    WDT_REGS->WDT_CLEAR = (uint8_t)WDT_CLEAR_CLEAR_KEY;
+
+    /* Wait for synchronization */
+    while(WDT_REGS->WDT_SYNCBUSY != 0U)
+    {
+
     }
 }
 

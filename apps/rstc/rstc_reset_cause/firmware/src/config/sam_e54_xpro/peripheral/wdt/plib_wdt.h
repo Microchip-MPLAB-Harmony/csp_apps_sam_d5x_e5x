@@ -81,6 +81,8 @@ void WDT_Disable( void );
 
 void WDT_Clear( void );
 
+void WDT_ClearWithSync( void );
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

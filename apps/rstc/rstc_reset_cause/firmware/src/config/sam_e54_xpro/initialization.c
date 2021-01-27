@@ -140,6 +140,7 @@ static void STDIO_BufferModeSet(void)
 
 void SYS_Initialize ( void* data )
 {
+
     NVMCTRL_Initialize( );
 
     STDIO_BufferModeSet();
@@ -154,6 +155,8 @@ void SYS_Initialize ( void* data )
 
 
     SERCOM2_USART_Initialize();
+
+    EVSYS_Initialize();
 
 	SYSTICK_TimerInitialize();
     EIC_Initialize();
