@@ -91,6 +91,57 @@ typedef enum
 
 } DMAC_TRANSFER_EVENT;
 
+typedef enum
+{
+    /* CRC16 (CRC-CCITT): 0x1021 */
+    DMAC_CRC_TYPE_16 = 0x0,
+
+    /* CRC32 (IEEE 802.3): 0x04C11DB7*/
+    DMAC_CRC_TYPE_32 = 0x1
+
+} DMAC_CRC_POLYNOMIAL_TYPE;
+
+typedef enum
+{
+    /* Byte bus access. */
+    DMAC_CRC_BEAT_SIZE_BYTE     = 0x0,
+
+    /* Half-word bus access. */
+    DMAC_CRC_BEAT_SIZE_HWORD    = 0x1,
+
+    /* Word bus access. */
+    DMAC_CRC_BEAT_SIZE_WORD     = 0x2
+
+} DMAC_CRC_BEAT_SIZE;
+
+typedef enum
+{
+    /* Default Operating mode */
+    DMAC_CRC_MODE_DEFAULT           = 0x0,
+
+    /* Reserved */
+    DMAC_CRC_MODE_RESERVED          = 0x1,
+
+    /* Memory CRC monitor operating mode */
+    DMAC_CRC_MODE_MEMORY_MONITOR    = 0x2,
+
+    /* Memory CRC generation operating mode */
+    DMAC_CRC_MODE_MEMORY_GEN        = 0x3
+
+} DMAC_CRC_MODE;
+
+typedef struct
+{
+    /* CRCCTRL[CRCPOLY]: Polynomial Type (CRC16, CRC32) */
+    DMAC_CRC_POLYNOMIAL_TYPE polynomial_type;
+
+    /* CRCCTRL[CRCMODE]: CRC Mode. Used with DMA Channel only.*/
+    DMAC_CRC_MODE crc_mode;
+
+    /* CRCCHKSUM: Initial Seed for calculating the CRC */
+    uint32_t seed;
+} DMAC_CRC_SETUP;
+
 typedef uint32_t DMAC_CHANNEL_CONFIG;
 
 typedef void (*DMAC_CHANNEL_CALLBACK) (DMAC_TRANSFER_EVENT event, uintptr_t contextHandle);
@@ -100,10 +151,24 @@ void DMAC_ChannelCallbackRegister (DMAC_CHANNEL channel, const DMAC_CHANNEL_CALL
 bool DMAC_ChannelTransfer (DMAC_CHANNEL channel, const void *srcAddr, const void *destAddr, size_t blockSize);
 bool DMAC_ChannelIsBusy ( DMAC_CHANNEL channel );
 void DMAC_ChannelDisable ( DMAC_CHANNEL channel );
+void DMAC_LinkedListDescriptorSetup (dmac_descriptor_registers_t* currentDescriptor,
+                                                    DMAC_CHANNEL_CONFIG setting,
+                                                    const void *srcAddr,
+                                                    const void *destAddr,
+                                                    size_t blockSize,
+                                                    dmac_descriptor_registers_t* nextDescriptor);
 bool DMAC_ChannelLinkedListTransfer ( DMAC_CHANNEL channel, dmac_descriptor_registers_t * channelDesc );
 DMAC_CHANNEL_CONFIG  DMAC_ChannelSettingsGet ( DMAC_CHANNEL channel );
 bool  DMAC_ChannelSettingsSet ( DMAC_CHANNEL channel, DMAC_CHANNEL_CONFIG settings );
 uint16_t DMAC_ChannelGetTransferredCount( DMAC_CHANNEL channel );
+
+void DMAC_ChannelCRCSetup(DMAC_CHANNEL channel, DMAC_CRC_SETUP CRCSetup);
+uint32_t DMAC_CRCRead( void );
+
+uint32_t DMAC_CRCCalculate(void *buffer, uint32_t length, DMAC_CRC_SETUP CRCSetup);
+
+void DMAC_CRCDisable( void );
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
