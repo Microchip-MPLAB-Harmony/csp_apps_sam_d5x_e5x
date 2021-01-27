@@ -55,11 +55,37 @@
 extern "C" {
 #endif
 // DOM-IGNORE-END
+// *****************************************************************************
+// *****************************************************************************
+// Section:Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
 
+
+#define RTC_CLOCK_INT_MASK_PER0  RTC_MODE2_INTENSET_PER0_Msk
+#define RTC_CLOCK_INT_MASK_PER1  RTC_MODE2_INTENSET_PER1_Msk
+#define RTC_CLOCK_INT_MASK_PER2  RTC_MODE2_INTENSET_PER2_Msk
+#define RTC_CLOCK_INT_MASK_PER3  RTC_MODE2_INTENSET_PER3_Msk
+#define RTC_CLOCK_INT_MASK_PER4  RTC_MODE2_INTENSET_PER4_Msk
+#define RTC_CLOCK_INT_MASK_PER5  RTC_MODE2_INTENSET_PER5_Msk
+#define RTC_CLOCK_INT_MASK_PER6  RTC_MODE2_INTENSET_PER6_Msk
+#define RTC_CLOCK_INT_MASK_PER7  RTC_MODE2_INTENSET_PER7_Msk
+#define RTC_CLOCK_INT_MASK_ALARM0  RTC_MODE2_INTENSET_ALARM0_Msk
+#define RTC_CLOCK_INT_MASK_ALARM1  RTC_MODE2_INTENSET_ALARM1_Msk
+#define RTC_CLOCK_INT_MASK_TAMPER  RTC_MODE2_INTENSET_TAMPER_Msk
+#define RTC_CLOCK_INT_MASK_OVF  RTC_MODE2_INTENSET_OVF_Msk
+#define RTC_CLOCK_INT_MASK_INVALID  0xFFFFFFFFU
+// *****************************************************************************
+// *****************************************************************************
+// Section: Data Types
+// *****************************************************************************
+// *****************************************************************************
+// *****************************************************************************
 
 typedef enum
 {
-    RTC_ALARM_MASK_SS = 0x1,    //Alarm every minute
+    RTC_ALARM_MASK_SS = 0x1U,    //Alarm every minute
     RTC_ALARM_MASK_MMSS,        //Alarm every Hour
     RTC_ALARM_MASK_HHMMSS,      //Alarm Every Day
     RTC_ALARM_MASK_DDHHMMSS,    //Alarm Every Month
@@ -67,42 +93,26 @@ typedef enum
     RTC_ALARM_MASK_YYMMDDHHMMSS //Alarm Once
 } RTC_ALARM_MASK;
 
-typedef enum
-{
-    RTC_CLOCK_INT_MASK_PER0 = RTC_MODE2_INTENSET_PER0_Msk,
-    RTC_CLOCK_INT_MASK_PER1 = RTC_MODE2_INTENSET_PER1_Msk,
-    RTC_CLOCK_INT_MASK_PER2 = RTC_MODE2_INTENSET_PER2_Msk,
-    RTC_CLOCK_INT_MASK_PER3 = RTC_MODE2_INTENSET_PER3_Msk,
-    RTC_CLOCK_INT_MASK_PER4 = RTC_MODE2_INTENSET_PER4_Msk,
-    RTC_CLOCK_INT_MASK_PER5 = RTC_MODE2_INTENSET_PER5_Msk,
-    RTC_CLOCK_INT_MASK_PER6 = RTC_MODE2_INTENSET_PER6_Msk,
-    RTC_CLOCK_INT_MASK_PER7 = RTC_MODE2_INTENSET_PER7_Msk,
-    RTC_CLOCK_INT_MASK_ALARM0 = RTC_MODE2_INTENSET_ALARM0_Msk,
-    RTC_CLOCK_INT_MASK_ALARM1 = RTC_MODE2_INTENSET_ALARM1_Msk,
-    RTC_CLOCK_INT_MASK_TAMPER = RTC_MODE2_INTENSET_TAMPER_Msk,
-    RTC_CLOCK_INT_MASK_OVF = RTC_MODE2_INTENSET_OVF_Msk,
-   /* Force the compiler to reserve 32-bit memory for enum */
-    RTC_CLOCK_INT_MASK_INVALID = 0xFFFFFFFF
-} RTC_CLOCK_INT_MASK;
+typedef uint32_t RTC_CLOCK_INT_MASK;
 
 typedef enum
 {
-    BACKUP_REGISTER_0 = 0,
-    BACKUP_REGISTER_1 = 1,
-    BACKUP_REGISTER_2 = 2,
-    BACKUP_REGISTER_3 = 3,
-    BACKUP_REGISTER_4 = 4,
-    BACKUP_REGISTER_5 = 5,
-    BACKUP_REGISTER_6 = 6,
-    BACKUP_REGISTER_7 = 7
+    BACKUP_REGISTER_0 = 0U,
+    BACKUP_REGISTER_1 = 1U,
+    BACKUP_REGISTER_2 = 2U,
+    BACKUP_REGISTER_3 = 3U,
+    BACKUP_REGISTER_4 = 4U,
+    BACKUP_REGISTER_5 = 5U,
+    BACKUP_REGISTER_6 = 6U,
+    BACKUP_REGISTER_7 = 7U
 } BACKUP_REGISTER;
 typedef enum
 {
-    TAMPER_CHANNEL_0 = 0,
-    TAMPER_CHANNEL_1 = 1,
-    TAMPER_CHANNEL_2 = 2,
-    TAMPER_CHANNEL_3 = 3,
-    TAMPER_CHANNEL_4 = 4
+    TAMPER_CHANNEL_0 = 0U,
+    TAMPER_CHANNEL_1 = 1U,
+    TAMPER_CHANNEL_2 = 2U,
+    TAMPER_CHANNEL_3 = 3U,
+    TAMPER_CHANNEL_4 = 4U
 } TAMPER_CHANNEL;
 typedef void (*RTC_CALLBACK)( RTC_CLOCK_INT_MASK intCause, uintptr_t context );
 
