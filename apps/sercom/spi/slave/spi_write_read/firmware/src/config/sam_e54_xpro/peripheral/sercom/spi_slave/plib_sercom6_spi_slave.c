@@ -45,6 +45,7 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
+#include "interrupts.h"
 #include "plib_sercom6_spi_slave.h"
 #include "peripheral/port/plib_port.h"
 #include <string.h>
@@ -54,8 +55,8 @@
 // Section: MACROS Definitions
 // *****************************************************************************
 // *****************************************************************************
-#define SERCOM6_SPI_READ_BUFFER_SIZE            256
-#define SERCOM6_SPI_WRITE_BUFFER_SIZE           256
+#define SERCOM6_SPI_READ_BUFFER_SIZE            256U
+#define SERCOM6_SPI_WRITE_BUFFER_SIZE           256U
 
 static uint8_t SERCOM6_SPI_ReadBuffer[SERCOM6_SPI_READ_BUFFER_SIZE];
 static uint8_t SERCOM6_SPI_WriteBuffer[SERCOM6_SPI_WRITE_BUFFER_SIZE];
@@ -81,7 +82,10 @@ void SERCOM6_SPI_Initialize(void)
     SERCOM6_REGS->SPIS.SERCOM_CTRLB = SERCOM_SPIS_CTRLB_CHSIZE_8_BIT | SERCOM_SPIS_CTRLB_PLOADEN_Msk | SERCOM_SPIS_CTRLB_RXEN_Msk | SERCOM_SPIS_CTRLB_SSDE_Msk;
 
     /* Wait for synchronization */
-    while(SERCOM6_REGS->SPIS.SERCOM_SYNCBUSY);
+    while(SERCOM6_REGS->SPIS.SERCOM_SYNCBUSY != 0U)
+    {
+        /* Do nothing */
+    }
 
     /* Mode - SPI Slave
      * IBON - 1 (Set immediately upon buffer overflow)
@@ -95,19 +99,22 @@ void SERCOM6_SPI_Initialize(void)
     SERCOM6_REGS->SPIS.SERCOM_CTRLA = SERCOM_SPIS_CTRLA_MODE_SPI_SLAVE | SERCOM_SPIS_CTRLA_IBON_Msk | SERCOM_SPIS_CTRLA_DOPO_PAD2 | SERCOM_SPIS_CTRLA_DIPO_PAD0 | SERCOM_SPIS_CTRLA_CPOL_IDLE_LOW | SERCOM_SPIS_CTRLA_CPHA_LEADING_EDGE | SERCOM_SPIS_CTRLA_DORD_MSB | SERCOM_SPIS_CTRLA_ENABLE_Msk ;
 
     /* Wait for synchronization */
-    while(SERCOM6_REGS->SPIS.SERCOM_SYNCBUSY);
+    while(SERCOM6_REGS->SPIS.SERCOM_SYNCBUSY != 0U)
+    {
+        /* Do nothing */
+    }
 
-    sercom6SPISObj.rdInIndex = 0;
-    sercom6SPISObj.wrOutIndex = 0;
-    sercom6SPISObj.nWrBytes = 0;
+    sercom6SPISObj.rdInIndex = 0U;
+    sercom6SPISObj.wrOutIndex = 0U;
+    sercom6SPISObj.nWrBytes = 0U;
     sercom6SPISObj.errorStatus = SPI_SLAVE_ERROR_NONE;
     sercom6SPISObj.callback = NULL ;
     sercom6SPISObj.transferIsBusy = false ;
 
-    SERCOM6_REGS->SPIS.SERCOM_INTENSET = SERCOM_SPIS_INTENSET_SSL_Msk | SERCOM_SPIS_INTENCLR_RXC_Msk;
+    SERCOM6_REGS->SPIS.SERCOM_INTENSET = (uint8_t)(SERCOM_SPIS_INTENSET_SSL_Msk | SERCOM_SPIS_INTENCLR_RXC_Msk);
 
     /* Set the Busy Pin to ready state */
-    PORT_PinWrite((PORT_PIN)PORT_PIN_PD00, 0);
+    PORT_PinWrite(PORT_PIN_PD00, false);
 }
 
 /* For 9-bit mode, the "size" must be specified in terms of 16-bit words */
@@ -135,6 +142,7 @@ size_t SERCOM6_SPI_Write(void* pWrBuffer, size_t size )
 {
     uint8_t intState = SERCOM6_REGS->SPIS.SERCOM_INTENSET;
     size_t wrSize = size;
+    bool writeReady = false;
 
     SERCOM6_REGS->SPIS.SERCOM_INTENCLR = intState;
 
@@ -146,15 +154,19 @@ size_t SERCOM6_SPI_Write(void* pWrBuffer, size_t size )
     memcpy(SERCOM6_SPI_WriteBuffer, pWrBuffer, wrSize);
 
     sercom6SPISObj.nWrBytes = wrSize;
-    sercom6SPISObj.wrOutIndex = 0;
+    sercom6SPISObj.wrOutIndex = 0U;
 
-    while ((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) && (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes))
+    writeReady = (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes);
+    writeReady = ((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) == SERCOM_SPIS_INTFLAG_DRE_Msk) && writeReady;
+    while (writeReady)
     {
         SERCOM6_REGS->SPIS.SERCOM_DATA = SERCOM6_SPI_WriteBuffer[sercom6SPISObj.wrOutIndex++];
+        writeReady = (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes);
+        writeReady = ((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) == SERCOM_SPIS_INTFLAG_DRE_Msk) && writeReady;
     }
 
     /* Restore interrupt enable state and also enable DRE interrupt to start pre-loading of DATA register */
-    SERCOM6_REGS->SPIS.SERCOM_INTENSET = (intState | SERCOM_SPIS_INTENSET_DRE_Msk);
+    SERCOM6_REGS->SPIS.SERCOM_INTENSET = (intState | (uint8_t)SERCOM_SPIS_INTENSET_DRE_Msk);
 
     return wrSize;
 }
@@ -193,7 +205,7 @@ bool SERCOM6_SPI_IsBusy(void)
 /* Drive the GPIO pin to indicate to SPI Master that the slave is ready now */
 void SERCOM6_SPI_Ready(void)
 {
-    PORT_PinWrite((PORT_PIN)PORT_PIN_PD00, 0);
+    PORT_PinWrite(PORT_PIN_PD00, false);
 }
 
 SPI_SLAVE_ERROR SERCOM6_SPI_ErrorGet(void)
@@ -208,42 +220,41 @@ SPI_SLAVE_ERROR SERCOM6_SPI_ErrorGet(void)
 void SERCOM6_SPI_InterruptHandler(void)
 {
     uint8_t txRxData;
-
     uint8_t intFlag = SERCOM6_REGS->SPIS.SERCOM_INTFLAG;
 
-    if(SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_SSL_Msk)
+    if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_SSL_Msk) == SERCOM_SPIS_INTFLAG_SSL_Msk)
     {
         /* Clear the SSL flag and enable TXC interrupt */
-        SERCOM6_REGS->SPIS.SERCOM_INTFLAG = SERCOM_SPIS_INTFLAG_SSL_Msk;
-        SERCOM6_REGS->SPIS.SERCOM_INTENSET = SERCOM_SPIS_INTENSET_TXC_Msk;
-        sercom6SPISObj.rdInIndex = 0;
+        SERCOM6_REGS->SPIS.SERCOM_INTFLAG = (uint8_t)SERCOM_SPIS_INTFLAG_SSL_Msk;
+        SERCOM6_REGS->SPIS.SERCOM_INTENSET = (uint8_t)SERCOM_SPIS_INTENSET_TXC_Msk;
+        sercom6SPISObj.rdInIndex = 0U;
         sercom6SPISObj.transferIsBusy = true;
-        PORT_PinWrite((PORT_PIN)PORT_PIN_PD00, 1);
+        PORT_PinWrite(PORT_PIN_PD00, true);
     }
 
-    if (SERCOM6_REGS->SPIS.SERCOM_STATUS & SERCOM_SPIS_STATUS_BUFOVF_Msk)
+    if ((SERCOM6_REGS->SPIS.SERCOM_STATUS & SERCOM_SPIS_STATUS_BUFOVF_Msk) == SERCOM_SPIS_STATUS_BUFOVF_Msk)
     {
         /* Save the error to report it to application later, when the transfer is complete (TXC = 1) */
         sercom6SPISObj.errorStatus = SERCOM_SPIS_STATUS_BUFOVF_Msk;
 
         /* Clear the status register */
-        SERCOM6_REGS->SPIS.SERCOM_STATUS = SERCOM_SPIS_STATUS_BUFOVF_Msk;
+        SERCOM6_REGS->SPIS.SERCOM_STATUS = (uint16_t)SERCOM_SPIS_STATUS_BUFOVF_Msk;
 
         /* Flush out the received data until RXC flag is set */
-        while(SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_RXC_Msk)
+        while((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_RXC_Msk) == SERCOM_SPIS_INTFLAG_RXC_Msk)
         {
-            txRxData = SERCOM6_REGS->SPIS.SERCOM_DATA;
+            /* Reading DATA register will also clear the RXC flag */
+            txRxData = (uint8_t)SERCOM6_REGS->SPIS.SERCOM_DATA;
         }
 
         /* Clear the Error Interrupt Flag */
-        SERCOM6_REGS->SPIS.SERCOM_INTFLAG = SERCOM_SPIS_INTFLAG_ERROR_Msk;
+        SERCOM6_REGS->SPIS.SERCOM_INTFLAG = (uint8_t)SERCOM_SPIS_INTFLAG_ERROR_Msk;
     }
 
-    if(SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_RXC_Msk)
+    if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_RXC_Msk) == SERCOM_SPIS_INTFLAG_RXC_Msk)
     {
-
         /* Reading DATA register will also clear the RXC flag */
-        txRxData = SERCOM6_REGS->SPIS.SERCOM_DATA;
+        txRxData = (uint8_t)SERCOM6_REGS->SPIS.SERCOM_DATA;     
 
         if (sercom6SPISObj.rdInIndex < SERCOM6_SPI_READ_BUFFER_SIZE)
         {
@@ -251,35 +262,35 @@ void SERCOM6_SPI_InterruptHandler(void)
         }
     }
 
-    if(SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk)
+    if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) == SERCOM_SPIS_INTFLAG_DRE_Msk)
     {
         if (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes)
         {
             txRxData = SERCOM6_SPI_WriteBuffer[sercom6SPISObj.wrOutIndex++];
 
             /* Before writing to DATA register (which clears TXC flag), check if TXC flag is set */
-            if(SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_TXC_Msk)
+            if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_TXC_Msk) == SERCOM_SPIS_INTFLAG_TXC_Msk)
             {
-                intFlag = SERCOM_SPIS_INTFLAG_TXC_Msk;
+                intFlag = (uint8_t)SERCOM_SPIS_INTFLAG_TXC_Msk;
             }
-            SERCOM6_REGS->SPIS.SERCOM_DATA = txRxData;
+            SERCOM6_REGS->SPIS.SERCOM_DATA = (uint32_t)txRxData;
         }
         else
         {
             /* Disable DRE interrupt. The last byte sent by the master will be shifted out automatically */
-            SERCOM6_REGS->SPIS.SERCOM_INTENCLR = SERCOM_SPIS_INTENCLR_DRE_Msk;
+            SERCOM6_REGS->SPIS.SERCOM_INTENCLR = (uint8_t)SERCOM_SPIS_INTENCLR_DRE_Msk;
         }
     }
 
-    if(intFlag & SERCOM_SPIS_INTFLAG_TXC_Msk)
+    if((intFlag & SERCOM_SPIS_INTFLAG_TXC_Msk) == SERCOM_SPIS_INTFLAG_TXC_Msk)
     {
         /* Clear TXC flag */
-        SERCOM6_REGS->SPIS.SERCOM_INTFLAG = SERCOM_SPIS_INTFLAG_TXC_Msk;
+        SERCOM6_REGS->SPIS.SERCOM_INTFLAG = (uint8_t)SERCOM_SPIS_INTFLAG_TXC_Msk;
 
         sercom6SPISObj.transferIsBusy = false;
 
-        sercom6SPISObj.wrOutIndex = 0;
-        sercom6SPISObj.nWrBytes = 0;
+        sercom6SPISObj.wrOutIndex = 0U;
+        sercom6SPISObj.nWrBytes = 0U;
 
         if(sercom6SPISObj.callback != NULL)
         {
