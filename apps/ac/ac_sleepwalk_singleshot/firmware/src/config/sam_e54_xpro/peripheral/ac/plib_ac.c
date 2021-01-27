@@ -45,6 +45,7 @@
 // DOM-IGNORE-END
 #include "device.h"
 #include "plib_ac.h"
+#include "interrupts.h"
 
 
 AC_OBJECT acObj;
@@ -67,6 +68,7 @@ void AC_Initialize(void)
     /*Load Calibration Value*/
     uint8_t calibVal = (uint8_t)((*(uint32_t*)0x00800080) & 0x3);
     calibVal = (((calibVal) == 0x3) ? 0x3 : (calibVal));
+    
 
     AC_REGS->AC_CALIB = calibVal;
 
