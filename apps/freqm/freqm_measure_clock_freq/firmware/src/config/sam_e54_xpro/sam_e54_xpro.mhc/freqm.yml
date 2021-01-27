@@ -1,0 +1,54 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: freqm}
+children:
+- type: Symbols
+  children:
+  - type: Boolean
+    attributes: {id: FREQM_INTERRUPT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: FREQM_REF_CLK_CYCLES}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '7'}
+  - type: Integer
+    attributes: {id: FREQM_REF_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: freqm, value: '32768'}
+  - type: Comment
+    attributes: {id: FREQM_REF_CLOCK_FREQUENCY_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '*** Reference Clock Frequency 32768.0 Hz ***'}
+  - type: Integer
+    attributes: {id: FREQM_RESULT_RIGHT_SHIFT}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: freqm, value: '7'}
+  - type: Comment
+    attributes: {id: FREQ_MEASUREMENT_TIME_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '*** Measurement Time 3.906 mS ***'}
+- type: ElementPosition
+  attributes: {x: '399', y: '20', id: freqm}

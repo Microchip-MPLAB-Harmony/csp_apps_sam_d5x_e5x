@@ -49,6 +49,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
+#include "interrupts.h"
 #include "plib_freqm.h"
 
 // *****************************************************************************
@@ -65,7 +66,7 @@ typedef struct
 
 } FREQM_OBJECT;
 
-FREQM_OBJECT freqmObj;
+static FREQM_OBJECT freqmObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -75,16 +76,18 @@ FREQM_OBJECT freqmObj;
 
 void FREQM_Initialize(void)
 {
-    FREQM_REGS->FREQM_CFGA = FREQM_CFGA_REFNUM(128) ;
+    FREQM_REGS->FREQM_CFGA = (uint16_t)(FREQM_CFGA_REFNUM(128UL) );
 
     /* Enable DONE Interrupt */
-    FREQM_REGS->FREQM_INTENSET = FREQM_INTENSET_DONE_Msk;
+    FREQM_REGS->FREQM_INTENSET = (uint8_t)FREQM_INTENSET_DONE_Msk;
 
     /* Enable FREQM */
-    FREQM_REGS->FREQM_CTRLA = FREQM_CTRLA_ENABLE_Msk;
+    FREQM_REGS->FREQM_CTRLA = (uint8_t)FREQM_CTRLA_ENABLE_Msk;
 
-    /* Wait for Sync */
-    while(FREQM_REGS->FREQM_SYNCBUSY);
+    while((FREQM_REGS->FREQM_SYNCBUSY) != 0U)
+    {
+        /* Wait for Sync */
+    }
 }
 
 bool FREQM_MeasurementStart(void)
@@ -95,10 +98,10 @@ bool FREQM_MeasurementStart(void)
     if((FREQM_REGS->FREQM_STATUS & FREQM_STATUS_BUSY_Msk) != FREQM_STATUS_BUSY_Msk)
     {
         /* Clear the Done Interrupt flag */
-        FREQM_REGS->FREQM_INTFLAG = FREQM_INTFLAG_DONE_Msk;
+        FREQM_REGS->FREQM_INTFLAG = (uint8_t)FREQM_INTFLAG_DONE_Msk;
 
         /* Start measurement */
-        FREQM_REGS->FREQM_CTRLB = FREQM_CTRLB_START_Msk;
+        FREQM_REGS->FREQM_CTRLB = (uint8_t)FREQM_CTRLB_START_Msk;
 
         status = true;
     }
@@ -125,25 +128,19 @@ FREQM_ERROR FREQM_ErrorGet(void)
     errorStatus = (FREQM_ERROR) (FREQM_REGS->FREQM_STATUS & FREQM_STATUS_OVF_Msk);
 
     /* Clear overflow status */
-    FREQM_REGS->FREQM_STATUS = FREQM_STATUS_OVF_Msk;
+    FREQM_REGS->FREQM_STATUS = (uint8_t)FREQM_STATUS_OVF_Msk;
 
     return errorStatus;
 }
 
 static uint64_t FREQM_Mul32x32(uint32_t r0, uint32_t r1)
 {
-    uint16_t r0h = r0 >> 16, r0l = r0 & 0xFFFF;
-    uint16_t r1h = r1 >> 16, r1l = r1 & 0xFFFF;
-
-    return ((uint64_t)(r0h * r1h) << 32)
-         + ((uint64_t)(r0h * r1l) << 16)
-         + ((uint64_t)(r0l * r1h) << 16)
-         + ((uint64_t)(r0l * r1l) << 0);
+    return (r0 * (uint64_t)r1);
 }
 
 uint32_t FREQM_FrequencyGet(void)
 {
-    uint64_t result = 0;
+    uint64_t result = 0U;
 
     result = FREQM_Mul32x32(FREQM_REGS->FREQM_VALUE, 32768UL);
 
@@ -161,7 +158,7 @@ void FREQM_CallbackRegister(FREQM_CALLBACK freqmCallback, uintptr_t context)
 
 void FREQM_InterruptHandler(void)
 {
-    FREQM_REGS->FREQM_INTFLAG = FREQM_INTFLAG_DONE_Msk;
+    FREQM_REGS->FREQM_INTFLAG = (uint8_t)FREQM_INTFLAG_DONE_Msk;
 
     if(freqmObj.callback != NULL)
     {
