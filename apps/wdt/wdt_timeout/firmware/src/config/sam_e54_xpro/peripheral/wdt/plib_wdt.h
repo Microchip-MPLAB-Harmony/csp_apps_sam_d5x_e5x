@@ -90,6 +90,8 @@ void WDT_Disable( void );
 
 void WDT_Clear( void );
 
+void WDT_ClearWithSync( void );
+
 void WDT_CallbackRegister( WDT_CALLBACK callback, uintptr_t context );
 
 // DOM-IGNORE-BEGIN
