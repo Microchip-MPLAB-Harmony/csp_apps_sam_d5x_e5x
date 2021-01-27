@@ -1,0 +1,226 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: ccl}
+children:
+- type: Symbols
+  children:
+  - type: Hex
+    attributes: {id: CCL_CTRL_REGVALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '2'}
+  - type: Boolean
+    attributes: {id: CCL_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Hex
+    attributes: {id: CCL_LUTCTRL_REGVALUE0}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '335843362'}
+  - type: Hex
+    attributes: {id: CCL_LUTCTRL_REGVALUE1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '0'}
+  - type: Hex
+    attributes: {id: CCL_LUTCTRL_REGVALUE2}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '0'}
+  - type: Hex
+    attributes: {id: CCL_LUTCTRL_REGVALUE3}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '0'}
+  - type: Hex
+    attributes: {id: CCL_SEQCTRL_REGVALUE0}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '0'}
+  - type: Hex
+    attributes: {id: CCL_SEQCTRL_REGVALUE1}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '0'}
+  - type: KeyValueSet
+    attributes: {id: CTRL0__ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: ccl, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__EDGESEL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: LUTCTRL0__ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__FILTSEL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '2'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__INSEL0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__INSEL1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '9'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__INSEL2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '4'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__INVEI}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__LUTEI}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: LUTCTRL0__LUTEO}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Hex
+    attributes: {id: LUTCTRL0__TRUTH}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '20'}
+  - type: Boolean
+    attributes: {id: LUTCTRL1__ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: LUTCTRL2__ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: LUTCTRL3__ENABLE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: SEQCTRL0__SEQSEL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: SEQCTRL1__SEQSEL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+- type: ElementPosition
+  attributes: {x: '980', y: '20', id: ccl}
