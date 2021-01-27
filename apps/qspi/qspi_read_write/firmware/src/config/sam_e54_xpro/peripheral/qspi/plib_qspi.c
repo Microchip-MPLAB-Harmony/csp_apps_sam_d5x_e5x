@@ -88,11 +88,6 @@ static void qspi_memcpy_8bit(uint8_t* dst, uint8_t* src, uint32_t count)
     }
 }
 
-static inline void qspi_end_transfer( void )
-{
-    QSPI_REGS->QSPI_CTRLA = QSPI_CTRLA_ENABLE_Msk | QSPI_CTRLA_LASTXFER_Msk;
-}
-
 static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, uint8_t tfr_type, uint32_t address )
 {
     uint32_t mask = 0;
@@ -130,6 +125,11 @@ static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, uint8_t t
     (uint32_t)QSPI_REGS->QSPI_INSTRFRAME;
 
     return true;
+}
+
+void QSPI_EndTransfer( void )
+{
+    QSPI_REGS->QSPI_CTRLA = QSPI_CTRLA_ENABLE_Msk | QSPI_CTRLA_LASTXFER_Msk;
 }
 
 bool QSPI_CommandWrite( qspi_command_xfer_t *qspi_command_xfer, uint32_t address )
@@ -193,7 +193,7 @@ bool QSPI_RegisterRead( qspi_register_xfer_t *qspi_register_xfer, uint32_t *rx_d
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     while((QSPI_REGS->QSPI_INTFLAG & QSPI_INTFLAG_INSTREND_Msk) != QSPI_INTFLAG_INSTREND_Msk)
     {
@@ -231,7 +231,7 @@ bool QSPI_RegisterWrite( qspi_register_xfer_t *qspi_register_xfer, uint32_t *tx_
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     while((QSPI_REGS->QSPI_INTFLAG & QSPI_INTFLAG_INSTREND_Msk) != QSPI_INTFLAG_INSTREND_Msk)
     {
@@ -276,7 +276,7 @@ bool QSPI_MemoryRead( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *rx_data, u
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     while((QSPI_REGS->QSPI_INTFLAG & QSPI_INTFLAG_INSTREND_Msk) != QSPI_INTFLAG_INSTREND_Msk)
     {
@@ -316,7 +316,7 @@ bool QSPI_MemoryWrite( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t *tx_data, 
     __DSB();
     __ISB();
 
-    qspi_end_transfer();
+    QSPI_EndTransfer();
 
     while((QSPI_REGS->QSPI_INTFLAG & QSPI_INTFLAG_INSTREND_Msk) != QSPI_INTFLAG_INSTREND_Msk)
     {

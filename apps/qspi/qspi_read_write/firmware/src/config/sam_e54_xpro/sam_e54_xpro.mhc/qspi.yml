@@ -1,0 +1,31 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: qspi}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: QSPI_BAUD_RATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: qspi, value: '66000000'}
+      - type: User
+        attributes: {value: '50000000'}
+  - type: KeyValueSet
+    attributes: {id: QSPI_CPOL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: qspi, value: '0'}
+  - type: Integer
+    attributes: {id: QSPI_SCBR}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: qspi, value: '1'}
+- type: ElementPosition
+  attributes: {x: '60', y: '80', id: qspi}
