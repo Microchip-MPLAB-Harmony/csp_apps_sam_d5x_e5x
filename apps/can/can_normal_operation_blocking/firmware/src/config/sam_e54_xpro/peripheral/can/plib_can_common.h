@@ -57,6 +57,46 @@
 
 // *****************************************************************************
 // *****************************************************************************
+// Section: Preprocessor macros
+// *****************************************************************************
+// *****************************************************************************
+ 
+ // *****************************************************************************
+/* CAN Transfer Errors
+
+   Summary:
+    CAN Transfer Error macros.
+
+   Description:
+    Helper macros to identify CAN errors.
+
+   Remarks:
+    None.
+*/
+ 
+    #define CAN_ERROR_NONE  0x0U
+    #define CAN_ERROR_LEC_STUFF  0x1U
+    #define CAN_ERROR_LEC_FORM  0x2U
+    #define CAN_ERROR_LEC_ACK  0x3U
+    #define CAN_ERROR_LEC_BIT1  0x4U
+    #define CAN_ERROR_LEC_BIT0  0x5U
+    #define CAN_ERROR_LEC_CRC  0x6U
+    #define CAN_ERROR_LEC_NC  0x7U
+    #define CAN_ERROR_PASSIVE  0x20U
+    #define CAN_ERROR_WARNING_STATUS  0x40U
+    #define CAN_ERROR_BUS_OFF  0x80U
+    #define CAN_ERROR_DLEC_STUFF  0x100U
+    #define CAN_ERROR_DLEC_FORM  0x200U
+    #define CAN_ERROR_DLEC_ACK  0x300U
+    #define CAN_ERROR_DLEC_BIT1  0x400U
+    #define CAN_ERROR_DLEC_BIT0  0x500U
+    #define CAN_ERROR_DLEC_CRC  0x600U
+    #define CAN_ERROR_DLEC_NC  0x700U
+    #define CAN_ERROR_PROTOCOL_EXCEPTION_EVENT  0x4000U
+    #define CAN_ERROR_INVALID  0xFFFFFFFFU
+
+// *****************************************************************************
+// *****************************************************************************
 // Section: Data Types
 // *****************************************************************************
 // *****************************************************************************
@@ -76,7 +116,7 @@
 */
 typedef enum
 {
-    CAN_MODE_NORMAL = 0,
+    CAN_MODE_NORMAL = 0U,
     CAN_MODE_FD_WITHOUT_BRS,
     CAN_MODE_FD_WITH_BRS
 } CAN_MODE;
@@ -96,7 +136,7 @@ typedef enum
 */
 typedef enum
 {
-    CAN_MSG_ATTR_TX_FIFO_DATA_FRAME = 0,
+    CAN_MSG_ATTR_TX_FIFO_DATA_FRAME = 0U,
     CAN_MSG_ATTR_TX_FIFO_RTR_FRAME,
     CAN_MSG_ATTR_TX_BUFFER_DATA_FRAME,
     CAN_MSG_ATTR_TX_BUFFER_RTR_FRAME
@@ -117,7 +157,7 @@ typedef enum
 */
 typedef enum
 {
-    CAN_MSG_ATTR_RX_FIFO0 = 0,
+    CAN_MSG_ATTR_RX_FIFO0 = 0U,
     CAN_MSG_ATTR_RX_FIFO1,
     CAN_MSG_ATTR_RX_BUFFER
 } CAN_MSG_RX_ATTRIBUTE;
@@ -136,46 +176,10 @@ typedef enum
 */
 typedef enum
 {
-    CAN_MSG_RX_DATA_FRAME = 0,
+    CAN_MSG_RX_DATA_FRAME = 0U,
     CAN_MSG_RX_REMOTE_FRAME
 } CAN_MSG_RX_FRAME_ATTRIBUTE;
 
-// *****************************************************************************
-/* CAN Transfer Error
-
-   Summary:
-    CAN Transfer Error data type.
-
-   Description:
-    This data type defines the CAN Transfer Error.
-
-   Remarks:
-    None.
-*/
-typedef enum
-{
-    CAN_ERROR_NONE = 0x0,
-    CAN_ERROR_LEC_STUFF = 0x1,
-    CAN_ERROR_LEC_FORM = 0x2,
-    CAN_ERROR_LEC_ACK = 0x3,
-    CAN_ERROR_LEC_BIT1 = 0x4,
-    CAN_ERROR_LEC_BIT0 = 0x5,
-    CAN_ERROR_LEC_CRC = 0x6,
-    CAN_ERROR_LEC_NC = 0x7,
-    CAN_ERROR_PASSIVE = 0x20,
-    CAN_ERROR_WARNING_STATUS = 0x40,
-    CAN_ERROR_BUS_OFF = 0x80,
-    CAN_ERROR_DLEC_STUFF = 0x100,
-    CAN_ERROR_DLEC_FORM = 0x200,
-    CAN_ERROR_DLEC_ACK = 0x300,
-    CAN_ERROR_DLEC_BIT1 = 0x400,
-    CAN_ERROR_DLEC_BIT0 = 0x500,
-    CAN_ERROR_DLEC_CRC = 0x600,
-    CAN_ERROR_DLEC_NC = 0x700,
-    CAN_ERROR_PROTOCOL_EXCEPTION_EVENT = 0x4000,
-    /* Force the compiler to reserve 32-bit space for each enum value */
-    CAN_ERROR_INVALID = 0xFFFFFFFF
-} CAN_ERROR;
 
 // *****************************************************************************
 /* CAN Interrupt Mask
@@ -191,35 +195,49 @@ typedef enum
 */
 typedef enum
 {
-    CAN_INTERRUPT_RF0N_MASK = (1U << 0U),
-    CAN_INTERRUPT_RF0W_MASK = (1U << 1U),
-    CAN_INTERRUPT_RF0F_MASK = (1U << 2U),
-    CAN_INTERRUPT_RF0L_MASK = (1U << 3U),
-    CAN_INTERRUPT_RF1N_MASK = (1U << 4U),
-    CAN_INTERRUPT_RF1W_MASK = (1U << 5U),
-    CAN_INTERRUPT_RF1F_MASK = (1U << 6U),
-    CAN_INTERRUPT_RF1L_MASK = (1U << 7U),
-    CAN_INTERRUPT_HPM_MASK = (1U << 8U),
-    CAN_INTERRUPT_TC_MASK = (1U << 9U),
-    CAN_INTERRUPT_TCF_MASK = (1U << 10U),
-    CAN_INTERRUPT_TFE_MASK = (1U << 11U),
-    CAN_INTERRUPT_TEFN_MASK = (1U << 12U),
-    CAN_INTERRUPT_TEFW_MASK = (1U << 13U),
-    CAN_INTERRUPT_TEFF_MASK = (1U << 14U),
-    CAN_INTERRUPT_TEFL_MASK = (1U << 15U),
-    CAN_INTERRUPT_TSW_MASK = (1U << 16U),
-    CAN_INTERRUPT_MRAF_MASK = (1U << 17U),
-    CAN_INTERRUPT_TOO_MASK = (1U << 18U),
-    CAN_INTERRUPT_DRX_MASK = (1U << 19U),
-    CAN_INTERRUPT_ELO_MASK = (1U << 22U),
-    CAN_INTERRUPT_EP_MASK = (1U << 23U),
-    CAN_INTERRUPT_EW_MASK = (1U << 24U),
-    CAN_INTERRUPT_BO_MASK = (1U << 25U),
-    CAN_INTERRUPT_WDI_MASK = (1U << 26U),
-    CAN_INTERRUPT_PEA_MASK = (1U << 27U),
-    CAN_INTERRUPT_PED_MASK = (1U << 28U),
-    CAN_INTERRUPT_ARA_MASK = (1U << 29U)
+    CAN_INTERRUPT_RF0N_MASK = (1UL << 0U),
+    CAN_INTERRUPT_RF0W_MASK = (1UL << 1U),
+    CAN_INTERRUPT_RF0F_MASK = (1UL << 2U),
+    CAN_INTERRUPT_RF0L_MASK = (1UL << 3U),
+    CAN_INTERRUPT_RF1N_MASK = (1UL << 4U),
+    CAN_INTERRUPT_RF1W_MASK = (1UL << 5U),
+    CAN_INTERRUPT_RF1F_MASK = (1UL << 6U),
+    CAN_INTERRUPT_RF1L_MASK = (1UL << 7U),
+    CAN_INTERRUPT_HPM_MASK = (1UL << 8U),
+    CAN_INTERRUPT_TC_MASK = (1UL << 9U),
+    CAN_INTERRUPT_TCF_MASK = (1UL << 10U),
+    CAN_INTERRUPT_TFE_MASK = (1UL << 11U),
+    CAN_INTERRUPT_TEFN_MASK = (1UL << 12U),
+    CAN_INTERRUPT_TEFW_MASK = (1UL << 13U),
+    CAN_INTERRUPT_TEFF_MASK = (1UL << 14U),
+    CAN_INTERRUPT_TEFL_MASK = (1UL << 15U),
+    CAN_INTERRUPT_TSW_MASK = (1UL << 16U),
+    CAN_INTERRUPT_MRAF_MASK = (1UL << 17U),
+    CAN_INTERRUPT_TOO_MASK = (1UL << 18U),
+    CAN_INTERRUPT_DRX_MASK = (1UL << 19U),
+    CAN_INTERRUPT_ELO_MASK = (1UL << 22U),
+    CAN_INTERRUPT_EP_MASK = (1UL << 23U),
+    CAN_INTERRUPT_EW_MASK = (1UL << 24U),
+    CAN_INTERRUPT_BO_MASK = (1UL << 25U),
+    CAN_INTERRUPT_WDI_MASK = (1UL << 26U),
+    CAN_INTERRUPT_PEA_MASK = (1UL << 27U),
+    CAN_INTERRUPT_PED_MASK = (1UL << 28U),
+    CAN_INTERRUPT_ARA_MASK = (1UL << 29U)
 }CAN_INTERRUPT_MASK;
+
+// *****************************************************************************
+/* CAN Transfer Error
+
+   Summary:
+    CAN Transfer Error data type.
+
+   Description:
+    This data type defines the CAN Transfer Error.
+
+   Remarks:
+    None.
+*/
+typedef uint32_t CAN_ERROR;
 
 // *****************************************************************************
 /* CAN Callback

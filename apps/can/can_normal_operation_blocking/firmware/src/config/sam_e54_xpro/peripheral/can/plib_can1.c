@@ -50,6 +50,7 @@
 // *****************************************************************************
 
 #include "device.h"
+#include "interrupts.h"
 #include "plib_can1.h"
 
 // *****************************************************************************
@@ -57,16 +58,16 @@
 // Global Data
 // *****************************************************************************
 // *****************************************************************************
-#define CAN_STD_ID_Msk        0x7FF
+#define CAN_STD_ID_Msk        0x7FFU
 static CAN_OBJ can1Obj;
 
 static const can_sidfe_registers_t can1StdFilter[] =
 {
     {
-        .CAN_SIDFE_0 = CAN_SIDFE_0_SFT(0) |
-                  CAN_SIDFE_0_SFID1(0x399) |
-                  CAN_SIDFE_0_SFID2(0x499) |
-                  CAN_SIDFE_0_SFEC(1)
+        .CAN_SIDFE_0 = CAN_SIDFE_0_SFT(0UL) |
+                  CAN_SIDFE_0_SFID1(0x399UL) |
+                  CAN_SIDFE_0_SFID2(0x499UL) |
+                  CAN_SIDFE_0_SFEC(1UL)
     },
 };
 
@@ -76,7 +77,7 @@ Local Functions
 
 static uint8_t CANDlcToLengthGet(uint8_t dlc)
 {
-    uint8_t msgLength[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 12, 16, 20, 24, 32, 48, 64};
+    uint8_t msgLength[] = {0U, 1U, 2U, 3U, 4U, 5U, 6U, 7U, 8U, 12U, 16U, 20U, 24U, 32U, 48U, 64U};
     return msgLength[dlc];
 }
 
@@ -105,13 +106,16 @@ void CAN1_Initialize(void)
 {
     /* Start CAN initialization */
     CAN1_REGS->CAN_CCCR = CAN_CCCR_INIT_Msk;
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk);
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk)
+    {
+        /* Wait for initialization complete */
+    }
 
     /* Set CCE to unlock the configuration registers */
     CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
 
     /* Set Nominal Bit timing and Prescaler Register */
-    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(29) | CAN_NBTP_NTSEG1(88) | CAN_NBTP_NBRP(0) | CAN_NBTP_NSJW(29);
+    CAN1_REGS->CAN_NBTP  = CAN_NBTP_NTSEG2(29UL) | CAN_NBTP_NTSEG1(88UL) | CAN_NBTP_NBRP(0UL) | CAN_NBTP_NSJW(29UL);
 
 
     /* Global Filter Configuration Register */
@@ -119,8 +123,11 @@ void CAN1_Initialize(void)
 
     /* Set the operation mode */
     CAN1_REGS->CAN_CCCR = (CAN1_REGS->CAN_CCCR & ~CAN_CCCR_INIT_Msk);
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk);
-    memset((void*)&can1Obj.msgRAMConfig, 0x00, sizeof(CAN_MSG_RAM_CONFIG));
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
+    {
+        /* Wait for initialization complete */
+    }
+    memset(&can1Obj.msgRAMConfig, 0x00, sizeof(CAN_MSG_RAM_CONFIG));
 }
 
 // *****************************************************************************
@@ -147,60 +154,68 @@ void CAN1_Initialize(void)
 */
 bool CAN1_MessageTransmit(uint32_t id, uint8_t length, uint8_t* data, CAN_MODE mode, CAN_MSG_TX_ATTRIBUTE msgAttr)
 {
-    uint8_t tfqpi = 0;
+    uint8_t tfqpi = 0U;
     can_txbe_registers_t *fifo = NULL;
-    static uint8_t messageMarker = 0;
+    static uint8_t messageMarker = 0U;
+    bool op_success = false;
 
     switch (msgAttr)
     {
         case CAN_MSG_ATTR_TX_FIFO_DATA_FRAME:
         case CAN_MSG_ATTR_TX_FIFO_RTR_FRAME:
-            if (CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQF_Msk)
+            /* The FIFO is not full */
+            if (0U == (CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQF_Msk))
             {
-                /* The FIFO is full */
-                return false;
+                tfqpi = (uint8_t)((CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQPI_Msk) >> CAN_TXFQS_TFQPI_Pos);
+                fifo = (can_txbe_registers_t *) ((uint8_t*)can1Obj.msgRAMConfig.txBuffersAddress + ((uint32_t)tfqpi * CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE));
+                op_success = true;
             }
-            tfqpi = (uint8_t)((CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQPI_Msk) >> CAN_TXFQS_TFQPI_Pos);
-            fifo = (can_txbe_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.txBuffersAddress + tfqpi * CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE);
             break;
         default:
             /* Invalid Message Attribute */
-            return false;
+            break;
     }
-
-    /* If the id is longer than 11 bits, it is considered as extended identifier */
-    if (id > CAN_STD_ID_Msk)
+    if (op_success)
     {
-        /* An extended identifier is stored into ID */
-        fifo->CAN_TXBE_0 = (id & CAN_TXBE_0_ID_Msk) | CAN_TXBE_0_XTD_Msk;
+        /* If the id is longer than 11 bits, it is considered as extended identifier */
+        if (id > CAN_STD_ID_Msk)
+        {
+            /* An extended identifier is stored into ID */
+            fifo->CAN_TXBE_0 = (id & CAN_TXBE_0_ID_Msk) | CAN_TXBE_0_XTD_Msk;
+        }
+        else
+        {
+            /* A standard identifier is stored into ID[28:18] */
+            fifo->CAN_TXBE_0 = id << 18U;
+        }
+        /* Limit length */
+        if (length > 8U)
+        {
+            length = 8U;
+        }
+        fifo->CAN_TXBE_1 = CAN_TXBE_1_DLC((uint32_t)length);
+        if ((msgAttr == CAN_MSG_ATTR_TX_BUFFER_DATA_FRAME) || (msgAttr == CAN_MSG_ATTR_TX_FIFO_DATA_FRAME))
+        {
+            /* copy the data into the payload */
+            memcpy((uint8_t *)&fifo->CAN_TXBE_DATA, data, length);
+        }
+        else if (msgAttr == CAN_MSG_ATTR_TX_BUFFER_RTR_FRAME || msgAttr == CAN_MSG_ATTR_TX_FIFO_RTR_FRAME)
+        {
+            fifo->CAN_TXBE_0 |= CAN_TXBE_0_RTR_Msk;
+        }
+        else
+        {
+            /* Do nothing */
+        }
+
+        messageMarker++;
+        fifo->CAN_TXBE_1 |= (((uint32_t)(messageMarker) << CAN_TXBE_1_MM_Pos) & CAN_TXBE_1_MM_Msk) | CAN_TXBE_1_EFC_Msk;
+
+        /* request the transmit */
+        CAN1_REGS->CAN_TXBAR = 1UL << tfqpi;
+
     }
-    else
-    {
-        /* A standard identifier is stored into ID[28:18] */
-        fifo->CAN_TXBE_0 = id << 18;
-    }
-
-    /* Limit length */
-    if (length > 8)
-        length = 8;
-    fifo->CAN_TXBE_1 = CAN_TXBE_1_DLC(length);
-
-    if (msgAttr == CAN_MSG_ATTR_TX_BUFFER_DATA_FRAME || msgAttr == CAN_MSG_ATTR_TX_FIFO_DATA_FRAME)
-    {
-        /* copy the data into the payload */
-        memcpy((uint8_t *)&fifo->CAN_TXBE_DATA, data, length);
-    }
-    else if (msgAttr == CAN_MSG_ATTR_TX_BUFFER_RTR_FRAME || msgAttr == CAN_MSG_ATTR_TX_FIFO_RTR_FRAME)
-    {
-        fifo->CAN_TXBE_0 |= CAN_TXBE_0_RTR_Msk;
-    }
-
-    fifo->CAN_TXBE_1 |= ((++messageMarker << CAN_TXBE_1_MM_Pos) & CAN_TXBE_1_MM_Msk);
-
-    /* request the transmit */
-    CAN1_REGS->CAN_TXBAR = 1U << tfqpi;
-
-    return true;
+    return op_success;
 }
 
 // *****************************************************************************
@@ -230,8 +245,9 @@ bool CAN1_MessageTransmit(uint32_t id, uint8_t length, uint8_t* data, CAN_MODE m
 bool CAN1_MessageReceive(uint32_t *id, uint8_t *length, uint8_t *data, uint16_t *timestamp,
                                          CAN_MSG_RX_ATTRIBUTE msgAttr, CAN_MSG_RX_FRAME_ATTRIBUTE *msgFrameAttr)
 {
-    uint8_t msgLength = 0;
-    uint8_t rxgi = 0;
+    uint8_t msgLength = 0U;
+    uint8_t rxgi = 0U;
+    bool testCondition = false;
     can_rxf0e_registers_t *rxf0eFifo = NULL;
     can_rxf1e_registers_t *rxf1eFifo = NULL;
     bool status = false;
@@ -240,16 +256,16 @@ bool CAN1_MessageReceive(uint32_t *id, uint8_t *length, uint8_t *data, uint16_t 
     {
         case CAN_MSG_ATTR_RX_FIFO0:
             /* Check and return false if nothing to be read */
-            if ((CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0FL_Msk) == 0)
+            if ((CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0FL_Msk) == 0U)
             {
                 return status;
             }
             /* Read data from the Rx FIFO0 */
             rxgi = (uint8_t)((CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0GI_Msk) >> CAN_RXF0S_F0GI_Pos);
-            rxf0eFifo = (can_rxf0e_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO0Address + rxgi * CAN1_RX_FIFO0_ELEMENT_SIZE);
+            rxf0eFifo = (can_rxf0e_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO0Address + ((uint32_t)rxgi * CAN1_RX_FIFO0_ELEMENT_SIZE));
 
             /* Get received identifier */
-            if (rxf0eFifo->CAN_RXF0E_0 & CAN_RXF0E_0_XTD_Msk)
+            if ((rxf0eFifo->CAN_RXF0E_0 & CAN_RXF0E_0_XTD_Msk) != 0U)
             {
                 *id = rxf0eFifo->CAN_RXF0E_0 & CAN_RXF0E_0_ID_Msk;
             }
@@ -259,7 +275,9 @@ bool CAN1_MessageReceive(uint32_t *id, uint8_t *length, uint8_t *data, uint16_t 
             }
 
             /* Check RTR and FDF bits for Remote/Data Frame */
-            if ((rxf0eFifo->CAN_RXF0E_0 & CAN_RXF0E_0_RTR_Msk) && ((rxf0eFifo->CAN_RXF0E_1 & CAN_RXF0E_1_FDF_Msk) == 0))
+            testCondition = ((rxf0eFifo->CAN_RXF0E_0 & CAN_RXF0E_0_RTR_Msk) != 0U);
+            testCondition = ((rxf0eFifo->CAN_RXF0E_1 & CAN_RXF0E_1_FDF_Msk) == 0U) && testCondition;
+            if (testCondition)
             {
                 *msgFrameAttr = CAN_MSG_RX_REMOTE_FRAME;
             }
@@ -269,38 +287,40 @@ bool CAN1_MessageReceive(uint32_t *id, uint8_t *length, uint8_t *data, uint16_t 
             }
 
             /* Get received data length */
-            msgLength = CANDlcToLengthGet(((rxf0eFifo->CAN_RXF0E_1 & CAN_RXF0E_1_DLC_Msk) >> CAN_RXF0E_1_DLC_Pos));
+            msgLength = CANDlcToLengthGet((uint8_t)((rxf0eFifo->CAN_RXF0E_1 & CAN_RXF0E_1_DLC_Msk) >> CAN_RXF0E_1_DLC_Pos));
 
             /* Copy data to user buffer */
             memcpy(data, (uint8_t *)&rxf0eFifo->CAN_RXF0E_DATA, msgLength);
             *length = msgLength;
 
             /* Ack the fifo position */
-            CAN1_REGS->CAN_RXF0A = CAN_RXF0A_F0AI(rxgi);
+            CAN1_REGS->CAN_RXF0A = CAN_RXF0A_F0AI((uint32_t)rxgi);
             status = true;
             break;
         case CAN_MSG_ATTR_RX_FIFO1:
             /* Check and return false if nothing to be read */
-            if ((CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1FL_Msk) == 0)
+            if ((CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1FL_Msk) == 0U)
             {
                 return status;
             }
             /* Read data from the Rx FIFO1 */
             rxgi = (uint8_t)((CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1GI_Msk) >> CAN_RXF1S_F1GI_Pos);
-            rxf1eFifo = (can_rxf1e_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO1Address + rxgi * CAN1_RX_FIFO1_ELEMENT_SIZE);
+            rxf1eFifo = (can_rxf1e_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO1Address + ((uint32_t)rxgi * CAN1_RX_FIFO1_ELEMENT_SIZE));
 
             /* Get received identifier */
-            if (rxf1eFifo->CAN_RXF1E_0 & CAN_RXF1E_0_XTD_Msk)
+            if ((rxf1eFifo->CAN_RXF1E_0 & CAN_RXF1E_0_XTD_Msk) != 0U)
             {
                 *id = rxf1eFifo->CAN_RXF1E_0 & CAN_RXF1E_0_ID_Msk;
             }
             else
             {
-                *id = (rxf1eFifo->CAN_RXF1E_0 >> 18) & CAN_STD_ID_Msk;
+                *id = (rxf1eFifo->CAN_RXF1E_0 >> 18U) & CAN_STD_ID_Msk;
             }
 
             /* Check RTR and FDF bits for Remote/Data Frame */
-            if ((rxf1eFifo->CAN_RXF1E_0 & CAN_RXF1E_0_RTR_Msk) && ((rxf1eFifo->CAN_RXF1E_1 & CAN_RXF1E_1_FDF_Msk) == 0))
+            testCondition = ((rxf1eFifo->CAN_RXF1E_0 & CAN_RXF1E_0_RTR_Msk) != 0U);
+            testCondition = ((rxf1eFifo->CAN_RXF1E_1 & CAN_RXF1E_1_FDF_Msk) == 0U) && testCondition;
+            if (testCondition)
             {
                 *msgFrameAttr = CAN_MSG_RX_REMOTE_FRAME;
             }
@@ -310,18 +330,19 @@ bool CAN1_MessageReceive(uint32_t *id, uint8_t *length, uint8_t *data, uint16_t 
             }
 
             /* Get received data length */
-            msgLength = CANDlcToLengthGet(((rxf1eFifo->CAN_RXF1E_1 & CAN_RXF1E_1_DLC_Msk) >> CAN_RXF1E_1_DLC_Pos));
+            msgLength = CANDlcToLengthGet((uint8_t)((rxf1eFifo->CAN_RXF1E_1 & CAN_RXF1E_1_DLC_Msk) >> CAN_RXF1E_1_DLC_Pos));
 
             /* Copy data to user buffer */
             memcpy(data, (uint8_t *)&rxf1eFifo->CAN_RXF1E_DATA, msgLength);
             *length = msgLength;
 
             /* Ack the fifo position */
-            CAN1_REGS->CAN_RXF1A = CAN_RXF1A_F1AI(rxgi);
+            CAN1_REGS->CAN_RXF1A = CAN_RXF1A_F1AI((uint32_t)rxgi);
             status = true;
             break;
         default:
-            return status;
+            /* Do nothing */
+            break;
     }
     return status;
 }
@@ -349,27 +370,27 @@ bool CAN1_MessageReceive(uint32_t *id, uint8_t *length, uint8_t *data, uint16_t 
 bool CAN1_TransmitEventFIFOElementGet(uint32_t *id, uint8_t *messageMarker, uint16_t *timestamp)
 {
     can_txefe_registers_t *txEventFIFOElement = NULL;
-    uint8_t txefgi = 0;
+    uint8_t txefgi = 0U;
     bool status = false;
 
     /* Check if Tx Event FIFO Element available */
-    if ((CAN1_REGS->CAN_TXEFS & CAN_TXEFS_EFFL_Msk) != 0)
+    if ((CAN1_REGS->CAN_TXEFS & CAN_TXEFS_EFFL_Msk) != 0U)
     {
         /* Get a pointer to Tx Event FIFO Element */
         txefgi = (uint8_t)((CAN1_REGS->CAN_TXEFS & CAN_TXEFS_EFGI_Msk) >> CAN_TXEFS_EFGI_Pos);
-        txEventFIFOElement = (can_txefe_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.txEventFIFOAddress + txefgi * sizeof(can_txefe_registers_t));
+        txEventFIFOElement = (can_txefe_registers_t *) ((uint8_t *)can1Obj.msgRAMConfig.txEventFIFOAddress + ((uint32_t)txefgi * sizeof(can_txefe_registers_t)));
 
         /* Check if it's a extended message type */
-        if (txEventFIFOElement->CAN_TXEFE_0 & CAN_TXEFE_0_XTD_Msk)
+        if (0U != (txEventFIFOElement->CAN_TXEFE_0 & CAN_TXEFE_0_XTD_Msk))
         {
             *id = txEventFIFOElement->CAN_TXEFE_0 & CAN_TXEFE_0_ID_Msk;
         }
         else
         {
-            *id = (txEventFIFOElement->CAN_TXEFE_0 >> 18) & CAN_STD_ID_Msk;
+            *id = (txEventFIFOElement->CAN_TXEFE_0 >> 18U) & CAN_STD_ID_Msk;
         }
 
-        *messageMarker = ((txEventFIFOElement->CAN_TXEFE_1 & CAN_TXEFE_1_MM_Msk) >> CAN_TXEFE_1_MM_Pos);
+        *messageMarker = (uint8_t)((txEventFIFOElement->CAN_TXEFE_1 & CAN_TXEFE_1_MM_Msk) >> CAN_TXEFE_1_MM_Pos);
 
         /* Get timestamp from transmitted message */
         if (timestamp != NULL)
@@ -378,7 +399,7 @@ bool CAN1_TransmitEventFIFOElementGet(uint32_t *id, uint8_t *messageMarker, uint
         }
 
         /* Ack the Tx Event FIFO position */
-        CAN1_REGS->CAN_TXEFA = CAN_TXEFA_EFAI(txefgi);
+        CAN1_REGS->CAN_TXEFA = CAN_TXEFA_EFAI((uint32_t)txefgi);
 
         /* Tx Event FIFO Element read successfully, so return true */
         status = true;
@@ -414,7 +435,10 @@ CAN_ERROR CAN1_ErrorGet(void)
     {
         CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
         CAN1_REGS->CAN_CCCR = (CAN1_REGS->CAN_CCCR & ~CAN_CCCR_INIT_Msk);
-        while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk);
+        while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
+        {
+            /* Wait for initialization complete */
+        }
     }
 
     return error;
@@ -462,7 +486,7 @@ void CAN1_ErrorCountGet(uint8_t *txErrorCount, uint8_t *rxErrorCount)
 */
 bool CAN1_InterruptGet(CAN_INTERRUPT_MASK interruptMask)
 {
-    return ((CAN1_REGS->CAN_IR & interruptMask) != 0x0);
+    return ((CAN1_REGS->CAN_IR & (uint32_t)interruptMask) != 0x0U);
 }
 
 // *****************************************************************************
@@ -483,7 +507,7 @@ bool CAN1_InterruptGet(CAN_INTERRUPT_MASK interruptMask)
 */
 void CAN1_InterruptClear(CAN_INTERRUPT_MASK interruptMask)
 {
-    CAN1_REGS->CAN_IR = interruptMask;
+    CAN1_REGS->CAN_IR = (uint32_t)interruptMask;
 }
 
 // *****************************************************************************
@@ -505,7 +529,7 @@ void CAN1_InterruptClear(CAN_INTERRUPT_MASK interruptMask)
 */
 bool CAN1_TxFIFOIsFull(void)
 {
-    return (CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQF_Msk);
+    return ((CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQF_Msk) == CAN_TXFQS_TFQF_Msk);
 }
 
 // *****************************************************************************
@@ -529,13 +553,16 @@ bool CAN1_TxFIFOIsFull(void)
 */
 void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
 {
-    uint32_t offset = 0;
+    uint32_t offset = 0U;
 
-    memset((void*)msgRAMConfigBaseAddress, 0x00, CAN1_MESSAGE_RAM_CONFIG_SIZE);
+    memset(msgRAMConfigBaseAddress, 0x00, CAN1_MESSAGE_RAM_CONFIG_SIZE);
 
     /* Set CAN CCCR Init for Message RAM Configuration */
     CAN1_REGS->CAN_CCCR = CAN_CCCR_INIT_Msk;
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk);
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk)
+    {
+        /* Wait for initialization complete */
+    }
 
     /* Set CCE to unlock the configuration registers */
     CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
@@ -543,40 +570,46 @@ void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
     can1Obj.msgRAMConfig.rxFIFO0Address = (can_rxf0e_registers_t *)msgRAMConfigBaseAddress;
     offset = CAN1_RX_FIFO0_SIZE;
     /* Receive FIFO 0 Configuration Register */
-    CAN1_REGS->CAN_RXF0C = CAN_RXF0C_F0S(1) | CAN_RXF0C_F0WM(0) | CAN_RXF0C_F0OM_Msk |
+    CAN1_REGS->CAN_RXF0C = CAN_RXF0C_F0S(1UL) | CAN_RXF0C_F0WM(0UL) | CAN_RXF0C_F0OM_Msk |
             CAN_RXF0C_F0SA((uint32_t)can1Obj.msgRAMConfig.rxFIFO0Address);
 
     can1Obj.msgRAMConfig.rxFIFO1Address = (can_rxf1e_registers_t *)(msgRAMConfigBaseAddress + offset);
     offset += CAN1_RX_FIFO1_SIZE;
     /* Receive FIFO 1 Configuration Register */
-    CAN1_REGS->CAN_RXF1C = CAN_RXF1C_F1S(1) | CAN_RXF1C_F1WM(0) | CAN_RXF1C_F1OM_Msk |
+    CAN1_REGS->CAN_RXF1C = CAN_RXF1C_F1S(1UL) | CAN_RXF1C_F1WM(0UL) | CAN_RXF1C_F1OM_Msk |
             CAN_RXF1C_F1SA((uint32_t)can1Obj.msgRAMConfig.rxFIFO1Address);
 
     can1Obj.msgRAMConfig.txBuffersAddress = (can_txbe_registers_t *)(msgRAMConfigBaseAddress + offset);
     offset += CAN1_TX_FIFO_BUFFER_SIZE;
     /* Transmit Buffer/FIFO Configuration Register */
-    CAN1_REGS->CAN_TXBC = CAN_TXBC_TFQS(1) |
+    CAN1_REGS->CAN_TXBC = CAN_TXBC_TFQS(1UL) |
             CAN_TXBC_TBSA((uint32_t)can1Obj.msgRAMConfig.txBuffersAddress);
 
     can1Obj.msgRAMConfig.txEventFIFOAddress =  (can_txefe_registers_t *)(msgRAMConfigBaseAddress + offset);
     offset += CAN1_TX_EVENT_FIFO_SIZE;
     /* Transmit Event FIFO Configuration Register */
-    CAN1_REGS->CAN_TXEFC = CAN_TXEFC_EFWM(0) | CAN_TXEFC_EFS(1) |
+    CAN1_REGS->CAN_TXEFC = CAN_TXEFC_EFWM(0UL) | CAN_TXEFC_EFS(1UL) |
             CAN_TXEFC_EFSA((uint32_t)can1Obj.msgRAMConfig.txEventFIFOAddress);
 
     can1Obj.msgRAMConfig.stdMsgIDFilterAddress = (can_sidfe_registers_t *)(msgRAMConfigBaseAddress + offset);
-    memcpy((void *)can1Obj.msgRAMConfig.stdMsgIDFilterAddress,
+    memcpy(can1Obj.msgRAMConfig.stdMsgIDFilterAddress,
            (const void *)can1StdFilter,
            CAN1_STD_MSG_ID_FILTER_SIZE);
     offset += CAN1_STD_MSG_ID_FILTER_SIZE;
     /* Standard ID Filter Configuration Register */
-    CAN1_REGS->CAN_SIDFC = CAN_SIDFC_LSS(1) |
+    CAN1_REGS->CAN_SIDFC = CAN_SIDFC_LSS(1UL) |
             CAN_SIDFC_FLSSA((uint32_t)can1Obj.msgRAMConfig.stdMsgIDFilterAddress);
 
 
+    /* Reference offset variable once to remove warning about the variable not being used after increment */
+    (void)offset;
+
     /* Complete Message RAM Configuration by clearing CAN CCCR Init */
     CAN1_REGS->CAN_CCCR = (CAN1_REGS->CAN_CCCR & ~CAN_CCCR_INIT_Msk);
-    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk);
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
+    {
+        /* Wait for configuration complete */
+    }
 }
 
 // *****************************************************************************
@@ -601,11 +634,11 @@ void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
 */
 bool CAN1_StandardFilterElementSet(uint8_t filterNumber, can_sidfe_registers_t *stdMsgIDFilterElement)
 {
-    if ((filterNumber > 1) || (stdMsgIDFilterElement == NULL))
+    if ((filterNumber > 1U) || (stdMsgIDFilterElement == NULL))
     {
         return false;
     }
-    can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1].CAN_SIDFE_0 = stdMsgIDFilterElement->CAN_SIDFE_0;
+    can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].CAN_SIDFE_0 = stdMsgIDFilterElement->CAN_SIDFE_0;
 
     return true;
 }
@@ -632,15 +665,38 @@ bool CAN1_StandardFilterElementSet(uint8_t filterNumber, can_sidfe_registers_t *
 */
 bool CAN1_StandardFilterElementGet(uint8_t filterNumber, can_sidfe_registers_t *stdMsgIDFilterElement)
 {
-    if ((filterNumber > 1) || (stdMsgIDFilterElement == NULL))
+    if ((filterNumber > 1U) || (stdMsgIDFilterElement == NULL))
     {
         return false;
     }
-    stdMsgIDFilterElement->CAN_SIDFE_0 = can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1].CAN_SIDFE_0;
+    stdMsgIDFilterElement->CAN_SIDFE_0 = can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].CAN_SIDFE_0;
 
     return true;
 }
 
+
+void CAN1_SleepModeEnter(void)
+{
+    CAN1_REGS->CAN_CCCR |=  CAN_CCCR_CSR_Msk;
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_CSA_Msk) != CAN_CCCR_CSA_Msk)
+    {
+        /* Wait for clock stop request to complete */
+    }
+}
+
+void CAN1_SleepModeExit(void)
+{
+    CAN1_REGS->CAN_CCCR &=  ~CAN_CCCR_CSR_Msk;
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_CSA_Msk) == CAN_CCCR_CSA_Msk)
+    {
+        /* Wait for no clock stop */
+    }
+    CAN1_REGS->CAN_CCCR &= ~CAN_CCCR_INIT_Msk;
+    while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
+    {
+        /* Wait for initialization complete */
+    }
+}
 
 
 
