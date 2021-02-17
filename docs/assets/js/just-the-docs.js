@@ -402,1323 +402,1371 @@ var myVariable = `
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dac/dac_wav_gen_dma/readme.html",
     "relUrl": "/apps/dac/dac_wav_gen_dma/readme.html"
   },"67": {
+    "doc": "DMAC CRC-32 Generation",
+    "title": "DMAC CRC-32 Generation",
+    "content": "This example application demonstrates how to use the DMAC peripheral to compute 32-bit Cyclic Redundancy Checksum (CRC). ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html#dmac-crc-32-generation",
+    "relUrl": "/apps/dmac/dmac_crc32_generate/readme.html#dmac-crc-32-generation"
+  },"68": {
+    "doc": "DMAC CRC-32 Generation",
+    "title": "Description",
+    "content": "The DMAC unit provides support for calculating a CRC-16 and CRC-32 value for data passing through any DMA channel or using an IO interface. This example application computes the 32-bit CRC value for the poynomial (0x04C11DB7) using below two data sources for the CRC engine in DMAC peripheral . | It uses a DMA Channel with software trigger to initiate a memory-memory transfer from the source buffer to the destination buffer with 8-bit beat size. Once the transfer is completed a 32-bit CRC will be generated for the source buffer. | It uses the IO mode to generate a 32-bit CRC value for the source buffer. | . Once the hardware CRC are generated using above two methods they are validated using a software-calculated CRC value. ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html#description",
+    "relUrl": "/apps/dmac/dmac_crc32_generate/readme.html#description"
+  },"69": {
+    "doc": "DMAC CRC-32 Generation",
+    "title": "Downloading and building the application",
+    "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/dmac/dmac_crc32_generate/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html#downloading-and-building-the-application",
+    "relUrl": "/apps/dmac/dmac_crc32_generate/readme.html#downloading-and-building-the-application"
+  },"70": {
+    "doc": "DMAC CRC-32 Generation",
+    "title": "Setting up the hardware",
+    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html#setting-up-the-hardware",
+    "relUrl": "/apps/dmac/dmac_crc32_generate/readme.html#setting-up-the-hardware"
+  },"71": {
+    "doc": "DMAC CRC-32 Generation",
+    "title": "Running the Application",
+    "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | LED indicates the success or failure: . | LED is turned ON when the DMAC memory transfer is successful and hardware CRC values matched with the software calculated CRC value | Following table provides the LED name | . | Board Name | LED Name | . | SAM E54 Xplained Pro board | LED0 | . | Observe output message in console as follows: . | Expected CRC Value for the polynomial (0x04C11DB7) is (0xcbf43926) | . | . ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html#running-the-application",
+    "relUrl": "/apps/dmac/dmac_crc32_generate/readme.html#running-the-application"
+  },"72": {
+    "doc": "DMAC CRC-32 Generation",
+    "title": "DMAC CRC-32 Generation",
+    "content": ". ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html",
+    "relUrl": "/apps/dmac/dmac_crc32_generate/readme.html"
+  },"73": {
     "doc": "DMAC memory transfer",
     "title": "DMAC memory transfer",
     "content": "This example application demonstrates how to use the DMAC peripheral to do a memory to memory transfer. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html#dmac-memory-transfer",
     "relUrl": "/apps/dmac/dmac_memory_transfer/readme.html#dmac-memory-transfer"
-  },"68": {
+  },"74": {
     "doc": "DMAC memory transfer",
     "title": "Description",
     "content": "The application uses a software trigger to initiate a memory-memory transfer from the source buffer to the destination buffer with 16-bit beat size and 32-bit beat size. The number of cycles taken for the DMA transfer is measured using the System timer (SysTick) and reported on the console. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html#description",
     "relUrl": "/apps/dmac/dmac_memory_transfer/readme.html#description"
-  },"69": {
+  },"75": {
     "doc": "DMAC memory transfer",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/apps/dmac/dmac_memory_transfer/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/dmac/dmac_memory_transfer/readme.html#downloading-and-building-the-application"
-  },"70": {
+  },"76": {
     "doc": "DMAC memory transfer",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/dmac/dmac_memory_transfer/readme.html#setting-up-the-hardware"
-  },"71": {
+  },"77": {
     "doc": "DMAC memory transfer",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | LED indicates the success or failure: . | LED is turned ON when the DMAC memory transfer is successful. | Following table provides the LED name | . | Board Name | LED Name | . | SAM E54 Xplained Pro board | LED0 | . | Observe output message in console as follows: . NOTE: The number of transfer cycles may vary . | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html#running-the-application",
     "relUrl": "/apps/dmac/dmac_memory_transfer/readme.html#running-the-application"
-  },"72": {
+  },"78": {
     "doc": "DMAC memory transfer",
     "title": "DMAC memory transfer",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html",
     "relUrl": "/apps/dmac/dmac_memory_transfer/readme.html"
-  },"73": {
+  },"79": {
     "doc": "DMAC USART echo",
     "title": "DMAC USART echo",
     "content": "This example application demonstrates USART transfer with DMA to receive 10 bytes and echo back the received bytes. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html#dmac-usart-echo",
     "relUrl": "/apps/dmac/dmac_usart_echo/readme.html#dmac-usart-echo"
-  },"74": {
+  },"80": {
     "doc": "DMAC USART echo",
     "title": "Description",
     "content": "This application demonstrates USART transfer with DMA using SERCOM peripheral configured in USART mode. One DMA channel is used to receive 10 bytes of data from the USART and another DMA channel is used to echo back the received bytes. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html#description",
     "relUrl": "/apps/dmac/dmac_usart_echo/readme.html#description"
-  },"75": {
+  },"81": {
     "doc": "DMAC USART echo",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/dmac/dmac_usart_echo/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/dmac/dmac_usart_echo/readme.html#downloading-and-building-the-application"
-  },"76": {
+  },"82": {
     "doc": "DMAC USART echo",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/dmac/dmac_usart_echo/readme.html#setting-up-the-hardware"
-  },"77": {
+  },"83": {
     "doc": "DMAC USART echo",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | The console displays the following message . | Type 10 characters in the console | Entered 10 characters will be echoed back and the LED is toggled | The following table provides the LED names | . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html#running-the-application",
     "relUrl": "/apps/dmac/dmac_usart_echo/readme.html#running-the-application"
-  },"78": {
+  },"84": {
     "doc": "DMAC USART echo",
     "title": "DMAC USART echo",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html",
     "relUrl": "/apps/dmac/dmac_usart_echo/readme.html"
-  },"79": {
+  },"85": {
     "doc": "DSU compute CRC32",
     "title": "DSU compute CRC32",
     "content": "This example application demonstrates how to use the DSU Peripheral library to compute 32-bit Cyclic Redundancy Checksum (CRC). ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html#dsu-compute-crc32",
     "relUrl": "/apps/dsu/dsu_crc32_generate/readme.html#dsu-compute-crc32"
-  },"80": {
+  },"86": {
     "doc": "DSU compute CRC32",
     "title": "Description",
     "content": "The DSU unit provides support for calculating a 32-bit CRC value for a memory area. This example application computes the 32-bit hardware CRC value using the DSU Peripheral and validates it using a software-calculated CRC value. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html#description",
     "relUrl": "/apps/dsu/dsu_crc32_generate/readme.html#description"
-  },"81": {
+  },"87": {
     "doc": "DSU compute CRC32",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/dsu/dsu_crc32_generate/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/dsu/dsu_crc32_generate/readme.html#downloading-and-building-the-application"
-  },"82": {
+  },"88": {
     "doc": "DSU compute CRC32",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/dsu/dsu_crc32_generate/readme.html#setting-up-the-hardware"
-  },"83": {
+  },"89": {
     "doc": "DSU compute CRC32",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | The LED indicates the success or failure: . | LED is turned ON when the hardware CRC value matched with the software calculated CRC value | LED is turned OFF when the hardware CRC value did not match with the software calculated CRC value | . | . The following table provides the LED name . | Board | LED Name |   | . | SAM E54 Xplained Pro board | LED0 |   | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html#running-the-application",
     "relUrl": "/apps/dsu/dsu_crc32_generate/readme.html#running-the-application"
-  },"84": {
+  },"90": {
     "doc": "DSU compute CRC32",
     "title": "DSU compute CRC32",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html",
     "relUrl": "/apps/dsu/dsu_crc32_generate/readme.html"
-  },"85": {
+  },"91": {
     "doc": "EIC Interrupt",
     "title": "EIC Interrupt",
     "content": "This example application demonstrates how to generate interrupt using the EIC on switch press and indicate it through an LED. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html#eic-interrupt",
     "relUrl": "/apps/eic/eic_led_on_off/readme.html#eic-interrupt"
-  },"86": {
+  },"92": {
     "doc": "EIC Interrupt",
     "title": "Description",
     "content": "The application registers an event callback with EIC Peripheral library and toggles an LED for every switch press event. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html#description",
     "relUrl": "/apps/eic/eic_led_on_off/readme.html#description"
-  },"87": {
+  },"93": {
     "doc": "EIC Interrupt",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/eic/eic_led_on_off/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/eic/eic_led_on_off/readme.html#downloading-and-building-the-application"
-  },"88": {
+  },"94": {
     "doc": "EIC Interrupt",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/eic/eic_led_on_off/readme.html#setting-up-the-hardware"
-  },"89": {
+  },"95": {
     "doc": "EIC Interrupt",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | LED toggles on every switch release | . Following table provides the LED name: . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html#running-the-application",
     "relUrl": "/apps/eic/eic_led_on_off/readme.html#running-the-application"
-  },"90": {
+  },"96": {
     "doc": "EIC Interrupt",
     "title": "EIC Interrupt",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html",
     "relUrl": "/apps/eic/eic_led_on_off/readme.html"
-  },"91": {
+  },"97": {
     "doc": "EVSYS trigger",
     "title": "EVSYS trigger",
     "content": "This example application demonstrates how to use the EVSYS Peripheral library to setup autonomous, low-latency and configurable communication between peripherals. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html#evsys-trigger",
     "relUrl": "/apps/evsys/evsys_trigger/readme.html#evsys-trigger"
-  },"92": {
+  },"98": {
     "doc": "EVSYS trigger",
     "title": "Description",
     "content": "This example application shows how to use the EVSYS Peripheral library to route the events generated by the switch to toggle an LED without CPU intervention. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html#description",
     "relUrl": "/apps/evsys/evsys_trigger/readme.html#description"
-  },"93": {
+  },"99": {
     "doc": "EVSYS trigger",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/evsys/evsys_trigger/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/evsys/evsys_trigger/readme.html#downloading-and-building-the-application"
-  },"94": {
+  },"100": {
     "doc": "EVSYS trigger",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/evsys/evsys_trigger/readme.html#setting-up-the-hardware"
-  },"95": {
+  },"101": {
     "doc": "EVSYS trigger",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | LED toggles on every switch press | . Following table provides the LED and switch names: . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html#running-the-application",
     "relUrl": "/apps/evsys/evsys_trigger/readme.html#running-the-application"
-  },"96": {
+  },"102": {
     "doc": "EVSYS trigger",
     "title": "EVSYS trigger",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html",
     "relUrl": "/apps/evsys/evsys_trigger/readme.html"
-  },"97": {
+  },"103": {
     "doc": "FREQM measurement",
     "title": "FREQM measurement",
     "content": "This example application demonstrates how to use the FREQM peripheral to measure the frequency of the internal RC Oscillator. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html#freqm-measurement",
     "relUrl": "/apps/freqm/freqm_measure_clock_freq/readme.html#freqm-measurement"
-  },"98": {
+  },"104": {
     "doc": "FREQM measurement",
     "title": "Description",
     "content": "The Frequency Meter (FREQM) can be used to accurately measure the frequency of a clock by comparing it to a known reference clock. The FREQM counts the number of periods of the measured clock with respect to the reference clock. This example application shows how to measure the cpu frequency using the 32-kHz Crystal oscillator as the reference clock. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html#description",
     "relUrl": "/apps/freqm/freqm_measure_clock_freq/readme.html#description"
-  },"99": {
+  },"105": {
     "doc": "FREQM measurement",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/freqm/freqm_measure_clock_freq/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/freqm/freqm_measure_clock_freq/readme.html#downloading-and-building-the-application"
-  },"100": {
+  },"106": {
     "doc": "FREQM measurement",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/freqm/freqm_measure_clock_freq/readme.html#setting-up-the-hardware"
-  },"101": {
+  },"107": {
     "doc": "FREQM measurement",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | Observe output message in console as follows: . Note that the measured clock frequency is approximate. The actual frequency may vary because of measurement error . | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html#running-the-application",
     "relUrl": "/apps/freqm/freqm_measure_clock_freq/readme.html#running-the-application"
-  },"102": {
+  },"108": {
     "doc": "FREQM measurement",
     "title": "FREQM measurement",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html",
     "relUrl": "/apps/freqm/freqm_measure_clock_freq/readme.html"
-  },"103": {
+  },"109": {
     "doc": "NVMCTRL read write",
     "title": "NVMCTRL read write",
     "content": "This example application demonstrates how to use the NVMCTRL to erase and program the internal Flash memory. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#nvmctrl-read-write",
     "relUrl": "/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#nvmctrl-read-write"
-  },"104": {
+  },"110": {
     "doc": "NVMCTRL read write",
     "title": "Description",
     "content": "This example uses the NVMCTRL peripheral library to erase a row and write an array of values to the internal Flash memory. It verifies the value written by reading the values back and comparing it to the value written. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#description",
     "relUrl": "/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#description"
-  },"105": {
+  },"111": {
     "doc": "NVMCTRL read write",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/nvmctrl/nvmctrl_flash_read_write/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#downloading-and-building-the-application"
-  },"106": {
+  },"112": {
     "doc": "NVMCTRL read write",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#setting-up-the-hardware"
-  },"107": {
+  },"113": {
     "doc": "NVMCTRL read write",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | The LED indicates the success or failure: . | The LED is turned ON when the value read from the flash memory matched with the written value | The LED is turned OFF when the value read from the flash memory did not match with the written value | . | The following table provides the LED name: | . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#running-the-application",
     "relUrl": "/apps/nvmctrl/nvmctrl_flash_read_write/readme.html#running-the-application"
-  },"108": {
+  },"114": {
     "doc": "NVMCTRL read write",
     "title": "NVMCTRL read write",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html",
     "relUrl": "/apps/nvmctrl/nvmctrl_flash_read_write/readme.html"
-  },"109": {
+  },"115": {
     "doc": "NVMCTRL SmartEEPROM",
     "title": "NVMCTRL SmartEEPROM",
     "content": "This example application demonstrates how to use the SmartEEPROM feature in NVMCTRL PLIB to erase and program the internal Flash memory. 8-bit, 16-bit, 32-bit access is supported. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#nvmctrl-smarteeprom",
     "relUrl": "/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#nvmctrl-smarteeprom"
-  },"110": {
+  },"116": {
     "doc": "NVMCTRL SmartEEPROM",
     "title": "Description",
     "content": "This SmartEEPROM feature is provided through the AHB2 interface and makes a portion of the NVM appear like a RAM. This example uses the NVMCTRL peripheral library to read or write a 8-bit data to the internal flash memory by using SmartEEPROM feature. This application demonstrates Read data from internal flash, Write data into internal flash. Along with these options,”Reset device” option also available in this demo to validate written data. This will be useful to check if EEPROM is holding user data even after reset. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#description",
     "relUrl": "/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#description"
-  },"111": {
+  },"117": {
     "doc": "NVMCTRL SmartEEPROM",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/nvmctrl/nvmctrl_smarteeprom/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#downloading-and-building-the-application"
-  },"112": {
+  },"118": {
     "doc": "NVMCTRL SmartEEPROM",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#setting-up-the-hardware"
-  },"113": {
+  },"119": {
     "doc": "NVMCTRL SmartEEPROM",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | See the following message in the console: . | After programming the application | . | After Resetting the device | . | Enter 1 and see the following message in the console: . | Enter 2 and see the following message in the console: . | Enter 3 and see the following message in the console: . | LED status will toggle on every reset | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#running-the-application",
     "relUrl": "/apps/nvmctrl/nvmctrl_smarteeprom/readme.html#running-the-application"
-  },"114": {
+  },"120": {
     "doc": "NVMCTRL SmartEEPROM",
     "title": "NVMCTRL SmartEEPROM",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html",
     "relUrl": "/apps/nvmctrl/nvmctrl_smarteeprom/readme.html"
-  },"115": {
+  },"121": {
     "doc": "PM wakeup using EIC",
     "title": "PM wakeup using EIC",
     "content": "This application demonstrates entering the low power modes and exiting it using the EIC. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html#pm-wakeup-using-eic",
     "relUrl": "/apps/pm/pm_wakeup_eic/readme.html#pm-wakeup-using-eic"
-  },"116": {
+  },"122": {
     "doc": "PM wakeup using EIC",
     "title": "Description",
     "content": "The PM peripheral library is used to enter the low power mode and the device exits low power mode when the button is pressed. To identify a button push, the EIC is configured to detect a falling edge on the GPIO pin connected to the switch. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html#description",
     "relUrl": "/apps/pm/pm_wakeup_eic/readme.html#description"
-  },"117": {
+  },"123": {
     "doc": "PM wakeup using EIC",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/pm/pm_wakeup_eic/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/pm/pm_wakeup_eic/readme.html#downloading-and-building-the-application"
-  },"118": {
+  },"124": {
     "doc": "PM wakeup using EIC",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/pm/pm_wakeup_eic/readme.html#setting-up-the-hardware"
-  },"119": {
+  },"125": {
     "doc": "PM wakeup using EIC",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | LED is blinked continuously using the SysTick Timer | The console displays the following message . | Select ‘a’ or ‘b’ to enter the low power mode (The LED is turned off when the device enters low power mode) | Press the switch to exit the low power mode | LED will start blinking and the console displays the following message: . | . The following table provides the detail of switch and LED . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html#running-the-application",
     "relUrl": "/apps/pm/pm_wakeup_eic/readme.html#running-the-application"
-  },"120": {
+  },"126": {
     "doc": "PM wakeup using EIC",
     "title": "PM wakeup using EIC",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html",
     "relUrl": "/apps/pm/pm_wakeup_eic/readme.html"
-  },"121": {
+  },"127": {
     "doc": "PM wakeup using RTC",
     "title": "PM wakeup using RTC",
     "content": "This example demonstrates entering the low power modes and exiting it using the RTC. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html#pm-wakeup-using-rtc",
     "relUrl": "/apps/pm/pm_wakeup_rtc/readme.html#pm-wakeup-using-rtc"
-  },"122": {
+  },"128": {
     "doc": "PM wakeup using RTC",
     "title": "Description",
     "content": "The PM Peripheral library is used to enter into the low power modes, and uses the RTC timer to wake up the device from the low power mode. The RTC peripheral is run continuously, including in the device’s low-power sleep modes. The RTC counter value is continuously compared with the Compare registers and generates compare match interrupt when compare match occurs to wake up the device. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html#description",
     "relUrl": "/apps/pm/pm_wakeup_rtc/readme.html#description"
-  },"123": {
+  },"129": {
     "doc": "PM wakeup using RTC",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/pm/pm_wakeup_rtc/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/pm/pm_wakeup_rtc/readme.html#downloading-and-building-the-application"
-  },"124": {
+  },"130": {
     "doc": "PM wakeup using RTC",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/pm/pm_wakeup_rtc/readme.html#setting-up-the-hardware"
-  },"125": {
+  },"131": {
     "doc": "PM wakeup using RTC",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | LED is blinked continuously using the SysTick Timer | The console displays the following message . | Select ‘a’ or ‘b’ to enter the low power mode (LED is turned off when the device enters low power mode) | When the device wakes up on RTC compare match interrupt, the LED starts blinking and the console displays the following message . | Select ‘e’ to enter the backup mode (LED is turned off when the device enters backup mode) | When the device wakes up on RTC compare match interrupt, the LED starts blinking and the console displays the following message . | . The following table provides the details of LED . | Board | LED Name |   | . | SAM E54 Xplained Pro board | LED0 |   | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html#running-the-application",
     "relUrl": "/apps/pm/pm_wakeup_rtc/readme.html#running-the-application"
-  },"126": {
+  },"132": {
     "doc": "PM wakeup using RTC",
     "title": "PM wakeup using RTC",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html",
     "relUrl": "/apps/pm/pm_wakeup_rtc/readme.html"
-  },"127": {
+  },"133": {
     "doc": "PORT polling",
     "title": "PORT polling",
     "content": "This example application demonstrate how to poll the switch input, and indicate the switch status using the LED. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html#port-polling",
     "relUrl": "/apps/port/port_led_on_off_polling/readme.html#port-polling"
-  },"128": {
+  },"134": {
     "doc": "PORT polling",
     "title": "Description",
     "content": "This application uses the PORT Peripheral library to read the GPIO pin connected to the switch, and drives the GPIO pin connected to the LED to indicate the switch status. LED is turned ON when the switch is pressed and turned OFF when the switch is released. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html#description",
     "relUrl": "/apps/port/port_led_on_off_polling/readme.html#description"
-  },"129": {
+  },"135": {
     "doc": "PORT polling",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/port/port_led_on_off_polling/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/port/port_led_on_off_polling/readme.html#downloading-and-building-the-application"
-  },"130": {
+  },"136": {
     "doc": "PORT polling",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/port/port_led_on_off_polling/readme.html#setting-up-the-hardware"
-  },"131": {
+  },"137": {
     "doc": "PORT polling",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | LED is turned on when the switch is pressed and turned off when the switch is released. | . Refer the table below for details of switch and LED . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html#running-the-application",
     "relUrl": "/apps/port/port_led_on_off_polling/readme.html#running-the-application"
-  },"132": {
+  },"138": {
     "doc": "PORT polling",
     "title": "PORT polling",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html",
     "relUrl": "/apps/port/port_led_on_off_polling/readme.html"
-  },"133": {
+  },"139": {
     "doc": "QSPI flash read write",
     "title": "QSPI flash read write",
     "content": "This example shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in Quad IO mode. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html#qspi-flash-read-write",
     "relUrl": "/apps/qspi/qspi_read_write/readme.html#qspi-flash-read-write"
-  },"134": {
+  },"140": {
     "doc": "QSPI flash read write",
     "title": "Description",
     "content": "This example uses the QSPI peripheral library to erase and write an array of values to the QSPI Serial Flash memory. It verifies the value written by reading the values back and comparing it to the value written. The application can be configured to perform operations on below QSPI Serial Flash Memories . | SST26VF064B (Default) | N25Q256 | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html#description",
     "relUrl": "/apps/qspi/qspi_read_write/readme.html#description"
-  },"135": {
+  },"141": {
     "doc": "QSPI flash read write",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/qspi/qspi_read_write/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/qspi/qspi_read_write/readme.html#downloading-and-building-the-application"
-  },"136": {
+  },"142": {
     "doc": "QSPI flash read write",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/qspi/qspi_read_write/readme.html#setting-up-the-hardware"
-  },"137": {
+  },"143": {
     "doc": "QSPI flash read write",
     "title": "Running the Application",
     "content": ". | Open the application project using its respective IDE | Open app.h file and set the macro for the QSPI Flash memory present on the board to 1 #define APP_USE_SST26_FLASH 1 #define APP_USE_N25Q_FLASH 0 . | Build and Program the application project | LED indicates success or failure: . | LED is toggled when the value read from the QSPI Serial Flash memory matches with the written value | LED is turned ON when the value read from the QSPI Serial Flash did not match with the written value | . | . The following table provides the LED name . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html#running-the-application",
     "relUrl": "/apps/qspi/qspi_read_write/readme.html#running-the-application"
-  },"138": {
+  },"144": {
     "doc": "QSPI flash read write",
     "title": "QSPI flash read write",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html",
     "relUrl": "/apps/qspi/qspi_read_write/readme.html"
-  },"139": {
+  },"145": {
     "doc": "QSPI flash read write in SPI mode",
     "title": "QSPI flash read write in SPI mode",
     "content": "This example shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in SPI mode. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html#qspi-flash-read-write-in-spi-mode",
     "relUrl": "/apps/qspi/spi_read_write/readme.html#qspi-flash-read-write-in-spi-mode"
-  },"140": {
+  },"146": {
     "doc": "QSPI flash read write in SPI mode",
     "title": "Description",
     "content": "This example uses the QSPI peripheral library to erase and write an array of values to the QSPI Serial Flash memory in SPI Mode. It verifies the value written by reading the values back and comparing it to the value written. The application can be configured to perform operations on below QSPI Serial Flash Memories . | SST26VF064B (Default) | N25Q256 | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html#description",
     "relUrl": "/apps/qspi/spi_read_write/readme.html#description"
-  },"141": {
+  },"147": {
     "doc": "QSPI flash read write in SPI mode",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/qspi/spi_read_write/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/qspi/spi_read_write/readme.html#downloading-and-building-the-application"
-  },"142": {
+  },"148": {
     "doc": "QSPI flash read write in SPI mode",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/qspi/spi_read_write/readme.html#setting-up-the-hardware"
-  },"143": {
+  },"149": {
     "doc": "QSPI flash read write in SPI mode",
     "title": "Running the Application",
     "content": ". | Open the application project using its respective IDE | Open app.h file and set the macro for the QSPI Flash memory present on the board to 1 #define APP_USE_SST26_FLASH 1 #define APP_USE_N25Q_FLASH 0 . | Build and Program the application project | Reset the device by power cycle | The LED indicates the success or failure: . | The LED is turned ON when the value read from the QSPI Serial Flash memory matches with the written value | . | . The following table provides the LED name . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html#running-the-application",
     "relUrl": "/apps/qspi/spi_read_write/readme.html#running-the-application"
-  },"144": {
+  },"150": {
     "doc": "QSPI flash read write in SPI mode",
     "title": "QSPI flash read write in SPI mode",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html",
     "relUrl": "/apps/qspi/spi_read_write/readme.html"
-  },"145": {
+  },"151": {
     "doc": "RSTC reset cause",
     "title": "RSTC reset cause",
     "content": "This example shows how to use the RSTC peripheral to indicate the cause of the device reset. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html#rstc-reset-cause",
     "relUrl": "/apps/rstc/rstc_reset_cause/readme.html#rstc-reset-cause"
-  },"146": {
+  },"152": {
     "doc": "RSTC reset cause",
     "title": "Description",
     "content": "Reset Controller collects the various reset sources and generates reset for the device and allows the reset source to be identified by the software. Power On Reset: Device contains a power-on-reset (POR) detector, which keeps the system reset until power is stable. This eliminates the need for external reset circuitry to guarantee stable operation when powering up the device. VDDCORE Brown Out Reset: BOD12 will reset the device if a voltage of 1.2 V or below is observed on the I/O pin supplying power to the MCU core (VDDCORE). VDDANA Brown Out Reset: BOD33 resets the device if the voltage on the VDDANA pin falls below a value configured by the SYSCTRL . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html#description",
     "relUrl": "/apps/rstc/rstc_reset_cause/readme.html#description"
-  },"147": {
+  },"153": {
     "doc": "RSTC reset cause",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/rstc/rstc_reset_cause/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/rstc/rstc_reset_cause/readme.html#downloading-and-building-the-application"
-  },"148": {
+  },"154": {
     "doc": "RSTC reset cause",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/rstc/rstc_reset_cause/readme.html#setting-up-the-hardware"
-  },"149": {
+  },"155": {
     "doc": "RSTC reset cause",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | LED is blinked continuously using the SysTick Timer | Console displays the following message . | Watchdog timer is fed periodically using System Timer (SysTick) to prevent the WDT reset and the LED is toggled | Press the switch to put the system in deadlock (LED should stop blinking) | WDT will reset the device in four seconds and the demonstration should restart | Console should display the following message . | . Following table provides the details of switch and LED . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html#running-the-application",
     "relUrl": "/apps/rstc/rstc_reset_cause/readme.html#running-the-application"
-  },"150": {
+  },"156": {
     "doc": "RSTC reset cause",
     "title": "RSTC reset cause",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html",
     "relUrl": "/apps/rstc/rstc_reset_cause/readme.html"
-  },"151": {
+  },"157": {
     "doc": "RTC alarm interrupt",
     "title": "RTC alarm interrupt",
     "content": "This example shows how to use the RTC to configure the time and generate the alarm. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html#rtc-alarm-interrupt",
     "relUrl": "/apps/rtc/rtc_alarm/readme.html#rtc-alarm-interrupt"
-  },"152": {
+  },"158": {
     "doc": "RTC alarm interrupt",
     "title": "Description",
     "content": "This example application shows how to setup system time and configure alarm using the RTC Peripheral Library. The application sets up an alarm to be generated after 20 seconds of the configured system time. The application displays a message on the alarm trigger. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html#description",
     "relUrl": "/apps/rtc/rtc_alarm/readme.html#description"
-  },"153": {
+  },"159": {
     "doc": "RTC alarm interrupt",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/rtc/rtc_alarm/firmware/ . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/rtc/rtc_alarm/readme.html#downloading-and-building-the-application"
-  },"154": {
+  },"160": {
     "doc": "RTC alarm interrupt",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/rtc/rtc_alarm/readme.html#setting-up-the-hardware"
-  },"155": {
+  },"161": {
     "doc": "RTC alarm interrupt",
     "title": "Running the Application",
-    "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application project using its IDE | The console displays the current time and the alarm time (System time starts at 12:00:00 and gets updated every second) . | Once the alarm time is reached, it print the alarm message and turns on the LED (System time keeps updating) . | . Following table provides the LED name: | Board | LED Name | ———- | —————- | SAM E54 Xplained Pro board | LED0 ||| . ",
+    "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application project using its IDE | The console displays the current time and the alarm time (System time starts at 12:00:00 and gets updated every second) . | Once the alarm time is reached, it print the alarm message and turns on the LED (System time keeps updating) . | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html#running-the-application",
     "relUrl": "/apps/rtc/rtc_alarm/readme.html#running-the-application"
-  },"156": {
+  },"162": {
     "doc": "RTC alarm interrupt",
     "title": "RTC alarm interrupt",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html",
     "relUrl": "/apps/rtc/rtc_alarm/readme.html"
-  },"157": {
+  },"163": {
     "doc": "RTC periodic interrupt",
     "title": "RTC periodic interrupt",
     "content": "This example application shows how to use the RTC to generate periodic interrupts. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html#rtc-periodic-interrupt",
     "relUrl": "/apps/rtc/rtc_periodic_timeout/readme.html#rtc-periodic-interrupt"
-  },"158": {
+  },"164": {
     "doc": "RTC periodic interrupt",
     "title": "Description",
     "content": "This example application demonstrates how to use the 32-bit timer mode of the RTC to generate periodic ticks. It toggles an LED every time the callback is triggered. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html#description",
     "relUrl": "/apps/rtc/rtc_periodic_timeout/readme.html#description"
-  },"159": {
+  },"165": {
     "doc": "RTC periodic interrupt",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/rtc/rtc_periodic_timeout/firmware/ . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/rtc/rtc_periodic_timeout/readme.html#downloading-and-building-the-application"
-  },"160": {
+  },"166": {
     "doc": "RTC periodic interrupt",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/rtc/rtc_periodic_timeout/readme.html#setting-up-the-hardware"
-  },"161": {
+  },"167": {
     "doc": "RTC periodic interrupt",
     "title": "Running the Application",
-    "content": ". | Build and Program the application using its IDE | The LED blinks continuously | . Following table provides the LED name: | Board | LED Name | ———- | —————- | SAM E54 Xplained Pro board | LED0 ||| . ",
+    "content": ". | Build and Program the application using its IDE | The LED blinks continuously | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html#running-the-application",
     "relUrl": "/apps/rtc/rtc_periodic_timeout/readme.html#running-the-application"
-  },"162": {
+  },"168": {
     "doc": "RTC periodic interrupt",
     "title": "RTC periodic interrupt",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html",
     "relUrl": "/apps/rtc/rtc_periodic_timeout/readme.html"
-  },"163": {
+  },"169": {
     "doc": "RTC tamper detect",
     "title": "RTC tamper detect",
     "content": "This example application shows how to configure and use tamper detect feature of RTC. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html#rtc-tamper-detect",
     "relUrl": "/apps/rtc/rtc_tamper_detect/readme.html#rtc-tamper-detect"
-  },"164": {
+  },"170": {
     "doc": "RTC tamper detect",
     "title": "Description",
     "content": "This example application shows how to setup system time and configure tamper detection using the RTC Peripheral Library. The application sets up system time and then waits for tamper detection to happen. On Tamper detection, application displays the tamper detected information and timestamp at which tamper is detected. Along with this, this example also demonstrates auto erase feature of backup register when tamper is detected. A known value is loaded into Backup register and displayed through console terminal. After tamper detection, it is evident that the pre-loaded value in backup register is erased. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html#description",
     "relUrl": "/apps/rtc/rtc_tamper_detect/readme.html#description"
-  },"165": {
+  },"171": {
     "doc": "RTC tamper detect",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/rtc/rtc_tamper_detect/firmware/ . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/rtc/rtc_tamper_detect/readme.html#downloading-and-building-the-application"
-  },"166": {
+  },"172": {
     "doc": "RTC tamper detect",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/rtc/rtc_tamper_detect/readme.html#setting-up-the-hardware"
-  },"167": {
+  },"173": {
     "doc": "RTC tamper detect",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application project using its IDE | System time is displayed in terminal session as RTC is configured in calendar mode. NOTE: System time value shown in the screen capture are for illustration purpose only. it will be updated every second while running the application. | To generate a tamper event, make the connection as follows: . | Board | Pad | Connection details | . | SAM E54 Xplained Pro board | PB00 | Connect EXT 2, Pin 3 to GND to generate a falling edge on RTC_IN0 (tamper event) | . |   |   |   | . NOTE: Using wires/jumpers may cause multiple detection because of connectivity glitch while shorting . | Upon detection of the tamper event, LED will be toggled and the console output will be updated as follows: . | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html#running-the-application",
     "relUrl": "/apps/rtc/rtc_tamper_detect/readme.html#running-the-application"
-  },"168": {
+  },"174": {
     "doc": "RTC tamper detect",
     "title": "RTC tamper detect",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html",
     "relUrl": "/apps/rtc/rtc_tamper_detect/readme.html"
-  },"169": {
+  },"175": {
     "doc": "SERCOM I2C EEPROM read write",
     "title": "SERCOM I2C EEPROM read write",
     "content": "This example application demonstrates how to use the SERCOM peripheral to write and read from the I2C serial EEPROM memory. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html#sercom-i2c-eeprom-read-write",
     "relUrl": "/apps/sercom/i2c/master/i2c_eeprom/readme.html#sercom-i2c-eeprom-read-write"
-  },"170": {
+  },"176": {
     "doc": "SERCOM I2C EEPROM read write",
     "title": "Description",
     "content": "This example uses the I2C peripheral library to write an array of values to the I2C Serial EEPROM and verify the value written by reading the values back and comparing it to the value written. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html#description",
     "relUrl": "/apps/sercom/i2c/master/i2c_eeprom/readme.html#description"
-  },"171": {
+  },"177": {
     "doc": "SERCOM I2C EEPROM read write",
     "title": "Downloading and building the application",
-    "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/i2c/master/i2c_eeprom/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . | sam_e54_xpro.IAR | IAR Project for SAM E54 Xplained Pro board | . |   |   | . ",
+    "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/i2c/master/i2c_eeprom/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . | sam_e54_xpro_iar.IAR/i2c_eeprom_sam_e54_xpro.eww | IAR Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/i2c/master/i2c_eeprom/readme.html#downloading-and-building-the-application"
-  },"172": {
+  },"178": {
     "doc": "SERCOM I2C EEPROM read write",
     "title": "Setting up the hardware",
-    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X sam_e54_xpro.IAR | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
+    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X sam_e54_xpro_iar.IAR/i2c_eeprom_sam_e54_xpro.eww | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/i2c/master/i2c_eeprom/readme.html#setting-up-the-hardware"
-  },"173": {
+  },"179": {
     "doc": "SERCOM I2C EEPROM read write",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | LED indicates success or failure: . | The LED is turned ON when the value read from the EEPROM matched with the written value | The LED is turned OFF when the value read from the EEPROM did not match with the written value | . | . The following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html#running-the-application",
     "relUrl": "/apps/sercom/i2c/master/i2c_eeprom/readme.html#running-the-application"
-  },"174": {
+  },"180": {
     "doc": "SERCOM I2C EEPROM read write",
     "title": "SERCOM I2C EEPROM read write",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html",
     "relUrl": "/apps/sercom/i2c/master/i2c_eeprom/readme.html"
-  },"175": {
+  },"181": {
     "doc": "SERCOM I2C EEPROM emulation",
     "title": "SERCOM I2C EEPROM emulation",
     "content": "This example application demonstrates how to use the SERCOM peripheral in slave mode. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#sercom-i2c-eeprom-emulation",
     "relUrl": "/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#sercom-i2c-eeprom-emulation"
-  },"176": {
+  },"182": {
     "doc": "SERCOM I2C EEPROM emulation",
     "title": "Description",
     "content": "This example uses the I2C peripheral library in slave mode and emulates an EEPROM of 512 bytes. There are two pages each of size 256 bytes. I2C slave expects two bytes of memory address from the I2C master and the memory address can range from 0x00 to 0x1FF. I2C slave application supports following: . Byte Write: The I2C master sends the slave address, followed by two bytes of memory address. The slave provides the data present at the requested memory address. Page Write: A page write is initiated the same way as a byte write, but the I2C master can write up-to 256 bytes (1 page). If more than 256 bytes are sent by the I2C master to the I2C slave, the memory address will “roll over” and previous data will be overwritten. The address “roll over” during write is from the last byte of the current page to the first byte of the same page. Current Address Read: The internal memory address counter maintains the last address accessed during the last read or write operation, incremented by one. Once the device address with the read/write bit set to one is clocked in and acknowledged by the EEPROM, the data byte at the current address is serially clocked out. After reading the data from the current address, the I2C master sends NAK and generates a STOP condition. Random Read: The I2C master writes the 2 byte memory address and then reads the data from that memory address. After reading the data, the I2C master sends NAK and generates a STOP condition. Sequential Read: Sequential reads are initiated by either a current address read or a random address read. As long as the EEPROM receives an acknowledge, it will continue to increment the memory address and serially clock out sequential data bytes. When the memory address limit is reached (0x1FF), the memory address will “roll over” to 0x00 and the sequential read will continue. The sequential read operation is terminated when the I2C master sends a NAK and generates a STOP condition. To run the application, two evaluation kits will be required - one acting as the I2C master and the other as the I2C slave. The I2C master application to be used for this demo application is available under apps/sercom/i2c/master/i2c_eeprom/firmware folder. I2C master writes an array of values to the I2C slave and verifies the value written by reading the values back and comparing it to the value written. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#description",
     "relUrl": "/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#description"
-  },"177": {
+  },"183": {
     "doc": "SERCOM I2C EEPROM emulation",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/i2c/slave/i2c_eeprom_emulation/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#downloading-and-building-the-application"
-  },"178": {
+  },"184": {
     "doc": "SERCOM I2C EEPROM emulation",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Hardware setup requires two boards, one acting as the I2C Master and the other as the I2C slave. Note: The I2C master demo - i2c_eeprom on the SAM E54 Xplained Pro uses the on-board EEPROM and hence cannot be used as is with this I2C slave application . Setting up SAM E54 Xplained Pro board . | On EXT1 header, connect I2C SDA line on Pin 11 (PA22) and I2C SCL line on Pin 12 (PA23) with the corresponding SDA and SCL lines of the I2C master | Connect a ground wire from Pin 2 of EXT1 to the ground of the I2C master | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#setting-up-the-hardware"
-  },"179": {
+  },"185": {
     "doc": "SERCOM I2C EEPROM emulation",
     "title": "Running the Application",
     "content": ". | Build and program I2C EEPROM application from apps/sercom/i2c/master/i2c_eeprom/firmware onto the evaluation kit used as I2C master | Build and Program I2C slave application onto the evaluation kit used as I2C slave | Run application on I2C slave board and then run the application on I2C master board | LED on the I2C master board indicates success or failure: . | The LED is turned ON when the value read from the I2C slave matches with the written value | The LED is turned OFF when the value read from the I2C slave did not match with the written value | . | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#running-the-application",
     "relUrl": "/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html#running-the-application"
-  },"180": {
+  },"186": {
     "doc": "SERCOM I2C EEPROM emulation",
     "title": "SERCOM I2C EEPROM emulation",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html",
     "relUrl": "/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html"
-  },"181": {
+  },"187": {
     "doc": "SERCOM SPI EEPROM read write",
     "title": "SERCOM SPI EEPROM read write",
     "content": "This example application demonstrates how to use the SERCOM SPI peripheral to write and read from the SPI serial EEPROM memory. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#sercom-spi-eeprom-read-write",
     "relUrl": "/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#sercom-spi-eeprom-read-write"
-  },"182": {
+  },"188": {
     "doc": "SERCOM SPI EEPROM read write",
     "title": "Description",
     "content": "This example uses the SERCOM SPI peripheral library to write an array of values to the SPI Serial EEPROM and verify the value written by reading the values back and comparing it to the value written. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#description",
     "relUrl": "/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#description"
-  },"183": {
+  },"189": {
     "doc": "SERCOM SPI EEPROM read write",
     "title": "Downloading and building the application",
     "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/spi_eeprom_write_read/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#downloading-and-building-the-application"
-  },"184": {
+  },"190": {
     "doc": "SERCOM SPI EEPROM read write",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect a mikroBUS Xplained Pro board to the EXT2 header | Plug an EEPROM 4 Click board into the MikroBus socket of the mikroBUS Xplained Pro board | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#setting-up-the-hardware"
-  },"185": {
+  },"191": {
     "doc": "SERCOM SPI EEPROM read write",
     "title": "Running the Application",
     "content": ". | Build and Program the application project using its IDE | LED indicates the success or failure: . | LED is turned ON when the value read from the EEPROM matched with the written value | LED is turned OFF when the value read from the EEPROM did not match with the written value | . | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#running-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_eeprom_write_read/readme.html#running-the-application"
-  },"186": {
+  },"192": {
     "doc": "SERCOM SPI EEPROM read write",
     "title": "SERCOM SPI EEPROM read write",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html",
     "relUrl": "/apps/sercom/spi/master/spi_eeprom_write_read/readme.html"
-  },"187": {
+  },"193": {
     "doc": "SERCOM SPI ping pong with DMA",
     "title": "SERCOM SPI ping pong with DMA",
     "content": "This example demonstrates how to continuously transmit and receive data over a SPI interface using ping pong buffers with DMA. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#sercom-spi-ping-pong-with-dma",
     "relUrl": "/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#sercom-spi-ping-pong-with-dma"
-  },"188": {
+  },"194": {
     "doc": "SERCOM SPI ping pong with DMA",
     "title": "Description",
     "content": "The DMA peripheral provides support to implement the ping-pong buffering. The DMA transmits and receives data from one pair of buffers, when the CPU works on the second pair. When the DMA is transmitting data from the ping buffer, the CPU works on the pong buffer. When the DMA completes the transfer, it generates interrupt to indicate transfer completion from the ping buffer. DMA channel is automatically re-initialized to transmit data from the pong buffer while the CPU works on the ping buffer. When the DMA is receiving data to the ping buffer, the CPU works on the the pong buffer.When DMA completes the transfer, it generates interrupt to indicate the availability of the data in the ping buffer. DMA channel is automatically re-initialized to receive data in the pong buffer while the CPU works on the ping buffer. Application transmits an array of values and verifies the value transmitted by receiving the values back with loop back and comparing it to the value transmitted. This application requires that the MOSI output pin to be connected to the MISO input pin so that anything transmitted will also be received. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#description",
     "relUrl": "/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#description"
-  },"189": {
+  },"195": {
     "doc": "SERCOM SPI ping pong with DMA",
     "title": "Downloading and building the application",
-    "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/spi_ping_pong_with_dma/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . | sam_e54_xpro.IAR | IAR Project for SAM E54 Xplained Pro board | . |   |   | . ",
+    "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/spi_ping_pong_with_dma/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . | sam_e54_xpro_iar.IAR/spi_ping_pong_with_dma_sam_e54_xpro.eww | IAR Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#downloading-and-building-the-application"
-  },"190": {
+  },"196": {
     "doc": "SERCOM SPI ping pong with DMA",
     "title": "Setting up the hardware",
-    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X sam_e54_xpro.IAR | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Use a jumper wire to short pin 16 and pin 17 of the EXT2 header | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
+    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X sam_e54_xpro_iar.IAR/spi_ping_pong_with_dma_sam_e54_xpro.eww | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Use a jumper wire to short pin 16 and pin 17 of the EXT2 header | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#setting-up-the-hardware"
-  },"191": {
+  },"197": {
     "doc": "SERCOM SPI ping pong with DMA",
     "title": "Running the Application",
     "content": ". | Build and Program the application project using its IDE | LED indicates the success or failure: . | The LED is turned ON when the value received matched with the transmitted value | The LED is turned OFF when the value received did not match with the transmitted value | . | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#running-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html#running-the-application"
-  },"192": {
+  },"198": {
     "doc": "SERCOM SPI ping pong with DMA",
     "title": "SERCOM SPI ping pong with DMA",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html",
     "relUrl": "/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html"
-  },"193": {
+  },"199": {
     "doc": "SERCOM SPI blocking",
     "title": "SERCOM SPI blocking",
     "content": "This example application demonstrates how to use the SERCOM SPI peripheral to transmit and receive a block of data in a blocking manner. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#sercom-spi-blocking",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#sercom-spi-blocking"
-  },"194": {
+  },"200": {
     "doc": "SERCOM SPI blocking",
     "title": "Description",
     "content": "This example shows the transmit and receive operation over a SPI interface in a blocking manner. The CPU polls the peripheral register continuously to manage the transfer. It transmits an array of values and verifies the value transmitted by receiving the values back with loop back and comparing it to the value transmitted. The loop back test requires the MOSI output pin to be connected to the MISO input pin so that anything transmitted will also be received. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#description",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#description"
-  },"195": {
+  },"201": {
     "doc": "SERCOM SPI blocking",
     "title": "Downloading and building the application",
     "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/spi_self_loopback_blocking/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#downloading-and-building-the-application"
-  },"196": {
+  },"202": {
     "doc": "SERCOM SPI blocking",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Use a jumper wire to short pin 16 and pin 17 of the EXT2 header | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#setting-up-the-hardware"
-  },"197": {
+  },"203": {
     "doc": "SERCOM SPI blocking",
     "title": "Running the Application",
     "content": ". | Build and Program the application project using its IDE | The LED indicates the success or failure: . | The LED is turned ON when the value received matched with the transmitted value | The LED is turned OFF when the value received did not match with the transmitted value | . | SPI data transfer and compare match checking happens only one time. | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#running-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html#running-the-application"
-  },"198": {
+  },"204": {
     "doc": "SERCOM SPI blocking",
     "title": "SERCOM SPI blocking",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html"
-  },"199": {
+  },"205": {
     "doc": "SERCOM SPI interrupt",
     "title": "SERCOM SPI interrupt",
     "content": "This example application shows how to use SERCOM SPI PLIB with external loop back to write and then read back an array of data in interrupt mode. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#sercom-spi-interrupt",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#sercom-spi-interrupt"
-  },"200": {
+  },"206": {
     "doc": "SERCOM SPI interrupt",
     "title": "Description",
     "content": "This example shows the transmit and receive operation over a SPI interface in a non-blocking manner. The peripheral interrupt is used to manage the transfer. It transmits an array of values and verifies the value transmitted by receiving the values back with look back and comparing it to the value transmitted. The loop back test requires the MOSI output pin to be connected to the MISO input pin so that anything transmitted will also be received. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#description",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#description"
-  },"201": {
+  },"207": {
     "doc": "SERCOM SPI interrupt",
     "title": "Downloading and building the application",
     "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/spi_self_loopback_interrupt/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#downloading-and-building-the-application"
-  },"202": {
+  },"208": {
     "doc": "SERCOM SPI interrupt",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Use a jumper wire to short pin 16 and pin 17 of the EXT2 header | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#setting-up-the-hardware"
-  },"203": {
+  },"209": {
     "doc": "SERCOM SPI interrupt",
     "title": "Running the Application",
     "content": ". | Build and Program the application project using its IDE | The LED indicates the success or failure: . | The LED is turned ON when the value received matched with the transmitted value | The LED is turned OFF when the value received did not match with the transmitted value | . | SPI data transfer and compare match checking happens only one time. | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#running-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html#running-the-application"
-  },"204": {
+  },"210": {
     "doc": "SERCOM SPI interrupt",
     "title": "SERCOM SPI interrupt",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html",
     "relUrl": "/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html"
-  },"205": {
+  },"211": {
     "doc": "SERCOM SPI Master read write test application",
     "title": "SERCOM SPI Master read write test application",
     "content": "This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under - apps/sercom/spi/slave/spi_write_read/firmware . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html#sercom-spi-master-read-write-test-application",
     "relUrl": "/apps/sercom/spi/master/spi_write_read_test_app/readme.html#sercom-spi-master-read-write-test-application"
-  },"206": {
+  },"212": {
     "doc": "SERCOM SPI Master read write test application",
     "title": "Description",
     "content": "This example uses the SERCOM SPI peripheral library in master mode and serves as a test application to demonstrate communication between SPI master and corresponding SPI slave application available at apps/sercom/spi/slave/spi_write_read/firmware. The SPI master writes data by sending a write command followed by two bytes of memory address followed by the data to be written. &lt; WR_CMD &gt; &lt; ADDR_MSB &gt; &lt; ADDR_LSB &gt; &lt; DATA0 &gt; … &lt; DATA n &gt; . The SPI slave asserts the Busy line to indicate to the SPI master that it is busy. Once ready, the SPI slave de-asserts the Busy line. Once the SPI slave is ready, the SPI master reads the data by sending read command followed by two bytes of memory address and the number of bytes to read. &lt; RD_CMD &gt; &lt; ADDR_MSB &gt; &lt; ADDR_LSB &gt; &lt; NUM_BYTES &gt; . The SPI slave responds by sending the data at the requested memory address. The SPI master compares the sent data with the received data and repeats the test if it matches. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html#description",
     "relUrl": "/apps/sercom/spi/master/spi_write_read_test_app/readme.html#description"
-  },"207": {
+  },"213": {
     "doc": "SERCOM SPI Master read write test application",
     "title": "Downloading and building the application",
     "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/master/spi_write_read_test_app/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_write_read_test_app/readme.html#downloading-and-building-the-application"
-  },"208": {
+  },"214": {
     "doc": "SERCOM SPI Master read write test application",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | To run this demo two SAM E54 Xplained Pro board are required. One will be progammed as SPI master and other will be programmed as SPI slave. | Connect Pin 15, 16, 17, 18 on EXT2 of SPI slave to Pin 15, 16, 17, 18 on EXT2 of SPI master . | Pin 15 - SPI Chip Select | Pin 16 - MOSI | Pin 17 - MISO | Pin 18 - SCK | . | Connect Pin 9 on EXT2 of SPI slave to Pin 9 on EXT2 of SPI master. Pin 9 is configured as GPIO and serves as the slave busy pin. | Connect the Debug USB port on the SPI master and slave boards to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/spi/master/spi_write_read_test_app/readme.html#setting-up-the-hardware"
-  },"209": {
+  },"215": {
     "doc": "SERCOM SPI Master read write test application",
     "title": "Running the Application",
     "content": ". | Build and Program the SPI master application project using its IDE | Build and Program the SPI slave application project using its IDE. Path of the SPI Slave application within the repository is apps/sercom/spi/slave/spi_write_read/firmware | On the SPI master board, press switch to start reading and writing data | LED on SPI master board indicates the success or failure: . | LED is turned ON when the data read from the SPI slave matches with the data written | LED is turned OFF when the data read from the SPI slave does not match with the data written | . | . Following table provides the LED name: . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html#running-the-application",
     "relUrl": "/apps/sercom/spi/master/spi_write_read_test_app/readme.html#running-the-application"
-  },"210": {
+  },"216": {
     "doc": "SERCOM SPI Master read write test application",
     "title": "SERCOM SPI Master read write test application",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html",
     "relUrl": "/apps/sercom/spi/master/spi_write_read_test_app/readme.html"
-  },"211": {
+  },"217": {
     "doc": "SERCOM SPI Slave read write",
     "title": "SERCOM SPI Slave read write",
     "content": "This example application demonstrates how to use the SERCOM SPI peripheral in slave mode . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html#sercom-spi-slave-read-write",
     "relUrl": "/apps/sercom/spi/slave/spi_write_read/readme.html#sercom-spi-slave-read-write"
-  },"212": {
+  },"218": {
     "doc": "SERCOM SPI Slave read write",
     "title": "Description",
     "content": "This example uses the SERCOM SPI peripheral library in slave mode and allows reading and writing data from/to its internal buffer by a SPI master. The SPI master writes data by sending a write command followed by two bytes of memory address followed by the data to be written. &lt; WR_CMD &gt; &lt; ADDR_MSB &gt; &lt; ADDR_LSB &gt; &lt; DATA0 &gt; … &lt; DATA n &gt; . The SPI slave asserts the Busy line to indicate to the SPI master that it is busy. Once ready, the SPI slave de-asserts the Busy line. Once the SPI slave is ready, the SPI master reads the data by sending read command followed by two bytes of memory address and the number of bytes to read. &lt; RD_CMD &gt; &lt; ADDR_MSB &gt; &lt; ADDR_LSB &gt; &lt; NUM_BYTES &gt; . The SPI slave responds by sending the data at the requested memory address. The SPI master compares the sent data with the received data and repeats the test if it matches. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html#description",
     "relUrl": "/apps/sercom/spi/slave/spi_write_read/readme.html#description"
-  },"213": {
+  },"219": {
     "doc": "SERCOM SPI Slave read write",
     "title": "Downloading and building the application",
     "content": "To download or clone this application from Github, go to the top level of the repository and click . Path of the application within the repository is apps/sercom/spi/slave/spi_write_read/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/spi/slave/spi_write_read/readme.html#downloading-and-building-the-application"
-  },"214": {
+  },"220": {
     "doc": "SERCOM SPI Slave read write",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | To run this demo two SAM E54 Xplained Pro board are required. One will be progammed as SPI master and other will be programmed as SPI slave. | Connect Pin 15, 16, 17, 18 on EXT2 of SPI slave to Pin 15, 16, 17, 18 on EXT2 of SPI master . | Pin 15 - SPI Chip Select | Pin 16 - MOSI | Pin 17 - MISO | Pin 18 - SCK | . | Connect Pin 9 on EXT2 of SPI slave to Pin 9 on EXT2 of SPI master. Pin 9 is configured as GPIO and serves as the slave busy pin. | Connect the Debug USB port on the SPI master and slave boards to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/spi/slave/spi_write_read/readme.html#setting-up-the-hardware"
-  },"215": {
+  },"221": {
     "doc": "SERCOM SPI Slave read write",
     "title": "Running the Application",
     "content": ". | Build and Program the SPI master application project (available under apps/sercom/spi/master/spi_write_read_test_app) using its IDE | Build and Program the SPI slave application project using its IDE | On the SPI master board, press switch to start reading and writing data | LED on SPI master board indicates the success or failure: . | LED is turned ON when the data read from the SPI slave matches with the data written | LED is turned OFF when the data read from the SPI slave does not match with the data written | . | . Following table provides the LED name: . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html#running-the-application",
     "relUrl": "/apps/sercom/spi/slave/spi_write_read/readme.html#running-the-application"
-  },"216": {
+  },"222": {
     "doc": "SERCOM SPI Slave read write",
     "title": "SERCOM SPI Slave read write",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html",
     "relUrl": "/apps/sercom/spi/slave/spi_write_read/readme.html"
-  },"217": {
+  },"223": {
     "doc": "SERCOM USART blocking",
     "title": "SERCOM USART blocking",
     "content": "This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer block of data in a blocking manner. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html#sercom-usart-blocking",
     "relUrl": "/apps/sercom/usart/usart_echo_blocking/readme.html#sercom-usart-blocking"
-  },"218": {
+  },"224": {
     "doc": "SERCOM USART blocking",
     "title": "Description",
     "content": "This example shows the read and write operation over a USART in a blocking manner. The CPU polls the peripheral register continuously to manage the transfer. It receives a line of characters from the terminal window and echoes them back. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html#description",
     "relUrl": "/apps/sercom/usart/usart_echo_blocking/readme.html#description"
-  },"219": {
+  },"225": {
     "doc": "SERCOM USART blocking",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/usart/usart_echo_blocking/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/usart/usart_echo_blocking/readme.html#downloading-and-building-the-application"
-  },"220": {
+  },"226": {
     "doc": "SERCOM USART blocking",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/usart/usart_echo_blocking/readme.html#setting-up-the-hardware"
-  },"221": {
+  },"227": {
     "doc": "SERCOM USART blocking",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | The console displays the following message . | Type a line of characters and press the Enter key (NOTE: Number of characters entered before pressing enter key must be less than 256)) | Entered line will be echoed back and the LED is toggled | The following table provides the LED names | . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html#running-the-application",
     "relUrl": "/apps/sercom/usart/usart_echo_blocking/readme.html#running-the-application"
-  },"222": {
+  },"228": {
     "doc": "SERCOM USART blocking",
     "title": "SERCOM USART blocking",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html",
     "relUrl": "/apps/sercom/usart/usart_echo_blocking/readme.html"
-  },"223": {
+  },"229": {
     "doc": "SERCOM USART interrupt",
     "title": "SERCOM USART interrupt",
     "content": "This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer data in a non-blocking manner. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html#sercom-usart-interrupt",
     "relUrl": "/apps/sercom/usart/usart_echo_interrupt/readme.html#sercom-usart-interrupt"
-  },"224": {
+  },"230": {
     "doc": "SERCOM USART interrupt",
     "title": "Description",
     "content": "This example shows the read and write operation over a UART in a non-blocking manner. The peripheral interrupt is used to manage the transfer. It receives 10 characters from the terminal window and echoes them back. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html#description",
     "relUrl": "/apps/sercom/usart/usart_echo_interrupt/readme.html#description"
-  },"225": {
+  },"231": {
     "doc": "SERCOM USART interrupt",
     "title": "Downloading and building the application",
-    "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/usart/usart_echo_interrupt/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . | sam_e54_xpro_iar.IAR | IAR Project for SAM E54 Xplained Pro board | . | sam_e54_xpro_keil.KEIL | KEIL uVision Project for SAM E54 Xplained Pro board | . |   |   | . ",
+    "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/usart/usart_echo_interrupt/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . | sam_e54_xpro_iar.IAR/usart_echo_interrupt_sam_e54_xpro.eww | IAR Project for SAM E54 Xplained Pro board | . | sam_e54_xpro_keil.KEIL/usart_echo_interrupt_sam_e54_xpro_keil.uvprojx | KEIL uVision Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/usart/usart_echo_interrupt/readme.html#downloading-and-building-the-application"
-  },"226": {
+  },"232": {
     "doc": "SERCOM USART interrupt",
     "title": "Setting up the hardware",
-    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X sam_e54_xpro_iar.IAR sam_e54_xpro_keil.KEIL | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
+    "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X sam_e54_xpro_iar.IAR/usart_echo_interrupt_sam_e54_xpro.eww sam_e54_xpro_keil.KEIL/usart_echo_interrupt_sam_e54_xpro_keil.uvprojx | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/usart/usart_echo_interrupt/readme.html#setting-up-the-hardware"
-  },"227": {
+  },"233": {
     "doc": "SERCOM USART interrupt",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | The console displays the following message . | Type 10 characters in the console | Entered characters will be echoed back and the LED is toggled | The following table provides the LED names | . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html#running-the-application",
     "relUrl": "/apps/sercom/usart/usart_echo_interrupt/readme.html#running-the-application"
-  },"228": {
+  },"234": {
     "doc": "SERCOM USART interrupt",
     "title": "SERCOM USART interrupt",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html",
     "relUrl": "/apps/sercom/usart/usart_echo_interrupt/readme.html"
-  },"229": {
+  },"235": {
     "doc": "SERCOM USART ring buffer",
     "title": "SERCOM USART ring buffer",
     "content": "This example application demonstrates how to use the SERCOM peripheral in USART ring buffer mode to transfer data in a non-blocking manner. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#sercom-usart-ring-buffer",
     "relUrl": "/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#sercom-usart-ring-buffer"
-  },"230": {
+  },"236": {
     "doc": "SERCOM USART ring buffer",
     "title": "Description",
     "content": "This example demonstrates read and write over USART using the ring buffer mode. The USART is configured in non-blocking mode (interrupts enabled). The example asks the user to enter 10 characters. Once received, the characters are echoed back. In the process, the example demonstrates various ring buffer APIs. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#description",
     "relUrl": "/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#description"
-  },"231": {
+  },"237": {
     "doc": "SERCOM USART ring buffer",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/sercom/usart/usart_ring_buffer_interrupt/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#downloading-and-building-the-application"
-  },"232": {
+  },"238": {
     "doc": "SERCOM USART ring buffer",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#setting-up-the-hardware"
-  },"233": {
+  },"239": {
     "doc": "SERCOM USART ring buffer",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | The console displays the following message . | Console displays the initial transmit and receive buffer sizes | It then adds 10 characters - “0123456789” to the transmit buffer and displays the available free space in the transmit buffer after the 10 characters have been added | The message asks the user to enter 10 characters | NOTE: For this example, the “Free Space in Transmit Buffer = xx”, where xx can be anything between 117 to 127, depending on the USART baud rate and the CPU execution speed | . | Enter 10 characters on the terminal | Entered characters are echoed back on the console and message is displayed indicating that the receive notification is turned on . | For every 10 characters typed, it will be echoed back on the console . | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#running-the-application",
     "relUrl": "/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html#running-the-application"
-  },"234": {
+  },"240": {
     "doc": "SERCOM USART ring buffer",
     "title": "SERCOM USART ring buffer",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html",
     "relUrl": "/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html"
-  },"235": {
+  },"241": {
     "doc": "Systick periodic interrupt",
     "title": "Systick periodic interrupt",
     "content": "This example shows how to use the SysTick to generate periodic interrupts. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html#systick-periodic-interrupt",
     "relUrl": "/apps/systick/systick_periodic_timeout/readme.html#systick-periodic-interrupt"
-  },"236": {
+  },"242": {
     "doc": "Systick periodic interrupt",
     "title": "Description",
     "content": "This example application configures the SysTick Peripheral Library to generate periodic ticks. The application registers a periodic timeout callback. It toggles an LED every time the callback is triggered. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html#description",
     "relUrl": "/apps/systick/systick_periodic_timeout/readme.html#description"
-  },"237": {
+  },"243": {
     "doc": "Systick periodic interrupt",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/systick/systick_periodic_timeout/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/systick/systick_periodic_timeout/readme.html#downloading-and-building-the-application"
-  },"238": {
+  },"244": {
     "doc": "Systick periodic interrupt",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/systick/systick_periodic_timeout/readme.html#setting-up-the-hardware"
-  },"239": {
+  },"245": {
     "doc": "Systick periodic interrupt",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | The LED blinks continuously | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html#running-the-application",
     "relUrl": "/apps/systick/systick_periodic_timeout/readme.html#running-the-application"
-  },"240": {
+  },"246": {
     "doc": "Systick periodic interrupt",
     "title": "Systick periodic interrupt",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html",
     "relUrl": "/apps/systick/systick_periodic_timeout/readme.html"
-  },"241": {
+  },"247": {
     "doc": "TC capture mode",
     "title": "TC capture mode",
     "content": "This example shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html#tc-capture-mode",
     "relUrl": "/apps/tc/tc_capture_mode/readme.html#tc-capture-mode"
-  },"242": {
+  },"248": {
     "doc": "TC capture mode",
     "title": "Description",
     "content": "The TC channel is configured in capture mode to measure duty cycle and frequency of the PWM signal. The PWM signal is generated using another TC channel which is configured in compare mode. Output of the compare TC channel is connected to input of the capture TC channel. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html#description",
     "relUrl": "/apps/tc/tc_capture_mode/readme.html#description"
-  },"243": {
+  },"249": {
     "doc": "TC capture mode",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/tc/tc_capture_mode/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/tc/tc_capture_mode/readme.html#downloading-and-building-the-application"
-  },"244": {
+  },"250": {
     "doc": "TC capture mode",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | TC0 generates the PWM waveform on pin PA05 . | TC0 output is routed using EIC and EVSYS to TC1 input event line | . | TC1 is configured in capture mode . | Capture trigger is provided by input event line | . | Use a jumper wire to connect “Pin 13 of EXT1 (TC0_W01)” to “Pin 3 of EXT1 (EIC_EXTINT4)” | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/tc/tc_capture_mode/readme.html#setting-up-the-hardware"
-  },"245": {
+  },"251": {
     "doc": "TC capture mode",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | Console displays the frequency and duty cycle of the input signal | Frequency is constant (800 Hz) and duty cycle changes by 1% | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html#running-the-application",
     "relUrl": "/apps/tc/tc_capture_mode/readme.html#running-the-application"
-  },"246": {
+  },"252": {
     "doc": "TC capture mode",
     "title": "TC capture mode",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html",
     "relUrl": "/apps/tc/tc_capture_mode/readme.html"
-  },"247": {
+  },"253": {
     "doc": "TC compare mode",
     "title": "TC compare mode",
     "content": "This example shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html#tc-compare-mode",
     "relUrl": "/apps/tc/tc_compare_mode/readme.html#tc-compare-mode"
-  },"248": {
+  },"254": {
     "doc": "TC compare mode",
     "title": "Description",
     "content": "Three TC channels are configured in compare mode. Each channel generates different output waveform depending upon configured action on compare match and period match. Active low output: Output is set high on compare 1 match and is set low on compare 0 match. Active high output: Output is set low on compare 1 match and is set high on compare 0 match. Toggle output: Output toggles on compare 0 match. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html#description",
     "relUrl": "/apps/tc/tc_compare_mode/readme.html#description"
-  },"249": {
+  },"255": {
     "doc": "TC compare mode",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/tc/tc_compare_mode/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/tc/tc_compare_mode/readme.html#downloading-and-building-the-application"
-  },"250": {
+  },"256": {
     "doc": "TC compare mode",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/tc/tc_compare_mode/readme.html#setting-up-the-hardware"
-  },"251": {
+  },"257": {
     "doc": "TC compare mode",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | Observe generated waveforms on the oscilloscope | . SAM E54 Xplained Pro board . | Timer Channel | Pin | Observable characteristic of the waveform | . | TC0_WO0 | PA04(Pin 14 of EXT1) | Toggle output with 37.5 Hz frequency | . | TC1_WO1 | PA07(Pin 6 of EXT1) | Active high output with 75 Hz frequency | . | TC4_WO1 | PB09 (Pin 8 of EXT1) | Active low output with 75 Hz frequency | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html#running-the-application",
     "relUrl": "/apps/tc/tc_compare_mode/readme.html#running-the-application"
-  },"252": {
+  },"258": {
     "doc": "TC compare mode",
     "title": "TC compare mode",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html",
     "relUrl": "/apps/tc/tc_compare_mode/readme.html"
-  },"253": {
+  },"259": {
     "doc": "TC timer mode",
     "title": "TC timer mode",
     "content": "This example shows how to use the TC module in timer mode to generate periodic interrupt. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html#tc-timer-mode",
     "relUrl": "/apps/tc/tc_timer_mode/readme.html#tc-timer-mode"
-  },"254": {
+  },"260": {
     "doc": "TC timer mode",
     "title": "Description",
     "content": "TC channel is configured in timer mode and generates periodic interrupt. LED is toggled in the interrupt handler to indicate periodic callback. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html#description",
     "relUrl": "/apps/tc/tc_timer_mode/readme.html#description"
-  },"255": {
+  },"261": {
     "doc": "TC timer mode",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/tc/tc_timer_mode/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/tc/tc_timer_mode/readme.html#downloading-and-building-the-application"
-  },"256": {
+  },"262": {
     "doc": "TC timer mode",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/tc/tc_timer_mode/readme.html#setting-up-the-hardware"
-  },"257": {
+  },"263": {
     "doc": "TC timer mode",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | Observe that the LED blinks once every second | . Following table provides the LED name: . | Board | LED Name | . | SAM E54 Xplained Pro board | LED0 | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html#running-the-application",
     "relUrl": "/apps/tc/tc_timer_mode/readme.html#running-the-application"
-  },"258": {
+  },"264": {
     "doc": "TC timer mode",
     "title": "TC timer mode",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html",
     "relUrl": "/apps/tc/tc_timer_mode/readme.html"
-  },"259": {
+  },"265": {
     "doc": "TCC PWM generation",
     "title": "TCC PWM generation",
     "content": "This example application shows how to use the TCC to generate a 2 or 3 phase PWM signals for motor control with dead time. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html#tcc-pwm-generation",
     "relUrl": "/apps/tcc/tcc_synchronous_pwm_channels/readme.html#tcc-pwm-generation"
-  },"260": {
+  },"266": {
     "doc": "TCC PWM generation",
     "title": "Description",
     "content": "TCC module is configured to generate synchronous 2 or 3 phase PWM signals with dead time. The duty cycle of the PWM signals is updated in the period interrupt handler. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html#description",
     "relUrl": "/apps/tcc/tcc_synchronous_pwm_channels/readme.html#description"
-  },"261": {
+  },"267": {
     "doc": "TCC PWM generation",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/tcc/tcc_synchronous_pwm_channels/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/tcc/tcc_synchronous_pwm_channels/readme.html#downloading-and-building-the-application"
-  },"262": {
+  },"268": {
     "doc": "TCC PWM generation",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/tcc/tcc_synchronous_pwm_channels/readme.html#setting-up-the-hardware"
-  },"263": {
+  },"269": {
     "doc": "TCC PWM generation",
     "title": "Running the Application",
     "content": ". | Build and Program the application using its IDE | Observe the high-side and low-side PWM waveforms on oscilloscope | Observe the dead time between the high side and the low side | Observe the pwm frequency to be 10 KHz | . SAM E54 Xplained Pro board pin details: . | Signal Name | Pad | Pin | . | CH0-PWMH | PC04 | Pin 16 of EXT2 connector | . | CH0-PWML | PD11 | Pin 8 of EXT3 connector | . | CH1-PWMH | PD08 | Pin 11 of EXT2 connector | . | CH1-PWML | PB17 | Pin 13 of EXT2 connector | . | CH2-PWMH | PB14 | Pin 7 of EXT2 connector | . | CH2-PWML | PC22 | Pin 14 of EXT3 connector | . |   |   |   | . SAM E54 Xplained Pro board waveforms: . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html#running-the-application",
     "relUrl": "/apps/tcc/tcc_synchronous_pwm_channels/readme.html#running-the-application"
-  },"264": {
+  },"270": {
     "doc": "TCC PWM generation",
     "title": "TCC PWM generation",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html",
     "relUrl": "/apps/tcc/tcc_synchronous_pwm_channels/readme.html"
-  },"265": {
+  },"271": {
     "doc": "TRNG random number",
     "title": "TRNG random number",
     "content": "This example shows how to use the TRNG Peripheral library to generate and read a random number. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html#trng-random-number",
     "relUrl": "/apps/trng/random_number/readme.html#trng-random-number"
-  },"266": {
+  },"272": {
     "doc": "TRNG random number",
     "title": "Description",
     "content": "This example application shows how to use the TRNG peripheral library to produce a 32-bit true random number. Generated random number can be used as an entropy source for seeding a Deterministic Random Number Generator (DRNG), creating cryptographic keys for ciphers etc. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html#description",
     "relUrl": "/apps/trng/random_number/readme.html#description"
-  },"267": {
+  },"273": {
     "doc": "TRNG random number",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/trng/random_number/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/trng/random_number/readme.html#downloading-and-building-the-application"
-  },"268": {
+  },"274": {
     "doc": "TRNG random number",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/trng/random_number/readme.html#setting-up-the-hardware"
-  },"269": {
+  },"275": {
     "doc": "TRNG random number",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and program the application using its IDE | The console displays the following message . | Every time the switch is pressed, a new random number is generated and displayed on the console . | . Following table provides the switch names: . | Board | Switch Name |   | . | SAM E54 Xplained Pro board | SW0 |   | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html#running-the-application",
     "relUrl": "/apps/trng/random_number/readme.html#running-the-application"
-  },"270": {
+  },"276": {
     "doc": "TRNG random number",
     "title": "TRNG random number",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html",
     "relUrl": "/apps/trng/random_number/readme.html"
-  },"271": {
+  },"277": {
     "doc": "WDT timeout",
     "title": "WDT timeout",
     "content": "This example shows how to generate a Watchdog timer reset by emulating a deadlock. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html#wdt-timeout",
     "relUrl": "/apps/wdt/wdt_timeout/readme.html#wdt-timeout"
-  },"272": {
+  },"278": {
     "doc": "WDT timeout",
     "title": "Description",
     "content": "This example application shows how the WDT peripheral library resets the watchdog timer by not feeding the watchdog on switch press. The application sets up the watchdog to reset the device. The application also sets up the timer to blink an LED to emulate a process. A user switch press forces the device to wait in an infinite loop to emulate a deadlock. As a result a device reset is triggered as the watchdog counter overflows the bounded value. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html#description",
     "relUrl": "/apps/wdt/wdt_timeout/readme.html#description"
-  },"273": {
+  },"279": {
     "doc": "WDT timeout",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/wdt/wdt_timeout/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/wdt/wdt_timeout/readme.html#downloading-and-building-the-application"
-  },"274": {
+  },"280": {
     "doc": "WDT timeout",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/wdt/wdt_timeout/readme.html#setting-up-the-hardware"
-  },"275": {
+  },"281": {
     "doc": "WDT timeout",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application project using its IDE | LED should be blinking and the console displays the following message . | Press the switch to put the system in a deadlock | LED should stop blinking and the console should print the following message . | WDT will reset the device in four seconds and the demonstration should restart | . Refer the table below for details of switch and LED: . | Board | Switch Name | LED Name | . | SAM E54 Xplained Pro board | SW0 | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html#running-the-application",
     "relUrl": "/apps/wdt/wdt_timeout/readme.html#running-the-application"
-  },"276": {
+  },"282": {
     "doc": "WDT timeout",
     "title": "WDT timeout",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html",
     "relUrl": "/apps/wdt/wdt_timeout/readme.html"
-  },"277": {
+  },"283": {
     "doc": "AC Sleepwalking",
     "title": "AC Sleepwalking",
     "content": "This example application shows how to use the AC Peripheral library to perform a single shot comparison in standby sleep mode periodically and wake up the device at the end of a successful comparison. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html#ac-sleepwalking",
     "relUrl": "/apps/ac/ac_sleepwalk_singleshot/readme.html#ac-sleepwalking"
-  },"278": {
+  },"284": {
     "doc": "AC Sleepwalking",
     "title": "Description",
     "content": "Single shot conversion is triggered by RTC compare event. Generation of a trigger and compare operation are done while the CPU is in the standby sleep mode. AC generates the interrupt on the end of the comparison which wakes the CPU. ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html#description",
     "relUrl": "/apps/ac/ac_sleepwalk_singleshot/readme.html#description"
-  },"279": {
+  },"285": {
     "doc": "AC Sleepwalking",
     "title": "Downloading and building the application",
     "content": "To clone or download this application from Github, go to the main page of this repository and then click Clone button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these instructions. Path of the application within the repository is apps/ac/ac_sleepwalk_singleshot/firmware . To build the application, refer to the following table and open the project using its IDE. | Project Name | Description | . | sam_e54_xpro.X | MPLABX Project for SAM E54 Xplained Pro board | . |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html#downloading-and-building-the-application",
     "relUrl": "/apps/ac/ac_sleepwalk_singleshot/readme.html#downloading-and-building-the-application"
-  },"280": {
+  },"286": {
     "doc": "AC Sleepwalking",
     "title": "Setting up the hardware",
     "content": "The following table shows the target hardware for the application projects. | Project Name | Board | . | sam_e54_xpro.X | SAM E54 Xplained Pro board | . |   |   | . Setting up SAM E54 Xplained Pro board . | Connect a voltage below VDD to AC-AIN0 (pin 14 of the EXT1 connector) | Connect the Debug USB port on the board to the computer using a micro USB cable | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html#setting-up-the-hardware",
     "relUrl": "/apps/ac/ac_sleepwalk_singleshot/readme.html#setting-up-the-hardware"
-  },"281": {
+  },"287": {
     "doc": "AC Sleepwalking",
     "title": "Running the Application",
     "content": ". | Open the Terminal application (Ex.:Tera term) on the computer | Connect to the EDBG Virtual COM port and configure the serial settings as follows: . | Baud : 115200 | Data : 8 Bits | Parity : None | Stop : 1 Bit | Flow Control : None | . | Build and Program the application using its IDE | Observe output message in console as follows: . | Console displays the message stating whether voltage at AC input is lower or greater than the internal bandgap voltage (1.1 V) | LED toggles when comparison is done | . Below table shows the AC input pin and LED name for the board: . | Board | AC input pin | LED name | . | SAM E54 Xplained Pro board | AC-AIN0 (pin 14 of the EXT1 connector) | LED0 | . |   |   |   | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html#running-the-application",
     "relUrl": "/apps/ac/ac_sleepwalk_singleshot/readme.html#running-the-application"
-  },"282": {
+  },"288": {
     "doc": "AC Sleepwalking",
     "title": "AC Sleepwalking",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html",
     "relUrl": "/apps/ac/ac_sleepwalk_singleshot/readme.html"
-  },"283": {
+  },"289": {
     "doc": "Release notes",
     "title": "Microchip MPLAB® Harmony 3 Release Notes",
     "content": " ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/release_notes.html#microchip-mplab-harmony-3-release-notes",
     "relUrl": "/release_notes.html#microchip-mplab-harmony-3-release-notes"
-  },"284": {
+  },"290": {
+    "doc": "Release notes",
+    "title": "Harmony 3 peripheral library application examples for SAM D5X/E5X family  v3.1.0",
+    "content": "Development kit and demo application support . Following table provides number of peripheral library examples available for different development kits. | Development Kits | MPLABx applications | IAR applications | KEIL applications | . | SAM E54 Xplained Pro Evaluation Kit | 48 | 3 | 1 | . New Features . | None | . Known Issues . | None | . Development Tools . | MPLAB® X IDE v5.45 | MPLAB® X IDE plug-ins: . | MPLAB® Harmony Configurator (MHC) v3.7.0 | . | MPLAB® XC32 C/C++ Compiler v2.50 | KEIL MDK v5.30 or above | IAR Embedded workbench for ARM v8.50 or above | . ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/release_notes.html#harmony-3-peripheral-library-application-examples-for-sam-d5xe5x-family--v310",
+    "relUrl": "/release_notes.html#harmony-3-peripheral-library-application-examples-for-sam-d5xe5x-family--v310"
+  },"291": {
+    "doc": "Release notes",
+    "title": "Harmony 3 peripheral library application examples for SAM D5X/E5X family  v3.0.1",
+    "content": "New Features . | Added discover.microchip.com metadata | . Bug fixes . | Same as v3.0.0 | . Known Issues . | Same as v3.0.0 | . Development Tools . | Same as v3.0.0 | . ",
+    "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/release_notes.html#harmony-3-peripheral-library-application-examples-for-sam-d5xe5x-family--v301",
+    "relUrl": "/release_notes.html#harmony-3-peripheral-library-application-examples-for-sam-d5xe5x-family--v301"
+  },"292": {
     "doc": "Release notes",
     "title": "Harmony 3 peripheral library application examples for SAM D5X/E5X family  v3.0.0",
     "content": "Development kit and demo application support . Following table provides number of peripheral library examples available for different development kits. | Development Kits | MPLABx applications | IAR applications | KEIL applications | . | SAM E54 Xplained Pro Evaluation Kit | 47 | 3 | 1 | . New Features . New features added in this release are as follows: . | Applications migrated from csp repository to this new application repository for SAM D5X/E5X development boards | . Known Issues . The current known issues are as follows: . | None | . Development Tools . | MPLAB® X IDE v5.40 | MPLAB® X IDE plug-ins: . | MPLAB® Harmony Configurator (MHC) v3.6.0 | . | MPLAB® XC32 C/C++ Compiler v2.41 | KEIL MDK v5.30 or above | IAR Embedded workbench for ARM v8.50 or above | . ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/release_notes.html#harmony-3-peripheral-library-application-examples-for-sam-d5xe5x-family--v300",
     "relUrl": "/release_notes.html#harmony-3-peripheral-library-application-examples-for-sam-d5xe5x-family--v300"
-  },"285": {
+  },"293": {
     "doc": "Release notes",
     "title": "Release notes",
     "content": ". ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/release_notes.html",
     "relUrl": "/release_notes.html"
-  },"286": {
+  },"294": {
     "doc": "Harmony 3 peripheral library application examples for SAM D5X/E5X family",
     "title": "Harmony 3 peripheral library application examples for SAM D5X/E5X family",
-    "content": "[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com) # Harmony 3 peripheral library application examples for SAM D5X/E5X family MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices. Refer to the following links for more information. - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit) - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus) - [Microchip MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony) - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/) This repository contains the MPLAB® Harmony 3 peripheral library application examples for SAM D5X/E5X family - [Release Notes](/csp_apps_sam_d5x_e5x/release_notes.html) - [MPLAB® Harmony License](/csp_apps_sam_d5x_e5x/mplab_harmony_license.html) To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki). ## Contents Summary | Folder | Description | --- | --- | apps | Contains peripheral library example applications | docs | Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use [github pages](https://microchip-mplab-harmony.github.io/csp_apps_sam_d5x_e5x/) of this repository for viewing it online. | ## Code Examples The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries. | Name | Description | ---- | ----------- | [AC Sleepwalking](/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html) | This example application shows how to use the AC Peripheral library to perform a single shot comparison in standby sleep mode periodically and wake up the device at the end of a successful comparison | [ADC DMA sequencing](/csp_apps_sam_d5x_e5x/apps/adc/adc_dma_sequencing/readme.html) | This application shows how to use DMA sequencing feature available in ADC peripheral library | [ADC DMA sleepwalking](/csp_apps_sam_d5x_e5x/apps/adc/adc_dma_sleepwalking/readme.html) | This application shows how to configure the ADC in a sleepwalking operation, where the input voltage is measured at a fixed interval, and then the device is woken from sleep after conversion of 16 samples | [ADC Sample](/csp_apps_sam_d5x_e5x/apps/adc/adc_sample/readme.html) | This example application shows how to sample an analog input using the ADC and displays the converted samples on a serial terminal | [ADC window sleepwalking](/csp_apps_sam_d5x_e5x/apps/adc/adc_window_sleepwalking/readme.html) | This application shows how to configure ADC in a sleepwalking operation, where input voltage is measured at a fixed interval, but device is not woken from sleep until the measured value is below a given threshold | [CAN FD blocking](/csp_apps_sam_d5x_e5x/apps/can/can_fd_operation_blocking/readme.html) | This example application shows how to use the CAN module to transmit and receive CAN FD messages in polling mode | [CAN FD interrupt](/csp_apps_sam_d5x_e5x/apps/can/can_fd_operation_interrupt_timestamp/readme.html) | This example application shows how to use the CAN module to transmit and receive CAN FD messages in interrupt mode | [CAN blocking](/csp_apps_sam_d5x_e5x/apps/can/can_normal_operation_blocking/readme.html) | This example application shows how to use the CAN module to transmit and receive normal CAN messages in polling mode | [CCL Manchester Encoder](/csp_apps_sam_d5x_e5x/apps/ccl/manchester_encoder/readme.html) | This example application shows how to use the CCL peripheral library and generate a Manchester-encoded output | [Clock configuration](/csp_apps_sam_d5x_e5x/apps/clock/clock_config/readme.html) | This example application shows how to configure the clock system to run the device at maximum frequency. It also outputs a prescaled clock signal on a GPIO pin for measurement and verification | [DAC waveform generation](/csp_apps_sam_d5x_e5x/apps/dac/dac_wav_gen/readme.html) | This example application shows how to use the DAC to generate a 1 KHz Sine or Sawtooth wave with a lookup table | [DAC waveform generation with DMA](/csp_apps_sam_d5x_e5x/apps/dac/dac_wav_gen_dma/readme.html) | This example application shows how to use the DAC with the DMA to generate a 5 KHz sinusoidal waveform without CPU intervention | [DMAC memory transfer](/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html) | This example application demonstrates how to use the DMAC peripheral to do a memory to memory transfer | [DMAC USART echo](/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html) | This example application demonstrates USART transfer with DMA to receive 10 bytes and echo back the received bytes | [DSU compute CRC32](/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html) | This example application demonstrates how to use the DSU Peripheral library to compute 32-bit Cyclic Redundancy Checksum (CRC) | [EIC Interrupt](/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html) | This example application demonstrates how to generate interrupt using the EIC on switch press and indicate it through an LED | [EVSYS trigger](/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html) | This example application demonstrates how to use the EVSYS Peripheral library to setup autonomous, low-latency and configurable communication between peripherals | [FREQM measurement](/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html) | This example application demonstrates how to use the FREQM peripheral to measure the frequency of the internal RC Oscillator | [NVMCTRL read write](/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html) | This example application demonstrates how to use the NVMCTRL to erase and program the internal Flash memory | [NVMCTRL SmartEEPROM](/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html) | This example application demonstrates how to use the SmartEEPROM feature in NVMCTRL PLIB to erase and program the internal Flash memory. 8-bit, 16-bit, 32-bit access is supported | [PM wakeup using EIC](/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html) | This application demonstrates entering the low power modes and exiting it using the EIC | [PM wakeup using RTC](/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html) | This example demonstrates entering the low power modes and exiting it using the RTC | [PORT polling](/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html) | This example application demonstrate how to poll the switch input, and indicate the switch status using the LED | [QSPI flash read write](/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html) | This example shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in Quad IO mode | [QSPI flash read write in SPI mode](/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html) | This example shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in SPI mode | [RSTC reset cause](/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html) | This example shows how to use the RSTC peripheral to indicate the cause of the device reset | [RTC alarm interrupt](/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html) | This example shows how to use the RTC to configure the time and generate the alarm | [RTC periodic interrupt](/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html) | This example application shows how to use the RTC to generate periodic interrupts | [RTC tamper detect](/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html) | This example application shows how to configure and use tamper detect feature of RTC | [SERCOM I2C EEPROM read write](/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html) | This example application demonstrates how to use the SERCOM peripheral to write and read from the I2C serial EEPROM memory | [SERCOM I2C EEPROM emulation](/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html) | This example application demonstrates how to use the SERCOM peripheral in slave mode | [SERCOM SPI EEPROM read write](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html) | This example application demonstrates how to use the SERCOM SPI peripheral to write and read from the SPI serial EEPROM memory | [SERCOM SPI ping pong with DMA](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html) | This example demonstrates how to continuously transmit and receive data over a SPI interface using ping pong buffers with DMA | [SERCOM SPI blocking](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html) | This example application demonstrates how to use the SERCOM SPI peripheral to transmit and receive a block of data in a blocking manner | [SERCOM SPI interrupt](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html) | This example application shows how to use SERCOM SPI PLIB with external loop back to write and then read back an array of data in interrupt mode | [SERCOM SPI Master read write test application](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html) | This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under - apps/sercom/spi/slave/spi_write_read/firmware | [SERCOM SPI Slave read write](/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html) | This example application demonstrates how to use the SERCOM SPI peripheral in slave mode | [SERCOM USART blocking](/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html) | This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer block of data in a blocking manner | [SERCOM USART interrupt](/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html) | This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer data in a non-blocking manner | [SERCOM USART ring buffer](/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html) | This example application demonstrates how to use the SERCOM peripheral in USART ring buffer mode to transfer data in a non-blocking manner | [Systick periodic interrupt](/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html) | This example shows how to use the SysTick to generate periodic interrupts | [TC capture mode](/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html) | This example shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input | [TC compare mode](/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html) | This example shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match | [TC timer mode](/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html) | This example shows how to use the TC module in timer mode to generate periodic interrupt | [TCC PWM generation](/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html) | This example application shows how to use the TCC to generate a 2 or 3 phase PWM signals for motor control with dead time | [TRNG random number](/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html) | This example shows how to use the TRNG Peripheral library to generate and read a random number | [WDT timeout](/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html) | This example shows how to generate a Watchdog timer reset by emulating a deadlock | ____ [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/blob/master/mplab_harmony_license.md) [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/releases/latest) [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/releases/latest) [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/graphs/commit-activity) [![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)]() ____ [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology) [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology) [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/) [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech) [![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg?style=social)]() [![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg?style=social)]() ",
+    "content": "[![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com) # Harmony 3 peripheral library application examples for SAM D5X/E5X family MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded firmware solutions for Microchip 32-bit SAM and PIC® microcontroller and microprocessor devices. Refer to the following links for more information. - [Microchip 32-bit MCUs](https://www.microchip.com/design-centers/32-bit) - [Microchip 32-bit MPUs](https://www.microchip.com/design-centers/32-bit-mpus) - [Microchip MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) - [Microchip MPLAB® Harmony](https://www.microchip.com/mplab/mplab-harmony) - [Microchip MPLAB® Harmony Pages](https://microchip-mplab-harmony.github.io/) This repository contains the MPLAB® Harmony 3 peripheral library application examples for SAM D5X/E5X family - [Release Notes](/csp_apps_sam_d5x_e5x/release_notes.html) - [MPLAB® Harmony License](/csp_apps_sam_d5x_e5x/mplab_harmony_license.html) To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x) and then click **Clone** button to clone this repository or download as zip file. This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki). ## Contents Summary | Folder | Description | --- | --- | apps | Contains peripheral library example applications | docs | Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use [github pages](https://microchip-mplab-harmony.github.io/csp_apps_sam_d5x_e5x/) of this repository for viewing it online. | ## Code Examples The following applications are provided to demonstrate the typical or interesting usage models of one or more peripheral libraries. | Name | Description | ---- | ----------- | [AC Sleepwalking](/csp_apps_sam_d5x_e5x/apps/ac/ac_sleepwalk_singleshot/readme.html) | This example application shows how to use the AC Peripheral library to perform a single shot comparison in standby sleep mode periodically and wake up the device at the end of a successful comparison | [ADC DMA sequencing](/csp_apps_sam_d5x_e5x/apps/adc/adc_dma_sequencing/readme.html) | This application shows how to use DMA sequencing feature available in ADC peripheral library | [ADC DMA sleepwalking](/csp_apps_sam_d5x_e5x/apps/adc/adc_dma_sleepwalking/readme.html) | This application shows how to configure the ADC in a sleepwalking operation, where the input voltage is measured at a fixed interval, and then the device is woken from sleep after conversion of 16 samples | [ADC Sample](/csp_apps_sam_d5x_e5x/apps/adc/adc_sample/readme.html) | This example application shows how to sample an analog input using the ADC and displays the converted samples on a serial terminal | [ADC window sleepwalking](/csp_apps_sam_d5x_e5x/apps/adc/adc_window_sleepwalking/readme.html) | This application shows how to configure ADC in a sleepwalking operation, where input voltage is measured at a fixed interval, but device is not woken from sleep until the measured value is below a given threshold | [CAN FD blocking](/csp_apps_sam_d5x_e5x/apps/can/can_fd_operation_blocking/readme.html) | This example application shows how to use the CAN module to transmit and receive CAN FD messages in polling mode | [CAN FD interrupt](/csp_apps_sam_d5x_e5x/apps/can/can_fd_operation_interrupt_timestamp/readme.html) | This example application shows how to use the CAN module to transmit and receive CAN FD messages in interrupt mode | [CAN blocking](/csp_apps_sam_d5x_e5x/apps/can/can_normal_operation_blocking/readme.html) | This example application shows how to use the CAN module to transmit and receive normal CAN messages in polling mode | [CCL Manchester Encoder](/csp_apps_sam_d5x_e5x/apps/ccl/manchester_encoder/readme.html) | This example application shows how to use the CCL peripheral library and generate a Manchester-encoded output | [Clock configuration](/csp_apps_sam_d5x_e5x/apps/clock/clock_config/readme.html) | This example application shows how to configure the clock system to run the device at maximum frequency. It also outputs a prescaled clock signal on a GPIO pin for measurement and verification | [DAC waveform generation](/csp_apps_sam_d5x_e5x/apps/dac/dac_wav_gen/readme.html) | This example application shows how to use the DAC to generate a 1 KHz Sine or Sawtooth wave with a lookup table | [DAC waveform generation with DMA](/csp_apps_sam_d5x_e5x/apps/dac/dac_wav_gen_dma/readme.html) | This example application shows how to use the DAC with the DMA to generate a 5 KHz sinusoidal waveform without CPU intervention | [DMAC CRC-32 Generation](/csp_apps_sam_d5x_e5x/apps/dmac/dmac_crc32_generate/readme.html) | This example application demonstrates how to use the DMAC peripheral to compute 32-bit Cyclic Redundancy Checksum (CRC) | [DMAC memory transfer](/csp_apps_sam_d5x_e5x/apps/dmac/dmac_memory_transfer/readme.html) | This example application demonstrates how to use the DMAC peripheral to do a memory to memory transfer | [DMAC USART echo](/csp_apps_sam_d5x_e5x/apps/dmac/dmac_usart_echo/readme.html) | This example application demonstrates USART transfer with DMA to receive 10 bytes and echo back the received bytes | [DSU compute CRC32](/csp_apps_sam_d5x_e5x/apps/dsu/dsu_crc32_generate/readme.html) | This example application demonstrates how to use the DSU Peripheral library to compute 32-bit Cyclic Redundancy Checksum (CRC) | [EIC Interrupt](/csp_apps_sam_d5x_e5x/apps/eic/eic_led_on_off/readme.html) | This example application demonstrates how to generate interrupt using the EIC on switch press and indicate it through an LED | [EVSYS trigger](/csp_apps_sam_d5x_e5x/apps/evsys/evsys_trigger/readme.html) | This example application demonstrates how to use the EVSYS Peripheral library to setup autonomous, low-latency and configurable communication between peripherals | [FREQM measurement](/csp_apps_sam_d5x_e5x/apps/freqm/freqm_measure_clock_freq/readme.html) | This example application demonstrates how to use the FREQM peripheral to measure the frequency of the internal RC Oscillator | [NVMCTRL read write](/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_flash_read_write/readme.html) | This example application demonstrates how to use the NVMCTRL to erase and program the internal Flash memory | [NVMCTRL SmartEEPROM](/csp_apps_sam_d5x_e5x/apps/nvmctrl/nvmctrl_smarteeprom/readme.html) | This example application demonstrates how to use the SmartEEPROM feature in NVMCTRL PLIB to erase and program the internal Flash memory. 8-bit, 16-bit, 32-bit access is supported | [PM wakeup using EIC](/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_eic/readme.html) | This application demonstrates entering the low power modes and exiting it using the EIC | [PM wakeup using RTC](/csp_apps_sam_d5x_e5x/apps/pm/pm_wakeup_rtc/readme.html) | This example demonstrates entering the low power modes and exiting it using the RTC | [PORT polling](/csp_apps_sam_d5x_e5x/apps/port/port_led_on_off_polling/readme.html) | This example application demonstrate how to poll the switch input, and indicate the switch status using the LED | [QSPI flash read write](/csp_apps_sam_d5x_e5x/apps/qspi/qspi_read_write/readme.html) | This example shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in Quad IO mode | [QSPI flash read write in SPI mode](/csp_apps_sam_d5x_e5x/apps/qspi/spi_read_write/readme.html) | This example shows how to use the QSPI Peripheral library to perform erase, write and read operation with the QSPI Serial Flash memory in SPI mode | [RSTC reset cause](/csp_apps_sam_d5x_e5x/apps/rstc/rstc_reset_cause/readme.html) | This example shows how to use the RSTC peripheral to indicate the cause of the device reset | [RTC alarm interrupt](/csp_apps_sam_d5x_e5x/apps/rtc/rtc_alarm/readme.html) | This example shows how to use the RTC to configure the time and generate the alarm | [RTC periodic interrupt](/csp_apps_sam_d5x_e5x/apps/rtc/rtc_periodic_timeout/readme.html) | This example application shows how to use the RTC to generate periodic interrupts | [RTC tamper detect](/csp_apps_sam_d5x_e5x/apps/rtc/rtc_tamper_detect/readme.html) | This example application shows how to configure and use tamper detect feature of RTC | [SERCOM I2C EEPROM read write](/csp_apps_sam_d5x_e5x/apps/sercom/i2c/master/i2c_eeprom/readme.html) | This example application demonstrates how to use the SERCOM peripheral to write and read from the I2C serial EEPROM memory | [SERCOM I2C EEPROM emulation](/csp_apps_sam_d5x_e5x/apps/sercom/i2c/slave/i2c_eeprom_emulation/readme.html) | This example application demonstrates how to use the SERCOM peripheral in slave mode | [SERCOM SPI EEPROM read write](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_eeprom_write_read/readme.html) | This example application demonstrates how to use the SERCOM SPI peripheral to write and read from the SPI serial EEPROM memory | [SERCOM SPI ping pong with DMA](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_ping_pong_with_dma/readme.html) | This example demonstrates how to continuously transmit and receive data over a SPI interface using ping pong buffers with DMA | [SERCOM SPI blocking](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_blocking/readme.html) | This example application demonstrates how to use the SERCOM SPI peripheral to transmit and receive a block of data in a blocking manner | [SERCOM SPI interrupt](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_self_loopback_interrupt/readme.html) | This example application shows how to use SERCOM SPI PLIB with external loop back to write and then read back an array of data in interrupt mode | [SERCOM SPI Master read write test application](/csp_apps_sam_d5x_e5x/apps/sercom/spi/master/spi_write_read_test_app/readme.html) | This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under - apps/sercom/spi/slave/spi_write_read/firmware | [SERCOM SPI Slave read write](/csp_apps_sam_d5x_e5x/apps/sercom/spi/slave/spi_write_read/readme.html) | This example application demonstrates how to use the SERCOM SPI peripheral in slave mode | [SERCOM USART blocking](/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_blocking/readme.html) | This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer block of data in a blocking manner | [SERCOM USART interrupt](/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_echo_interrupt/readme.html) | This example application demonstrates how to use the SERCOM peripheral in USART mode to transfer data in a non-blocking manner | [SERCOM USART ring buffer](/csp_apps_sam_d5x_e5x/apps/sercom/usart/usart_ring_buffer_interrupt/readme.html) | This example application demonstrates how to use the SERCOM peripheral in USART ring buffer mode to transfer data in a non-blocking manner | [Systick periodic interrupt](/csp_apps_sam_d5x_e5x/apps/systick/systick_periodic_timeout/readme.html) | This example shows how to use the SysTick to generate periodic interrupts | [TC capture mode](/csp_apps_sam_d5x_e5x/apps/tc/tc_capture_mode/readme.html) | This example shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input | [TC compare mode](/csp_apps_sam_d5x_e5x/apps/tc/tc_compare_mode/readme.html) | This example shows how to use the TC module in compare mode to generate an active low, active high, and toggle output on compare match | [TC timer mode](/csp_apps_sam_d5x_e5x/apps/tc/tc_timer_mode/readme.html) | This example shows how to use the TC module in timer mode to generate periodic interrupt | [TCC PWM generation](/csp_apps_sam_d5x_e5x/apps/tcc/tcc_synchronous_pwm_channels/readme.html) | This example application shows how to use the TCC to generate a 2 or 3 phase PWM signals for motor control with dead time | [TRNG random number](/csp_apps_sam_d5x_e5x/apps/trng/random_number/readme.html) | This example shows how to use the TRNG Peripheral library to generate and read a random number | [WDT timeout](/csp_apps_sam_d5x_e5x/apps/wdt/wdt_timeout/readme.html) | This example shows how to generate a Watchdog timer reset by emulating a deadlock | ____ [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/blob/master/mplab_harmony_license.md) [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/releases/latest) [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/releases/latest) [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)](https://github.com/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x/graphs/commit-activity) [![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg)]() ____ [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology) [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology) [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/) [![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech) [![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg?style=social)]() [![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/csp_apps_sam_d5x_e5x.svg?style=social)]() ",
     "url": "http://localhost:4000/csp_apps_sam_d5x_e5x/",
     "relUrl": "/"
   }
