@@ -4,15 +4,14 @@
 
 
 project: usart_echo_interrupt
-creation_date: 2021-01-28T16:35:27.204+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-02-17T14:38:45.188+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
-mhc_version: v3.7.0-tc.1
+mhc_version: v3.7.0
 mplabx_version: NA        # if MPLAB X plugin only
 plugin_version: NA        # if MPLAB X plugin only
 compiler: iar
 
 modules:
-    - {name: "csp", version: "unknown"}
-    - {name: "dev_packs", version: "v3.9.0-rc.1"}
-
+    - {name: "csp", version: "v3.9.0"}
+    - {name: "dev_packs", version: "v3.9.0"}

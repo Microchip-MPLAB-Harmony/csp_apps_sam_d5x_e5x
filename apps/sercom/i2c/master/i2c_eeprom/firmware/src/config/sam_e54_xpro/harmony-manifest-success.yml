@@ -4,10 +4,10 @@
 
 
 project: i2c_eeprom
-creation_date: 2021-01-27T13:18:00.237+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-02-17T14:38:44.915+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.6.5
+mhc_version: v3.7.0
 mplabx_version: v5.45        # if MPLAB X plugin only
 plugin_version: v3.6.2        # if MPLAB X plugin only
 compiler: XC32 (2.50)
