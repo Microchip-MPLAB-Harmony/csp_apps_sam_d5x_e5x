@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_adc_window_sleepwalking",
-		"version": "3.0.1",
+		"version": "3.1.0",
 		"displayName": "ADC window sleepwalking Example for SAM D5x/E5x Family",
 		"projectName": "adc_window_sleepwalking_sam_e54_xpro",
 		"shortDescription": "This application shows how to configure ADC in a sleepwalking operation, where input voltage is measured at a fixed interval, but device is not woken from sleep until the measured value is below a given threshold.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.40.0"
+			"semverRange": ">=5.45.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.40.0"
+				"semverRange": ">=2.50.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.5.1"
+			"semverRange": ">=3.7.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
@@ -39,13 +39,17 @@
 		"author": "Microchip",
 		"subcategories": [
 			[
-				"Development Kit", "SAM E54 Xplained Pro board"
+				"Development Kit",
+				"SAM E54 Xplained Pro board"
 			],
 			[
-				"Harmony", "Peripherals", "ADC"
+				"Harmony",
+				"Peripherals",
+				"ADC"
 			],
 			[
-				"Peripherals", "ADC"
+				"Peripherals",
+				"ADC"
 			]
 		],
 		"peripherals": [
