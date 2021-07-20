@@ -61,9 +61,11 @@ The following table shows the target hardware for the application projects.
     - Stop : 1 Bit
     - Flow Control : None
 3. Build and Program the application using its IDE
-4. In the console associated with board 2, press "2" to receive a CAN message
-5. In the console associated with board 1, press "1" to transmit a CAN  message
-6. Transmitted message description and status will be displayed in the console window of board 1
-7. Received message will be displayed in the console window of board 2
+4. In the console associated with board 1, press "1" to transmit a CAN message
+5. Transmitted message status will be displayed in the console window of board 1
+6. Received message will be displayed in the console window of board 2
+7. Follow the sequence below to send and receive CAN message:
+    - Press '1' on board 2
 8. If the steps are executed in this sequence, the final output in the consoles will be as below (console on the left is the transmitter (board 1) and the one on the right is receiver (board 2)):
-![output](images/output_can_normal_operation_blocking.png)
+
+  ![output](images/output_can_normal_operation_blocking.png)

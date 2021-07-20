@@ -52,11 +52,53 @@
 
 uint8_t Can1MessageRAM[CAN1_MESSAGE_RAM_CONFIG_SIZE] __attribute__((aligned (32)));
 
+/* Standard identifier id[28:18]*/
+#define WRITE_ID(id) (id << 18)
+#define READ_ID(id)  (id >> 18)
+
+static uint32_t status = 0;
+static uint8_t loop_count = 0;
+static uint8_t user_input = 0;
+
+static uint8_t txFiFo[CAN1_TX_FIFO_BUFFER_SIZE];
+static uint8_t rxFiFo0[CAN1_RX_FIFO0_SIZE];
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local functions
+// *****************************************************************************
+// *****************************************************************************
+/* Menu */
 void print_menu(void)
 {
     printf(" ------------------------------ \r\n");   
     printf(" Press '1' to Transmit message \r\n");
-    printf(" Press '2' to Receive message \r\n");
+    printf(" Press 'm' to Display menu \r\n");
+}
+
+/* Print Rx Message */
+static void print_message(uint8_t numberOfMessage, CAN_RX_BUFFER *rxBuf, uint8_t rxBufLen)
+{
+    uint8_t length = 0;
+    uint8_t msgLength = 0;
+    uint32_t id = 0;
+
+    for (uint8_t count = 0; count < numberOfMessage; count++)
+    {
+        /* Print message to Console */
+        printf(" Rx FIFO0 : New Message Received\r\n");
+        id = rxBuf->xtd ? rxBuf->id : READ_ID(rxBuf->id);
+        msgLength = rxBuf->dlc;
+        length = msgLength;
+        printf(" Message - ID : 0x%x Length : 0x%x ", (unsigned int)id, (unsigned int)msgLength);
+        printf("Message : ");
+        while(length)
+        {
+            printf("0x%x ", rxBuf->data[msgLength - length--]);
+        }
+        printf("\r\n");
+        rxBuf += rxBufLen;
+    }
 }
 
 // *****************************************************************************
@@ -67,16 +109,8 @@ void print_menu(void)
 
 int main ( void )
 {
-    uint8_t user_input = 0;
-    uint32_t messageID = 0;
-    uint8_t message[8];
-    uint8_t messageLength = 0;
-    uint32_t status = 0;
-    
-    uint8_t rx_message[8];
-    uint32_t rx_messageID = 0;
-    uint8_t rx_messageLength = 0;
-    CAN_MSG_RX_FRAME_ATTRIBUTE msgFrameAttr = CAN_MSG_RX_DATA_FRAME;
+    CAN_TX_BUFFER *txBuffer = NULL;
+    uint8_t        numberOfMessage = 0;
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
@@ -90,91 +124,73 @@ int main ( void )
 
     print_menu();
     
-    /* Prepare the message to send*/
-    messageID = 0x469;
-    messageLength = 8;
-    for (uint8_t count = 8; count >=1; count--){
-        message[count - 1] = count;
-    }
-    
     while ( true )
     {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        scanf("%c", (char *) &user_input);
-        
+        /* Rx FIFO0 */
+        if (CAN1_InterruptGet(CAN_INTERRUPT_RF0N_MASK))
+        {    
+            CAN1_InterruptClear(CAN_INTERRUPT_RF0N_MASK);
+
+            /* Check CAN Status */
+            status = CAN1_ErrorGet();
+
+            if (((status & CAN_PSR_LEC_Msk) == CAN_ERROR_NONE) || ((status & CAN_PSR_LEC_Msk) == CAN_ERROR_LEC_NC))
+            {
+                numberOfMessage = CAN1_RxFifoFillLevelGet(CAN_RX_FIFO_0);
+                if (numberOfMessage != 0)
+                {
+                    memset(rxFiFo0, 0x00, (numberOfMessage * CAN1_RX_FIFO0_ELEMENT_SIZE));
+                    if (CAN1_MessageReceiveFifo(CAN_RX_FIFO_0, numberOfMessage, (CAN_RX_BUFFER *)rxFiFo0) == true)
+                    {
+                        print_message(numberOfMessage, (CAN_RX_BUFFER *)rxFiFo0, CAN1_RX_FIFO0_ELEMENT_SIZE);
+                    }
+                    else
+                    {
+                        printf(" Error in received message\r\n");
+                    }
+                }
+            }
+            else
+            {
+                printf(" Error in received message\r\n");
+            }
+        }
+
+        /* User input */
+        if (SERCOM2_USART_ReceiverIsReady() == false)
+        {
+            continue;
+        }
+        user_input = (uint8_t)SERCOM2_USART_ReadByte();
+
         switch (user_input)
         {
             case '1': 
                 printf(" Transmitting Message:");
-                if (CAN1_InterruptGet(CAN_INTERRUPT_TC_MASK))
-                {
-                    CAN1_InterruptClear(CAN_INTERRUPT_TC_MASK);
-                }
-                if (CAN1_MessageTransmit(messageID,messageLength,message, CAN_MODE_NORMAL, CAN_MSG_ATTR_TX_FIFO_DATA_FRAME) == true)
+                memset(txFiFo, 0x00, CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE);
+                txBuffer = (CAN_TX_BUFFER *)txFiFo;
+                txBuffer->id = WRITE_ID(0x469);
+                txBuffer->dlc = 8;
+                for (loop_count = 0; loop_count < 8; loop_count++){
+                    txBuffer->data[loop_count] = loop_count;
+                }                
+                if (CAN1_MessageTransmitFifo(1, txBuffer) == true)
                 {    
-                    printf("Success \r\n");
+                    printf(" Success \r\n");
                 }
                 else
                 {
-                    printf("Failed \r\n");
+                    printf(" Failed \r\n");
                 }             
                 break;
-            case '2':
-                printf(" Waiting for message: \r\n");
-                while (true)
-                {
-                    if (CAN1_InterruptGet(CAN_INTERRUPT_RF0N_MASK))
-                    {    
-                        CAN1_InterruptClear(CAN_INTERRUPT_RF0N_MASK);
-
-                        /* Check CAN Status */
-                        status = CAN1_ErrorGet();
-
-                        if (((status & CAN_PSR_LEC_Msk) == CAN_ERROR_NONE) || ((status & CAN_PSR_LEC_Msk) == CAN_ERROR_LEC_NC))
-                        {
-                            memset(rx_message, 0x00, sizeof(rx_message));
-                            
-                            /* Receive FIFO 0 New Message */
-                            if (CAN1_MessageReceive(&rx_messageID, &rx_messageLength, rx_message, 0, CAN_MSG_ATTR_RX_FIFO0, &msgFrameAttr) == true)  
-                            {
-                                printf(" New Message Received    \r\n");
-                                status = CAN1_ErrorGet();
-                                if (((status & CAN_PSR_LEC_Msk) == CAN_ERROR_NONE) || ((status & CAN_PSR_LEC_Msk) == CAN_ERROR_LEC_NC))
-                                {
-                                    /* Print message to Console */
-                                    uint8_t length = rx_messageLength;
-                                    printf(" Message - ID : 0x%x Length : 0x%x ", (unsigned int) rx_messageID,(unsigned int) rx_messageLength);
-                                    printf("Message : ");
-                                    while(length)
-                                    {
-                                        printf("0x%x ", rx_message[rx_messageLength - length--]);
-                                    }
-                                    printf("\r\n");
-                                    break;
-                                }
-                                else
-                                {
-                                    printf("Error in received message");
-                                }
-                            }
-                            else
-                            {
-                                printf("Message Reception Failed \r");
-                            }
-                        }
-                        else
-                        {
-                            printf("Error in last received message");
-                        }
-                    }
-                }
+            case 'm':
+            case 'M':
+                print_menu();
                 break;
             default:
                 printf(" Invalid Input \r\n");
                 break;
         }
-        
-        print_menu();
         
     }
 
