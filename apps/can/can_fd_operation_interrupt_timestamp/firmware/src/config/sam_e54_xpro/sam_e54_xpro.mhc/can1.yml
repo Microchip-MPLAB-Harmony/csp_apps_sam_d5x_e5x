@@ -407,5 +407,23 @@ children:
       children:
       - type: User
         attributes: {value: '7'}
+  - type: File
+    attributes: {id: instHeaderFile}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/can_u2003/templates/plib_can_interrupt.h.ftl}
+  - type: File
+    attributes: {id: sourceFile}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: source}
+        children:
+        - {type: Value, value: ../peripheral/can_u2003/templates/plib_can_interrupt.c.ftl}
 - type: ElementPosition
   attributes: {x: '282', y: '140', id: can1}
