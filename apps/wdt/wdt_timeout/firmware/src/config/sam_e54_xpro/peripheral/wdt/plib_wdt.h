@@ -88,6 +88,8 @@ void WDT_Enable( void );
 
 void WDT_Disable( void );
 
+void WDT_TimeoutPeriodSet(uint8_t TimeoutPeriod);
+
 void WDT_Clear( void );
 
 void WDT_ClearWithSync( void );
