@@ -85,7 +85,7 @@ void TC1_CaptureInitialize( void )
                                   | TC_CTRLA_CAPTEN0_Msk | TC_CTRLA_CAPTEN1_Msk  ;
 
 
-    TC1_REGS->COUNT16.TC_EVCTRL = (uint8_t)(TC_EVCTRL_EVACT_PPW | TC_EVCTRL_TCEI_Msk);
+    TC1_REGS->COUNT16.TC_EVCTRL = (uint16_t)(TC_EVCTRL_EVACT_PPW | TC_EVCTRL_TCEI_Msk);
 
     /* Clear all interrupt flags */
     TC1_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
