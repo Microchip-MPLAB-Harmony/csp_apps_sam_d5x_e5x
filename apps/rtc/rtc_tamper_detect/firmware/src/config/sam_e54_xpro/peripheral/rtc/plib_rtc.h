@@ -112,7 +112,7 @@ typedef enum
     TAMPER_CHANNEL_1 = 1U,
     TAMPER_CHANNEL_2 = 2U,
     TAMPER_CHANNEL_3 = 3U,
-    TAMPER_CHANNEL_4 = 4U
+    TAMPER_CHANNEL_4 = 4U,
 } TAMPER_CHANNEL;
 typedef void (*RTC_CALLBACK)( RTC_CLOCK_INT_MASK intCause, uintptr_t context );
 

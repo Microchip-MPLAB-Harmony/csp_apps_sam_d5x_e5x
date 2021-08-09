@@ -80,6 +80,13 @@ children:
       children:
       - type: User
         attributes: {value: '2'}
+  - type: Hex
+    attributes: {id: RTC_TAMPCTRL_REG}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: rtc, value: '16777218'}
   - type: File
     attributes: {id: RTC_TIMER_SOURCE}
     children:
