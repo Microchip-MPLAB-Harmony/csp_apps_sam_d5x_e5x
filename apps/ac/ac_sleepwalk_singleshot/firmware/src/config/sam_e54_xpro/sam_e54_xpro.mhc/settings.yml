@@ -8,6 +8,6 @@ settings:
   PackageFilter: csp;
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.4.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
   DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.0.27\atdf\ATSAME54P20A.atdf

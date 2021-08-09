@@ -99,6 +99,8 @@ typedef struct
 
 } AC_OBJECT ;
 
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Interface Routines
@@ -116,6 +118,7 @@ bool AC_StatusGet (AC_CHANNEL channel);
 void AC_CallbackRegister (AC_CALLBACK callback, uintptr_t context);
 
 void AC_SetVddScalar( AC_CHANNEL channel_id , uint8_t vdd_scalar);
+
 
 void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEGINPUT negativeInput);
 
