@@ -110,6 +110,10 @@ children:
         attributes: {id: visible}
         children:
         - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: sercom3, value: 'false'}
   - type: Boolean
     attributes: {id: I2CS_TENBITEN_SUPPORT}
     children:
