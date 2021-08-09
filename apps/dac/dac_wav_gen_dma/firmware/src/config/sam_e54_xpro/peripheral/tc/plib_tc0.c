@@ -94,7 +94,7 @@ void TC0_TimerInitialize( void )
     TC0_REGS->COUNT32.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
 
 
-    TC0_REGS->COUNT32.TC_EVCTRL = (uint8_t)(TC_EVCTRL_OVFEO_Msk);
+    TC0_REGS->COUNT32.TC_EVCTRL = (uint16_t)(TC_EVCTRL_OVFEO_Msk);
 
     while((TC0_REGS->COUNT32.TC_SYNCBUSY) != 0U)
     {
