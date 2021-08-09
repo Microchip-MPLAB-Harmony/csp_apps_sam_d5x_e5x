@@ -84,6 +84,16 @@ typedef struct
     uintptr_t context;
 }TCC_CALLBACK_OBJECT;
 
+typedef enum 
+{
+    TCC_COMMAND_NONE,
+    TCC_COMMAND_START_RETRIGGER,
+    TCC_COMMAND_STOP,
+    TCC_COMMAND_FORCE_UPDATE,
+    TCC_COMMAND_READ_SYNC
+}TCC_COMMAND;
+
+
 
 
 // DOM-IGNORE-BEGIN
