@@ -485,6 +485,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x1'}
+  - type: Boolean
+    attributes: {id: PORT_GROUP_0_PIN_4_USED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: PORT_GROUP_0_PIN_5_USED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: PORT_GROUP_0_PMUX2}
     children:
@@ -527,6 +541,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x1'}
+  - type: Boolean
+    attributes: {id: PORT_GROUP_1_PIN_1_USED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: PORT_GROUP_1_PIN_2_USED}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: PORT_GROUP_1_PMUX0}
     children:
