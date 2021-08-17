@@ -937,13 +937,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 195EBF50B59CE07E3F39CD39DF4FA8FE
-- generatedChecksum: 3448B62FDF48416310C7CED2A0A37D1C
+- generatedChecksum: 267E11FBC03D0FD88E7330DDB79B19FC
   logicalPath: config/sam_e54_xpro
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3448B62FDF48416310C7CED2A0A37D1C
+  userChecksum: 267E11FBC03D0FD88E7330DDB79B19FC
 - generatedChecksum: 9BAA095FD13BD9C7A4DE9C557A5853FA
   logicalPath: packs/ATSAME54P20A_DFP/component
   name: trng.h

@@ -74,6 +74,6 @@ The following table shows the target hardware for the application projects.
     - Press '2' on board 2
     - Press '3' on board 2
     - Press '4' on board 2
-8. If the steps are executed in this sequence, the final output in the consoles will be as below (console on the left is the transmitter (board 1) and the one on the right is receiver (board 2)):
+8. If the steps are executed in this sequence, the final output in the consoles will be as below:
 
   ![output](images/output_can_fd_operation_blocking.png)
