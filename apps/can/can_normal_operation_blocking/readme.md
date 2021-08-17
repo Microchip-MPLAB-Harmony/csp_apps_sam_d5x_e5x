@@ -66,6 +66,6 @@ The following table shows the target hardware for the application projects.
 6. Received message will be displayed in the console window of board 2
 7. Follow the sequence below to send and receive CAN message:
     - Press '1' on board 2
-8. If the steps are executed in this sequence, the final output in the consoles will be as below (console on the left is the transmitter (board 1) and the one on the right is receiver (board 2)):
+8. If the steps are executed in this sequence, the final output in the consoles will be as below:
 
   ![output](images/output_can_normal_operation_blocking.png)
