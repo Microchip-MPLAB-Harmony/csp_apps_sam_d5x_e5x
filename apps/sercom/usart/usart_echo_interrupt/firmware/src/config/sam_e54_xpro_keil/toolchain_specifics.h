@@ -46,7 +46,7 @@ typedef long _ssize_t;
 #endif
 #endif
 typedef _ssize_t ssize_t;
-#define	_SSIZE_T_DECLARED
+#define    _SSIZE_T_DECLARED
 #endif
 
 #define NO_INIT        __attribute__((section(".no_init")))
@@ -54,6 +54,8 @@ typedef _ssize_t ssize_t;
 
 #define CACHE_LINE_SIZE    (16u)
 #define CACHE_ALIGN        __ALIGNED(CACHE_LINE_SIZE)
+
+#define CACHE_ALIGNED_SIZE_GET(size)     (size + ((size % CACHE_LINE_SIZE)? (CACHE_LINE_SIZE - (size % CACHE_LINE_SIZE)) : 0))
 
 #ifndef FORMAT_ATTRIBUTE
    #define FORMAT_ATTRIBUTE(archetype, string_index, first_to_check)  __attribute__ ((format (archetype, string_index, first_to_check)))

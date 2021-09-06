@@ -469,6 +469,11 @@
               <FilePath>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</FilePath>
             </File>
             <File>
+              <FileName>fuses.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\component\fuses.h</FilePath>
+            </File>
+            <File>
               <FileName>gclk.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</FilePath>
@@ -672,6 +677,11 @@
               <FileName>freqm.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\src\packs\ATSAME54P20A_DFP\instance\freqm.h</FilePath>
+            </File>
+            <File>
+              <FileName>fuses.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</FilePath>
             </File>
             <File>
               <FileName>gclk.h</FileName>
