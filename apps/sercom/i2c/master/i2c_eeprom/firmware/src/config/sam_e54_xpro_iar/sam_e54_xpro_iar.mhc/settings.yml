@@ -5,9 +5,9 @@ frameworkPath: D:\HARMONY3
 processor: ATSAME54P20A
 projectName: i2c_eeprom_sam_e54_xpro
 settings:
-  PackageFilter: bsp;core;csp;net;
+  PackageFilter: audio;bootloader;bsp;core;core_apps_pic32cz_ca;core_apps_sam_d21_da1;crypto;cryptoauthlib;csp;gfx;mbed_os_rtos;mbed_os_rtos_apps;micrium_ucos3;motor_control;net;touch;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
-  CMSISPath: .\dev_packs\arm\CMSIS\5.6.0
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: OVERWRITE
-  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.2.60\atdf\ATSAME54P20A.atdf
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf

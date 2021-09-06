@@ -2238,6 +2238,9 @@
                             <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\component\freqm.h</name>
                         </file>
                         <file>
+                            <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\component\fuses.h</name>
+                        </file>
+                        <file>
                             <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\component\gclk.h</name>
                         </file>
                         <file>
@@ -2362,6 +2365,9 @@
                         </file>
                         <file>
                             <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\instance\freqm.h</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</name>
                         </file>
                         <file>
                             <name>$PROJ_DIR$\..\src\packs\ATSAME54P20A_DFP\instance\gclk.h</name>
