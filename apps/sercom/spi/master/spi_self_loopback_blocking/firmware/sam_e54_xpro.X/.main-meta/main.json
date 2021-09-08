@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_spi_self_loopback_blocking",
-		"version": "3.1.0",
+		"version": "3.2.0",
 		"displayName": "SERCOM SPI blocking Example for SAM D5x/E5x Family",
 		"projectName": "spi_self_loopback_blocking_sam_e54_xpro",
 		"shortDescription": "This example application demonstrates how to use the SERCOM SPI peripheral to transmit and receive a block of data in a blocking manner.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.50.0"
+				"semverRange": ">=3.01.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.7.0"
+			"semverRange": ">=3.8.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

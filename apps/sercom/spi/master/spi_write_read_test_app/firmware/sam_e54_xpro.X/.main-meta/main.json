@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_spi_write_read_test_app",
-		"version": "3.1.0",
+		"version": "3.2.0",
 		"displayName": "SERCOM SPI Master read write test application Example for SAM D5x/E5x Family",
 		"projectName": "spi_master_write_read_test_sam_e54_xpro",
 		"shortDescription": "This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/sercom/spi/slave/spi_write_read/firmware ",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.50.0"
+				"semverRange": ">=3.01.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.7.0"
+			"semverRange": ">=3.8.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

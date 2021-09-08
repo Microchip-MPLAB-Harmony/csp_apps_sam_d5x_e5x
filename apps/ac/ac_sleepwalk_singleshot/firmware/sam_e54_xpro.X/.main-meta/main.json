@@ -4,18 +4,18 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_ac_sleepwalk_singleshot",
-		"version": "3.1.0",
+		"version": "3.2.0",
 		"displayName": "AC Sleepwalking Example for SAM D5x/E5x Family",
 		"projectName": "ac_sleepwalk_singleshot_sam_e54_xpro",
 		"shortDescription": "This example application shows how to use the AC Peripheral library to perform a single shot comparison in standby sleep mode periodically and wake up the device at the end of a successful comparison.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.45.0"
+			"semverRange": ">=5.50.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=2.50.0"
+				"semverRange": ">=3.01.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.7.0"
+			"semverRange": ">=3.8.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
