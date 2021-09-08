@@ -4,7 +4,7 @@
 
 
 project: i2c_eeprom
-creation_date: 2021-09-06T09:41:33.459+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-09-08T17:03:08.006+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.0
@@ -15,4 +15,3 @@ compiler: iar
 modules:
     - {name: "csp", version: "v3.10.0"}
     - {name: "dev_packs", version: "v3.10.0"}
-
