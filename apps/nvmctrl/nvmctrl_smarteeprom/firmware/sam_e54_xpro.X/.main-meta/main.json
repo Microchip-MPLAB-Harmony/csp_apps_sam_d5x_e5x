@@ -15,7 +15,7 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.01.0"
+				"semverRange": ">=3.1.0"
 			}
 		],
 		"dfp": {

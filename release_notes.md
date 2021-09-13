@@ -14,7 +14,7 @@ nav_order: 99
 
 Following table provides number of peripheral library examples available for different development kits.
 
-| Development Kits  | MPLABx applications | IAR applications | KEIL applications |
+| Development Kits  | MPLAB X applications | IAR applications | KEIL applications |
 |:-----------------:|:-------------------:|:----------------:|:-----------------:|
 | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | 48 | 3 | 1 |
 
@@ -41,7 +41,7 @@ Following table provides number of peripheral library examples available for dif
 
 Following table provides number of peripheral library examples available for different development kits.
 
-| Development Kits  | MPLABx applications | IAR applications | KEIL applications |
+| Development Kits  | MPLAB X applications | IAR applications | KEIL applications |
 |:-----------------:|:-------------------:|:----------------:|:-----------------:|
 | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | 48 | 3 | 1 |
 
@@ -83,7 +83,7 @@ Following table provides number of peripheral library examples available for dif
 
 Following table provides number of peripheral library examples available for different development kits.
 
-| Development Kits  | MPLABx applications | IAR applications | KEIL applications |
+| Development Kits  | MPLAB X applications | IAR applications | KEIL applications |
 |:-----------------:|:-------------------:|:----------------:|:-----------------:|
 | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | 47 | 3 | 1 |
 
