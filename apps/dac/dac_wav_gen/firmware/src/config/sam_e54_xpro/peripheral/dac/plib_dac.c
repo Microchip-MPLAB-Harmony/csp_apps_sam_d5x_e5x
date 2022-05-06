@@ -44,13 +44,13 @@
 #include "plib_dac.h"
 #include "device.h"
 
-						 
+
 /* (DAC DATA) Mask DATA[15:12] Bit */
 #define DAC_DATA_MSB_MASK                    (0x0FFFU)
 
 /* (DAC DATA) Mask DATA[3:0] Bit */
 #define DAC_DATA_LSB_MASK                    (0xFFF0U)
-						 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: DAC Implementation
@@ -59,26 +59,35 @@
 
 void DAC_Initialize (void)
 {
-	/* Reset DAC Peripheral */
+    /* Reset DAC Peripheral */
     DAC_REGS->DAC_CTRLA = DAC_CTRLA_SWRST_Msk;
-	while (((DAC_REGS->DAC_CTRLA & DAC_CTRLA_SWRST_Msk) == DAC_CTRLA_SWRST_Msk) && ((DAC_REGS->DAC_SYNCBUSY & DAC_SYNCBUSY_SWRST_Msk) == DAC_SYNCBUSY_SWRST_Msk));
-	
-    DAC_REGS->DAC_CTRLB = DAC_CTRLB_REFSEL (3);
+    while (((DAC_REGS->DAC_CTRLA & DAC_CTRLA_SWRST_Msk) == DAC_CTRLA_SWRST_Msk) && ((DAC_REGS->DAC_SYNCBUSY & DAC_SYNCBUSY_SWRST_Msk) == DAC_SYNCBUSY_SWRST_Msk))
+    {
+        /* Wait for synchronization */
+    }
 
-	
-	DAC_REGS->DAC_DACCTRL[0] = DAC_DACCTRL_ENABLE_Msk | DAC_DACCTRL_CCTRL (0x2) | DAC_DACCTRL_OSR (0) | DAC_DACCTRL_REFRESH (1) ;
-	
-	
-	/* Enable DAC */
+    DAC_REGS->DAC_CTRLB = DAC_CTRLB_REFSEL (3U);
+
+
+    DAC_REGS->DAC_DACCTRL[0] = DAC_DACCTRL_ENABLE_Msk | DAC_DACCTRL_CCTRL (0x2U) | DAC_DACCTRL_OSR (0U) | DAC_DACCTRL_REFRESH (1U) ;
+
+
+    /* Enable DAC */
     DAC_REGS->DAC_CTRLA |= DAC_CTRLA_ENABLE_Msk;
-	while ((DAC_REGS->DAC_SYNCBUSY & DAC_SYNCBUSY_ENABLE_Msk) == DAC_SYNCBUSY_ENABLE_Msk);
+    while ((DAC_REGS->DAC_SYNCBUSY & DAC_SYNCBUSY_ENABLE_Msk) == DAC_SYNCBUSY_ENABLE_Msk)
+    {
+        /* Wait for synchronization */
+    }
 }
 
 void DAC_DataWrite (DAC_CHANNEL_NUM channel, uint16_t data)
 {
-	/* Write Data to DATA0 Register for conversion(DATA[11:0]) */
-	DAC_REGS->DAC_DATA[0] = DAC_DATA_MSB_MASK & DAC_DATA_DATA(data);
-	while ((DAC_REGS->DAC_SYNCBUSY & DAC_SYNCBUSY_DATA0_Msk) == DAC_SYNCBUSY_DATA0_Msk);
+    /* Write Data to DATA0 Register for conversion(DATA[11:0]) */
+    DAC_REGS->DAC_DATA[0] = DAC_DATA_MSB_MASK & DAC_DATA_DATA(data);
+    while ((DAC_REGS->DAC_SYNCBUSY & DAC_SYNCBUSY_DATA0_Msk) == DAC_SYNCBUSY_DATA0_Msk)
+    {
+        /* Wait for synchronization */
+    }
 }
 
 
@@ -87,5 +96,5 @@ void DAC_DataWrite (DAC_CHANNEL_NUM channel, uint16_t data)
 
 bool DAC_IsReady (DAC_CHANNEL_NUM channel)
 {
-    return (bool)(((DAC_REGS->DAC_STATUS >> channel) & DAC_STATUS_READY0_Msk) == DAC_STATUS_READY0_Msk);
+    return (((DAC_REGS->DAC_STATUS >> channel) & DAC_STATUS_READY0_Msk) == DAC_STATUS_READY0_Msk);
 }
