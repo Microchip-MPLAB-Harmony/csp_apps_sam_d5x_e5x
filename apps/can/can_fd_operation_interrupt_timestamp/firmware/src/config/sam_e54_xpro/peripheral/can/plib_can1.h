@@ -115,6 +115,7 @@ void CAN1_TxFifoCallbackRegister(CAN_TX_FIFO_CALLBACK callback, uintptr_t contex
 void CAN1_TxEventFifoCallbackRegister(CAN_TX_EVENT_FIFO_CALLBACK callback, uintptr_t contextHandle);
 void CAN1_RxBuffersCallbackRegister(CAN_TXRX_BUFFERS_CALLBACK callback, uintptr_t contextHandle);
 void CAN1_RxFifoCallbackRegister(CAN_RX_FIFO_NUM rxFifoNum, CAN_RX_FIFO_CALLBACK callback, uintptr_t contextHandle);
+void CAN1_CallbackRegister(CAN_CALLBACK callback, uintptr_t contextHandle);
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
     }
