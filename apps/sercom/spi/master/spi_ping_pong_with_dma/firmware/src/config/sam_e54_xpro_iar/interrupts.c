@@ -73,17 +73,12 @@ void Dummy_Handler( void )
 
     }
 }
+
+/* MISRAC 2012 deviation block start */
+/* MISRA C-2012 Rule 8.6 deviated 131 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
-extern void MemoryManagement_Handler ( void );
-#pragma weak MemoryManagement_Handler=Dummy_Handler
-extern void BusFault_Handler ( void );
-#pragma weak BusFault_Handler=Dummy_Handler
-extern void UsageFault_Handler ( void );
-#pragma weak UsageFault_Handler=Dummy_Handler
 extern void SVCall_Handler ( void );
 #pragma weak SVCall_Handler=Dummy_Handler
-extern void DebugMonitor_Handler ( void );
-#pragma weak DebugMonitor_Handler=Dummy_Handler
 extern void PendSV_Handler ( void );
 #pragma weak PendSV_Handler=Dummy_Handler
 extern void SysTick_Handler ( void );
@@ -346,6 +341,7 @@ extern void SDHC1_Handler ( void );
 #pragma weak SDHC1_Handler=Dummy_Handler
 
 
+/* MISRAC 2012 deviation block end */
 
 /* Multiple handlers for vector */
 
