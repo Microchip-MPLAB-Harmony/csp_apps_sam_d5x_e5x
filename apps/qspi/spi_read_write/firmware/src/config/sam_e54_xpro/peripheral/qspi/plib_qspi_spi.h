@@ -89,6 +89,8 @@ void QSPI_CallbackRegister (QSPI_CALLBACK callback, uintptr_t context);
 
 bool QSPI_IsBusy(void);
 
+bool QSPI_IsTransmitterBusy(void);
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus // Provide C++ Compatibility
 }
