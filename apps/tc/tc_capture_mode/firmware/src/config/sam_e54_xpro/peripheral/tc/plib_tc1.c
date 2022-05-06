@@ -129,7 +129,7 @@ void TC1_CaptureCommandSet(TC_COMMAND command)
     while((TC1_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 
@@ -158,7 +158,7 @@ void TC1_CaptureInterruptHandler( void )
         /* Clear all interrupts */
         TC1_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
 
-        if((status != TC_CAPTURE_STATUS_NONE) && TC1_CallbackObject.callback != NULL)
+        if((status != TC_CAPTURE_STATUS_NONE) && (TC1_CallbackObject.callback != NULL))
         {
             TC1_CallbackObject.callback(status, TC1_CallbackObject.context);
         }
