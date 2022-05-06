@@ -113,13 +113,15 @@ void CAN1_Initialize(void)
     CAN1_REGS->CAN_GFC = CAN_GFC_ANFS_REJECT | CAN_GFC_ANFE_REJECT;
 
     /* Set the operation mode */
-    CAN1_REGS->CAN_CCCR = (CAN1_REGS->CAN_CCCR & ~CAN_CCCR_INIT_Msk);
+
+
+    CAN1_REGS->CAN_CCCR &= ~CAN_CCCR_INIT_Msk;
     while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
     {
         /* Wait for initialization complete */
     }
 
-    memset(&can1Obj.msgRAMConfig, 0x00, sizeof(CAN_MSG_RAM_CONFIG));
+   (void) memset(&can1Obj.msgRAMConfig, 0x00, sizeof(CAN_MSG_RAM_CONFIG));
 }
 
 
@@ -149,33 +151,34 @@ bool CAN1_MessageTransmitFifo(uint8_t numberOfMessage, CAN_TX_BUFFER *txBuffer)
     uint32_t bufferNumber = 0U;
     uint8_t  tfqpi = 0U;
     uint8_t  count = 0U;
+    bool transmitFifo_event = false;
 
-    if (((numberOfMessage < 1U) || (numberOfMessage > 1U)) || (txBuffer == NULL))
+    if (!(((numberOfMessage < 1U) || (numberOfMessage > 1U)) || (txBuffer == NULL)))
     {
-        return false;
-    }
 
-    tfqpi = (uint8_t)((CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQPI_Msk) >> CAN_TXFQS_TFQPI_Pos);
+        tfqpi = (uint8_t)((CAN1_REGS->CAN_TXFQS & CAN_TXFQS_TFQPI_Msk) >> CAN_TXFQS_TFQPI_Pos);
 
-    for (count = 0; count < numberOfMessage; count++)
-    {
-        txFifo = (uint8_t *)((uint8_t*)can1Obj.msgRAMConfig.txBuffersAddress + ((uint32_t)tfqpi * CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE));
-
-        memcpy(txFifo, txBuf, CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE);
-
-        txBuf += CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE;
-        bufferNumber |= (1UL << tfqpi);
-        tfqpi++;
-        if (tfqpi == 1U)
+        for (count = 0U; count < numberOfMessage; count++)
         {
-            tfqpi = 0U;
+            txFifo = (uint8_t *)((uint8_t*)can1Obj.msgRAMConfig.txBuffersAddress + ((uint32_t)tfqpi * CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE));
+
+            (void) memcpy(txFifo, txBuf, CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE);
+
+            txBuf += CAN1_TX_FIFO_BUFFER_ELEMENT_SIZE;
+            bufferNumber |= (1UL << tfqpi);
+            tfqpi++;
+            if (tfqpi == 1U)
+            {
+                tfqpi = 0U;
+            }
         }
+
+        /* Set Transmission request */
+        CAN1_REGS->CAN_TXBAR = bufferNumber;
+
+        transmitFifo_event = true;
     }
-
-    /* Set Transmission request */
-    CAN1_REGS->CAN_TXBAR = bufferNumber;
-
-    return true;
+    return transmitFifo_event;
 }
 
 // *****************************************************************************
@@ -246,36 +249,36 @@ bool CAN1_TxEventFifoRead(uint8_t numberOfTxEvent, CAN_TX_EVENT_FIFO *txEventFif
     uint8_t count      = 0U;
     uint8_t *txEvent   = NULL;
     uint8_t *txEvtFifo = (uint8_t *)txEventFifo;
+    bool txFifo_event = false;
 
-    if (txEventFifo == NULL)
+    if (txEventFifo != NULL)
     {
-        return false;
-    }
-
-    /* Read data from the Rx FIFO0 */
-    txefgi = (uint8_t)((CAN1_REGS->CAN_TXEFS & CAN_TXEFS_EFGI_Msk) >> CAN_TXEFS_EFGI_Pos);
-    for (count = 0; count < numberOfTxEvent; count++)
-    {
-        txEvent = (uint8_t *) ((uint8_t *)can1Obj.msgRAMConfig.txEventFIFOAddress + ((uint32_t)txefgi * sizeof(CAN_TX_EVENT_FIFO)));
-
-        memcpy(txEvtFifo, txEvent, sizeof(CAN_TX_EVENT_FIFO));
-
-        if ((count + 1) == numberOfTxEvent)
+        /* Read data from the Rx FIFO0 */
+        txefgi = (uint8_t)((CAN1_REGS->CAN_TXEFS & CAN_TXEFS_EFGI_Msk) >> CAN_TXEFS_EFGI_Pos);
+        for (count = 0U; count < numberOfTxEvent; count++)
         {
-            break;
+            txEvent = (uint8_t *) ((uint8_t *)can1Obj.msgRAMConfig.txEventFIFOAddress + ((uint32_t)txefgi * sizeof(CAN_TX_EVENT_FIFO)));
+
+            (void) memcpy(txEvtFifo, txEvent, sizeof(CAN_TX_EVENT_FIFO));
+
+            if ((count + 1U) == numberOfTxEvent)
+            {
+                break;
+            }
+            txEvtFifo += sizeof(CAN_TX_EVENT_FIFO);
+            txefgi++;
+            if (txefgi == 1U)
+            {
+                txefgi = 0U;
+            }
         }
-        txEvtFifo += sizeof(CAN_TX_EVENT_FIFO);
-        txefgi++;
-        if (txefgi == 1U)
-        {
-            txefgi = 0U;
-        }
+
+        /* Ack the Tx Event FIFO position */
+        CAN1_REGS->CAN_TXEFA = CAN_TXEFA_EFAI((uint32_t)txefgi);
+
+        txFifo_event = true;
     }
-
-    /* Ack the Tx Event FIFO position */
-    CAN1_REGS->CAN_TXEFA = CAN_TXEFA_EFAI((uint32_t)txefgi);
-
-    return true;
+    return txFifo_event;
 }
 
 // *****************************************************************************
@@ -328,67 +331,65 @@ bool CAN1_MessageReceiveFifo(CAN_RX_FIFO_NUM rxFifoNum, uint8_t numberOfMessage,
     uint8_t *rxBuf = (uint8_t *)rxBuffer;
     bool status = false;
 
-    if (rxBuffer == NULL)
+    if (rxBuffer != NULL)
     {
-        return status;
-    }
-
-    switch (rxFifoNum)
-    {
-        case CAN_RX_FIFO_0:
-            /* Read data from the Rx FIFO0 */
-            rxgi = (uint8_t)((CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0GI_Msk) >> CAN_RXF0S_F0GI_Pos);
-            for (count = 0; count < numberOfMessage; count++)
-            {
-                rxFifo = (uint8_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO0Address + ((uint32_t)rxgi * CAN1_RX_FIFO0_ELEMENT_SIZE));
-
-                memcpy(rxBuf, rxFifo, CAN1_RX_FIFO0_ELEMENT_SIZE);
-
-                if ((count + 1) == numberOfMessage)
+        switch (rxFifoNum)
+        {
+            case CAN_RX_FIFO_0:
+                /* Read data from the Rx FIFO0 */
+                rxgi = (uint8_t)((CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0GI_Msk) >> CAN_RXF0S_F0GI_Pos);
+                for (count = 0U; count < numberOfMessage; count++)
                 {
-                    break;
+                    rxFifo = (uint8_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO0Address + ((uint32_t)rxgi * CAN1_RX_FIFO0_ELEMENT_SIZE));
+
+                    (void) memcpy(rxBuf, rxFifo, CAN1_RX_FIFO0_ELEMENT_SIZE);
+
+                    if ((count + 1U) == numberOfMessage)
+                    {
+                        break;
+                    }
+                    rxBuf += CAN1_RX_FIFO0_ELEMENT_SIZE;
+                    rxgi++;
+                    if (rxgi == 1U)
+                    {
+                        rxgi = 0U;
+                    }
                 }
-                rxBuf += CAN1_RX_FIFO0_ELEMENT_SIZE;
-                rxgi++;
-                if (rxgi == 1U)
+
+                /* Ack the fifo position */
+                CAN1_REGS->CAN_RXF0A = CAN_RXF0A_F0AI((uint32_t)rxgi);
+
+                status = true;
+                break;
+            case CAN_RX_FIFO_1:
+                /* Read data from the Rx FIFO1 */
+                rxgi = (uint8_t)((CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1GI_Msk) >> CAN_RXF1S_F1GI_Pos);
+                for (count = 0U; count < numberOfMessage; count++)
                 {
-                    rxgi = 0U;
+                    rxFifo = (uint8_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO1Address + ((uint32_t)rxgi * CAN1_RX_FIFO1_ELEMENT_SIZE));
+
+                    (void) memcpy(rxBuf, rxFifo, CAN1_RX_FIFO1_ELEMENT_SIZE);
+
+                    if ((count + 1U) == numberOfMessage)
+                    {
+                        break;
+                    }
+                    rxBuf += CAN1_RX_FIFO1_ELEMENT_SIZE;
+                    rxgi++;
+                    if (rxgi == 1U)
+                    {
+                        rxgi = 0U;
+                    }
                 }
-            }
+                /* Ack the fifo position */
+                CAN1_REGS->CAN_RXF1A = CAN_RXF1A_F1AI((uint32_t)rxgi);
 
-            /* Ack the fifo position */
-            CAN1_REGS->CAN_RXF0A = CAN_RXF0A_F0AI((uint32_t)rxgi);
-
-            status = true;
-            break;
-        case CAN_RX_FIFO_1:
-            /* Read data from the Rx FIFO1 */
-            rxgi = (uint8_t)((CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1GI_Msk) >> CAN_RXF1S_F1GI_Pos);
-            for (count = 0; count < numberOfMessage; count++)
-            {
-                rxFifo = (uint8_t *) ((uint8_t *)can1Obj.msgRAMConfig.rxFIFO1Address + ((uint32_t)rxgi * CAN1_RX_FIFO1_ELEMENT_SIZE));
-
-                memcpy(rxBuf, rxFifo, CAN1_RX_FIFO1_ELEMENT_SIZE);
-
-                if ((count + 1) == numberOfMessage)
-                {
-                    break;
-                }
-                rxBuf += CAN1_RX_FIFO1_ELEMENT_SIZE;
-                rxgi++;
-                if (rxgi == 1U)
-                {
-                    rxgi = 0U;
-                }
-            }
-            /* Ack the fifo position */
-            CAN1_REGS->CAN_RXF1A = CAN_RXF1A_F1AI((uint32_t)rxgi);
-
-            status = true;
-            break;
-        default:
-            /* Do nothing */
-            break;
+                status = true;
+                break;
+            default:
+                /* Do nothing */
+                break;
+        }
     }
     return status;
 }
@@ -411,14 +412,17 @@ bool CAN1_MessageReceiveFifo(CAN_RX_FIFO_NUM rxFifoNum, uint8_t numberOfMessage,
 */
 uint8_t CAN1_RxFifoFillLevelGet(CAN_RX_FIFO_NUM rxFifoNum)
 {
+    uint8_t fillLevel = 0U;
+
     if (rxFifoNum == CAN_RX_FIFO_0)
     {
-        return (uint8_t)(CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0FL_Msk);
+        fillLevel = (uint8_t)(CAN1_REGS->CAN_RXF0S & CAN_RXF0S_F0FL_Msk);
     }
     else
     {
-        return (uint8_t)(CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1FL_Msk);
+        fillLevel = (uint8_t)(CAN1_REGS->CAN_RXF1S & CAN_RXF1S_F1FL_Msk);
     }
+    return fillLevel;
 }
 
 // *****************************************************************************
@@ -447,8 +451,7 @@ CAN_ERROR CAN1_ErrorGet(void)
 
     if ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
     {
-        CAN1_REGS->CAN_CCCR |= CAN_CCCR_CCE_Msk;
-        CAN1_REGS->CAN_CCCR = (CAN1_REGS->CAN_CCCR & ~CAN_CCCR_INIT_Msk);
+        CAN1_REGS->CAN_CCCR &= ~CAN_CCCR_INIT_Msk;
         while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
         {
             /* Wait for initialization complete */
@@ -547,10 +550,10 @@ void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
 {
     uint32_t offset = 0U;
 
-    memset(msgRAMConfigBaseAddress, 0x00, CAN1_MESSAGE_RAM_CONFIG_SIZE);
+    (void) memset(msgRAMConfigBaseAddress, 0x00, CAN1_MESSAGE_RAM_CONFIG_SIZE);
 
     /* Set CAN CCCR Init for Message RAM Configuration */
-    CAN1_REGS->CAN_CCCR = CAN_CCCR_INIT_Msk;
+    CAN1_REGS->CAN_CCCR |= CAN_CCCR_INIT_Msk;
     while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) != CAN_CCCR_INIT_Msk)
     {
         /* Wait for initialization complete */
@@ -584,7 +587,7 @@ void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
             CAN_TXEFC_EFSA((uint32_t)can1Obj.msgRAMConfig.txEventFIFOAddress);
 
     can1Obj.msgRAMConfig.stdMsgIDFilterAddress = (can_sidfe_registers_t *)(msgRAMConfigBaseAddress + offset);
-    memcpy(can1Obj.msgRAMConfig.stdMsgIDFilterAddress,
+    (void) memcpy(can1Obj.msgRAMConfig.stdMsgIDFilterAddress,
            (const void *)can1StdFilter,
            CAN1_STD_MSG_ID_FILTER_SIZE);
     offset += CAN1_STD_MSG_ID_FILTER_SIZE;
@@ -597,7 +600,7 @@ void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
     (void)offset;
 
     /* Complete Message RAM Configuration by clearing CAN CCCR Init */
-    CAN1_REGS->CAN_CCCR = (CAN1_REGS->CAN_CCCR & ~CAN_CCCR_INIT_Msk);
+    CAN1_REGS->CAN_CCCR &= ~CAN_CCCR_INIT_Msk;
     while ((CAN1_REGS->CAN_CCCR & CAN_CCCR_INIT_Msk) == CAN_CCCR_INIT_Msk)
     {
         /* Wait for configuration complete */
@@ -626,13 +629,13 @@ void CAN1_MessageRAMConfigSet(uint8_t *msgRAMConfigBaseAddress)
 */
 bool CAN1_StandardFilterElementSet(uint8_t filterNumber, can_sidfe_registers_t *stdMsgIDFilterElement)
 {
-    if ((filterNumber > 1U) || (stdMsgIDFilterElement == NULL))
+    bool retval = false;
+    if (!((filterNumber > 1U) || (stdMsgIDFilterElement == NULL)))
     {
-        return false;
+        can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].CAN_SIDFE_0 = stdMsgIDFilterElement->CAN_SIDFE_0;
+        retval = true;
     }
-    can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].CAN_SIDFE_0 = stdMsgIDFilterElement->CAN_SIDFE_0;
-
-    return true;
+    return retval;
 }
 
 // *****************************************************************************
@@ -657,13 +660,13 @@ bool CAN1_StandardFilterElementSet(uint8_t filterNumber, can_sidfe_registers_t *
 */
 bool CAN1_StandardFilterElementGet(uint8_t filterNumber, can_sidfe_registers_t *stdMsgIDFilterElement)
 {
-    if ((filterNumber > 1U) || (stdMsgIDFilterElement == NULL))
+    bool retval = false;
+    if (!((filterNumber > 1U) || (stdMsgIDFilterElement == NULL)))
     {
-        return false;
+        stdMsgIDFilterElement->CAN_SIDFE_0 = can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].CAN_SIDFE_0;
+        retval = true;
     }
-    stdMsgIDFilterElement->CAN_SIDFE_0 = can1Obj.msgRAMConfig.stdMsgIDFilterAddress[filterNumber - 1U].CAN_SIDFE_0;
-
-    return true;
+    return retval;
 }
 
 
