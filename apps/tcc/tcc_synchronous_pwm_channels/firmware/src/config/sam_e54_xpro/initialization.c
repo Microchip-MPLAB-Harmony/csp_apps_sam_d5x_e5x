@@ -131,9 +131,9 @@ void SYS_Initialize ( void* data )
 
 
 
-    EVSYS_Initialize();
-
     TCC0_PWMInitialize();
+
+    EVSYS_Initialize();
 
 
 
