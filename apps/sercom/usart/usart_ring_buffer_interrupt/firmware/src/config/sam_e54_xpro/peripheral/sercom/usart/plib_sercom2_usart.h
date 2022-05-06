@@ -75,6 +75,9 @@ USART_ERROR SERCOM2_USART_ErrorGet( void );
 
 uint32_t SERCOM2_USART_FrequencyGet( void );
 
+
+bool SERCOM2_USART_TransmitComplete( void );
+
 size_t SERCOM2_USART_Write(uint8_t* pWrBuffer, const size_t size );
 
 size_t SERCOM2_USART_WriteCountGet(void);
