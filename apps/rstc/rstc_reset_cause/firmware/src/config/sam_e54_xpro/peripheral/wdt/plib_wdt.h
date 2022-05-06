@@ -79,6 +79,16 @@ void WDT_Enable( void );
 
 void WDT_Disable( void );
 
+void WDT_EnableWindowMode( void );
+
+void WDT_DisableWindowMode( void );
+
+bool WDT_IsEnabled(void);
+
+bool WDT_IsAlwaysOn(void);
+
+bool WDT_IsWindowModeEnabled(void);
+
 void WDT_TimeoutPeriodSet(uint8_t TimeoutPeriod);
 
 void WDT_Clear( void );
