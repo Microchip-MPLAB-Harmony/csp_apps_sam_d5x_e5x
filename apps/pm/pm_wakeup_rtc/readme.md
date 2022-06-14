@@ -57,12 +57,12 @@ The following table shows the target hardware for the application projects.
 
     ![output](images/output_pm_wakeup_rtc_1.png)
 
-6. Select 'a' or 'b' to enter the low power mode (LED is turned off when the device enters low power mode)
+6. Select 'a', 'b', or 'c' to enter the low power mode (LED is turned off when the device enters low power mode)
 7. When the device wakes up on RTC compare match interrupt, the LED starts blinking and the console displays the following
 message
 
     ![output](images/output_pm_wakeup_rtc_2.png)
-
+8. Select 'd' to enter off mode. LED is turned off and device enters off mode. Press reset button to exit the off mode.
 8. Select 'e' to enter the backup mode (LED is turned off when the device enters backup mode)
 9. When the device wakes up on RTC compare match interrupt, the LED starts blinking and the console displays the following
 message
