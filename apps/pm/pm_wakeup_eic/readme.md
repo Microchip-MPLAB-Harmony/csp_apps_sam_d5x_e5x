@@ -57,8 +57,8 @@ The following table shows the target hardware for the application projects.
 
     ![output](images/output_pm_wakeup_eic_1.png)
 
-6. Select 'a' or 'b' to enter the low power mode (The LED is turned off when the device enters low power mode)
-7. Press the switch to exit the low power mode
+6. Select option 'a', 'b', 'c' or 'd' to enter the low power mode (The LED is turned off when the device enters low power mode)
+7. Depending on the lower power mode, either press the switch or reset the board to exit the low power mode
 8. LED will start blinking and the console displays the following message:
 
     ![output](images/output_pm_wakeup_eic_2.png)
