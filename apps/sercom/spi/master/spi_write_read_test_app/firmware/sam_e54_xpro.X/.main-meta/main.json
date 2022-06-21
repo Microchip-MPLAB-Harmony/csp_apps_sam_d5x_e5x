@@ -10,12 +10,12 @@
 		"shortDescription": "This is a SPI Master test application which is provided to demonstrate communication between SPI master and the corresponding SPI slave application available under -  apps/sercom/spi/slave/spi_write_read/firmware ",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.0.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.1.0"
+				"semverRange": ">=4.1.0"
 			}
 		],
 		"dfp": {
@@ -24,7 +24,7 @@
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.8.0"
+			"semverRange": ">=3.8.5"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

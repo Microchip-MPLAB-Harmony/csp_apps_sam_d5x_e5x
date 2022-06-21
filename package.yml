@@ -1,0 +1,14 @@
+package:
+  format-version: "1.0.0"
+  name: "csp_apps_sam_d5x_e5x"
+  version: "v3.3.0"
+  type: "application"
+  status: "production"
+  required: true
+
+  dependencies:
+    - name: "csp"
+      type: "package"
+      version: "v3.13.0"
+
+
