@@ -4,13 +4,13 @@
 
 
 project: evsys_trigger
-creation_date: 2022-05-06T15:52:41.112+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-06-21T20:04:50.125+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.8.5
 mplabx_version: v6.00        # if MPLAB X plugin only
 plugin_version: NA        # if MPLAB X plugin only
-compiler: XC32 (4.00)
+compiler: XC32 (4.10)
 
 modules:
     - {name: "csp", version: "v3.13.0"}
