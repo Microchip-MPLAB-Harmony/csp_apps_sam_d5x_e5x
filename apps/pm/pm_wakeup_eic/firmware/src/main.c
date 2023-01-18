@@ -140,11 +140,13 @@ int main ( void )
             {
                 printf("\n\rEntering STANDBY SLEEP Mode");
                 printf("\n\rPress SW0 to wakeup the device");   
+                SYSTICK_DelayUs(1000);
                 SYSTICK_TimerStop();
                 LED_OFF();
                 PM_StandbyModeEnter();
-                printf("\n\rSW0 Pressed exiting Standby mode......");
                 SYSTICK_TimerStart();
+                SYSTICK_DelayMs(1000);
+                printf("\n\rSW0 Pressed exiting Standby mode......");
                 display_menu();
                 break;
             }
@@ -152,6 +154,7 @@ int main ( void )
             {
                 printf("\n\rEntering HIBERNATE SLEEP Mode");
                 printf("\n\rPress Reset button to wakeup the device   ");   
+                SYSTICK_DelayUs(1000);
                 SYSTICK_TimerStop();
                 LED_OFF();
                 PM_HibernateModeEnter();
@@ -161,6 +164,7 @@ int main ( void )
             {
                 printf("\n\rEntering OFF SLEEP Mode");
                 printf("\n\rPress Reset button to wakeup the device  ");   
+                SYSTICK_DelayUs(1000);
                 SYSTICK_TimerStop();
                 LED_OFF();
                 PM_OffModeEnter();
