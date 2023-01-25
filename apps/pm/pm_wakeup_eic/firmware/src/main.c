@@ -145,7 +145,7 @@ int main ( void )
                 LED_OFF();
                 PM_StandbyModeEnter();
                 SYSTICK_TimerStart();
-                SYSTICK_DelayMs(1000);
+                SYSTICK_DelayUs(1000);
                 printf("\n\rSW0 Pressed exiting Standby mode......");
                 display_menu();
                 break;
