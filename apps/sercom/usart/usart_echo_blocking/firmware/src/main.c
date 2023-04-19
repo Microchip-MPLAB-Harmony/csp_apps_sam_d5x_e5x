@@ -63,7 +63,7 @@ char messageStart[] = "**** USART Line Echo Demo: Blocking Transfer without the 
 char newline[] = "\r\n";
 char errorMessage[] = "\r\n**** USART error has occurred ****\r\n";
 char receiveBuffer[RX_BUFFER_SIZE] = {};
-char data = 0;
+static char data = 0;
 
 // *****************************************************************************
 // *****************************************************************************
