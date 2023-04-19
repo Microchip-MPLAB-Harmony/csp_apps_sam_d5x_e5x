@@ -58,12 +58,12 @@
 #define SERCOM6_SPI_READ_BUFFER_SIZE            256U
 #define SERCOM6_SPI_WRITE_BUFFER_SIZE           256U
 
-static uint8_t SERCOM6_SPI_ReadBuffer[SERCOM6_SPI_READ_BUFFER_SIZE];
-static uint8_t SERCOM6_SPI_WriteBuffer[SERCOM6_SPI_WRITE_BUFFER_SIZE];
+volatile static uint8_t SERCOM6_SPI_ReadBuffer[SERCOM6_SPI_READ_BUFFER_SIZE];
+volatile static uint8_t SERCOM6_SPI_WriteBuffer[SERCOM6_SPI_WRITE_BUFFER_SIZE];
 
 
 /* Global object to save SPI Exchange related data  */
-static SPI_SLAVE_OBJECT sercom6SPISObj;
+volatile static SPI_SLAVE_OBJECT sercom6SPISObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -71,6 +71,17 @@ static SPI_SLAVE_OBJECT sercom6SPISObj;
 // *****************************************************************************
 // *****************************************************************************
 // *****************************************************************************
+
+static void mem_copy(volatile void* pDst, volatile void* pSrc, uint32_t nBytes)
+{
+    volatile uint8_t* pSource = (volatile uint8_t*)pSrc;
+    volatile uint8_t* pDest = (volatile uint8_t*)pDst;
+
+    for (uint32_t i = 0U; i < nBytes; i++)
+    {
+        pDest[i] = pSource[i];
+    }
+}
 
 void SERCOM6_SPI_Initialize(void)
 {
@@ -122,6 +133,7 @@ size_t SERCOM6_SPI_Read(void* pRdBuffer, size_t size)
 {
     uint8_t intState = SERCOM6_REGS->SPIS.SERCOM_INTENSET;
     size_t rdSize = size;
+    uint8_t* pDstBuffer = (uint8_t*)pRdBuffer;
 
     SERCOM6_REGS->SPIS.SERCOM_INTENCLR = intState;
 
@@ -130,7 +142,7 @@ size_t SERCOM6_SPI_Read(void* pRdBuffer, size_t size)
         rdSize = sercom6SPISObj.rdInIndex;
     }
 
-    (void) memcpy(pRdBuffer, SERCOM6_SPI_ReadBuffer, rdSize);
+    (void) mem_copy(pDstBuffer, SERCOM6_SPI_ReadBuffer, rdSize);
 
     SERCOM6_REGS->SPIS.SERCOM_INTENSET = intState;
 
@@ -143,6 +155,8 @@ size_t SERCOM6_SPI_Write(void* pWrBuffer, size_t size )
     uint8_t intState = SERCOM6_REGS->SPIS.SERCOM_INTENSET;
     size_t wrSize = size;
     bool writeReady = false;
+    uint32_t wrOutIndex = 0;
+    uint8_t* pSrcBuffer = (uint8_t*)pWrBuffer;
 
     SERCOM6_REGS->SPIS.SERCOM_INTENCLR = intState;
 
@@ -151,20 +165,21 @@ size_t SERCOM6_SPI_Write(void* pWrBuffer, size_t size )
         wrSize = SERCOM6_SPI_WRITE_BUFFER_SIZE;
     }
 
-   (void) memcpy(SERCOM6_SPI_WriteBuffer, pWrBuffer, wrSize);
+   (void) mem_copy(SERCOM6_SPI_WriteBuffer, pSrcBuffer, wrSize);
 
     sercom6SPISObj.nWrBytes = wrSize;
-    sercom6SPISObj.wrOutIndex = 0U;
 
-    writeReady = (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes);
+    writeReady = (wrOutIndex < sercom6SPISObj.nWrBytes);
     writeReady = ((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) == SERCOM_SPIS_INTFLAG_DRE_Msk) && writeReady;
     while (writeReady)
     {
-        SERCOM6_REGS->SPIS.SERCOM_DATA = SERCOM6_SPI_WriteBuffer[sercom6SPISObj.wrOutIndex];
-		sercom6SPISObj.wrOutIndex++;
-        writeReady = (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes);
+        SERCOM6_REGS->SPIS.SERCOM_DATA = SERCOM6_SPI_WriteBuffer[wrOutIndex];
+        wrOutIndex++;
+        writeReady = (wrOutIndex < sercom6SPISObj.nWrBytes);
         writeReady = ((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) == SERCOM_SPIS_INTFLAG_DRE_Msk) && writeReady;
     }
+
+    sercom6SPISObj.wrOutIndex = wrOutIndex;
 
     /* Restore interrupt enable state and also enable DRE interrupt to start pre-loading of DATA register */
     SERCOM6_REGS->SPIS.SERCOM_INTENSET = (intState | (uint8_t)SERCOM_SPIS_INTENSET_DRE_Msk);
@@ -218,7 +233,7 @@ SPI_SLAVE_ERROR SERCOM6_SPI_ErrorGet(void)
     return errorStatus;
 }
 
-void SERCOM6_SPI_InterruptHandler(void)
+void __attribute__((used)) SERCOM6_SPI_InterruptHandler(void)
 {
     uint8_t txRxData;
     uint8_t intFlag = SERCOM6_REGS->SPIS.SERCOM_INTFLAG;
@@ -255,21 +270,25 @@ void SERCOM6_SPI_InterruptHandler(void)
     if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_RXC_Msk) == SERCOM_SPIS_INTFLAG_RXC_Msk)
     {
         /* Reading DATA register will also clear the RXC flag */
-        txRxData = (uint8_t)SERCOM6_REGS->SPIS.SERCOM_DATA;     
+        txRxData = (uint8_t)SERCOM6_REGS->SPIS.SERCOM_DATA;
 
         if (sercom6SPISObj.rdInIndex < SERCOM6_SPI_READ_BUFFER_SIZE)
         {
-            SERCOM6_SPI_ReadBuffer[sercom6SPISObj.rdInIndex] = txRxData;
-			sercom6SPISObj.rdInIndex++;
+            uint32_t rdInIndex = sercom6SPISObj.rdInIndex;
+
+            SERCOM6_SPI_ReadBuffer[rdInIndex] = txRxData;
+            sercom6SPISObj.rdInIndex++;
         }
     }
 
     if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_DRE_Msk) == SERCOM_SPIS_INTFLAG_DRE_Msk)
     {
-        if (sercom6SPISObj.wrOutIndex < sercom6SPISObj.nWrBytes)
+        uint32_t wrOutIndex = sercom6SPISObj.wrOutIndex;
+
+        if (wrOutIndex < sercom6SPISObj.nWrBytes)
         {
-            txRxData = SERCOM6_SPI_WriteBuffer[sercom6SPISObj.wrOutIndex];
-			sercom6SPISObj.wrOutIndex++;
+            txRxData = SERCOM6_SPI_WriteBuffer[wrOutIndex];
+            wrOutIndex++;
 
             /* Before writing to DATA register (which clears TXC flag), check if TXC flag is set */
             if((SERCOM6_REGS->SPIS.SERCOM_INTFLAG & SERCOM_SPIS_INTFLAG_TXC_Msk) == SERCOM_SPIS_INTFLAG_TXC_Msk)
@@ -283,6 +302,8 @@ void SERCOM6_SPI_InterruptHandler(void)
             /* Disable DRE interrupt. The last byte sent by the master will be shifted out automatically */
             SERCOM6_REGS->SPIS.SERCOM_INTENCLR = (uint8_t)SERCOM_SPIS_INTENCLR_DRE_Msk;
         }
+
+        sercom6SPISObj.wrOutIndex = wrOutIndex;
     }
 
     if((intFlag & SERCOM_SPIS_INTFLAG_TXC_Msk) == SERCOM_SPIS_INTFLAG_TXC_Msk)
@@ -297,7 +318,9 @@ void SERCOM6_SPI_InterruptHandler(void)
 
         if(sercom6SPISObj.callback != NULL)
         {
-            sercom6SPISObj.callback(sercom6SPISObj.context);
+            uintptr_t context = sercom6SPISObj.context;
+
+            sercom6SPISObj.callback(context);
         }
     }
 }
