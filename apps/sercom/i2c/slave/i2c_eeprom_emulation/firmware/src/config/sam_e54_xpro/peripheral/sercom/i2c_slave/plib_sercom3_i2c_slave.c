@@ -57,7 +57,7 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-static SERCOM_I2C_SLAVE_OBJ sercom3I2CSObj;
+volatile static SERCOM_I2C_SLAVE_OBJ sercom3I2CSObj;
 // *****************************************************************************
 // *****************************************************************************
 // Section: SERCOM3 I2C Implementation
@@ -198,12 +198,14 @@ void SERCOM3_I2C_CommandSet(SERCOM_I2C_SLAVE_COMMAND command)
     }
 }
 
-void SERCOM3_I2C_InterruptHandler(void)
+void __attribute__((used)) SERCOM3_I2C_InterruptHandler(void)
 {
     uint32_t intFlags = SERCOM3_REGS->I2CS.SERCOM_INTFLAG;
 
     if((intFlags & SERCOM3_REGS->I2CS.SERCOM_INTENSET) != 0U)
     {
+        uintptr_t context = sercom3I2CSObj.context;
+
         if ((intFlags & SERCOM_I2CS_INTFLAG_AMATCH_Msk) != 0U)
         {
             sercom3I2CSObj.isBusy = true;
@@ -214,7 +216,7 @@ void SERCOM3_I2C_InterruptHandler(void)
 
             if (sercom3I2CSObj.callback != NULL)
             {
-                if (sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_ADDR_MATCH, sercom3I2CSObj.context) == true)
+                if (sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_ADDR_MATCH, context) == true)
                 {
                     SERCOM3_I2C_CommandSet(SERCOM_I2C_SLAVE_COMMAND_SEND_ACK);
                 }
@@ -230,7 +232,7 @@ void SERCOM3_I2C_InterruptHandler(void)
             {
                 if (SERCOM3_I2C_TransferDirGet() == SERCOM_I2C_SLAVE_TRANSFER_DIR_WRITE)
                 {
-                    if (sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_RX_READY, sercom3I2CSObj.context) == true)
+                    if (sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_RX_READY, context) == true)
                     {
                         SERCOM3_I2C_CommandSet(SERCOM_I2C_SLAVE_COMMAND_SEND_ACK);
                     }
@@ -241,10 +243,10 @@ void SERCOM3_I2C_InterruptHandler(void)
                 }
                 else
                 {
-                    if ((SERCOM3_I2C_LastByteAckStatusGet() == SERCOM_I2C_SLAVE_ACK_STATUS_RECEIVED_ACK) || (sercom3I2CSObj.isFirstRxAfterAddressPending == true))
+                    if ((sercom3I2CSObj.isFirstRxAfterAddressPending == true) || (SERCOM3_I2C_LastByteAckStatusGet() == SERCOM_I2C_SLAVE_ACK_STATUS_RECEIVED_ACK))
                     {
-                        bool status = sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_TX_READY, sercom3I2CSObj.context);
-                        (void)status;
+                        (void)sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_TX_READY, context);
+
                         sercom3I2CSObj.isFirstRxAfterAddressPending = false;
                         SERCOM3_I2C_CommandSet(SERCOM_I2C_SLAVE_COMMAND_RECEIVE_ACK_NAK);
                     }
@@ -261,8 +263,7 @@ void SERCOM3_I2C_InterruptHandler(void)
 
             if (sercom3I2CSObj.callback != NULL)
             {
-                bool status = sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_STOP_BIT_RECEIVED, sercom3I2CSObj.context);
-                (void)status;
+                (void)sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_STOP_BIT_RECEIVED, context);
             }
 
             SERCOM3_REGS->I2CS.SERCOM_INTFLAG = (uint8_t)SERCOM_I2CS_INTFLAG_PREC_Msk;
@@ -271,8 +272,7 @@ void SERCOM3_I2C_InterruptHandler(void)
         {
             if (sercom3I2CSObj.callback != NULL)
             {
-                bool status = sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_ERROR, sercom3I2CSObj.context);
-                (void)status;
+                (void)sercom3I2CSObj.callback(SERCOM_I2C_SLAVE_TRANSFER_EVENT_ERROR, context);
             }
 
             SERCOM3_REGS->I2CS.SERCOM_INTFLAG = (uint8_t)SERCOM_I2CS_INTFLAG_ERROR_Msk;

@@ -134,6 +134,9 @@ static void GCLK2_Initialize(void)
 
 void CLOCK_Initialize (void)
 {
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID - H3_MISRAC_2012_R_2_2_DR_2 */
+
     /* Function to Initialize the Oscillators */
     OSCCTRL_Initialize();
 
@@ -146,7 +149,7 @@ void CLOCK_Initialize (void)
     GCLK0_Initialize();
     GCLK1_Initialize();
 
-
+    /* MISRAC 2012 deviation block end */
 
     /* Selection of the Generator and write Lock for SERCOM3_CORE */
     GCLK_REGS->GCLK_PCHCTRL[24] = GCLK_PCHCTRL_GEN(0x1U)  | GCLK_PCHCTRL_CHEN_Msk;
