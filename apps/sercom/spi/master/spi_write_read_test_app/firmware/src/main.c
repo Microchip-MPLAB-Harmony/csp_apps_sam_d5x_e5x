@@ -92,7 +92,7 @@ typedef enum
 
 uint8_t rxData[APP_RX_BUFFER_SIZE];
 uint8_t txData[APP_TX_BUFFER_SIZE];
-APP_STATES state = APP_STATE_INITIALIZE;
+static APP_STATES state = APP_STATE_INITIALIZE;
 APP_STATES nextState;
 volatile bool isTransferDone = false;
 
