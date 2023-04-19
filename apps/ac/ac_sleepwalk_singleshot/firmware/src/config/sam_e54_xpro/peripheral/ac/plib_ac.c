@@ -52,7 +52,15 @@
 
 
 
-static AC_OBJECT acObj;
+typedef struct
+{
+    uint8_t int_flags;
+    AC_CALLBACK callback;
+    uintptr_t    context;
+
+} AC_OBJECT ;
+
+volatile static AC_OBJECT acObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -86,7 +94,7 @@ void AC_Initialize(void)
     AC_REGS->AC_COMPCTRL[0] = AC_COMPCTRL_MUXPOS_PIN0 | AC_COMPCTRL_MUXNEG_BANDGAP | AC_COMPCTRL_INTSEL_EOC | AC_COMPCTRL_OUT_OFF | AC_COMPCTRL_SPEED(3) | AC_COMPCTRL_FLEN_OFF | AC_COMPCTRL_SINGLE_Msk | AC_COMPCTRL_RUNSTDBY_Msk ;
 
 
-    AC_REGS->AC_COMPCTRL[0] |= AC_COMPCTRL_ENABLE_Msk;	
+    AC_REGS->AC_COMPCTRL[0] |= AC_COMPCTRL_ENABLE_Msk;
     AC_REGS->AC_SCALER[0] = 0U;
 
 
@@ -96,7 +104,7 @@ void AC_Initialize(void)
     AC_REGS->AC_EVCTRL =  AC_EVCTRL_COMPEI0_Msk;
     AC_REGS->AC_INTENSET =  AC_INTENSET_COMP0_Msk;
     AC_REGS->AC_CTRLA = AC_CTRLA_ENABLE_Msk;
-	while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_ENABLE_Msk) == AC_SYNCBUSY_ENABLE_Msk)
+    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_ENABLE_Msk) == AC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for Synchronization */
     }
@@ -105,7 +113,7 @@ void AC_Initialize(void)
 void AC_Start( AC_CHANNEL channel_id )
 {
     /* Start Comparison */
-    AC_REGS->AC_CTRLB |= (1U << (uint8_t)channel_id);
+    AC_REGS->AC_CTRLB |= ((uint8_t)1U << (uint8_t)channel_id);
 }
 
 void AC_SetVddScalar( AC_CHANNEL channel_id , uint8_t vdd_scalar)
@@ -117,21 +125,20 @@ void AC_SetVddScalar( AC_CHANNEL channel_id , uint8_t vdd_scalar)
 
 void AC_SwapInputs( AC_CHANNEL channel_id )
 {
-    /* Check Synchronization */
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
-    {
-        /* Wait for Synchronization */
-    }
     /* Disable comparator before swapping */
     AC_REGS->AC_COMPCTRL[channel_id] &= ~AC_COMPCTRL_ENABLE_Msk;
     /* Check Synchronization to ensure that the comparator is disabled */
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
+    while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
     }
     /* Swap inputs of the given comparator */
     AC_REGS->AC_COMPCTRL[channel_id] = AC_COMPCTRL_SWAP_Msk;
     AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_ENABLE_Msk;
+    while((AC_REGS->AC_SYNCBUSY != 0U))
+    {
+        /* Wait for Synchronization */
+    }
 }
 
 void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEGINPUT negativeInput)
@@ -139,7 +146,7 @@ void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEG
     /* Disable comparator before swapping */
     AC_REGS->AC_COMPCTRL[channel_id] &= ~AC_COMPCTRL_ENABLE_Msk;
     /* Check Synchronization to ensure that the comparator is disabled */
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
+    while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
     }
@@ -148,7 +155,7 @@ void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEG
 
     /* Enable comparator channel */
     AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_ENABLE_Msk;
-    while((AC_REGS->AC_SYNCBUSY & AC_SYNCBUSY_Msk) == AC_SYNCBUSY_Msk)
+    while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
     }
@@ -180,16 +187,22 @@ void AC_CallbackRegister (AC_CALLBACK callback, uintptr_t context)
     acObj.context = context;
 }
 
-void AC_InterruptHandler( void )
+void __attribute__((used)) AC_InterruptHandler( void )
 {
+    uintptr_t context_var;
+    uint8_t int_flags_var;
+
     /* Copy the status to use inside the callback */
-    acObj.int_flags = AC_REGS->AC_STATUSA;
+    acObj.int_flags = (uint8_t)AC_REGS->AC_STATUSA;
     /* Clear the interrupt flags*/
     AC_REGS->AC_INTFLAG = AC_INTFLAG_Msk;
 
     /* Callback user function */
     if(acObj.callback != NULL)
     {
-        acObj.callback(acObj.int_flags, acObj.context);
+        context_var = acObj.context;
+        int_flags_var = acObj.int_flags;
+
+        acObj.callback(int_flags_var, context_var);
     }
 }
