@@ -61,7 +61,7 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-static ADC_CALLBACK_OBJ ADC0_CallbackObject;
+volatile static ADC_CALLBACK_OBJ ADC0_CallbackObject;
 
 #define ADC0_BIASCOMP_POS     (2U)
 #define ADC0_BIASCOMP_Msk     (0x7U << ADC0_BIASCOMP_POS)
@@ -244,14 +244,15 @@ bool ADC0_ConversionStatusGet( void )
     ADC0_REGS->ADC_INTFLAG = ADC_INTFLAG_RESRDY_Msk;
     return status;
 }
-void ADC0_OTHER_InterruptHandler( void )
+void __attribute__((used)) ADC0_OTHER_InterruptHandler( void )
 {
-    volatile ADC_STATUS status;
+    ADC_STATUS status;
     status = ADC0_REGS->ADC_INTFLAG;
     /* Clear interrupt flag */
     ADC0_REGS->ADC_INTFLAG = ADC_INTFLAG_WINMON_Msk | ADC_INTFLAG_OVERRUN_Msk;
     if (ADC0_CallbackObject.callback != NULL)
     {
-        ADC0_CallbackObject.callback(status, ADC0_CallbackObject.context);
+        uintptr_t context = ADC0_CallbackObject.context;
+        ADC0_CallbackObject.callback(status, context);
     }
 }
