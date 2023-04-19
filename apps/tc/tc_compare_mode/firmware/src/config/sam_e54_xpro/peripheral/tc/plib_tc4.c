@@ -131,7 +131,7 @@ void TC4_CompareCommandSet(TC_COMMAND command)
     while((TC4_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current counter value */

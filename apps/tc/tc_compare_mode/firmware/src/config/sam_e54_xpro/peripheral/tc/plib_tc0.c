@@ -130,7 +130,7 @@ void TC0_CompareCommandSet(TC_COMMAND command)
     while((TC0_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current counter value */
