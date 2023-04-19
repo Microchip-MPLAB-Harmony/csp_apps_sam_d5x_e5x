@@ -63,9 +63,9 @@ char receiveBuffer[RX_BUFFER_SIZE] = {0};
 char echoBuffer[RX_BUFFER_SIZE+4] = {0};
 char messageError[] = "**** USART error occurred ****\r\n";
 
-bool errorStatus = false;
-bool writeStatus = false;
-bool readStatus = false;
+static bool errorStatus = false;
+static bool writeStatus = false;
+static bool readStatus = false;
 
 
 void APP_WriteCallback(uintptr_t context)
