@@ -410,6 +410,84 @@ typedef struct
 } CAN_TX_EVENT_FIFO;
 
 // *****************************************************************************
+/* CAN Nominal Bit Timing Parameters
+
+   Summary:
+    CAN Nominal Bit Timing Parameter structure.
+
+   Description:
+    This data structure defines Nominal Bit Timing Parameters.
+
+   Remarks:
+    None.
+*/
+typedef struct
+{
+    /* Nominal Time segment after sample point */
+    uint8_t nominalTimeSegment2;
+
+    /* Nominal Time segment before sample point */
+    uint8_t nominalTimeSegment1;
+
+    /* Nominal Baud Rate Prescaler */
+    uint16_t nominalPrescaler;
+
+    /* Nominal Syncronization Jump Width */
+    uint8_t nominalSJW;
+
+} CAN_NOMINAL_BIT_TIMING;
+
+// *****************************************************************************
+/* CAN Bit Timing Parameters
+
+   Summary:
+    CAN Bit Timing Parameter structure.
+
+   Description:
+    This data structure defines Bit Timing Parameters.
+
+   Remarks:
+    None.
+*/
+typedef struct
+{
+    /* Nominal bit timing set flag */
+    bool nominalBitTimingSet;
+
+    /* Nominal bit timing parameters */
+    CAN_NOMINAL_BIT_TIMING nominalBitTiming;
+
+} CAN_BIT_TIMING;
+
+// *****************************************************************************
+/* CAN Bit Timing Setup
+
+   Summary:
+    CAN Bit Timing Setup structure.
+
+   Description:
+    This data structure defines Bit Timing Setup parameters.
+
+   Remarks:
+    None.
+*/
+typedef struct
+{
+    /* Nominal bit timing set flag */
+    bool nominalBitTimingSet;
+
+    /* Nominal bit rate */
+    uint32_t nominalBitRate;
+
+    /* Nominal Sample Point */
+    float nominalSamplePoint;
+
+    /* Nominal Baud Rate Prescaler */
+    uint16_t nominalPrescaler;
+
+} CAN_BIT_TIMING_SETUP;
+
+// *****************************************************************************
 /* CAN Tx FIFO Callback Object
 
    Summary:
