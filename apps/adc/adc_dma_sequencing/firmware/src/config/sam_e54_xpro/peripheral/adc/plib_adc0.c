@@ -61,7 +61,7 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-static ADC_CALLBACK_OBJ ADC0_CallbackObject;
+volatile static ADC_CALLBACK_OBJ ADC0_CallbackObject;
 
 #define ADC0_BIASCOMP_POS     (2U)
 #define ADC0_BIASCOMP_Msk     (0x7U << ADC0_BIASCOMP_POS)
@@ -231,7 +231,7 @@ void ADC0_CallbackRegister( ADC_CALLBACK callback, uintptr_t context )
     ADC0_CallbackObject.context = context;
 }
 
-void ADC0_RESRDY_InterruptHandler( void )
+void __attribute__((used)) ADC0_RESRDY_InterruptHandler( void )
 {
     ADC_STATUS status;
     status = (ADC_STATUS) (ADC0_REGS->ADC_INTFLAG & ADC_INTFLAG_RESRDY_Msk);
@@ -239,6 +239,7 @@ void ADC0_RESRDY_InterruptHandler( void )
     ADC0_REGS->ADC_INTFLAG = ADC_INTFLAG_RESRDY_Msk;
     if (ADC0_CallbackObject.callback != NULL)
     {
-        ADC0_CallbackObject.callback(status, ADC0_CallbackObject.context);
+        uintptr_t context = ADC0_CallbackObject.context;
+        ADC0_CallbackObject.callback(status, context);
     }
 }
