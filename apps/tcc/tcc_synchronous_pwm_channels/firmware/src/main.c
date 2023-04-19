@@ -65,7 +65,7 @@
 #define DUTY_INCREMENT (10U)
 
 /* Save PWM period */
-uint32_t period;
+static uint32_t period;
 
 /* This function is called after TCC period event */
 void TCC_PeriodEventHandler(uint32_t status, uintptr_t context)
