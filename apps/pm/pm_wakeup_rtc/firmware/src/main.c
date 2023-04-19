@@ -69,7 +69,7 @@ uint8_t cmd = 0;
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
-void timeout (uintptr_t context)
+static void timeout (uintptr_t context)
 {
     LED_Toggle();    
 }
