@@ -93,7 +93,7 @@ static void qspi_memcpy_8bit(uint8_t* dst, uint8_t* src, uint32_t count)
     }
 }
 
-static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, uint8_t tfr_type, uint32_t address )
+static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, uint32_t tfr_type, uint32_t address )
 {
     uint32_t mask = 0;
 
@@ -122,7 +122,7 @@ static bool qspi_setup_transfer( qspi_memory_xfer_t *qspi_memory_xfer, uint8_t t
 
     mask |= QSPI_INSTRFRAME_INSTREN_Msk | QSPI_INSTRFRAME_ADDREN_Msk | QSPI_INSTRFRAME_DATAEN_Msk;
 
-    mask |= QSPI_INSTRFRAME_TFRTYPE((uint32_t)tfr_type);
+    mask |= QSPI_INSTRFRAME_TFRTYPE(tfr_type);
 
     QSPI_REGS->QSPI_INSTRFRAME = mask;
 
