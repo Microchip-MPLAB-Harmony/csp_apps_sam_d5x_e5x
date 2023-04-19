@@ -62,7 +62,7 @@
 // *****************************************************************************
 
 
-static TC_CAPTURE_CALLBACK_OBJ TC1_CallbackObject;
+volatile static TC_CAPTURE_CALLBACK_OBJ TC1_CallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -149,7 +149,7 @@ void TC1_CaptureCallbackRegister( TC_CAPTURE_CALLBACK callback, uintptr_t contex
     TC1_CallbackObject.context = context;
 }
 
-void TC1_CaptureInterruptHandler( void )
+void __attribute__((used)) TC1_CaptureInterruptHandler( void )
 {
     if (TC1_REGS->COUNT16.TC_INTENSET != 0U)
     {
@@ -158,9 +158,10 @@ void TC1_CaptureInterruptHandler( void )
         /* Clear all interrupts */
         TC1_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
 
-        if((status != TC_CAPTURE_STATUS_NONE) && (TC1_CallbackObject.callback != NULL))
+        if((TC1_CallbackObject.callback != NULL) && (status != TC_CAPTURE_STATUS_NONE))
         {
-            TC1_CallbackObject.callback(status, TC1_CallbackObject.context);
+            uintptr_t context = TC1_CallbackObject.context;
+            TC1_CallbackObject.callback(status, context);
         }
     }
 }
