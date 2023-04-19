@@ -64,8 +64,8 @@ char receiveBuffer[RX_BUFFER_SIZE] = {};
 char echoBuffer[RX_BUFFER_SIZE+2] = {};
 
         
-volatile bool writeStatus = false;
-volatile bool readStatus = false;
+static volatile bool writeStatus = false;
+static volatile bool readStatus = false;
 
 // *****************************************************************************
 // *****************************************************************************
