@@ -75,7 +75,7 @@ uint8_t CACHE_ALIGN dstBuffer[DMA_TRANSFER_SIZE] = {0};
 uint32_t CACHE_ALIGN reverse_table[256] = {0};
 
 volatile bool completeStatus = false;
-volatile bool errorStatus = false;
+static volatile bool errorStatus = false;
 
 void APP_Callback(DMAC_TRANSFER_EVENT status, uintptr_t context)
 {
