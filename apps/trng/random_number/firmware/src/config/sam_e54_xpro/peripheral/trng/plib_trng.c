@@ -49,10 +49,13 @@ void TRNG_Initialize( void )
 
 uint32_t TRNG_ReadData( void )
 {
-	TRNG_REGS->TRNG_CTRLA |= TRNG_CTRLA_ENABLE_Msk;
-	while(((TRNG_REGS->TRNG_INTFLAG) & (TRNG_INTFLAG_DATARDY_Msk)) != TRNG_INTFLAG_DATARDY_Msk);			
-	TRNG_REGS->TRNG_CTRLA &= ~(TRNG_CTRLA_ENABLE_Msk);
-	return (TRNG_REGS->TRNG_DATA);
+   TRNG_REGS->TRNG_CTRLA |= TRNG_CTRLA_ENABLE_Msk;
+   while(((TRNG_REGS->TRNG_INTFLAG) & (TRNG_INTFLAG_DATARDY_Msk)) != TRNG_INTFLAG_DATARDY_Msk)
+   {
+       /* Do Nothing */
+   }
+   TRNG_REGS->TRNG_CTRLA &= ~(TRNG_CTRLA_ENABLE_Msk);
+   return (TRNG_REGS->TRNG_DATA);
 }
 
 
