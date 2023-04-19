@@ -71,7 +71,7 @@ enum
 
 uint8_t cmd = 0;
 
-void timeout (uintptr_t context)
+static void timeout (uintptr_t context)
 {
     LED_Toggle();    
 }
