@@ -4,27 +4,27 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d5x_e5x_can_fd_operation_interrupt_timestamp",
-		"version": "3.2.0",
+		"version": "3.4.0",
 		"displayName": "CAN FD interrupt Example for SAM D5x/E5x Family",
 		"projectName": "can_fd_operation_interrupt_timestamp_sam_e54_xpro",
 		"shortDescription": "This example application shows how to use the CAN module to transmit and receive CAN FD messages in interrupt mode.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=6.0.0"
+			"semverRange": ">=6.5.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.1.0"
+				"semverRange": ">=4.21.0"
 			}
 		],
 		"dfp": {
-			"name": "CMSIS",
-			"semverRange": "^5.4.0"
+			"name": "SAME54_DFP",
+			"semverRange": "^3.7.122"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.8.5"
+			"name": "MCC",
+			"semverRange": ">=5.3.0"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
