@@ -52,6 +52,7 @@
 
 
 
+
 typedef struct
 {
     uint8_t int_flags;
@@ -79,6 +80,8 @@ void AC_Initialize(void)
         /* Wait for Synchronization */
     }
 
+
+
     /*Load Calibration Value*/
     uint8_t calibVal = (uint8_t)((*(uint32_t*)0x00800080) & 0x3U);
     calibVal = (((calibVal) == 0x3U) ? 0x3U : (calibVal));
@@ -87,9 +90,10 @@ void AC_Initialize(void)
     AC_REGS->AC_CALIB = calibVal;
 
 
-     /* Disable the module and configure COMPCTRL */
 
 
+
+    /* Disable the module and configure COMPCTRL */
     /**************** Comparator 0 Configurations ************************/
     AC_REGS->AC_COMPCTRL[0] = AC_COMPCTRL_MUXPOS_PIN0 | AC_COMPCTRL_MUXNEG_BANDGAP | AC_COMPCTRL_INTSEL_EOC | AC_COMPCTRL_OUT_OFF | AC_COMPCTRL_SPEED(3) | AC_COMPCTRL_FLEN_OFF | AC_COMPCTRL_SINGLE_Msk | AC_COMPCTRL_RUNSTDBY_Msk ;
 
@@ -127,14 +131,17 @@ void AC_SwapInputs( AC_CHANNEL channel_id )
 {
     /* Disable comparator before swapping */
     AC_REGS->AC_COMPCTRL[channel_id] &= ~AC_COMPCTRL_ENABLE_Msk;
+
+
     /* Check Synchronization to ensure that the comparator is disabled */
     while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
     }
     /* Swap inputs of the given comparator */
-    AC_REGS->AC_COMPCTRL[channel_id] = AC_COMPCTRL_SWAP_Msk;
+    AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_SWAP_Msk;
     AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_ENABLE_Msk;
+
     while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
@@ -145,6 +152,7 @@ void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEG
 {
     /* Disable comparator before swapping */
     AC_REGS->AC_COMPCTRL[channel_id] &= ~AC_COMPCTRL_ENABLE_Msk;
+
     /* Check Synchronization to ensure that the comparator is disabled */
     while((AC_REGS->AC_SYNCBUSY != 0U))
     {
@@ -155,6 +163,8 @@ void AC_ChannelSelect( AC_CHANNEL channel_id , AC_POSINPUT positiveInput, AC_NEG
 
     /* Enable comparator channel */
     AC_REGS->AC_COMPCTRL[channel_id] |= AC_COMPCTRL_ENABLE_Msk;
+
+
     while((AC_REGS->AC_SYNCBUSY != 0U))
     {
         /* Wait for Synchronization */
