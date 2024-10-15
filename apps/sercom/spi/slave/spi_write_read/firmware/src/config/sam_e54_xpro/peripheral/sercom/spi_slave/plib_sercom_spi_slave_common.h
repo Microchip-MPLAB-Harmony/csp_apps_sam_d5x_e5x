@@ -78,6 +78,7 @@
 /* SPI slave Error convenience macros */
 // *****************************************************************************
 // *****************************************************************************
+
 /* Error status when no error has occurred */
 #define SPI_SLAVE_ERROR_NONE 0U
 
