@@ -357,6 +357,77 @@ bool SERCOM7_I2C_WriteRead(uint16_t address, uint8_t* wrData, uint32_t wrLength,
 }
 
 
+bool SERCOM7_I2C_BusScan(uint16_t start_addr, uint16_t end_addr, void* pDevicesList, uint8_t* nDevicesFound)
+{
+    uint8_t* pDevList = (uint8_t*)pDevicesList;
+    uint8_t nDevFound = 0;
+
+    /* Check for ongoing transfer */
+    if(sercom7I2CObj.state != SERCOM_I2C_STATE_IDLE)
+    {
+        return false;
+    }
+
+    if ((pDevicesList == NULL) || (nDevicesFound == NULL))
+    {
+        return false;
+    }
+
+    *nDevicesFound = 0;
+
+    /* Clear all flags */
+    SERCOM7_REGS->I2CM.SERCOM_INTFLAG = (uint8_t)SERCOM_I2CM_INTFLAG_Msk;
+
+    /* Disable all interrupts */
+    SERCOM7_REGS->I2CM.SERCOM_INTENCLR = (uint8_t)SERCOM_I2CM_INTENCLR_Msk;
+
+    for (uint16_t dev_addr = start_addr; dev_addr <= end_addr; dev_addr++)
+    {
+        while(((SERCOM7_REGS->I2CM.SERCOM_STATUS & SERCOM_I2CM_STATUS_BUSSTATE_Msk) != SERCOM_I2CM_STATUS_BUSSTATE(0x01U)))
+        {
+            /* Wait for the bus to become IDLE */
+        }
+
+        /* Put the 7-bit device address on the bus with WR bit */
+            SERCOM7_REGS->I2CM.SERCOM_ADDR = ((uint32_t)dev_addr << 1U);
+
+        /* Wait for synchronization */
+        while((SERCOM7_REGS->I2CM.SERCOM_SYNCBUSY) != 0U)
+        {
+            /* Do nothing */
+        }
+
+        while ((SERCOM7_REGS->I2CM.SERCOM_INTFLAG & SERCOM_I2CM_INTFLAG_MB_Msk) == 0U)
+        {
+            /* Wait for the address transfer to complete */
+        }
+
+        if ((SERCOM7_REGS->I2CM.SERCOM_STATUS & (SERCOM_I2CM_STATUS_ARBLOST_Msk | SERCOM_I2CM_STATUS_BUSERR_Msk | SERCOM_I2CM_STATUS_RXNACK_Msk)) == 0U)
+        {
+            /* No error and device responded with an ACK. Add the device to the list of found devices. */
+            pDevList[nDevFound] = (uint8_t)dev_addr;
+
+            nDevFound += 1U;
+        }
+
+        /* Issue stop condition */
+        SERCOM7_REGS->I2CM.SERCOM_CTRLB |= SERCOM_I2CM_CTRLB_CMD(3UL);
+
+        /* Wait for synchronization */
+        while((SERCOM7_REGS->I2CM.SERCOM_SYNCBUSY) != 0U)
+        {
+            /* Do nothing */
+        }
+    }
+
+    *nDevicesFound = nDevFound;
+
+    /* Re-enable all interrupts */
+    SERCOM7_REGS->I2CM.SERCOM_INTENSET = (uint8_t)SERCOM_I2CM_INTENSET_Msk;
+
+    return true;
+}
+
 bool SERCOM7_I2C_IsBusy(void)
 {
     bool isBusy = true;
