@@ -100,10 +100,10 @@ void ADC0_Initialize( void )
     ADC0_REGS->ADC_CTRLA = ADC_CTRLA_PRESCALER_DIV4;
 
     /* Sampling length */
-    ADC0_REGS->ADC_SAMPCTRL = ADC_SAMPCTRL_SAMPLEN(3U);
+    ADC0_REGS->ADC_SAMPCTRL = (uint8_t)ADC_SAMPCTRL_SAMPLEN(3UL);
 
     /* reference */
-    ADC0_REGS->ADC_REFCTRL = ADC_REFCTRL_REFSEL_INTVCC1;
+    ADC0_REGS->ADC_REFCTRL = ADC_REFCTRL_REFSEL_INTVCC1 | ADC_REFCTRL_REFCOMP_Msk;
 
     ADC0_REGS->ADC_DSEQCTRL = ADC_DSEQCTRL_INPUTCTRL_Msk;
 
@@ -131,7 +131,7 @@ void ADC0_Initialize( void )
 void ADC0_Enable( void )
 {
     ADC0_REGS->ADC_CTRLA |= ADC_CTRLA_ENABLE_Msk;
-    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
+    while((ADC0_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_ENABLE_Msk) == ADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for Synchronization */
     }
@@ -141,7 +141,7 @@ void ADC0_Enable( void )
 void ADC0_Disable( void )
 {
     ADC0_REGS->ADC_CTRLA &=(uint16_t) ~ADC_CTRLA_ENABLE_Msk;
-    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
+    while((ADC0_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_ENABLE_Msk) == ADC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for Synchronization */
     }
@@ -180,17 +180,21 @@ void ADC0_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 {
     ADC0_REGS->ADC_WINLT = low_threshold;
     ADC0_REGS->ADC_WINUT = high_threshold;
-    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
+    while((ADC0_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_WINLT_Msk) == ADC_SYNCBUSY_WINLT_Msk)
     {
         /* Wait for Synchronization */
     }
+    while((ADC0_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_WINUT_Msk) == ADC_SYNCBUSY_WINUT_Msk)
+    {
+        /* Wait for Synchronization */
+    } 
 }
 
 void ADC0_WindowModeSet(ADC_WINMODE mode)
 {
     ADC0_REGS->ADC_CTRLB &= (uint16_t)~ADC_CTRLB_WINMODE_Msk;
     ADC0_REGS->ADC_CTRLB |= (uint16_t)mode << ADC_CTRLB_WINMODE_Pos;
-    while(ADC0_REGS->ADC_SYNCBUSY != 0U)
+    while((ADC0_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_CTRLB_Msk) == ADC_SYNCBUSY_CTRLB_Msk)
     {
         /* Wait for Synchronization */
     }
