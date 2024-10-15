@@ -157,6 +157,7 @@ bool SERCOM6_SPI_TransferSetup(SPI_TRANSFER_SETUP *setup, uint32_t spiSourceCloc
     /* Disable the SPI Module */
     SERCOM6_REGS->SPIM.SERCOM_CTRLA &= ~(SERCOM_SPIM_CTRLA_ENABLE_Msk);
 
+
     /* Wait for synchronization */
     while((SERCOM6_REGS->SPIM.SERCOM_SYNCBUSY) != 0U)
     {
