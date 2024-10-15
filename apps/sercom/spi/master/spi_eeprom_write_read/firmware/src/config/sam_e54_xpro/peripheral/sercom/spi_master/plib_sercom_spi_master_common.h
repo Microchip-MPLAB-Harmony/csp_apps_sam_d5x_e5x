@@ -88,13 +88,9 @@
 
 typedef enum
 {
-    /* Input data is sampled on clock trailing edge and changed on
-       leading edge */
+        SPI_CLOCK_PHASE_LEADING_EDGE = SERCOM_SPIM_CTRLA_CPHA_LEADING_EDGE,
     SPI_CLOCK_PHASE_TRAILING_EDGE = SERCOM_SPIM_CTRLA_CPHA_TRAILING_EDGE,
 
-    /* Input data is sampled on clock leading edge and changed on
-       trailing edge */
-    SPI_CLOCK_PHASE_LEADING_EDGE = SERCOM_SPIM_CTRLA_CPHA_LEADING_EDGE,
 
     /* Force the compiler to reserve 32-bit space for each enum value */
     SPI_CLOCK_PHASE_INVALID = 0xFFFFFFFFU
@@ -116,11 +112,9 @@ typedef enum
 
 typedef enum
 {
-    /* The inactive state value of clock is logic level zero */
-    SPI_CLOCK_POLARITY_IDLE_LOW = SERCOM_SPIM_CTRLA_CPOL_IDLE_LOW,
-
-    /* The inactive state value of clock is logic level one */
+         SPI_CLOCK_POLARITY_IDLE_LOW = SERCOM_SPIM_CTRLA_CPOL_IDLE_LOW,
     SPI_CLOCK_POLARITY_IDLE_HIGH = SERCOM_SPIM_CTRLA_CPOL_IDLE_HIGH,
+
 
     /* Force the compiler to reserve 32-bit space for each enum value */
     SPI_CLOCK_POLARITY_INVALID = 0xFFFFFFFFU
@@ -143,11 +137,9 @@ typedef enum
 
 typedef enum
 {
-    /* 8 bits per transfer */
-    SPI_DATA_BITS_8 = SERCOM_SPIM_CTRLB_CHSIZE_8_BIT,
-
-    /* 9 bits per transfer */
+        SPI_DATA_BITS_8 = SERCOM_SPIM_CTRLB_CHSIZE_8_BIT,
     SPI_DATA_BITS_9 = SERCOM_SPIM_CTRLB_CHSIZE_9_BIT,
+
 
     /* Force the compiler to reserve 32-bit space for each enum value */
     SPI_DATA_BITS_INVALID = 0xFFFFFFFFU
