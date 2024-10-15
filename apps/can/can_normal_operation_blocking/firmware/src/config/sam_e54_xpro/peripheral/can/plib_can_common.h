@@ -438,6 +438,34 @@ typedef struct
 } CAN_NOMINAL_BIT_TIMING;
 
 // *****************************************************************************
+/* CAN Data Bit Timing Parameters
+
+   Summary:
+    CAN Data Bit Timing Parameter structure.
+
+   Description:
+    This data structure defines Data Bit Timing Parameters.
+
+   Remarks:
+    None.
+*/
+typedef struct
+{
+    /* Data Time segment after sample point */
+    uint8_t dataTimeSegment2;
+
+    /* Data Time segment before sample point */
+    uint8_t dataTimeSegment1;
+
+    /* Data Baud Rate Prescaler */
+    uint8_t dataPrescaler;
+
+    /* Data Syncronization Jump Width */
+    uint8_t dataSJW;
+
+} CAN_DATA_BIT_TIMING;
+
+// *****************************************************************************
 /* CAN Bit Timing Parameters
 
    Summary:
@@ -457,6 +485,11 @@ typedef struct
     /* Nominal bit timing parameters */
     CAN_NOMINAL_BIT_TIMING nominalBitTiming;
 
+    /* Data bit timing set flag */
+    bool dataBitTimingSet;
+
+    /* Data bit timing parameters */
+    CAN_DATA_BIT_TIMING dataBitTiming;
 } CAN_BIT_TIMING;
 
 // *****************************************************************************
@@ -484,6 +517,18 @@ typedef struct
 
     /* Nominal Baud Rate Prescaler */
     uint16_t nominalPrescaler;
+
+    /* Data bit timing set flag */
+    bool dataBitTimingSet;
+
+    /* Data bit rate */
+    uint32_t dataBitRate;
+
+    /* Data Sample Point */
+    float dataSamplePoint;
+
+    /* Data Baud Rate Prescaler */
+    uint8_t dataPrescaler;
 
 } CAN_BIT_TIMING_SETUP;
 
