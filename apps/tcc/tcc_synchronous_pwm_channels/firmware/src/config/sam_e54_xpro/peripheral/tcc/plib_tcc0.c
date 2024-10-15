@@ -63,7 +63,7 @@ void TCC0_PWMInitialize(void)
 {
     /* Reset TCC */
     TCC0_REGS->TCC_CTRLA = TCC_CTRLA_SWRST_Msk;
-    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_SWRST_Msk) != 0U)
+    while((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_SWRST_Msk) == TCC_SYNCBUSY_SWRST_Msk)
     {
         /* Wait for sync */
     }
@@ -101,7 +101,7 @@ void TCC0_PWMInitialize(void)
 void TCC0_PWMStart(void)
 {
     TCC0_REGS->TCC_CTRLA |= TCC_CTRLA_ENABLE_Msk;
-    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) != 0U)
+    while((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) == TCC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for sync */
     }
@@ -111,7 +111,7 @@ void TCC0_PWMStart(void)
 void TCC0_PWMStop (void)
 {
     TCC0_REGS->TCC_CTRLA &= ~TCC_CTRLA_ENABLE_Msk;
-    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) != 0U)
+    while((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_ENABLE_Msk) == TCC_SYNCBUSY_ENABLE_Msk)
     {
         /* Wait for sync */
     }
@@ -133,7 +133,7 @@ bool TCC0_PWM24bitPeriodSet (uint32_t period)
 /* Read TCC period */
 uint32_t TCC0_PWM24bitPeriodGet (void)
 {
-    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_PER_Msk) != 0U)
+    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_PER_Msk) == TCC_SYNCBUSY_PER_Msk)
     {
         /* Wait for sync */
     }
@@ -184,7 +184,7 @@ uint32_t TCC0_PWM24bitCounterGet( void )
 void TCC0_PWM24bitCounterSet (uint32_t countVal)
 {
     TCC0_REGS->TCC_COUNT = countVal & 0xFFFFFFU;
-    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_COUNT_Msk) != 0U)
+    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_COUNT_Msk) == TCC_SYNCBUSY_COUNT_Msk)
     {
         /* Wait for sync */
     }
@@ -194,7 +194,7 @@ void TCC0_PWM24bitCounterSet (uint32_t countVal)
 void TCC0_PWMForceUpdate(void)
 {
     TCC0_REGS->TCC_CTRLBSET |= (uint8_t)TCC_CTRLBCLR_CMD_UPDATE;
-    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) != 0U)
+    while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) == TCC_SYNCBUSY_CTRLB_Msk)
     {
         /* Wait for sync */
     }
