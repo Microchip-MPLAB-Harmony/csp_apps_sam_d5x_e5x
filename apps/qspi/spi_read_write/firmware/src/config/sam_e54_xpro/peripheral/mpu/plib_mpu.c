@@ -60,12 +60,33 @@ void MPU_Initialize(void)
     MPU->RASR = MPU_REGION_SIZE(27U) | MPU_RASR_AP(MPU_RASR_AP_READWRITE_Val) | MPU_ATTR_STRONGLY_ORDERED \
                 | MPU_ATTR_ENABLE  ;
 
+    /* Disable Region 1*/
+    MPU->RBAR = MPU_RBAR_REGION(1U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
+    /* Disable Region 2*/
+    MPU->RBAR = MPU_RBAR_REGION(2U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
+    /* Disable Region 3*/
+    MPU->RBAR = MPU_RBAR_REGION(3U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
+    /* Disable Region 4*/
+    MPU->RBAR = MPU_RBAR_REGION(4U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
+    /* Disable Region 5*/
+    MPU->RBAR = MPU_RBAR_REGION(5U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
+    /* Disable Region 6*/
+    MPU->RBAR = MPU_RBAR_REGION(6U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
+    /* Disable Region 7*/
+    MPU->RBAR = MPU_RBAR_REGION(7U) | MPU_RBAR_VALID_Msk;
+    MPU->RASR &= ~MPU_ATTR_ENABLE;
 
 
 
