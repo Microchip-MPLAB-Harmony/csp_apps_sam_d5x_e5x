@@ -4,15 +4,19 @@
 
 
 project: i2c_eeprom_emulation
-creation_date: 2023-05-30T11:04:51.363+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2024-10-15T15:48:56.677+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.3.0
-mcc_core_version: v5.5.0
-mplabx_version: v6.05        # if MPLAB X plugin only
-harmony_version: v1.3.1
-compiler: XC32 (v4.21)
+mcc_mode: Headless            # [IDE|Standalone|Headless]
+mcc_version: v5.5.1
+mcc_core_version: v5.7.1
+mplabx_version: NA        # if MPLAB X plugin only
+harmony_version: v1.5.3
+compiler: NA
 
 modules:
-    - {name: "csp", version: "v3.17.0"}
-    - {name: "dev_packs", version: "v3.17.0"}
+    - {name: "csp", version: "v3.20.0-rc.1-10-g4bed52c"}
+    - {name: "CMSIS_5", version: "5.9.0"}
+
+packs:
+    - {name: "SAME54_DFP", version: "3.9.244"}
+
