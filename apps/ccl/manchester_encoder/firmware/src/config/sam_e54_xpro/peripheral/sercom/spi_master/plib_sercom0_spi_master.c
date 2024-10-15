@@ -164,6 +164,14 @@ bool SERCOM0_SPI_TransferSetup(SPI_TRANSFER_SETUP *setup, uint32_t spiSourceCloc
     /* Disable the SPI Module */
     SERCOM0_REGS->SPIM.SERCOM_CTRLA &= ~(SERCOM_SPIM_CTRLA_ENABLE_Msk);
 
+    /* Disabling SPI module, also clears the TXC (Transmit Complete) bit to 0. TXC = 0 means transfer is not complete (busy).
+       As a result, calling SERCOM0_SPI_IsBusy() after a call to SERCOM0_SPI_TransferSetup() always returns busy.
+       Since, application must call the SERCOM0_SPI_TransferSetup() API only after ensuring that no transfer is in progress,
+       it is safe to clear the rxSize and txSize to 0, so as to let the SERCOM0_SPI_IsBusy() return false (not busy).
+    */
+    sercom0SPIObj.rxSize = 0;
+    sercom0SPIObj.txSize = 0;
+
     /* Wait for synchronization */
     while((SERCOM0_REGS->SPIM.SERCOM_SYNCBUSY) != 0U)
     {
