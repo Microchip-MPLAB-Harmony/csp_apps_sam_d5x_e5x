@@ -118,7 +118,6 @@ void __attribute__((section(".text.Reset_Handler"))) Reset_Handler(void)
     /* Enable the FPU if the application is built with --fpu options */
     FPU_Enable();
 #endif
-
 	TCM_Configure(2);
     /* Enable TCM   */
     TCM_Enable();
