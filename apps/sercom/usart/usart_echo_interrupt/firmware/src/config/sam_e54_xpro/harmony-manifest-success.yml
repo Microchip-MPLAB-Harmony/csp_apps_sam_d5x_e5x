@@ -4,18 +4,18 @@
 
 
 project: usart_echo_interrupt
-creation_date: 2024-10-15T15:43:13.155+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2024-10-27T01:08:02.295+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mcc_mode: Headless            # [IDE|Standalone|Headless]
+mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.1
 mcc_core_version: v5.7.1
-mplabx_version: NA        # if MPLAB X plugin only
+mplabx_version: v6.20        # if MPLAB X plugin only
 harmony_version: v1.5.3
-compiler: NA
+compiler: XC32 4.45
 
 modules:
-    - {name: "csp", version: "v3.20.0-rc.1-10-g4bed52c"}
     - {name: "CMSIS_5", version: "5.9.0"}
+    - {name: "csp", version: "v3.20.0"}
 
 packs:
     - {name: "SAME54_DFP", version: "3.9.244"}
