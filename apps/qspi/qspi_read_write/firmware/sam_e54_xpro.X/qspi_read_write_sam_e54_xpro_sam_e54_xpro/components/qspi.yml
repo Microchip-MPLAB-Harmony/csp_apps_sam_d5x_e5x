@@ -1,0 +1,85 @@
+configVersion: 1.0.0
+componentName: qspi
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: qspi
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: qspi
+          x: '60'
+          y: '80'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    QSPI_BAUD_RATE:
+      attributes:
+        id: QSPI_BAUD_RATE
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '66000000'
+          type: Integer
+        - attributes:
+            id: min
+          children:
+          - type: Value
+            value: '468750'
+          type: Integer
+        type: Attributes
+      - children:
+        - attributes:
+            id: qspi
+            value: '66000000'
+          type: Dynamic
+        - attributes:
+            value: '50000000'
+          type: User
+        type: Values
+      type: Integer
+    QSPI_CPOL:
+      attributes:
+        id: QSPI_CPOL
+      children:
+      - children:
+        - attributes:
+            id: qspi
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    QSPI_SCBR:
+      attributes:
+        id: QSPI_SCBR
+      children:
+      - children:
+        - attributes:
+            id: qspi
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}
