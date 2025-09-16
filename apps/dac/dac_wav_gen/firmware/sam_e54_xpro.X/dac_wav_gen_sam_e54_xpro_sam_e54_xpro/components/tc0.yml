@@ -1,0 +1,140 @@
+configVersion: 1.0.0
+componentName: tc0
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tc0
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tc0
+          x: '190'
+          y: '100'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    COMPARE_SET_API_NAME:
+      attributes:
+        id: COMPARE_SET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: TC0_Timer32bitCompareSet
+          type: Dynamic
+        type: Values
+      type: String
+    COUNTER_GET_API_NAME:
+      attributes:
+        id: COUNTER_GET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: TC0_Timer32bitCounterGet
+          type: Dynamic
+        type: Values
+      type: String
+    PERIOD_SET_API_NAME:
+      attributes:
+        id: PERIOD_SET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: TC0_Timer32bitPeriodSet
+          type: Dynamic
+        type: Values
+      type: String
+    TC_CTRLA_MODE:
+      attributes:
+        id: TC_CTRLA_MODE
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TC_FREQUENCY:
+      attributes:
+        id: TC_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: '12000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TC_TIMER_PERIOD:
+      attributes:
+        id: TC_TIMER_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: '119'
+          type: Dynamic
+        type: Values
+      type: Long
+    TC_TIMER_TIME_MS:
+      attributes:
+        id: TC_TIMER_TIME_MS
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '357913.94'
+          type: Float
+        type: Attributes
+      - children:
+        - attributes:
+            value: '0.01'
+          type: User
+        type: Values
+      type: Float
+    TIMER_PERIOD_MAX:
+      attributes:
+        id: TIMER_PERIOD_MAX
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: '4294967295'
+          type: Dynamic
+        type: Values
+      type: String
+    TIMER_WIDTH:
+      attributes:
+        id: TIMER_WIDTH
+      children:
+      - children:
+        - attributes:
+            id: tc0
+            value: '32'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}
