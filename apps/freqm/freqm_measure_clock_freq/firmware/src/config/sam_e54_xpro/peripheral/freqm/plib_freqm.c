@@ -66,7 +66,7 @@ typedef struct
 
 } FREQM_OBJECT;
 
-volatile static FREQM_OBJECT freqmObj;
+static volatile FREQM_OBJECT freqmObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -159,7 +159,7 @@ void FREQM_CallbackRegister(FREQM_CALLBACK freqmCallback, uintptr_t context)
 void __attribute__((used)) FREQM_InterruptHandler(void)
 {
     uintptr_t context_var;
-	
+
     FREQM_REGS->FREQM_INTFLAG = (uint8_t)FREQM_INTFLAG_DONE_Msk;
 
     if(freqmObj.callback != NULL)
