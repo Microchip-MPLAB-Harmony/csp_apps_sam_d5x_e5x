@@ -62,7 +62,7 @@
 #define SERCOM0_SPIM_BAUD_VALUE         (299UL)
 
 /*Global object to save SPI Exchange related data  */
-volatile static SPI_OBJECT sercom0SPIObj;
+static volatile SPI_OBJECT sercom0SPIObj;
 
 // *****************************************************************************
 // *****************************************************************************

@@ -1,0 +1,223 @@
+configVersion: 1.0.0
+componentName: ccl
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: ccl
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: ccl
+          x: '980'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    CCL_CTRL_REGVALUE:
+      attributes:
+        id: CCL_CTRL_REGVALUE
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CCL_ENABLE:
+      attributes:
+        id: CCL_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    CCL_LUTCTRL_REGVALUE0:
+      attributes:
+        id: CCL_LUTCTRL_REGVALUE0
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '335843362'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CCL_LUTCTRL_REGVALUE1:
+      attributes:
+        id: CCL_LUTCTRL_REGVALUE1
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CCL_LUTCTRL_REGVALUE2:
+      attributes:
+        id: CCL_LUTCTRL_REGVALUE2
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CCL_LUTCTRL_REGVALUE3:
+      attributes:
+        id: CCL_LUTCTRL_REGVALUE3
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CCL_SEQCTRL_REGVALUE0:
+      attributes:
+        id: CCL_SEQCTRL_REGVALUE0
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CCL_SEQCTRL_REGVALUE1:
+      attributes:
+        id: CCL_SEQCTRL_REGVALUE1
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Hex
+    CTRL0__ENABLE:
+      attributes:
+        id: CTRL0__ENABLE
+      children:
+      - children:
+        - attributes:
+            id: ccl
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    LUTCTRL0__ENABLE:
+      attributes:
+        id: LUTCTRL0__ENABLE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    LUTCTRL0__FILTSEL:
+      attributes:
+        id: LUTCTRL0__FILTSEL
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    LUTCTRL0__INSEL1:
+      attributes:
+        id: LUTCTRL0__INSEL1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '9'
+          type: User
+        type: Values
+      type: KeyValueSet
+    LUTCTRL0__INSEL2:
+      attributes:
+        id: LUTCTRL0__INSEL2
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '4'
+          type: User
+        type: Values
+      type: KeyValueSet
+    LUTCTRL0__TRUTH:
+      attributes:
+        id: LUTCTRL0__TRUTH
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '20'
+          type: User
+        type: Values
+      type: Hex
+  userData: {}
