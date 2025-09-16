@@ -45,7 +45,7 @@
 #include "string.h" // memmove
 #include "interrupts.h"
 
-volatile static qspi_spi_obj qspiObj;
+static volatile qspi_spi_obj qspiObj;
 
 
 void QSPI_Initialize(void)
