@@ -1,0 +1,116 @@
+configVersion: 1.0.0
+componentName: tc1
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tc1
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tc1
+          x: '81'
+          y: '244'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TC_CAPTURE_CTRLA_COPEN0:
+      attributes:
+        id: TC_CAPTURE_CTRLA_COPEN0
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TC_CAPTURE_INTERRUPT:
+      attributes:
+        id: TC_CAPTURE_INTERRUPT
+      children:
+      - children:
+        - attributes:
+            id: tc1
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    TC_CAPTURE_INTSET_MC0:
+      attributes:
+        id: TC_CAPTURE_INTSET_MC0
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TC_CTRLA_PRESCALER:
+      attributes:
+        id: TC_CTRLA_PRESCALER
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TC_FREQUENCY:
+      attributes:
+        id: TC_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: tc1
+            value: '30000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TC_OPERATION_MODE:
+      attributes:
+        id: TC_OPERATION_MODE
+      children:
+      - children:
+        - attributes:
+            value: Capture
+          type: User
+        type: Values
+      type: Combo
+    TC_TIMER_PERIOD:
+      attributes:
+        id: TC_TIMER_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '65535'
+          type: Long
+        type: Attributes
+      - children:
+        - attributes:
+            id: tc1
+            value: '30000'
+          type: Dynamic
+        type: Values
+      type: Long
+  userData: {}
