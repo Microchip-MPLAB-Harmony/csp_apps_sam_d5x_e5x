@@ -49,7 +49,7 @@
 #include "interrupts.h"
 #include "plib_wdt.h"
 
-volatile static WDT_CALLBACK_OBJECT wdtCallbackObj;
+static volatile WDT_CALLBACK_OBJECT wdtCallbackObj;
 
 // *****************************************************************************
 // *****************************************************************************
