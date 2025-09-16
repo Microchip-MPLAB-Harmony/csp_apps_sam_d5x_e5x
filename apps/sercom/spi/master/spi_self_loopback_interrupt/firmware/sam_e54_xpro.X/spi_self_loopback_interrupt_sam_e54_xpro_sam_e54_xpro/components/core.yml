@@ -1,0 +1,6639 @@
+configVersion: 1.0.0
+componentName: core
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: core
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: core
+          x: '170'
+          y: '60'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    COMPILER_CHOICE:
+      attributes:
+        id: COMPILER_CHOICE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    COMPONENT_PACKAGE:
+      attributes:
+        id: COMPONENT_PACKAGE
+      children:
+      - children:
+        - attributes:
+            value: TQFP128
+          type: User
+        type: Values
+      type: Combo
+    CONFIG_CLOCK_DPLL0_ENABLE:
+      attributes:
+        id: CONFIG_CLOCK_DPLL0_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    CONFIG_CLOCK_DPLL0_LDR_INTEGER:
+      attributes:
+        id: CONFIG_CLOCK_DPLL0_LDR_INTEGER
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '119'
+          type: Dynamic
+        type: Values
+      type: Integer
+    CONFIG_CLOCK_DPLL0_MULTIPLIER_VALUE:
+      attributes:
+        id: CONFIG_CLOCK_DPLL0_MULTIPLIER_VALUE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '120.0'
+          type: Dynamic
+        type: Values
+      type: Float
+    CONFIG_CLOCK_DPLL0_REF_CLOCK:
+      attributes:
+        id: CONFIG_CLOCK_DPLL0_REF_CLOCK
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    CPU_CLOCK_FREQUENCY:
+      attributes:
+        id: CPU_CLOCK_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '120000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    DEVICE_SECURITY_CMD:
+      attributes:
+        id: DEVICE_SECURITY_CMD
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    DEVICE_TCM_SIZE:
+      attributes:
+        id: DEVICE_TCM_SIZE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    DPLL0_CLOCK_FREQ:
+      attributes:
+        id: DPLL0_CLOCK_FREQ
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '120000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_0_FREQ:
+      attributes:
+        id: GCLK_0_FREQ
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '120000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_0_SRC:
+      attributes:
+        id: GCLK_0_SRC
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '7'
+          type: Dynamic
+        - attributes:
+            value: '7'
+          type: User
+        type: Values
+      type: KeyValueSet
+    GCLK_1_DIV:
+      attributes:
+        id: GCLK_1_DIV
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_1_DIVIDER_VALUE:
+      attributes:
+        id: GCLK_1_DIVIDER_VALUE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_1_FREQ:
+      attributes:
+        id: GCLK_1_FREQ
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '60000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_1_SRC:
+      attributes:
+        id: GCLK_1_SRC
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '6'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    GCLK_2_DIV:
+      attributes:
+        id: GCLK_2_DIV
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '48'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_2_DIVIDER_VALUE:
+      attributes:
+        id: GCLK_2_DIVIDER_VALUE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '48'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_2_FREQ:
+      attributes:
+        id: GCLK_2_FREQ
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_2_SRC:
+      attributes:
+        id: GCLK_2_SRC
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '6'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    GCLK_CYCLE_FORMED:
+      attributes:
+        id: GCLK_CYCLE_FORMED
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    GCLK_ID_1_CHEN:
+      attributes:
+        id: GCLK_ID_1_CHEN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    GCLK_ID_1_FREQ:
+      attributes:
+        id: GCLK_ID_1_FREQ
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_ID_1_GENSEL:
+      attributes:
+        id: GCLK_ID_1_GENSEL
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    GCLK_ID_36_CHEN:
+      attributes:
+        id: GCLK_ID_36_CHEN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    GCLK_ID_36_FREQ:
+      attributes:
+        id: GCLK_ID_36_FREQ
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '60000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    GCLK_INST_NUM1:
+      attributes:
+        id: GCLK_INST_NUM1
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    GCLK_INST_NUM2:
+      attributes:
+        id: GCLK_INST_NUM2
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    KEIL_STACK_HEAP_SIZE:
+      attributes:
+        id: KEIL_STACK_HEAP_SIZE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x1200'
+          type: Dynamic
+        type: Values
+      type: String
+    MAIN_CLOCK_FREQUENCY:
+      attributes:
+        id: MAIN_CLOCK_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '120000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    MCLK_APBD_INITIAL_VALUE:
+      attributes:
+        id: MCLK_APBD_INITIAL_VALUE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x4'
+          type: Dynamic
+        type: Values
+      type: String
+    NVIC_70_0_ENABLE:
+      attributes:
+        id: NVIC_70_0_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_70_0_HANDLER:
+      attributes:
+        id: NVIC_70_0_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    NVIC_70_0_HANDLER_LOCK:
+      attributes:
+        id: NVIC_70_0_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_71_0_ENABLE:
+      attributes:
+        id: NVIC_71_0_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_71_0_HANDLER:
+      attributes:
+        id: NVIC_71_0_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    NVIC_71_0_HANDLER_LOCK:
+      attributes:
+        id: NVIC_71_0_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_72_0_ENABLE:
+      attributes:
+        id: NVIC_72_0_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_72_0_HANDLER:
+      attributes:
+        id: NVIC_72_0_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    NVIC_72_0_HANDLER_LOCK:
+      attributes:
+        id: NVIC_72_0_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_73_0_ENABLE:
+      attributes:
+        id: NVIC_73_0_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    NVIC_73_0_HANDLER:
+      attributes:
+        id: NVIC_73_0_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    NVIC_73_0_HANDLER_LOCK:
+      attributes:
+        id: NVIC_73_0_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PIN_100_FUNCTION_TYPE:
+      attributes:
+        id: PIN_100_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_100_GROUP:
+      attributes:
+        id: PIN_100_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_100_PORT_GROUP:
+      attributes:
+        id: PIN_100_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_100_PORT_PIN:
+      attributes:
+        id: PIN_100_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '24'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_101_FUNCTION_TYPE:
+      attributes:
+        id: PIN_101_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_101_GROUP:
+      attributes:
+        id: PIN_101_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_101_PORT_GROUP:
+      attributes:
+        id: PIN_101_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_101_PORT_PIN:
+      attributes:
+        id: PIN_101_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '25'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_102_FUNCTION_TYPE:
+      attributes:
+        id: PIN_102_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_102_GROUP:
+      attributes:
+        id: PIN_102_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_102_PORT_GROUP:
+      attributes:
+        id: PIN_102_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_102_PORT_PIN:
+      attributes:
+        id: PIN_102_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '26'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_103_FUNCTION_TYPE:
+      attributes:
+        id: PIN_103_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_103_GROUP:
+      attributes:
+        id: PIN_103_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_103_PORT_GROUP:
+      attributes:
+        id: PIN_103_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_103_PORT_PIN:
+      attributes:
+        id: PIN_103_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '27'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_104_FUNCTION_TYPE:
+      attributes:
+        id: PIN_104_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_104_GROUP:
+      attributes:
+        id: PIN_104_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_104_PORT_GROUP:
+      attributes:
+        id: PIN_104_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_104_PORT_PIN:
+      attributes:
+        id: PIN_104_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '28'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_105_FUNCTION_TYPE:
+      attributes:
+        id: PIN_105_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_105_GROUP:
+      attributes:
+        id: PIN_105_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_105_PORT_GROUP:
+      attributes:
+        id: PIN_105_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_105_PORT_PIN:
+      attributes:
+        id: PIN_105_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '29'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_106_FUNCTION_TYPE:
+      attributes:
+        id: PIN_106_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_106_GROUP:
+      attributes:
+        id: PIN_106_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_106_PORT_GROUP:
+      attributes:
+        id: PIN_106_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_106_PORT_PIN:
+      attributes:
+        id: PIN_106_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_107_FUNCTION_TYPE:
+      attributes:
+        id: PIN_107_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_107_GROUP:
+      attributes:
+        id: PIN_107_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_107_PORT_GROUP:
+      attributes:
+        id: PIN_107_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_107_PORT_PIN:
+      attributes:
+        id: PIN_107_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_108_FUNCTION_TYPE:
+      attributes:
+        id: PIN_108_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_108_GROUP:
+      attributes:
+        id: PIN_108_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_108_PORT_GROUP:
+      attributes:
+        id: PIN_108_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_108_PORT_PIN:
+      attributes:
+        id: PIN_108_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '24'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_109_FUNCTION_TYPE:
+      attributes:
+        id: PIN_109_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_109_GROUP:
+      attributes:
+        id: PIN_109_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_109_PORT_GROUP:
+      attributes:
+        id: PIN_109_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_109_PORT_PIN:
+      attributes:
+        id: PIN_109_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '25'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_10_FUNCTION_TYPE:
+      attributes:
+        id: PIN_10_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_10_GROUP:
+      attributes:
+        id: PIN_10_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_10_PORT_GROUP:
+      attributes:
+        id: PIN_10_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_10_PORT_PIN:
+      attributes:
+        id: PIN_10_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_110_FUNCTION_TYPE:
+      attributes:
+        id: PIN_110_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_110_GROUP:
+      attributes:
+        id: PIN_110_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_110_PORT_GROUP:
+      attributes:
+        id: PIN_110_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_110_PORT_PIN:
+      attributes:
+        id: PIN_110_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '26'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_111_FUNCTION_TYPE:
+      attributes:
+        id: PIN_111_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_111_GROUP:
+      attributes:
+        id: PIN_111_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_111_PORT_GROUP:
+      attributes:
+        id: PIN_111_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_111_PORT_PIN:
+      attributes:
+        id: PIN_111_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '27'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_112_FUNCTION_TYPE:
+      attributes:
+        id: PIN_112_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_112_GROUP:
+      attributes:
+        id: PIN_112_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_112_PORT_GROUP:
+      attributes:
+        id: PIN_112_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_112_PORT_PIN:
+      attributes:
+        id: PIN_112_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '28'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_113_FUNCTION_TYPE:
+      attributes:
+        id: PIN_113_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_113_GROUP:
+      attributes:
+        id: PIN_113_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_113_PORT_GROUP:
+      attributes:
+        id: PIN_113_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_113_PORT_PIN:
+      attributes:
+        id: PIN_113_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '27'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_114_FUNCTION_TYPE:
+      attributes:
+        id: PIN_114_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_114_GROUP:
+      attributes:
+        id: PIN_114_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '4'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_114_PORT_GROUP:
+      attributes:
+        id: PIN_114_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_114_PORT_PIN:
+      attributes:
+        id: PIN_114_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_115_FUNCTION_TYPE:
+      attributes:
+        id: PIN_115_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_115_GROUP:
+      attributes:
+        id: PIN_115_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_115_PORT_GROUP:
+      attributes:
+        id: PIN_115_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_115_PORT_PIN:
+      attributes:
+        id: PIN_115_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_116_FUNCTION_TYPE:
+      attributes:
+        id: PIN_116_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_116_GROUP:
+      attributes:
+        id: PIN_116_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_116_PORT_GROUP:
+      attributes:
+        id: PIN_116_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_116_PORT_PIN:
+      attributes:
+        id: PIN_116_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_117_FUNCTION_TYPE:
+      attributes:
+        id: PIN_117_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_117_GROUP:
+      attributes:
+        id: PIN_117_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '18'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_117_PORT_GROUP:
+      attributes:
+        id: PIN_117_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_117_PORT_PIN:
+      attributes:
+        id: PIN_117_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_118_FUNCTION_TYPE:
+      attributes:
+        id: PIN_118_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_118_GROUP:
+      attributes:
+        id: PIN_118_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_118_PORT_GROUP:
+      attributes:
+        id: PIN_118_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_118_PORT_PIN:
+      attributes:
+        id: PIN_118_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_119_FUNCTION_TYPE:
+      attributes:
+        id: PIN_119_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_119_GROUP:
+      attributes:
+        id: PIN_119_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_119_PORT_GROUP:
+      attributes:
+        id: PIN_119_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_119_PORT_PIN:
+      attributes:
+        id: PIN_119_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '30'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_11_FUNCTION_TYPE:
+      attributes:
+        id: PIN_11_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_11_GROUP:
+      attributes:
+        id: PIN_11_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_11_PORT_GROUP:
+      attributes:
+        id: PIN_11_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_11_PORT_PIN:
+      attributes:
+        id: PIN_11_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '4'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_120_FUNCTION_TYPE:
+      attributes:
+        id: PIN_120_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_120_GROUP:
+      attributes:
+        id: PIN_120_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_120_PORT_GROUP:
+      attributes:
+        id: PIN_120_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_120_PORT_PIN:
+      attributes:
+        id: PIN_120_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '31'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_121_FUNCTION_TYPE:
+      attributes:
+        id: PIN_121_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_121_GROUP:
+      attributes:
+        id: PIN_121_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_121_PORT_GROUP:
+      attributes:
+        id: PIN_121_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_121_PORT_PIN:
+      attributes:
+        id: PIN_121_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '30'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_122_FUNCTION_TYPE:
+      attributes:
+        id: PIN_122_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_122_GROUP:
+      attributes:
+        id: PIN_122_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_122_PORT_GROUP:
+      attributes:
+        id: PIN_122_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_122_PORT_PIN:
+      attributes:
+        id: PIN_122_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '31'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_123_FUNCTION_TYPE:
+      attributes:
+        id: PIN_123_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_123_GROUP:
+      attributes:
+        id: PIN_123_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_123_PORT_GROUP:
+      attributes:
+        id: PIN_123_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_123_PORT_PIN:
+      attributes:
+        id: PIN_123_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '30'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_124_FUNCTION_TYPE:
+      attributes:
+        id: PIN_124_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_124_GROUP:
+      attributes:
+        id: PIN_124_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_124_PORT_GROUP:
+      attributes:
+        id: PIN_124_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_124_PORT_PIN:
+      attributes:
+        id: PIN_124_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '31'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_125_FUNCTION_TYPE:
+      attributes:
+        id: PIN_125_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_125_GROUP:
+      attributes:
+        id: PIN_125_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_125_PORT_GROUP:
+      attributes:
+        id: PIN_125_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_125_PORT_PIN:
+      attributes:
+        id: PIN_125_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_126_FUNCTION_TYPE:
+      attributes:
+        id: PIN_126_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_126_GROUP:
+      attributes:
+        id: PIN_126_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_126_PORT_GROUP:
+      attributes:
+        id: PIN_126_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_126_PORT_PIN:
+      attributes:
+        id: PIN_126_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_127_FUNCTION_TYPE:
+      attributes:
+        id: PIN_127_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_127_GROUP:
+      attributes:
+        id: PIN_127_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_127_PORT_GROUP:
+      attributes:
+        id: PIN_127_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_127_PORT_PIN:
+      attributes:
+        id: PIN_127_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_128_FUNCTION_TYPE:
+      attributes:
+        id: PIN_128_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_128_GROUP:
+      attributes:
+        id: PIN_128_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_128_PORT_GROUP:
+      attributes:
+        id: PIN_128_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_128_PORT_PIN:
+      attributes:
+        id: PIN_128_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_12_FUNCTION_TYPE:
+      attributes:
+        id: PIN_12_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_12_GROUP:
+      attributes:
+        id: PIN_12_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_12_PORT_GROUP:
+      attributes:
+        id: PIN_12_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_12_PORT_PIN:
+      attributes:
+        id: PIN_12_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '5'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_13_FUNCTION_TYPE:
+      attributes:
+        id: PIN_13_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_13_GROUP:
+      attributes:
+        id: PIN_13_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_13_PORT_GROUP:
+      attributes:
+        id: PIN_13_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_13_PORT_PIN:
+      attributes:
+        id: PIN_13_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_14_FUNCTION_TYPE:
+      attributes:
+        id: PIN_14_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_14_GROUP:
+      attributes:
+        id: PIN_14_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_14_PORT_GROUP:
+      attributes:
+        id: PIN_14_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_14_PORT_PIN:
+      attributes:
+        id: PIN_14_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_15_FUNCTION_TYPE:
+      attributes:
+        id: PIN_15_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_15_GROUP:
+      attributes:
+        id: PIN_15_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_15_PORT_GROUP:
+      attributes:
+        id: PIN_15_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_15_PORT_PIN:
+      attributes:
+        id: PIN_15_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_16_FUNCTION_TYPE:
+      attributes:
+        id: PIN_16_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_16_GROUP:
+      attributes:
+        id: PIN_16_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_16_PORT_GROUP:
+      attributes:
+        id: PIN_16_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_16_PORT_PIN:
+      attributes:
+        id: PIN_16_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_17_FUNCTION_TYPE:
+      attributes:
+        id: PIN_17_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_17_GROUP:
+      attributes:
+        id: PIN_17_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_17_PORT_GROUP:
+      attributes:
+        id: PIN_17_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_17_PORT_PIN:
+      attributes:
+        id: PIN_17_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '6'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_18_FUNCTION_TYPE:
+      attributes:
+        id: PIN_18_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_18_GROUP:
+      attributes:
+        id: PIN_18_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_18_PORT_GROUP:
+      attributes:
+        id: PIN_18_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_18_PORT_PIN:
+      attributes:
+        id: PIN_18_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '7'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_19_FUNCTION_TYPE:
+      attributes:
+        id: PIN_19_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_19_GROUP:
+      attributes:
+        id: PIN_19_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_19_PORT_GROUP:
+      attributes:
+        id: PIN_19_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_19_PORT_PIN:
+      attributes:
+        id: PIN_19_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '8'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_1_FUNCTION_TYPE:
+      attributes:
+        id: PIN_1_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_1_GROUP:
+      attributes:
+        id: PIN_1_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_1_PORT_GROUP:
+      attributes:
+        id: PIN_1_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_1_PORT_PIN:
+      attributes:
+        id: PIN_1_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_20_FUNCTION_TYPE:
+      attributes:
+        id: PIN_20_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_20_GROUP:
+      attributes:
+        id: PIN_20_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_20_PORT_GROUP:
+      attributes:
+        id: PIN_20_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_20_PORT_PIN:
+      attributes:
+        id: PIN_20_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '9'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_21_FUNCTION_TYPE:
+      attributes:
+        id: PIN_21_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_21_GROUP:
+      attributes:
+        id: PIN_21_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_21_PORT_GROUP:
+      attributes:
+        id: PIN_21_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_21_PORT_PIN:
+      attributes:
+        id: PIN_21_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '4'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_22_FUNCTION_TYPE:
+      attributes:
+        id: PIN_22_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_22_GROUP:
+      attributes:
+        id: PIN_22_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_22_PORT_GROUP:
+      attributes:
+        id: PIN_22_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_22_PORT_PIN:
+      attributes:
+        id: PIN_22_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '5'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_23_FUNCTION_TYPE:
+      attributes:
+        id: PIN_23_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_23_GROUP:
+      attributes:
+        id: PIN_23_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_23_PORT_GROUP:
+      attributes:
+        id: PIN_23_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_23_PORT_PIN:
+      attributes:
+        id: PIN_23_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '6'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_24_FUNCTION_TYPE:
+      attributes:
+        id: PIN_24_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_24_GROUP:
+      attributes:
+        id: PIN_24_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_24_PORT_GROUP:
+      attributes:
+        id: PIN_24_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_24_PORT_PIN:
+      attributes:
+        id: PIN_24_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '7'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_25_FUNCTION_TYPE:
+      attributes:
+        id: PIN_25_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_25_GROUP:
+      attributes:
+        id: PIN_25_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_25_PORT_GROUP:
+      attributes:
+        id: PIN_25_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_25_PORT_PIN:
+      attributes:
+        id: PIN_25_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_26_FUNCTION_TYPE:
+      attributes:
+        id: PIN_26_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_26_GROUP:
+      attributes:
+        id: PIN_26_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_26_PORT_GROUP:
+      attributes:
+        id: PIN_26_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_26_PORT_PIN:
+      attributes:
+        id: PIN_26_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_27_FUNCTION_NAME:
+      attributes:
+        id: PIN_27_FUNCTION_NAME
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_27_FUNCTION_TYPE:
+      attributes:
+        id: PIN_27_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: SERCOM6_PAD0
+          type: User
+        type: Values
+      type: String
+    PIN_27_GROUP:
+      attributes:
+        id: PIN_27_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_27_MODE:
+      attributes:
+        id: PIN_27_MODE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_27_PERIPHERAL_FUNCTION:
+      attributes:
+        id: PIN_27_PERIPHERAL_FUNCTION
+      children:
+      - children:
+        - attributes:
+            value: C
+          type: User
+        type: Values
+      type: String
+    PIN_27_PORT_GROUP:
+      attributes:
+        id: PIN_27_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_27_PORT_PIN:
+      attributes:
+        id: PIN_27_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '4'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_28_FUNCTION_NAME:
+      attributes:
+        id: PIN_28_FUNCTION_NAME
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_28_FUNCTION_TYPE:
+      attributes:
+        id: PIN_28_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: SERCOM6_PAD1
+          type: User
+        type: Values
+      type: String
+    PIN_28_GROUP:
+      attributes:
+        id: PIN_28_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_28_MODE:
+      attributes:
+        id: PIN_28_MODE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_28_PERIPHERAL_FUNCTION:
+      attributes:
+        id: PIN_28_PERIPHERAL_FUNCTION
+      children:
+      - children:
+        - attributes:
+            value: C
+          type: User
+        type: Values
+      type: String
+    PIN_28_PORT_GROUP:
+      attributes:
+        id: PIN_28_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_28_PORT_PIN:
+      attributes:
+        id: PIN_28_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '5'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_29_FUNCTION_TYPE:
+      attributes:
+        id: PIN_29_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_29_GROUP:
+      attributes:
+        id: PIN_29_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_29_PORT_GROUP:
+      attributes:
+        id: PIN_29_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_29_PORT_PIN:
+      attributes:
+        id: PIN_29_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '6'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_2_FUNCTION_TYPE:
+      attributes:
+        id: PIN_2_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_2_GROUP:
+      attributes:
+        id: PIN_2_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_2_PORT_GROUP:
+      attributes:
+        id: PIN_2_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_2_PORT_PIN:
+      attributes:
+        id: PIN_2_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_30_FUNCTION_NAME:
+      attributes:
+        id: PIN_30_FUNCTION_NAME
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_30_FUNCTION_TYPE:
+      attributes:
+        id: PIN_30_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: SERCOM6_PAD3
+          type: User
+        type: Values
+      type: String
+    PIN_30_GROUP:
+      attributes:
+        id: PIN_30_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_30_MODE:
+      attributes:
+        id: PIN_30_MODE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_30_PERIPHERAL_FUNCTION:
+      attributes:
+        id: PIN_30_PERIPHERAL_FUNCTION
+      children:
+      - children:
+        - attributes:
+            value: C
+          type: User
+        type: Values
+      type: String
+    PIN_30_PORT_GROUP:
+      attributes:
+        id: PIN_30_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_30_PORT_PIN:
+      attributes:
+        id: PIN_30_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '7'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_31_FUNCTION_TYPE:
+      attributes:
+        id: PIN_31_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_31_GROUP:
+      attributes:
+        id: PIN_31_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_31_PORT_GROUP:
+      attributes:
+        id: PIN_31_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_31_PORT_PIN:
+      attributes:
+        id: PIN_31_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_32_FUNCTION_TYPE:
+      attributes:
+        id: PIN_32_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_32_GROUP:
+      attributes:
+        id: PIN_32_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_32_PORT_GROUP:
+      attributes:
+        id: PIN_32_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_32_PORT_PIN:
+      attributes:
+        id: PIN_32_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_33_FUNCTION_TYPE:
+      attributes:
+        id: PIN_33_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_33_GROUP:
+      attributes:
+        id: PIN_33_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_33_PORT_GROUP:
+      attributes:
+        id: PIN_33_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_33_PORT_PIN:
+      attributes:
+        id: PIN_33_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '8'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_34_FUNCTION_TYPE:
+      attributes:
+        id: PIN_34_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_34_GROUP:
+      attributes:
+        id: PIN_34_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_34_PORT_GROUP:
+      attributes:
+        id: PIN_34_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_34_PORT_PIN:
+      attributes:
+        id: PIN_34_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '9'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_35_FUNCTION_TYPE:
+      attributes:
+        id: PIN_35_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_35_GROUP:
+      attributes:
+        id: PIN_35_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_35_PORT_GROUP:
+      attributes:
+        id: PIN_35_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_35_PORT_PIN:
+      attributes:
+        id: PIN_35_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '10'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_36_FUNCTION_TYPE:
+      attributes:
+        id: PIN_36_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_36_GROUP:
+      attributes:
+        id: PIN_36_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_36_PORT_GROUP:
+      attributes:
+        id: PIN_36_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_36_PORT_PIN:
+      attributes:
+        id: PIN_36_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '11'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_37_FUNCTION_TYPE:
+      attributes:
+        id: PIN_37_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_37_GROUP:
+      attributes:
+        id: PIN_37_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_37_PORT_GROUP:
+      attributes:
+        id: PIN_37_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_37_PORT_PIN:
+      attributes:
+        id: PIN_37_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_38_FUNCTION_TYPE:
+      attributes:
+        id: PIN_38_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_38_GROUP:
+      attributes:
+        id: PIN_38_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_38_PORT_GROUP:
+      attributes:
+        id: PIN_38_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_38_PORT_PIN:
+      attributes:
+        id: PIN_38_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_39_FUNCTION_TYPE:
+      attributes:
+        id: PIN_39_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_39_GROUP:
+      attributes:
+        id: PIN_39_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_39_PORT_GROUP:
+      attributes:
+        id: PIN_39_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_39_PORT_PIN:
+      attributes:
+        id: PIN_39_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '10'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_3_FUNCTION_TYPE:
+      attributes:
+        id: PIN_3_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_3_GROUP:
+      attributes:
+        id: PIN_3_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_3_PORT_GROUP:
+      attributes:
+        id: PIN_3_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_3_PORT_PIN:
+      attributes:
+        id: PIN_3_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_40_FUNCTION_TYPE:
+      attributes:
+        id: PIN_40_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_40_GROUP:
+      attributes:
+        id: PIN_40_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_40_PORT_GROUP:
+      attributes:
+        id: PIN_40_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_40_PORT_PIN:
+      attributes:
+        id: PIN_40_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '11'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_41_FUNCTION_TYPE:
+      attributes:
+        id: PIN_41_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_41_GROUP:
+      attributes:
+        id: PIN_41_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_41_PORT_GROUP:
+      attributes:
+        id: PIN_41_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_41_PORT_PIN:
+      attributes:
+        id: PIN_41_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '12'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_42_FUNCTION_TYPE:
+      attributes:
+        id: PIN_42_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_42_GROUP:
+      attributes:
+        id: PIN_42_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_42_PORT_GROUP:
+      attributes:
+        id: PIN_42_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_42_PORT_PIN:
+      attributes:
+        id: PIN_42_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_43_FUNCTION_TYPE:
+      attributes:
+        id: PIN_43_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_43_GROUP:
+      attributes:
+        id: PIN_43_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_43_PORT_GROUP:
+      attributes:
+        id: PIN_43_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_43_PORT_PIN:
+      attributes:
+        id: PIN_43_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '14'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_44_FUNCTION_TYPE:
+      attributes:
+        id: PIN_44_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_44_GROUP:
+      attributes:
+        id: PIN_44_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_44_PORT_GROUP:
+      attributes:
+        id: PIN_44_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_44_PORT_PIN:
+      attributes:
+        id: PIN_44_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '15'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_45_FUNCTION_TYPE:
+      attributes:
+        id: PIN_45_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_45_GROUP:
+      attributes:
+        id: PIN_45_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_45_PORT_GROUP:
+      attributes:
+        id: PIN_45_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_45_PORT_PIN:
+      attributes:
+        id: PIN_45_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_46_FUNCTION_TYPE:
+      attributes:
+        id: PIN_46_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_46_GROUP:
+      attributes:
+        id: PIN_46_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_46_PORT_GROUP:
+      attributes:
+        id: PIN_46_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_46_PORT_PIN:
+      attributes:
+        id: PIN_46_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_47_FUNCTION_TYPE:
+      attributes:
+        id: PIN_47_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_47_GROUP:
+      attributes:
+        id: PIN_47_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_47_PORT_GROUP:
+      attributes:
+        id: PIN_47_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_47_PORT_PIN:
+      attributes:
+        id: PIN_47_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '8'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_48_FUNCTION_TYPE:
+      attributes:
+        id: PIN_48_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_48_GROUP:
+      attributes:
+        id: PIN_48_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_48_PORT_GROUP:
+      attributes:
+        id: PIN_48_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_48_PORT_PIN:
+      attributes:
+        id: PIN_48_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '9'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_49_FUNCTION_TYPE:
+      attributes:
+        id: PIN_49_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_49_GROUP:
+      attributes:
+        id: PIN_49_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_49_PORT_GROUP:
+      attributes:
+        id: PIN_49_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_49_PORT_PIN:
+      attributes:
+        id: PIN_49_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '10'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_4_FUNCTION_TYPE:
+      attributes:
+        id: PIN_4_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_4_GROUP:
+      attributes:
+        id: PIN_4_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_4_PORT_GROUP:
+      attributes:
+        id: PIN_4_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_4_PORT_PIN:
+      attributes:
+        id: PIN_4_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_50_FUNCTION_TYPE:
+      attributes:
+        id: PIN_50_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_50_GROUP:
+      attributes:
+        id: PIN_50_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_50_PORT_GROUP:
+      attributes:
+        id: PIN_50_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_50_PORT_PIN:
+      attributes:
+        id: PIN_50_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '11'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_51_FUNCTION_TYPE:
+      attributes:
+        id: PIN_51_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_51_GROUP:
+      attributes:
+        id: PIN_51_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_51_PORT_GROUP:
+      attributes:
+        id: PIN_51_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_51_PORT_PIN:
+      attributes:
+        id: PIN_51_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '12'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_52_FUNCTION_TYPE:
+      attributes:
+        id: PIN_52_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_52_GROUP:
+      attributes:
+        id: PIN_52_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_52_PORT_GROUP:
+      attributes:
+        id: PIN_52_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_52_PORT_PIN:
+      attributes:
+        id: PIN_52_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '10'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_53_FUNCTION_TYPE:
+      attributes:
+        id: PIN_53_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_53_GROUP:
+      attributes:
+        id: PIN_53_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_53_PORT_GROUP:
+      attributes:
+        id: PIN_53_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_53_PORT_PIN:
+      attributes:
+        id: PIN_53_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_54_FUNCTION_TYPE:
+      attributes:
+        id: PIN_54_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_54_GROUP:
+      attributes:
+        id: PIN_54_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_54_PORT_GROUP:
+      attributes:
+        id: PIN_54_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_54_PORT_PIN:
+      attributes:
+        id: PIN_54_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_55_FUNCTION_TYPE:
+      attributes:
+        id: PIN_55_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_55_GROUP:
+      attributes:
+        id: PIN_55_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_55_PORT_GROUP:
+      attributes:
+        id: PIN_55_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_55_PORT_PIN:
+      attributes:
+        id: PIN_55_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '11'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_56_FUNCTION_TYPE:
+      attributes:
+        id: PIN_56_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_56_GROUP:
+      attributes:
+        id: PIN_56_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_56_PORT_GROUP:
+      attributes:
+        id: PIN_56_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_56_PORT_PIN:
+      attributes:
+        id: PIN_56_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '12'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_57_FUNCTION_TYPE:
+      attributes:
+        id: PIN_57_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_57_GROUP:
+      attributes:
+        id: PIN_57_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_57_PORT_GROUP:
+      attributes:
+        id: PIN_57_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_57_PORT_PIN:
+      attributes:
+        id: PIN_57_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_58_FUNCTION_TYPE:
+      attributes:
+        id: PIN_58_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_58_GROUP:
+      attributes:
+        id: PIN_58_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_58_PORT_GROUP:
+      attributes:
+        id: PIN_58_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_58_PORT_PIN:
+      attributes:
+        id: PIN_58_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '14'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_59_FUNCTION_TYPE:
+      attributes:
+        id: PIN_59_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_59_GROUP:
+      attributes:
+        id: PIN_59_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_59_PORT_GROUP:
+      attributes:
+        id: PIN_59_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_59_PORT_PIN:
+      attributes:
+        id: PIN_59_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '15'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_5_FUNCTION_TYPE:
+      attributes:
+        id: PIN_5_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_5_GROUP:
+      attributes:
+        id: PIN_5_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_5_PORT_GROUP:
+      attributes:
+        id: PIN_5_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_5_PORT_PIN:
+      attributes:
+        id: PIN_5_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_60_FUNCTION_TYPE:
+      attributes:
+        id: PIN_60_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_60_GROUP:
+      attributes:
+        id: PIN_60_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_60_PORT_GROUP:
+      attributes:
+        id: PIN_60_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_60_PORT_PIN:
+      attributes:
+        id: PIN_60_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '12'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_61_FUNCTION_TYPE:
+      attributes:
+        id: PIN_61_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_61_GROUP:
+      attributes:
+        id: PIN_61_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_61_PORT_GROUP:
+      attributes:
+        id: PIN_61_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_61_PORT_PIN:
+      attributes:
+        id: PIN_61_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_62_FUNCTION_TYPE:
+      attributes:
+        id: PIN_62_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_62_GROUP:
+      attributes:
+        id: PIN_62_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_62_PORT_GROUP:
+      attributes:
+        id: PIN_62_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_62_PORT_PIN:
+      attributes:
+        id: PIN_62_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '14'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_63_FUNCTION_TYPE:
+      attributes:
+        id: PIN_63_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_63_GROUP:
+      attributes:
+        id: PIN_63_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_63_PORT_GROUP:
+      attributes:
+        id: PIN_63_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_63_PORT_PIN:
+      attributes:
+        id: PIN_63_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '15'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_64_FUNCTION_TYPE:
+      attributes:
+        id: PIN_64_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_64_GROUP:
+      attributes:
+        id: PIN_64_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_64_PORT_GROUP:
+      attributes:
+        id: PIN_64_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_64_PORT_PIN:
+      attributes:
+        id: PIN_64_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_65_FUNCTION_TYPE:
+      attributes:
+        id: PIN_65_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_65_GROUP:
+      attributes:
+        id: PIN_65_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_65_PORT_GROUP:
+      attributes:
+        id: PIN_65_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_65_PORT_PIN:
+      attributes:
+        id: PIN_65_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_66_FUNCTION_TYPE:
+      attributes:
+        id: PIN_66_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_66_GROUP:
+      attributes:
+        id: PIN_66_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_66_PORT_GROUP:
+      attributes:
+        id: PIN_66_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_66_PORT_PIN:
+      attributes:
+        id: PIN_66_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '16'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_67_FUNCTION_TYPE:
+      attributes:
+        id: PIN_67_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_67_GROUP:
+      attributes:
+        id: PIN_67_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_67_PORT_GROUP:
+      attributes:
+        id: PIN_67_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_67_PORT_PIN:
+      attributes:
+        id: PIN_67_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '17'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_68_FUNCTION_TYPE:
+      attributes:
+        id: PIN_68_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_68_GROUP:
+      attributes:
+        id: PIN_68_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_68_PORT_GROUP:
+      attributes:
+        id: PIN_68_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_68_PORT_PIN:
+      attributes:
+        id: PIN_68_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '18'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_69_FUNCTION_TYPE:
+      attributes:
+        id: PIN_69_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_69_GROUP:
+      attributes:
+        id: PIN_69_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_69_PORT_GROUP:
+      attributes:
+        id: PIN_69_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_69_PORT_PIN:
+      attributes:
+        id: PIN_69_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '19'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_6_FUNCTION_TYPE:
+      attributes:
+        id: PIN_6_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_6_GROUP:
+      attributes:
+        id: PIN_6_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_6_PORT_GROUP:
+      attributes:
+        id: PIN_6_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_6_PORT_PIN:
+      attributes:
+        id: PIN_6_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_70_FUNCTION_TYPE:
+      attributes:
+        id: PIN_70_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_70_GROUP:
+      attributes:
+        id: PIN_70_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_70_PORT_GROUP:
+      attributes:
+        id: PIN_70_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_70_PORT_PIN:
+      attributes:
+        id: PIN_70_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '16'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_71_FUNCTION_TYPE:
+      attributes:
+        id: PIN_71_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_71_GROUP:
+      attributes:
+        id: PIN_71_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_71_PORT_GROUP:
+      attributes:
+        id: PIN_71_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_71_PORT_PIN:
+      attributes:
+        id: PIN_71_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '17'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_72_DIR:
+      attributes:
+        id: PIN_72_DIR
+      children:
+      - children:
+        - attributes:
+            value: Out
+          type: User
+        type: Values
+      type: String
+    PIN_72_FUNCTION_NAME:
+      attributes:
+        id: PIN_72_FUNCTION_NAME
+      children:
+      - children:
+        - attributes:
+            value: LED
+          type: User
+        type: Values
+      type: String
+    PIN_72_FUNCTION_TYPE:
+      attributes:
+        id: PIN_72_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: GPIO
+          type: User
+        type: Values
+      type: String
+    PIN_72_GROUP:
+      attributes:
+        id: PIN_72_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_72_LAT:
+      attributes:
+        id: PIN_72_LAT
+      children:
+      - children:
+        - attributes:
+            value: High
+          type: User
+        type: Values
+      type: String
+    PIN_72_MODE:
+      attributes:
+        id: PIN_72_MODE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_72_PERIPHERAL_FUNCTION:
+      attributes:
+        id: PIN_72_PERIPHERAL_FUNCTION
+      children:
+      - children:
+        - attributes:
+            value: GPIO
+          type: User
+        type: Values
+      type: String
+    PIN_72_PORT_GROUP:
+      attributes:
+        id: PIN_72_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_72_PORT_PIN:
+      attributes:
+        id: PIN_72_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '18'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_73_FUNCTION_TYPE:
+      attributes:
+        id: PIN_73_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_73_GROUP:
+      attributes:
+        id: PIN_73_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_73_PORT_GROUP:
+      attributes:
+        id: PIN_73_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_73_PORT_PIN:
+      attributes:
+        id: PIN_73_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '19'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_74_FUNCTION_TYPE:
+      attributes:
+        id: PIN_74_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_74_GROUP:
+      attributes:
+        id: PIN_74_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_74_PORT_GROUP:
+      attributes:
+        id: PIN_74_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_74_PORT_PIN:
+      attributes:
+        id: PIN_74_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '20'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_75_FUNCTION_TYPE:
+      attributes:
+        id: PIN_75_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_75_GROUP:
+      attributes:
+        id: PIN_75_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_75_PORT_GROUP:
+      attributes:
+        id: PIN_75_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_75_PORT_PIN:
+      attributes:
+        id: PIN_75_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '21'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_76_FUNCTION_TYPE:
+      attributes:
+        id: PIN_76_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_76_GROUP:
+      attributes:
+        id: PIN_76_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_76_PORT_GROUP:
+      attributes:
+        id: PIN_76_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_76_PORT_PIN:
+      attributes:
+        id: PIN_76_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '22'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_77_FUNCTION_TYPE:
+      attributes:
+        id: PIN_77_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_77_GROUP:
+      attributes:
+        id: PIN_77_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_77_PORT_GROUP:
+      attributes:
+        id: PIN_77_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_77_PORT_PIN:
+      attributes:
+        id: PIN_77_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '23'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_78_FUNCTION_TYPE:
+      attributes:
+        id: PIN_78_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_78_GROUP:
+      attributes:
+        id: PIN_78_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_78_PORT_GROUP:
+      attributes:
+        id: PIN_78_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_78_PORT_PIN:
+      attributes:
+        id: PIN_78_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_79_FUNCTION_TYPE:
+      attributes:
+        id: PIN_79_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_79_GROUP:
+      attributes:
+        id: PIN_79_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_79_PORT_GROUP:
+      attributes:
+        id: PIN_79_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_79_PORT_PIN:
+      attributes:
+        id: PIN_79_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_7_FUNCTION_TYPE:
+      attributes:
+        id: PIN_7_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_7_GROUP:
+      attributes:
+        id: PIN_7_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_7_PORT_GROUP:
+      attributes:
+        id: PIN_7_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_7_PORT_PIN:
+      attributes:
+        id: PIN_7_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_80_FUNCTION_TYPE:
+      attributes:
+        id: PIN_80_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_80_GROUP:
+      attributes:
+        id: PIN_80_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_80_PORT_GROUP:
+      attributes:
+        id: PIN_80_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_80_PORT_PIN:
+      attributes:
+        id: PIN_80_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '20'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_81_FUNCTION_TYPE:
+      attributes:
+        id: PIN_81_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_81_GROUP:
+      attributes:
+        id: PIN_81_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_81_PORT_GROUP:
+      attributes:
+        id: PIN_81_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: D
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_81_PORT_PIN:
+      attributes:
+        id: PIN_81_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '21'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_82_FUNCTION_TYPE:
+      attributes:
+        id: PIN_82_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_82_GROUP:
+      attributes:
+        id: PIN_82_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_82_PORT_GROUP:
+      attributes:
+        id: PIN_82_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_82_PORT_PIN:
+      attributes:
+        id: PIN_82_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '16'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_83_FUNCTION_TYPE:
+      attributes:
+        id: PIN_83_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_83_GROUP:
+      attributes:
+        id: PIN_83_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_83_PORT_GROUP:
+      attributes:
+        id: PIN_83_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_83_PORT_PIN:
+      attributes:
+        id: PIN_83_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '17'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_84_FUNCTION_TYPE:
+      attributes:
+        id: PIN_84_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_84_GROUP:
+      attributes:
+        id: PIN_84_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_84_PORT_GROUP:
+      attributes:
+        id: PIN_84_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_84_PORT_PIN:
+      attributes:
+        id: PIN_84_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '18'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_85_FUNCTION_TYPE:
+      attributes:
+        id: PIN_85_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_85_GROUP:
+      attributes:
+        id: PIN_85_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_85_PORT_GROUP:
+      attributes:
+        id: PIN_85_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_85_PORT_PIN:
+      attributes:
+        id: PIN_85_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '19'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_86_FUNCTION_TYPE:
+      attributes:
+        id: PIN_86_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_86_GROUP:
+      attributes:
+        id: PIN_86_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_86_PORT_GROUP:
+      attributes:
+        id: PIN_86_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_86_PORT_PIN:
+      attributes:
+        id: PIN_86_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '20'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_87_FUNCTION_TYPE:
+      attributes:
+        id: PIN_87_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_87_GROUP:
+      attributes:
+        id: PIN_87_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_87_PORT_GROUP:
+      attributes:
+        id: PIN_87_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_87_PORT_PIN:
+      attributes:
+        id: PIN_87_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '21'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_88_FUNCTION_TYPE:
+      attributes:
+        id: PIN_88_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_88_GROUP:
+      attributes:
+        id: PIN_88_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_88_PORT_GROUP:
+      attributes:
+        id: PIN_88_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_88_PORT_PIN:
+      attributes:
+        id: PIN_88_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '20'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_89_FUNCTION_TYPE:
+      attributes:
+        id: PIN_89_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_89_GROUP:
+      attributes:
+        id: PIN_89_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_89_PORT_GROUP:
+      attributes:
+        id: PIN_89_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_89_PORT_PIN:
+      attributes:
+        id: PIN_89_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '21'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_8_FUNCTION_TYPE:
+      attributes:
+        id: PIN_8_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_8_GROUP:
+      attributes:
+        id: PIN_8_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_8_PORT_GROUP:
+      attributes:
+        id: PIN_8_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: C
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_8_PORT_PIN:
+      attributes:
+        id: PIN_8_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_90_FUNCTION_TYPE:
+      attributes:
+        id: PIN_90_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_90_GROUP:
+      attributes:
+        id: PIN_90_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_90_PORT_GROUP:
+      attributes:
+        id: PIN_90_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_90_PORT_PIN:
+      attributes:
+        id: PIN_90_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_91_FUNCTION_TYPE:
+      attributes:
+        id: PIN_91_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_91_GROUP:
+      attributes:
+        id: PIN_91_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_91_PORT_GROUP:
+      attributes:
+        id: PIN_91_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_91_PORT_PIN:
+      attributes:
+        id: PIN_91_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_92_FUNCTION_TYPE:
+      attributes:
+        id: PIN_92_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_92_GROUP:
+      attributes:
+        id: PIN_92_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_92_PORT_GROUP:
+      attributes:
+        id: PIN_92_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_92_PORT_PIN:
+      attributes:
+        id: PIN_92_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '22'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_93_FUNCTION_TYPE:
+      attributes:
+        id: PIN_93_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_93_GROUP:
+      attributes:
+        id: PIN_93_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_93_PORT_GROUP:
+      attributes:
+        id: PIN_93_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_93_PORT_PIN:
+      attributes:
+        id: PIN_93_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '23'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_94_FUNCTION_TYPE:
+      attributes:
+        id: PIN_94_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_94_GROUP:
+      attributes:
+        id: PIN_94_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_94_PORT_GROUP:
+      attributes:
+        id: PIN_94_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_94_PORT_PIN:
+      attributes:
+        id: PIN_94_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '24'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_95_FUNCTION_TYPE:
+      attributes:
+        id: PIN_95_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_95_GROUP:
+      attributes:
+        id: PIN_95_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_95_PORT_GROUP:
+      attributes:
+        id: PIN_95_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_95_PORT_PIN:
+      attributes:
+        id: PIN_95_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '25'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_96_FUNCTION_TYPE:
+      attributes:
+        id: PIN_96_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_96_GROUP:
+      attributes:
+        id: PIN_96_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '13'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_96_PORT_GROUP:
+      attributes:
+        id: PIN_96_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_96_PORT_PIN:
+      attributes:
+        id: PIN_96_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_97_FUNCTION_TYPE:
+      attributes:
+        id: PIN_97_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_97_GROUP:
+      attributes:
+        id: PIN_97_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '3'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_97_PORT_GROUP:
+      attributes:
+        id: PIN_97_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_97_PORT_PIN:
+      attributes:
+        id: PIN_97_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '-1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_98_FUNCTION_TYPE:
+      attributes:
+        id: PIN_98_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_98_GROUP:
+      attributes:
+        id: PIN_98_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_98_PORT_GROUP:
+      attributes:
+        id: PIN_98_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_98_PORT_PIN:
+      attributes:
+        id: PIN_98_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '22'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_99_FUNCTION_TYPE:
+      attributes:
+        id: PIN_99_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_99_GROUP:
+      attributes:
+        id: PIN_99_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_99_PORT_GROUP:
+      attributes:
+        id: PIN_99_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: B
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_99_PORT_PIN:
+      attributes:
+        id: PIN_99_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '23'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_9_FUNCTION_TYPE:
+      attributes:
+        id: PIN_9_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_9_GROUP:
+      attributes:
+        id: PIN_9_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PIN_9_PORT_GROUP:
+      attributes:
+        id: PIN_9_PORT_GROUP
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: A
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_9_PORT_PIN:
+      attributes:
+        id: PIN_9_PORT_PIN
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '2'
+          type: Dynamic
+        type: Values
+      type: Integer
+    PORT_GROUP_0:
+      attributes:
+        id: PORT_GROUP_0
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_1:
+      attributes:
+        id: PORT_GROUP_1
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_2:
+      attributes:
+        id: PORT_GROUP_2
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_2_DIR:
+      attributes:
+        id: PORT_GROUP_2_DIR
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x40000'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_OUT:
+      attributes:
+        id: PORT_GROUP_2_OUT
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x40000'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PAD_18:
+      attributes:
+        id: PORT_GROUP_2_PAD_18
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: PC18
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PAD_4:
+      attributes:
+        id: PORT_GROUP_2_PAD_4
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: PC04
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PAD_5:
+      attributes:
+        id: PORT_GROUP_2_PAD_5
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: PC05
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PAD_7:
+      attributes:
+        id: PORT_GROUP_2_PAD_7
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: PC07
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PINCFG18:
+      attributes:
+        id: PORT_GROUP_2_PINCFG18
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x0'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PINCFG4:
+      attributes:
+        id: PORT_GROUP_2_PINCFG4
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x1'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PINCFG5:
+      attributes:
+        id: PORT_GROUP_2_PINCFG5
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x1'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PINCFG7:
+      attributes:
+        id: PORT_GROUP_2_PINCFG7
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x1'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PIN_18_USED:
+      attributes:
+        id: PORT_GROUP_2_PIN_18_USED
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_2_PIN_4_USED:
+      attributes:
+        id: PORT_GROUP_2_PIN_4_USED
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_2_PIN_5_USED:
+      attributes:
+        id: PORT_GROUP_2_PIN_5_USED
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_2_PIN_7_USED:
+      attributes:
+        id: PORT_GROUP_2_PIN_7_USED
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_2_PMUX2:
+      attributes:
+        id: PORT_GROUP_2_PMUX2
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x22'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PMUX3:
+      attributes:
+        id: PORT_GROUP_2_PMUX3
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x20'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_2_PMUX9:
+      attributes:
+        id: PORT_GROUP_2_PMUX9
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x0'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_3:
+      attributes:
+        id: PORT_GROUP_3
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_REG_NAME:
+      attributes:
+        id: PORT_REG_NAME
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: PORT
+          type: Dynamic
+        type: Values
+      type: String
+    QSPI_CLOCK_FREQUENCY:
+      attributes:
+        id: QSPI_CLOCK_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    SERCOM6_0_INTERRUPT_ENABLE:
+      attributes:
+        id: SERCOM6_0_INTERRUPT_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_0_INTERRUPT_ENABLE_UPDATE:
+      attributes:
+        id: SERCOM6_0_INTERRUPT_ENABLE_UPDATE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_0_INTERRUPT_HANDLER:
+      attributes:
+        id: SERCOM6_0_INTERRUPT_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    SERCOM6_0_INTERRUPT_HANDLER_LOCK:
+      attributes:
+        id: SERCOM6_0_INTERRUPT_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_1_INTERRUPT_ENABLE:
+      attributes:
+        id: SERCOM6_1_INTERRUPT_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_1_INTERRUPT_ENABLE_UPDATE:
+      attributes:
+        id: SERCOM6_1_INTERRUPT_ENABLE_UPDATE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_1_INTERRUPT_HANDLER:
+      attributes:
+        id: SERCOM6_1_INTERRUPT_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    SERCOM6_1_INTERRUPT_HANDLER_LOCK:
+      attributes:
+        id: SERCOM6_1_INTERRUPT_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_2_INTERRUPT_ENABLE:
+      attributes:
+        id: SERCOM6_2_INTERRUPT_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_2_INTERRUPT_ENABLE_UPDATE:
+      attributes:
+        id: SERCOM6_2_INTERRUPT_ENABLE_UPDATE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_2_INTERRUPT_HANDLER:
+      attributes:
+        id: SERCOM6_2_INTERRUPT_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    SERCOM6_2_INTERRUPT_HANDLER_LOCK:
+      attributes:
+        id: SERCOM6_2_INTERRUPT_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_CORE_CLOCK_ENABLE:
+      attributes:
+        id: SERCOM6_CORE_CLOCK_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_CORE_CLOCK_FREQUENCY:
+      attributes:
+        id: SERCOM6_CORE_CLOCK_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '60000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    SERCOM6_OTHER_INTERRUPT_ENABLE:
+      attributes:
+        id: SERCOM6_OTHER_INTERRUPT_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_OTHER_INTERRUPT_ENABLE_UPDATE:
+      attributes:
+        id: SERCOM6_OTHER_INTERRUPT_ENABLE_UPDATE
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SERCOM6_OTHER_INTERRUPT_HANDLER:
+      attributes:
+        id: SERCOM6_OTHER_INTERRUPT_HANDLER
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: SERCOM6_SPI_InterruptHandler
+          type: Dynamic
+        type: Values
+      type: String
+    SERCOM6_OTHER_INTERRUPT_HANDLER_LOCK:
+      attributes:
+        id: SERCOM6_OTHER_INTERRUPT_HANDLER_LOCK
+      children:
+      - children:
+        - attributes:
+            id: sercom6
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SYSTICK_PERIOD:
+      attributes:
+        id: SYSTICK_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x1D4C0'
+          type: Dynamic
+        type: Values
+      type: String
+    SYSTICK_PERIOD_US:
+      attributes:
+        id: SYSTICK_PERIOD_US
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '1000'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData:
+    children:
+    - attributes:
+        canvasHeight: '400'
+        canvasWidth: '400'
+      type: GraphSettings
+    - children:
+      - attributes:
+          id: profile0
+          name: Main
+        type: Profile
+      type: PowerProfiles
+    type: UserData
