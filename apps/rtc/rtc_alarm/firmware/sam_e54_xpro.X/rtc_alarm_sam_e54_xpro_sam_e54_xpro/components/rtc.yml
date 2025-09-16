@@ -1,0 +1,86 @@
+configVersion: 1.0.0
+componentName: rtc
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: rtc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: rtc
+          x: '8'
+          y: '24'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    RTC_MODE2_INTENSET:
+      attributes:
+        id: RTC_MODE2_INTENSET
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '256'
+          type: Dynamic
+        type: Values
+      type: Hex
+    RTC_MODE2_INTENSET_ALARM0_ENABLE:
+      attributes:
+        id: RTC_MODE2_INTENSET_ALARM0_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    RTC_MODE2_INTERRUPT:
+      attributes:
+        id: RTC_MODE2_INTERRUPT
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    RTC_MODE2_PRESCALER:
+      attributes:
+        id: RTC_MODE2_PRESCALER
+      children:
+      - children:
+        - attributes:
+            value: '11'
+          type: User
+        type: Values
+      type: KeyValueSet
+    RTC_MODULE_SELECTION:
+      attributes:
+        id: RTC_MODULE_SELECTION
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+  userData: {}
