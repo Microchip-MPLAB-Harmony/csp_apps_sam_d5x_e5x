@@ -1,0 +1,298 @@
+configVersion: 1.0.0
+componentName: adc0
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: adc0
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: adc0
+          x: '0'
+          y: '75'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    ADC_CALLBACK_API:
+      attributes:
+        id: ADC_CALLBACK_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_CallbackRegister
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_CHANNEL_SELECT_API:
+      attributes:
+        id: ADC_CHANNEL_SELECT_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_ChannelSelect
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_CH_PHASE_U:
+      attributes:
+        id: ADC_CH_PHASE_U
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC_POSINPUT_AIN0
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_CH_PHASE_V:
+      attributes:
+        id: ADC_CH_PHASE_V
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC_POSINPUT_AIN0
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_CH_POT:
+      attributes:
+        id: ADC_CH_POT
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC_POSINPUT_AIN0
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_CH_VDC_BUS:
+      attributes:
+        id: ADC_CH_VDC_BUS
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC_POSINPUT_AIN0
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_CONV_TRIGGER:
+      attributes:
+        id: ADC_CONV_TRIGGER
+      children:
+      - children:
+        - attributes:
+            value: HW Event Trigger
+          type: User
+        type: Values
+      type: Combo
+    ADC_CTRLA_PRESCALER:
+      attributes:
+        id: ADC_CTRLA_PRESCALER
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    ADC_EVCTRL_START:
+      attributes:
+        id: ADC_EVCTRL_START
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    ADC_GET_RESULT_API:
+      attributes:
+        id: ADC_GET_RESULT_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_ConversionResultGet
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_GND:
+      attributes:
+        id: ADC_GND
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC_NEGINPUT_GND
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_INTENSET_RESRDY:
+      attributes:
+        id: ADC_INTENSET_RESRDY
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_INT_CLEAR_API:
+      attributes:
+        id: ADC_INT_CLEAR_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_InterruptsClear
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_INT_DISABLE_API:
+      attributes:
+        id: ADC_INT_DISABLE_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_InterruptsDisable
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_INT_ENABLE_API:
+      attributes:
+        id: ADC_INT_ENABLE_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_InterruptsEnable
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_IS_RESULT_READY_API:
+      attributes:
+        id: ADC_IS_RESULT_READY_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_ConversionStatusGet
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_SEQCTRL_SEQ0:
+      attributes:
+        id: ADC_SEQCTRL_SEQ0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_SEQCTRL_SEQ9:
+      attributes:
+        id: ADC_SEQCTRL_SEQ9
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    ADC_SEQ_ENABLE:
+      attributes:
+        id: ADC_SEQ_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ADC_START_API:
+      attributes:
+        id: ADC_START_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_Enable
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_START_CONV_API:
+      attributes:
+        id: ADC_START_CONV_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_ConversionStart
+          type: Dynamic
+        type: Values
+      type: String
+    ADC_STOP_API:
+      attributes:
+        id: ADC_STOP_API
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_Disable
+          type: Dynamic
+        type: Values
+      type: String
+    INTERRUPT_ADC_RESULT:
+      attributes:
+        id: INTERRUPT_ADC_RESULT
+      children:
+      - children:
+        - attributes:
+            id: adc0
+            value: ADC0_RESRDY_IRQn
+          type: Dynamic
+        type: Values
+      type: String
+  userData: {}
