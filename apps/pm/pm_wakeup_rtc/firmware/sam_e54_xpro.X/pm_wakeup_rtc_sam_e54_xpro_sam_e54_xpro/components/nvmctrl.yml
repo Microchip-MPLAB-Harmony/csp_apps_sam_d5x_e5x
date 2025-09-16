@@ -1,0 +1,76 @@
+configVersion: 1.0.0
+componentName: nvmctrl
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: nvmctrl
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: nvmctrl
+          x: '639'
+          y: '114'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    NVMCTRL_AHB0_CACHE_DISABLE:
+      attributes:
+        id: NVMCTRL_AHB0_CACHE_DISABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    NVMCTRL_AHB1_CACHE_DISABLE:
+      attributes:
+        id: NVMCTRL_AHB1_CACHE_DISABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    NVMCTRL_CTRLA_POWER_REDUCTION_MODE:
+      attributes:
+        id: NVMCTRL_CTRLA_POWER_REDUCTION_MODE
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    NVM_RWS:
+      attributes:
+        id: NVM_RWS
+      children:
+      - children:
+        - attributes:
+            id: nvmctrl
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}
