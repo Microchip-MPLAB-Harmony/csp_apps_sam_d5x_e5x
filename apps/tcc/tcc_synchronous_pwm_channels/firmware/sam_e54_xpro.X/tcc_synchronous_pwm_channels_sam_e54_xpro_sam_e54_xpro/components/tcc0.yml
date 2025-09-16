@@ -1,0 +1,261 @@
+configVersion: 1.0.0
+componentName: tcc0
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tcc0
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tcc0
+          x: '38'
+          y: '110'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    INTR_PWM_FAULT:
+      attributes:
+        id: INTR_PWM_FAULT
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_OTHER_IRQn
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_CALLBACK_API:
+      attributes:
+        id: PWM_CALLBACK_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWMCallbackRegister
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_GET_PERIOD_API:
+      attributes:
+        id: PWM_GET_PERIOD_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWM24bitPeriodGet
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_OUTPUT_DISABLE_API:
+      attributes:
+        id: PWM_OUTPUT_DISABLE_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWMPatternSet
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_OUTPUT_ENABLE_API:
+      attributes:
+        id: PWM_OUTPUT_ENABLE_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWMPatternSet
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_PATTERN_MASK:
+      attributes:
+        id: PWM_PATTERN_MASK
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: '119'
+          type: Dynamic
+        type: Values
+      type: Hex
+    PWM_PH_MASK:
+      attributes:
+        id: PWM_PH_MASK
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: '7'
+          type: Dynamic
+        type: Values
+      type: Hex
+    PWM_PH_U:
+      attributes:
+        id: PWM_PH_U
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0CHANNEL0
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_PH_V:
+      attributes:
+        id: PWM_PH_V
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0CHANNEL1
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_PH_W:
+      attributes:
+        id: PWM_PH_W
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0CHANNEL2
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_SET_DUTY_API:
+      attributes:
+        id: PWM_SET_DUTY_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWM24bitDutySet
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_START_API:
+      attributes:
+        id: PWM_START_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWMStart
+          type: Dynamic
+        type: Values
+      type: String
+    PWM_STOP_API:
+      attributes:
+        id: PWM_STOP_API
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: TCC0_PWMStop
+          type: Dynamic
+        type: Values
+      type: String
+    TCC_INTENSET_OVF:
+      attributes:
+        id: TCC_INTENSET_OVF
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TCC_MODULE_FREQUENCY:
+      attributes:
+        id: TCC_MODULE_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: '120000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TCC_PER_PER:
+      attributes:
+        id: TCC_PER_PER
+      children:
+      - children:
+        - attributes:
+            value: '5999'
+          type: User
+        type: Values
+      type: Integer
+    TCC_PWM_INTERRUPT_MODE:
+      attributes:
+        id: TCC_PWM_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    TCC_TIMER_PERIOD:
+      attributes:
+        id: TCC_TIMER_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: tcc0
+            value: '120000'
+          type: Dynamic
+        type: Values
+      type: Long
+    TCC_WAVE_WAVEGEN:
+      attributes:
+        id: TCC_WAVE_WAVEGEN
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TCC_WEXCTRL_DTHS:
+      attributes:
+        id: TCC_WEXCTRL_DTHS
+      children:
+      - children:
+        - attributes:
+            value: '128'
+          type: User
+        type: Values
+      type: Integer
+    TCC_WEXCTRL_DTLS:
+      attributes:
+        id: TCC_WEXCTRL_DTLS
+      children:
+      - children:
+        - attributes:
+            value: '128'
+          type: User
+        type: Values
+      type: Integer
+  userData: {}

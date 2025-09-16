@@ -56,7 +56,7 @@
 
 
 /* Object to hold callback function and context */
-volatile static TCC_CALLBACK_OBJECT TCC0_CallbackObj;
+static volatile TCC_CALLBACK_OBJECT TCC0_CallbackObj;
 
 /* Initialize TCC module */
 void TCC0_PWMInitialize(void)
@@ -68,7 +68,7 @@ void TCC0_PWMInitialize(void)
         /* Wait for sync */
     }
     /* Clock prescaler */
-    TCC0_REGS->TCC_CTRLA = TCC_CTRLA_PRESCALER_DIV1 
+    TCC0_REGS->TCC_CTRLA = TCC_CTRLA_PRESCALER_DIV1
                             | TCC_CTRLA_PRESCSYNC_PRESC ;
     TCC0_REGS->TCC_WEXCTRL = TCC_WEXCTRL_OTMX(0UL);
     /* Dead time configurations */
@@ -125,7 +125,7 @@ bool TCC0_PWM24bitPeriodSet (uint32_t period)
     {
         TCC0_REGS->TCC_PERBUF = period & 0xFFFFFFU;
         status = true;
-    }    
+    }
     return status;
 }
 
@@ -154,8 +154,8 @@ bool TCC0_PWMPatternSet(uint8_t pattern_enable, uint8_t pattern_output)
     {
         TCC0_REGS->TCC_PATTBUF = (uint16_t)(pattern_enable | ((uint32_t)pattern_output << 8U));
         status = true;
-    }   
-    return status; 
+    }
+    return status;
 }
 
 
@@ -225,7 +225,7 @@ void __attribute__((used)) TCC0_OTHER_InterruptHandler(void)
     uint32_t status;
     /* Additional local variable to prevent MISRA C violations (Rule 13.x) */
     uintptr_t context;
-    context = TCC0_CallbackObj.context;            
+    context = TCC0_CallbackObj.context;
     status = (TCC0_REGS->TCC_INTFLAG & 0xFFFFU);
     /* Clear interrupt flags */
     TCC0_REGS->TCC_INTFLAG = 0xFFFFU;
