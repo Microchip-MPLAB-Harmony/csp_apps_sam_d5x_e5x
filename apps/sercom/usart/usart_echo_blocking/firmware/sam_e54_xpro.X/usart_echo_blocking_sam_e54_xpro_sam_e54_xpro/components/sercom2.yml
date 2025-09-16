@@ -1,0 +1,205 @@
+configVersion: 1.0.0
+componentName: sercom2
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sercom2
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: sercom2
+          x: '166'
+          y: '129'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    I2CM_BAUD:
+      attributes:
+        id: I2CM_BAUD
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '255'
+          type: Dynamic
+        type: Values
+      type: Hex
+    I2CS_SDASETUP_TIME_REG_VALUE:
+      attributes:
+        id: I2CS_SDASETUP_TIME_REG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    I2CS_SDASETUP_TIME_SUPPORT:
+      attributes:
+        id: I2CS_SDASETUP_TIME_SUPPORT
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SPI_BAUD_REG_VALUE:
+      attributes:
+        id: SPI_BAUD_REG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '29'
+          type: Dynamic
+        type: Values
+      type: Integer
+    USART_BAUD_VALUE:
+      attributes:
+        id: USART_BAUD_VALUE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '63522'
+          type: Dynamic
+        type: Values
+      type: Integer
+    USART_FORM:
+      attributes:
+        id: USART_FORM
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    USART_INTERRUPT_MODE:
+      attributes:
+        id: USART_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            id: label
+          children:
+          - type: Value
+            value: '---'
+          type: String
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    USART_INTERRUPT_MODE_ENABLE:
+      attributes:
+        id: USART_INTERRUPT_MODE_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    USART_LIN_MASTER_SUPPORTED:
+      attributes:
+        id: USART_LIN_MASTER_SUPPORTED
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    USART_OPERATING_MODE:
+      attributes:
+        id: USART_OPERATING_MODE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: KeyValueSet
+    USART_RING_BUFFER_MODE_ENABLE:
+      attributes:
+        id: USART_RING_BUFFER_MODE_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    USART_RXPO:
+      attributes:
+        id: USART_RXPO
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    USART_SAMPLE_COUNT:
+      attributes:
+        id: USART_SAMPLE_COUNT
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '16'
+          type: Dynamic
+        type: Values
+      type: Integer
+    USART_SAMPLE_RATE:
+      attributes:
+        id: USART_SAMPLE_RATE
+      children:
+      - children:
+        - attributes:
+            id: sercom2
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    USART_TXPO:
+      attributes:
+        id: USART_TXPO
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+  userData: {}
