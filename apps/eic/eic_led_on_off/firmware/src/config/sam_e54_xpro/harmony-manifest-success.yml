@@ -4,18 +4,18 @@
 
 
 project: eic_led_on_off
-creation_date: 2024-10-27T01:08:02.295+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-09-16T14:57:16.708+00:00[UTC]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.5.1
-mcc_core_version: v5.7.1
-mplabx_version: v6.20        # if MPLAB X plugin only
-harmony_version: v1.5.3
-compiler: XC32 4.45
+mcc_version: v5.6.2
+mcc_core_version: v5.8.2
+mplabx_version: v6.25        # if MPLAB X plugin only
+harmony_version: v5.6.2
+compiler: XC32 4.60
 
 modules:
+    - {name: "csp", version: "v3.23.0"}
     - {name: "CMSIS_5", version: "5.9.0"}
-    - {name: "csp", version: "v3.20.0"}
 
 packs:
     - {name: "SAME54_DFP", version: "3.9.244"}
