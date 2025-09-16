@@ -1,0 +1,185 @@
+configVersion: 1.0.0
+componentName: rtc
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: rtc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: rtc
+          x: '21'
+          y: '112'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    CALLBACK_API_NAME:
+      attributes:
+        id: CALLBACK_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_Timer32CallbackRegister
+          type: Dynamic
+        type: Values
+      type: String
+    COMPARE_SET_API_NAME:
+      attributes:
+        id: COMPARE_SET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_Timer32Compare0Set
+          type: Dynamic
+        type: Values
+      type: String
+    COUNTER_GET_API_NAME:
+      attributes:
+        id: COUNTER_GET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_Timer32CounterGet
+          type: Dynamic
+        type: Values
+      type: String
+    FREQUENCY_GET_API_NAME:
+      attributes:
+        id: FREQUENCY_GET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_Timer32FrequencyGet
+          type: Dynamic
+        type: Values
+      type: String
+    IRQ_ENUM_NAME:
+      attributes:
+        id: IRQ_ENUM_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_IRQn
+          type: Dynamic
+        type: Values
+      type: String
+    PERIOD_SET_API_NAME:
+      attributes:
+        id: PERIOD_SET_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    RTC_MODE0_MATCHCLR:
+      attributes:
+        id: RTC_MODE0_MATCHCLR
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    RTC_MODE0_TIMER_COMPARE0:
+      attributes:
+        id: RTC_MODE0_TIMER_COMPARE0
+      children:
+      - children:
+        - attributes:
+            value: '256'
+          type: User
+        type: Values
+      type: Hex
+    RTC_MODE0_TIMER_COMPARE1:
+      attributes:
+        id: RTC_MODE0_TIMER_COMPARE1
+      children:
+      - children:
+        - attributes:
+            value: '256'
+          type: User
+        type: Values
+      type: Hex
+    RTC_MODULE_SELECTION:
+      attributes:
+        id: RTC_MODULE_SELECTION
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TIMER_PERIOD_MAX:
+      attributes:
+        id: TIMER_PERIOD_MAX
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '0xFFFFFFFF'
+          type: Dynamic
+        type: Values
+      type: String
+    TIMER_START_API_NAME:
+      attributes:
+        id: TIMER_START_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_Timer32Start
+          type: Dynamic
+        type: Values
+      type: String
+    TIMER_STOP_API_NAME:
+      attributes:
+        id: TIMER_STOP_API_NAME
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: RTC_Timer32Stop
+          type: Dynamic
+        type: Values
+      type: String
+    TIMER_WIDTH:
+      attributes:
+        id: TIMER_WIDTH
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '32'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}
