@@ -68,7 +68,7 @@
 /* Adjust to tm structure month */
 #define ADJUST_TM_STRUCT_MONTH(mon) (mon - 1U)
 
-volatile static RTC_OBJECT rtcObj;
+static volatile RTC_OBJECT rtcObj;
 
 void RTC_Initialize(void)
 {

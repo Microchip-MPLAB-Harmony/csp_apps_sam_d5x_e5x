@@ -1,0 +1,219 @@
+configVersion: 1.0.0
+componentName: rtc
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: rtc
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: rtc
+          x: '220'
+          y: '77'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    RTC_MODE0_INTENSET:
+      attributes:
+        id: RTC_MODE0_INTENSET
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '16384'
+          type: Dynamic
+        type: Values
+      type: Hex
+    RTC_MODE1_INTENSET:
+      attributes:
+        id: RTC_MODE1_INTENSET
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '16384'
+          type: Dynamic
+        type: Values
+      type: Hex
+    RTC_MODE2_INTENSET:
+      attributes:
+        id: RTC_MODE2_INTENSET
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '16384'
+          type: Dynamic
+        type: Values
+      type: Hex
+    RTC_MODE2_INTENSET_ALARM0_ENABLE:
+      attributes:
+        id: RTC_MODE2_INTENSET_ALARM0_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    RTC_MODE2_INTERRUPT:
+      attributes:
+        id: RTC_MODE2_INTERRUPT
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    RTC_MODE2_PRESCALER:
+      attributes:
+        id: RTC_MODE2_PRESCALER
+      children:
+      - children:
+        - attributes:
+            value: '11'
+          type: User
+        type: Values
+      type: KeyValueSet
+    RTC_MODULE_SELECTION:
+      attributes:
+        id: RTC_MODULE_SELECTION
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    RTC_TAMPCTRL_REG:
+      attributes:
+        id: RTC_TAMPCTRL_REG
+      children:
+      - children:
+        - attributes:
+            id: rtc
+            value: '16777218'
+          type: Dynamic
+        type: Values
+      type: Hex
+    TAMP_ACTIVE_FREQUENCY:
+      attributes:
+        id: TAMP_ACTIVE_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TAMP_CHANNEL0_ACTION:
+      attributes:
+        id: TAMP_CHANNEL0_ACTION
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TAMP_CHANNEL0_DEBNC:
+      attributes:
+        id: TAMP_CHANNEL0_DEBNC
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TAMP_CHANNEL1_ACTION:
+      attributes:
+        id: TAMP_CHANNEL1_ACTION
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TAMP_CHANNEL2_ACTION:
+      attributes:
+        id: TAMP_CHANNEL2_ACTION
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TAMP_DEBOUNCE_ASYNCH:
+      attributes:
+        id: TAMP_DEBOUNCE_ASYNCH
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TAMP_INTERRUPT_ENABLE:
+      attributes:
+        id: TAMP_INTERRUPT_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TAMP_OUT:
+      attributes:
+        id: TAMP_OUT
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    TAMP_RESET_BACKUP:
+      attributes:
+        id: TAMP_RESET_BACKUP
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    TAMP_RESET_GP:
+      attributes:
+        id: TAMP_RESET_GP
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}
