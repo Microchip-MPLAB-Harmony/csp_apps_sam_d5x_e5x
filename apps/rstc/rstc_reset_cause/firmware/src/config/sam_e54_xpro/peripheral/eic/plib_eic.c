@@ -63,7 +63,7 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-volatile static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+static volatile EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
