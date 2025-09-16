@@ -1,0 +1,157 @@
+configVersion: 1.0.0
+componentName: tc4
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tc4
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: CMSIS_5
+  type: package
+  version: 5.9.0
+- dependencyPackage: ''
+  name: csp
+  type: package
+  version: v3.23.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tc4
+          x: '213'
+          y: '109'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TC_COMPARE_CC0:
+      attributes:
+        id: TC_COMPARE_CC0
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '65535'
+          type: Long
+        type: Attributes
+      - children:
+        - attributes:
+            value: '12500'
+          type: User
+        type: Values
+      type: Long
+    TC_COMPARE_CC1:
+      attributes:
+        id: TC_COMPARE_CC1
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '12500'
+          type: Long
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '3000'
+          type: User
+        type: Values
+      type: Long
+    TC_COMPARE_DRVCTRL_INVEN1:
+      attributes:
+        id: TC_COMPARE_DRVCTRL_INVEN1
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    TC_COMPARE_PERIOD:
+      attributes:
+        id: TC_COMPARE_PERIOD
+      children:
+      - children:
+        - attributes:
+            value: '12500'
+          type: User
+        type: Values
+      type: Long
+    TC_COMPARE_WAVE_WAVEGEN:
+      attributes:
+        id: TC_COMPARE_WAVE_WAVEGEN
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TC_CTRLA_PRESCALER:
+      attributes:
+        id: TC_CTRLA_PRESCALER
+      children:
+      - children:
+        - attributes:
+            value: '5'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TC_FREQUENCY:
+      attributes:
+        id: TC_FREQUENCY
+      children:
+      - children:
+        - attributes:
+            id: tc4
+            value: '937500'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TC_OPERATION_MODE:
+      attributes:
+        id: TC_OPERATION_MODE
+      children:
+      - children:
+        - attributes:
+            value: Compare
+          type: User
+        type: Values
+      type: Combo
+    TC_TIMER_PERIOD:
+      attributes:
+        id: TC_TIMER_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '65535'
+          type: Long
+        type: Attributes
+      - children:
+        - attributes:
+            id: tc4
+            value: '937'
+          type: Dynamic
+        type: Values
+      type: Long
+  userData: {}
