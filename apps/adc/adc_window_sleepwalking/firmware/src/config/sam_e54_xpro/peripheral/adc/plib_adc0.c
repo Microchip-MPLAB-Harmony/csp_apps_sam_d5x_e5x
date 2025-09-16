@@ -61,7 +61,7 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-volatile static ADC_CALLBACK_OBJ ADC0_CallbackObject;
+static volatile ADC_CALLBACK_OBJ ADC0_CallbackObject;
 
 #define ADC0_BIASCOMP_POS     (2U)
 #define ADC0_BIASCOMP_Msk     (0x7U << ADC0_BIASCOMP_POS)
@@ -191,7 +191,7 @@ void ADC0_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
     while((ADC0_REGS->ADC_SYNCBUSY & ADC_SYNCBUSY_WINUT_Msk) == ADC_SYNCBUSY_WINUT_Msk)
     {
         /* Wait for Synchronization */
-    } 
+    }
 }
 
 void ADC0_WindowModeSet(ADC_WINMODE mode)
