@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: rtc_periodic_timeout_sam_e54_xpro
-creation_date: 2025-09-16T14:55:03.491+00:00[UTC]
-operating_system: Windows 10
+creation_date: 2025-11-18T10:23:31.593+00:00[UTC]
+operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: ATSAME54P20A

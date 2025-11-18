@@ -17,7 +17,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro\ATSAME54P20A.ld
   hash: ba1b5ba1b9c97c94416b0198dc30e928c5a66c926c3ad7695f9bbe3b798adaba
 - file: ..\src\config\sam_e54_xpro\definitions.h
-  hash: 2b5ad351c68098219a0288d0fc6e366054416c7c67ff240eb6f2f9d157f6f945
+  hash: df9f0583619afc501c2833bb78319a553a5e24f30dc172d778605f457ca321fa
 - file: ..\src\config\sam_e54_xpro\device.h
   hash: b8fdcc4ed83daa65a6f38614a689c97d414774be19ae106e6da07556c50a2c82
 - file: ..\src\config\sam_e54_xpro\device_cache.h

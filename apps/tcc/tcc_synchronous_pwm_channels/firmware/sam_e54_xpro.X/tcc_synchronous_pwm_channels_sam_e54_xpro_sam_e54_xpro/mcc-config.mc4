@@ -15,7 +15,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro\ATSAME54P20A.ld
   hash: ba1b5ba1b9c97c94416b0198dc30e928c5a66c926c3ad7695f9bbe3b798adaba
 - file: ..\src\config\sam_e54_xpro\definitions.h
-  hash: e9b2596662b6607b7e018f1ae7c1b28c656a626991e1bb45650b1503c041df7f
+  hash: 64bb78271e892e1cc923a7a6a9897708902949108d6be8667bb546b0a6e8f775
 - file: ..\src\config\sam_e54_xpro\device.h
   hash: b8fdcc4ed83daa65a6f38614a689c97d414774be19ae106e6da07556c50a2c82
 - file: ..\src\config\sam_e54_xpro\device_cache.h
@@ -25,7 +25,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro\exceptions.c
   hash: de00e84d46e0d8933ee2fae9d699e08456443d4f80ac78f87edada9c35a9d15f
 - file: ..\src\config\sam_e54_xpro\initialization.c
-  hash: b17219ece94797efcbf63ccb9f2b5f3b248cb720455a99010bd97009c7434def
+  hash: 114ddcdee12e50af249569710ddea14f7f371f90d404138bfa44ecc922b18459
 - file: ..\src\config\sam_e54_xpro\interrupts.c
   hash: e58aaf42d73b0e0df921898d72a5a1fdc7578114f980e3a5b47cef10f386524b
 - file: ..\src\config\sam_e54_xpro\interrupts.h

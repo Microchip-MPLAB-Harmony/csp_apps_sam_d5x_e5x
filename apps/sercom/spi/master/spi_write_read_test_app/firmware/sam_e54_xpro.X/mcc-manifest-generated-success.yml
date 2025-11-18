@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: spi_master_write_read_test_sam_e54_xpro
-creation_date: 2025-09-16T14:53:32.861+00:00[UTC]
-operating_system: Windows 10
+creation_date: 2025-11-18T10:20:28.884+00:00[UTC]
+operating_system: Windows 11
 mcc_mode: IDE
 mcc_mode_version: v6.25
 device_name: ATSAME54P20A
