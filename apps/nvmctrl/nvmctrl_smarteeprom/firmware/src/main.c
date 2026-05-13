@@ -48,8 +48,9 @@
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
+#include <stdio.h>
 #include <string.h>
+#include "definitions.h"                // SYS function prototypes
 
 #define LED_ON                      LED_Clear
 #define LED_OFF                     LED_Set
