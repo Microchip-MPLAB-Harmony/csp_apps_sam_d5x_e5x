@@ -44,7 +44,6 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
@@ -101,16 +100,23 @@ uint8_t eeprom_data_buffer[MAX_BUFF_SIZE] = {0};
  */
 void invert_seep_byte(uint8_t index)
 {
-	/* Wait till the SmartEEPROM is free */
-	while (NVMCTRL_SmartEEPROM_IsBusy());
+    /* Wait till the SmartEEPROM is free */
+    while (NVMCTRL_SmartEEPROM_IsBusy());
 
-	/* Read the data, invert it, and write it back */
-	data_8              = SmartEEPROM8[index];
-	printf("\r\nData at test address %d is = %d\r\n", index, (int)data_8);
-	SmartEEPROM8[index] = !data_8;
-	printf("\r\nInverted the data at test address and written\r\n");
+    /* Read the data, invert it, and write it back */
+    data_8              = SmartEEPROM8[index];
+    printf("\r\nData at test address %d is = %d\r\n", index, (int)data_8);
+    SmartEEPROM8[index] = !data_8;
+    printf("\r\nInverted the data at test address and written\r\n");
 }
-
+void clear_buffer(void)
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF)
+    {
+        // Do nothing
+    }
+}
 /**
  * \brief Verify the custom data in SmartEEPROM
  *
@@ -119,21 +125,21 @@ void invert_seep_byte(uint8_t index)
 int8_t verify_seep_signature(void)
 {
     uint32_t        NVMCTRL_SEESBLK_FuseConfig    = ((*(uint32_t *)(USER_PAGE_ADDR + 4)) >> 0) & NVMCTRL_SEESBLK_MASK_BITS;
-	int8_t          ret_val                       = 0;
+    int8_t          ret_val                       = 0;
 
-	/* If SBLK fuse is not configured, inform the user and wait here */
-	if (!NVMCTRL_SEESBLK_FuseConfig)
+    /* If SBLK fuse is not configured, inform the user and wait here */
+    if (!NVMCTRL_SEESBLK_FuseConfig)
     {
-		printf("\r\nPlease configure SBLK fuse to allocate SmartEEPROM area\r\n");
-		while (1);
-	}
+        printf("\r\nPlease configure SBLK fuse to allocate SmartEEPROM area\r\n");
+        while (1);
+    }
 
-	if (SMEE_CUSTOM_SIG != SmartEEPROM32[0])
+    if (SMEE_CUSTOM_SIG != SmartEEPROM32[0])
     {
-		ret_val = 0x4;
-	}
+        ret_val = 0x4;
+    }
 
-	return ret_val;
+    return ret_val;
 }
 
 /**
@@ -143,17 +149,17 @@ int8_t verify_seep_signature(void)
  */
 void print_hex_array(void *mem, uint16_t len)
 {
-	unsigned char *p = (unsigned char *)mem;
+    unsigned char *p = (unsigned char *)mem;
 
-	for(uint32_t i = 0; i < len; i++)
+    for(uint32_t i = 0; i < len; i++)
     {
-		if ((i != 0) && (!(i & 0x7)))
+        if ((i != 0) && (!(i & 0x7)))
         {
-			printf("\r\n");
+            printf("\r\n");
         }
-		printf("%03d ", p[i]);
-	}
-	printf("\r\n");
+        printf("%03d ", p[i]);
+    }
+    printf("\r\n");
 }
 
 // *****************************************************************************
@@ -166,61 +172,61 @@ int main ( void )
 {
     uint32_t    NVMCTRL_SEESBLK_FuseConfig  = ((*(uint32_t *)(USER_PAGE_ADDR + 4)) >> 0) & NVMCTRL_SEESBLK_MASK_BITS;
     uint32_t    NVMCTRL_SEEPSZ_FuseConfig   = ((*(uint32_t *)(USER_PAGE_ADDR + 4)) >> 4) & NVMCTRL_SEEPSZ_MASK_BITS;
-	MenuOptions user_selection              = NoSelection;
-	uint32_t    num_of_bytes_to_read        = 0;
-	uint32_t    eeprom_data                 = 0;
-	uint32_t    eeprom_addr                 = 0;
-	uint32_t    eeprom_data_buf_start_index = 0;
+    MenuOptions user_selection              = NoSelection;
+    uint32_t    num_of_bytes_to_read        = 0;
+    uint32_t    eeprom_data                 = 0;
+    uint32_t    eeprom_addr                 = 0;
+    uint32_t    eeprom_data_buf_start_index = 0;
 
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
-	printf("\r\n\r\n=============SmartEEPROM Example=============\r\n");
+    printf("\r\n\r\n=============SmartEEPROM Example=============\r\n");
 
-	if (verify_seep_signature() == 0)
+    if (verify_seep_signature() == 0)
     {
-		printf("\r\nSmartEEPROM contains valid data \r\n");
-	}
+        printf("\r\nSmartEEPROM contains valid data \r\n");
+    }
     else
     {
-		printf("\r\nStoring signature to SmartEEPROM address 0x00 to 0x03\r\n");
+        printf("\r\nStoring signature to SmartEEPROM address 0x00 to 0x03\r\n");
         /* Wait till the SmartEEPROM is free */
         while (NVMCTRL_SmartEEPROM_IsBusy())
         {
             ;
         }
 
-		SmartEEPROM32[0] = SMEE_CUSTOM_SIG;
-	}
-	printf("\r\nFuse values for SBLK = %d, PSZ = %d. See the table 'SmartEEPROM Virtual \
-	Size in Bytes' in the Datasheet to calculate total available bytes \r\n",
-	       (int)NVMCTRL_SEESBLK_FuseConfig,
-	       (int)NVMCTRL_SEEPSZ_FuseConfig);
+        SmartEEPROM32[0] = SMEE_CUSTOM_SIG;
+    }
+    printf("\r\nFuse values for SBLK = %d, PSZ = %d. See the table 'SmartEEPROM Virtual \
+    Size in Bytes' in the Datasheet to calculate total available bytes \r\n",
+           (int)NVMCTRL_SEESBLK_FuseConfig,
+           (int)NVMCTRL_SEEPSZ_FuseConfig);
 
-	/* Toggle a SmartEEPROM byte and give indication with LED0 on SAM E54 Xpro */
-	invert_seep_byte(SEEP_TEST_ADDR);
+    /* Toggle a SmartEEPROM byte and give indication with LED0 on SAM E54 Xpro */
+    invert_seep_byte(SEEP_TEST_ADDR);
 
-	/* Check the data at test address and show indication on LED0 */
-	if (SmartEEPROM8[SEEP_TEST_ADDR])
+    /* Check the data at test address and show indication on LED0 */
+    if (SmartEEPROM8[SEEP_TEST_ADDR])
     {
         LED_ON();
-	}
+    }
     else
     {
         LED_OFF();
-	}
+    }
 
     while ( true )
     {
-		printf("%s", menu);
-		if (scanf("%c", (char *)&user_selection) == 0)
+        printf("%s", menu);
+        if (scanf("%c", (char *)&user_selection) == 0)
         {
-			/* If its not a number, flush stdin */
-			fflush(stdin);
-			continue;
-		}
-		printf("\r\nSelected option is %c\r\n", user_selection);
-		switch (user_selection)
+            /* If its not a number, flush stdin */
+            clear_buffer();
+            continue;
+        }
+        printf("\r\nSelected option is %c\r\n", user_selection);
+        switch (user_selection)
         {
             case ReadSmartEEPROM:
                 /* Code to read from EEPROM */
@@ -236,7 +242,7 @@ int main ( void )
                 }
                 printf("\r\nEnter number bytes need to read >> ");
                 scanf("%d", (int *)&num_of_bytes_to_read);
-                fflush(stdin);              /* Removing if any null characters are there in Rx register after reading number of bytes to read value */ 
+                clear_buffer();               /* Removing if any null characters are there in Rx register after reading number of bytes to read value */
                 if (num_of_bytes_to_read > MAX_BUFF_SIZE)
                 {
                     printf("\r\nERROR: In this Demo, at a time demo can able to \
@@ -252,7 +258,7 @@ int main ( void )
                 {
                     eeprom_data_buffer[i]   = SmartEEPROM8[eeprom_addr + i];
                 }
-                printf("\r\nEEPROM Data from location: %d to location: %d: \r\n", 
+                printf("\r\nEEPROM Data from location: %d to location: %d: \r\n",
                         (int)eeprom_addr, (int)(eeprom_addr + num_of_bytes_to_read - 1));
                 print_hex_array(eeprom_data_buffer, num_of_bytes_to_read);
                 break;
@@ -271,7 +277,7 @@ int main ( void )
                 }
                 printf("\r\nEnter data >> ");
                 scanf("%d", (int *)&eeprom_data);
-                fflush(stdin);              /* Removing if any null characters are there in Rx register after reading eeprom data value */ 
+                clear_buffer();               /* Removing if any null characters are there in Rx register after reading eeprom data value */
                 SmartEEPROM8[eeprom_addr] = eeprom_data;
                 printf("\r\nWritten %d at %d", (int)eeprom_data, (int)eeprom_addr);
                 eeprom_data_buf_start_index = (eeprom_addr & (~0xFF));
@@ -279,7 +285,7 @@ int main ( void )
                 {
                     eeprom_data_buffer[i] = SmartEEPROM8[eeprom_data_buf_start_index + i];
                 }
-                printf("\r\nEEPROM Data from location: %d  to location: %d: \r\n", 
+                printf("\r\nEEPROM Data from location: %d  to location: %d: \r\n",
                         (int)(eeprom_addr & (~0xFF)), (int)((eeprom_addr & (~0xFF)) + MAX_BUFF_SIZE - 1));
                 print_hex_array(eeprom_data_buffer, MAX_BUFF_SIZE);
                 break;
@@ -291,7 +297,7 @@ int main ( void )
             default:
                 printf("\r\nInvalid option \r\n");
                 break;
-		}
+        }
     }
 
     /* Execution should not come here during normal operation */
