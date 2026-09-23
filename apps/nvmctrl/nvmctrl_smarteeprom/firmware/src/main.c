@@ -112,7 +112,7 @@ void invert_seep_byte(uint8_t index)
 void clear_buffer(void)
 {
     int c;
-    while ((c = getchar()) != '\n' && c != EOF)
+    while ((c = getchar()) != '\r')
     {
         // Do nothing
     }
