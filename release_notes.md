@@ -3,6 +3,28 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Harmony 3 peripheral library application examples for SAM D5x/E5x family v3.6.2
+
+### Development kit and demo application support
+
+Following table provides number of peripheral library examples available for different development kits.
+
+| Development Kits  | MPLAB X applications |
+|:-----------------:|:-------------------:|
+| [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsame54-xpro) | 48 |
+
+### New Features
+
+- None
+
+### Bug fixes
+
+- Updated QSPI and NVMCTRL demos for IAR compatibility
+
+### Known Issues
+
+- None
+
 ## Harmony 3 peripheral library application examples for SAM D5x/E5x family v3.6.1
 
 ### Development kit and demo application support
